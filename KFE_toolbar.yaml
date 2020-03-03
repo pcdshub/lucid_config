@@ -1,0 +1,24 @@
+Vacuum:
+  config:
+    cols: 4
+
+  buttons:
+    GEM:
+        type: display
+        filenames:
+          - mghaly/screens/vacuumscreens/AT1L0.ui
+    HXR Beamline Vac:
+        type: display
+        filenames:
+          - sabbah01/screens/pydmstuff/HXRVacuum/hxr-vac-dev_adpai.ui
+
+Slits:
+  config:
+    cols: 4
+
+  buttons:
+    SL1L0:
+        type: display
+        filenames:
+          - mghaly/screens/devices/AA-dev.ui
+
