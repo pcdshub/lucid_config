@@ -6,7 +6,7 @@ Instrumentation:
     Gas Detector Instrumentation:
         type: shell
         commands:
-          - launch_gdet_edm.sh
+          - /reg/g/pcds/epics-dev/rajan-01/screens/launch_gdet_edm.sh
 
 Vacuum:
   config:
@@ -31,4 +31,3 @@ Slits:
         type: display
         filenames:
           - mghaly/screens/devices/AA-dev.ui
-
