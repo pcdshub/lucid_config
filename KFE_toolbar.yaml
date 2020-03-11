@@ -1,3 +1,13 @@
+General:
+  config:
+    cols: 4
+  buttons:
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/kfe/camviewer.sh
+
+
 Vacuum:
   config:
     cols: 4
@@ -58,4 +68,3 @@ EM2K0-XGMD:
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/XGMDInjectscreen.ui
 
-    
