@@ -24,14 +24,19 @@ Slits:
 
 Vacuum:
   config:
-    cols: 2
+    cols: 1
 
   buttons:
     SXR Beamline Vacuum:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
-    EM1K0-GMD:
+    
+EM1K0-GMD:
+  config:
+    cols: 2
+  buttons:
+    EM1K0-GMD Vacuum:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/GMD1bVacScreen.ui
@@ -39,7 +44,12 @@ Vacuum:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/GMD1bInjectScreen.ui
-    EM2K0-XMD:
+
+EM2K0-XGMD:
+  config:
+    cols: 2
+  buttons:
+    EM2K0-XGMD Vacuum:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/XGMDVacScreen.ui
