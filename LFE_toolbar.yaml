@@ -1,3 +1,12 @@
+General:
+  config:
+    cols: 4
+  buttons:
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/lfe/camviewer.sh
+
 Instrumentation:
   config:
     cols: 1
