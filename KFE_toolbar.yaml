@@ -21,6 +21,10 @@ Vacuum:
         type: display
         filenames:
           - sabbah01/screens/pydmstuff/HXRVacuum/hxr-vac-dev_adpai.ui
+    SXR Beamline Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
 
 Slits:
   config:
@@ -32,16 +36,6 @@ Slits:
         filenames:
           - mghaly/screens/devices/AA-dev.ui
 
-Vacuum:
-  config:
-    cols: 1
-
-  buttons:
-    SXR Beamline Vacuum:
-        type: display
-        filenames:
-          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
-    
 EM1K0-GMD:
   config:
     cols: 2
