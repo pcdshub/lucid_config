@@ -10,31 +10,39 @@ General:
 
 Vacuum:
   config:
-    cols: 4
+    cols: 1
 
   buttons:
-    GEM:
-        type: display
-        filenames:
-          - mghaly/screens/vacuumscreens/AT1L0.ui
-    HXR Beamline Vac:
-        type: display
-        filenames:
-          - sabbah01/screens/pydmstuff/HXRVacuum/hxr-vac-dev_adpai.ui
     SXR Beamline Vacuum:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
+          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
 
 Slits:
   config:
     cols: 4
 
   buttons:
-    SL1L0:
+    SL1K0:
         type: display
         filenames:
-          - mghaly/screens/devices/AA-dev.ui
+          - mghaly/screens/devices/SL1K0-POWER.ui
+    SL2K0:
+        type: display
+        filenames:
+          - mghaly/screens/devices/SL2K0-POWER.ui
+
+AT1K0-GAS:
+  config:
+    cols: 1
+  buttons:
+    AT1K0-GAS Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/mghaly/screens/vacuumscreens/AT1K0-GAS.ui
+
+
 
 EM1K0-GMD:
   config:
