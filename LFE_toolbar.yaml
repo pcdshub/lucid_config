@@ -2,10 +2,25 @@ General:
   config:
     cols: 4
   buttons:
+    LCLS Home: 
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
     Cam Viewer:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/lfe/camviewer.sh
+    PMPS Diagnostics:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=LFE" pmps-ui/pmps.py
+    Lightpath:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - python /reg/g/pcds/pyps/apps/dev/lightpath/bin/lightpath --hutches LFE
 
 Instrumentation:
   config:
@@ -16,6 +31,14 @@ Instrumentation:
         type: shell
         commands:
           - /reg/g/pcds/epics-dev/rajan-01/screens/launch_gdet_edm.sh
+    AT1L0-SOLID Instrumentation:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/mghaly/screens/launch_at1l0_solid_edm.sh
+    Kmono Diode Instrumentation:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/adpai/screens/launch_k_mono_main.sh
 
 Vacuum:
   config:
@@ -29,7 +52,7 @@ Vacuum:
     HXR Beamline Vac:
         type: display
         filenames:
-          - sabbah01/screens/pydmstuff/HXRVacuum/hxr-vac-dev_adpai.ui
+          - screens/pydm/vacuumscreens/screens/hxrVac.ui
 
 Slits:
   config:
@@ -39,4 +62,15 @@ Slits:
     SL1L0:
         type: display
         filenames:
-          - mghaly/screens/devices/AA-dev.ui
+          - mghaly/screens/devices/SL1L0-POWER.ui
+
+RTDSL0:
+ config:
+    cols: 4
+
+ buttons:
+    RTDSL0:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/jyin/RTDSL0.ui
+

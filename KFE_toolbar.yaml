@@ -2,10 +2,21 @@ General:
   config:
     cols: 4
   buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
     Cam Viewer:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/kfe/camviewer.sh
+    PMPS Diagnostics:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
+
 
 
 Vacuum:
@@ -69,4 +80,14 @@ EM2K0-XGMD:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/XGMDInjectscreen.ui
+
+RTDSK0:
+  config:
+    cols: 4
+
+  buttons:
+    RTDSK0:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/jyin/screens/RTDSK0.ui
 
