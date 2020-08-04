@@ -22,6 +22,8 @@ lfe ()
 }
 ```
 
+where `lucid-launcher.sh` is:
+
 ```bash
 #!/usr/bin/env bash
 
