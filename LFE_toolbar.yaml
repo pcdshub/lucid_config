@@ -53,6 +53,10 @@ Vacuum:
         type: display
         filenames:
           - screens/pydm/vacuumscreens/screens/hxrVac.ui
+    HXR Beamline Vac in H1.1&H1.2:
+        type: display
+        filenames:
+          - screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
 
 Slits:
   config:
