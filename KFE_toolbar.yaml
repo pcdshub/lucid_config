@@ -57,7 +57,7 @@ AT1K0-GAS:
 
 EM1K0-GMD:
   config:
-    cols: 2
+    cols: 3
   buttons:
     EM1K0-GMD Vacuum:
         type: display
@@ -67,10 +67,14 @@ EM1K0-GMD:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/GMD1bInjectScreen.ui
+    EM1K0-GMD-VGP-40:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/EM1K0-VGP.ui
 
 EM2K0-XGMD:
   config:
-    cols: 2
+    cols: 3
   buttons:
     EM2K0-XGMD Vacuum:
         type: display
@@ -80,6 +84,10 @@ EM2K0-XGMD:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/XGMDInjectscreen.ui
+    EM2K0-XGMD-VGP-50:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/EM2K0-VGP.ui
 
 RTDSK0:
   config:
