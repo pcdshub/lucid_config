@@ -77,9 +77,8 @@ EM1K0-GMD:
           - sh /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/launch_GSR_EDM.sh
     EM1K0-GMD Signals:
         type: shell
-        redirectCommandOutput: true
         commands:
-          -/reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh 
+          - sh /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh 
 
 
 EM2K0-XGMD:
@@ -104,9 +103,8 @@ EM2K0-XGMD:
           - sh /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/launch_GSR_EDM.sh
     EM2K0-XGMD Signals:
         type: shell
-        redirectCommandOutput: true
         commands:
-          -/reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
+          - sh /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
 
 RTDSK0:
   config:
