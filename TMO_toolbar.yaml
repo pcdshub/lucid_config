@@ -10,17 +10,32 @@ General:
     Cam Viewer:
       type: shell
       commands:
-        - /reg/g/pcds/pyps/config/kfe/camviewer.sh
-
+        - /reg/g/pcds/pyps/config/tmo/camviewer.sh
 
 Vacuum:
   config:
-    cols: 1
+    cols: 2
 
   buttons:
-    TMO Beamline Vacuum:
+   FEE Beamline Vacuum:
         type: display
         filenames:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
           - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOVac.ui
+
+   TMO Beamline Vacuum:
+        type: display
+        filenames:
+        - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOhutch.ui
+
+LAMP:
+  config:
+    cols: 1
+
+  buttons:
+   LAMP Vacuum:
+        type: display
+        filenames:
+          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
+          - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/LAMP.ui
 

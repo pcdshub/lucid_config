@@ -21,7 +21,7 @@ General:
 
 Vacuum:
   config:
-    cols: 1
+    cols: 2
 
   buttons:
     SXR Beamline Vacuum:
@@ -29,6 +29,10 @@ Vacuum:
         filenames:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
           - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
+    RIX FEE Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/rixFeeVac.ui 
 
 Slits:
   config:
