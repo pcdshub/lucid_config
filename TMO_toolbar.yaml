@@ -30,7 +30,7 @@ Vacuum:
 
 LAMP:
   config:
-    cols: 1
+    cols: 2
 
   buttons:
    LAMP Vacuum:
@@ -38,4 +38,8 @@ LAMP:
         filenames:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
           - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/LAMP.ui
+   SQ1 PLC Remote Desktop Session:
+     type: shell
+     commands:
+       - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
 
