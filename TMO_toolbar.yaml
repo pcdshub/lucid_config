@@ -12,21 +12,27 @@ General:
       commands:
         - /reg/g/pcds/pyps/config/tmo/camviewer.sh
 
+    PMPS Diagnostics:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
+
 Vacuum:
   config:
     cols: 2
 
   buttons:
    FEE Beamline Vacuum:
-        type: display
-        filenames:
+        type: shell 
+        commands:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
-          - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOVac.ui
+          - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOVac.ui
 
    TMO Beamline Vacuum:
-        type: display
-        filenames:
-        - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOhutch.ui
+        type: shell
+        commands:
+        - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOhutch.ui
 
 LAMP:
   config:
@@ -34,12 +40,27 @@ LAMP:
 
   buttons:
    LAMP Vacuum:
-        type: display
-        filenames:
+        type: shell
+        commands:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
-          - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/LAMP.ui
+          - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/LAMP.ui
    SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
        - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+
+   LAMP HV Channels:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/bhill/epics/ioc/common/isegPower/current/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+
+SLITS:
+  config:
+    cols: 1
+
+  buttons:
+   SL1K4-SCATTER:
+        type: shell
+        commands:
+          - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL1K4-SCATTER.ui
 
