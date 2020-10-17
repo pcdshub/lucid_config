@@ -52,7 +52,7 @@ LAMP:
    LAMP HV Channels:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/bhill/epics/ioc/common/isegPower/current/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+       - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
 
 SLITS:
   config:
