@@ -54,7 +54,12 @@ LAMP:
      commands:
        - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
 
-SLITS:
+   LAMP In-vacuum Piezo Motors:
+     type: shell
+     commands:
+       - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+
+Slits:
   config:
     cols: 1
 
@@ -64,3 +69,37 @@ SLITS:
         commands:
           - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL1K4-SCATTER.ui
 
+Tools:
+  config:
+    cols: 4
+
+  buttons:
+   EVR:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-evr-01.cmd
+
+   Striptools:
+     type: shell
+     commands:
+       - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/tmo_striptools.ui
+
+   BYKIKS Control:
+     type: shell
+     commands:
+       - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/bykiks_burst.ui
+
+   iocmanager:
+     type: shell
+     commands:
+       - iocmanager
+
+User Devices:
+  config:
+    cols: 2
+  buttons:
+    User Beckhoff:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics-dev/sfsyunus/tmo/ek9000/ek9000screens/edm-ioc-tmo-ppl-bhc-01
