@@ -61,7 +61,7 @@ LAMP:
 
 Slits:
   config:
-    cols: 1
+    cols: 2
 
   buttons:
    SL1K4-SCATTER:
@@ -69,15 +69,45 @@ Slits:
         commands:
           - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL1K4-SCATTER.ui
 
+   SL2K4-SCATTER:
+        type: shell
+        commands:
+          - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL2K4-SCATTER.ui
+
 Tools:
   config:
-    cols: 4
+    cols: 5
 
   buttons:
+   ST4K4:
+     type: shell
+     commands:
+       - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/st4k4_temp.ui
+
+   grubber:
+     type: shell
+     commands:
+       - eloggrabber -s grubber_script
+
    EVR:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-evr-01.cmd
+
+   EventSequencer:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-eventSequencer.cmd
+
+   MPOD Crate:
+     type: shell
+     commands:
+       - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/mpod/mpod_crate.ui
+
+   MPOD AC Power:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/sfsyunus/tmo/Leviton/Screens/edm-ioc-power-tmo-portable02.cmd
 
    Striptools:
      type: shell
