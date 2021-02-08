@@ -26,13 +26,33 @@ Vacuum:
    FEE Beamline Vacuum:
         type: shell 
         commands:
-          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
           - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOVac.ui
 
    TMO Beamline Vacuum:
         type: shell
         commands:
-        - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOhutch.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/tmoHutchVac.ui
+
+
+CVMI:
+  config:
+    cols: 2
+
+  buttons:
+   CVMI Vacuum:
+        type: shell
+        commands:
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac.ui
+   CVMI SQ1 PLC Remote Desktop Session:
+        type: shell
+        commands:
+        - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
+
+   CVMI HV Channels:
+        type: shell
+        commands:
+        - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+
 
 LAMP:
   config:
@@ -42,9 +62,8 @@ LAMP:
    LAMP Vacuum:
         type: shell
         commands:
-          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
-          - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/LAMP.ui
-   SQ1 PLC Remote Desktop Session:
+          - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lampVac.ui
+   LAMP SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
        - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
@@ -58,6 +77,27 @@ LAMP:
      type: shell
      commands:
        - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+
+
+MRCO:
+  config:
+    cols: 2
+
+  buttons:
+   MRCO Vacuum:
+        type: shell
+        commands:
+       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac.ui
+   MRCO SQ1 PLC Remote Desktop Session:
+     type: shell
+     commands:
+       #- /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+
+   MRCO HV Channels:
+     type: shell
+     commands:
+       #- /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+
 
 Slits:
   config:
@@ -79,6 +119,15 @@ Tools:
     cols: 5
 
   buttons:
+   Laser:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-las-lhn-vitara-04.cmd
+   Laser Motors:
+     type: shell
+     commands:
+       - /cds/home/t/tjohnson/heinz/tmo_mods_motors.cmd
+
    ST4K4:
      type: shell
      commands:
@@ -117,12 +166,17 @@ Tools:
    BYKIKS Control:
      type: shell
      commands:
-       - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/bykiks_burst.ui
+       - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/bykiks/bykiks_burst.py
 
-   iocmanager:
+   TMO iocmanager:
      type: shell
      commands:
-       - iocmanager
+       - iocmanager --hutch tmo
+
+   KFE iocmanager:
+     type: shell
+     commands:
+       - /reg/g/pcds/pyps/config/kfe/iocmanager.sh
 
 User Devices:
   config:

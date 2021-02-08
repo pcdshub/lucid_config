@@ -1,0 +1,72 @@
+General:
+  config:
+    cols: 4
+  buttons:
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/kfe/camviewer.sh
+
+
+Vacuum:
+  config:
+    cols: 1
+
+  buttons:
+    TMO Beamline Vacuum:
+        type: display
+        filenames:
+          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
+          - /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOVac.ui
+
+Slits:
+  config:
+    cols: 4
+
+  buttons:
+    SL1K0:
+        type: display
+        filenames:
+          - mghaly/screens/devices/SL1K0-POWER.ui
+    SL2K0:
+        type: display
+        filenames:
+          - mghaly/screens/devices/SL2K0-POWER.ui
+
+AT1K0-GAS:
+  config:
+    cols: 1
+  buttons:
+    AT1K0-GAS Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/mghaly/screens/vacuumscreens/AT1K0-GAS.ui
+
+
+
+EM1K0-GMD:
+  config:
+    cols: 2
+  buttons:
+    EM1K0-GMD Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/GMD1bVacScreen.ui
+    EM1K0-GMD Injector:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-gmd-vac/ui/GMD1bInjectScreen.ui
+
+EM2K0-XGMD:
+  config:
+    cols: 2
+  buttons:
+    EM2K0-XGMD Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/XGMDVacScreen.ui
+    EM2K0-XGMD Injector:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-xgmd-vac/ui/XGMDInjectscreen.ui
+

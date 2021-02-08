@@ -1,0 +1,62 @@
+General:
+  config:
+    cols: 4
+  buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/kfe/camviewer.sh
+    PMPS Diagnostics:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
+
+
+
+Vacuum:
+  config:
+    cols: 3
+
+  buttons:
+    SXR Beamline Vacuum:
+        type: display
+        filenames:
+          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
+    RIX FEE Vacuum:
+        type: display
+        filenames:
+          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/rixFeeVac.ui 
+          - /cds/group/pcds/epics-dev/jjoshi/screens/rixFeeVac.ui
+    RIX Vacuum:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/jjoshi/screens/rixVac.ui
+
+
+Tools:
+  config:
+    cols: 3
+
+  buttons:
+    iocmanager:
+     type: shell
+     commands:
+       - iocmanager
+   
+    grubber:
+     type: shell
+     commands:
+       - eloggrabber -s grubber_script
+
+ 
+    EVR CAM 01:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/jjoshi/evr/current/build/iocBoot/ioc-rix-evr-01/edm-ioc-rix-evr-01.cmd

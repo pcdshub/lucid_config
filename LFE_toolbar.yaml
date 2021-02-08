@@ -42,21 +42,21 @@ Instrumentation:
 
 Vacuum:
   config:
-    cols: 1
+    cols: 3
 
   buttons:
     GEM:
-        type: display
-        filenames:
-          - mghaly/screens/vacuumscreens/AT1L0.ui
+        type: shell
+        commands:
+          - pydm mghaly/screens/vacuumscreens/AT1L0.ui
     HXR Beamline Vac:
-        type: display
-        filenames:
-          - screens/pydm/vacuumscreens/screens/hxrVac.ui
+        type: shell
+        commands:
+          - pydm screens/pydm/vacuumscreens/screens/hxrVac.ui
     HXR Beamline Vac in H1.1&H1.2:
-        type: display
-        filenames:
-          - screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
+        type: shell
+        commands:
+          - pydm screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
 
 Slits:
   config:
@@ -64,9 +64,9 @@ Slits:
 
   buttons:
     SL1L0:
-        type: display
-        filenames:
-          - mghaly/screens/devices/SL1L0-POWER.ui
+        type: shell
+        commands:
+          - pydm mghaly/screens/devices/SL1L0-POWER.ui
 
 RTDSL0:
  config:
@@ -74,7 +74,7 @@ RTDSL0:
 
  buttons:
     RTDSL0:
-        type: display
-        filenames:
-          - /reg/g/pcds/epics-dev/jyin/RTDSL0.ui
+        type: shell
+        commands:
+          - pydm /reg/g/pcds/epics-dev/jyin/RTDSL0.ui
 
