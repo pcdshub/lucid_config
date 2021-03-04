@@ -114,7 +114,7 @@ Slits:
         commands:
           - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL2K4-SCATTER.ui
 
-Tools:
+Lser:
   config:
     cols: 5
 
@@ -127,6 +127,22 @@ Tools:
      type: shell
      commands:
        - /cds/home/t/tjohnson/heinz/tmo_mods_motors.cmd
+
+   Time Tool:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aegger/tmo_screens/edm-ioc-las-tmo-vitara-tt.cmd
+
+
+Tools:
+  config:
+    cols: 5
+
+  buttons:
+   TMO Summary:
+     type: shell
+     commands:
+       - pydm --stylesheet /cds/group/pcds/epics-dev/aegger/tmo_screens/user_screens/style.css /cds/group/pcds/epics-dev/aegger/tmo_screens/user_screens/tmo_summary.py
 
    ST4K4:
      type: shell

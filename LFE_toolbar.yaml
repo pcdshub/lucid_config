@@ -76,5 +76,5 @@ RTDSL0:
     RTDSL0:
         type: shell
         commands:
-          - pydm /reg/g/pcds/epics-dev/jyin/RTDSL0.ui
+          - pydm /reg/g/pcds/epics-dev/jyin/screens/RTDSL0.ui
 
