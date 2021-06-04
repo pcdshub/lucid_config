@@ -1,6 +1,6 @@
 General:
   config:
-    cols: 4
+    cols: 5
   buttons:
     LCLS Home:
       type: shell
@@ -10,13 +10,22 @@ General:
     Cam Viewer:
       type: shell
       commands:
-        - /reg/g/pcds/pyps/config/kfe/camviewer.sh
+        - /reg/g/pcds/pyps/config/rix/camviewer.sh
+    FIM Top:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/common/pgpWave8/latest/edm-rix-fim-01-top.cmd
     PMPS Diagnostics:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
-
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui-KFE/pmps.py
+    Lightpath:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - python /reg/g/pcds/pyps/apps/dev/lightpath/bin/lightpath --hutches RIX KFE TMO
+ 
 
 
 Vacuum:
@@ -37,7 +46,12 @@ Vacuum:
     RIX Vacuum:
         type: display
         filenames:
-          - /cds/group/pcds/epics-dev/jjoshi/screens/rixVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixVac.ui
+          # - /cds/group/pcds/epics-dev/jjoshi/screens/rixVac.ui
+    ChemRIX Vacuum:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/tjohnson/screens/chemrixsVac.ui
 
 
 Tools:
@@ -49,6 +63,13 @@ Tools:
      type: shell
      commands:
        - iocmanager
+
+
+    KFE iocmanager:
+     type: shell
+     commands:
+       - /reg/g/pcds/pyps/config/kfe/iocmanager.sh
+ 
    
     grubber:
      type: shell
@@ -60,3 +81,104 @@ Tools:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/jjoshi/evr/current/build/iocBoot/ioc-rix-evr-01/edm-ioc-rix-evr-01.cmd
+
+    Zero Order Beam Test:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/mghaly/screens/devices/zob.ui
+
+Camera EDM-screens:
+  config:
+    cols: 6
+
+  buttons:
+    IM1K1:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-im1k1-gige/edm-ioc-im1k1-gige.cmd
+
+
+    IM2K1:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-im2k1-gige/edm-ioc-im2k1-gige.cmd
+
+    
+    MONO-03:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-kfe-mono-gige03/edm-ioc-kfe-mono-gige03.cmd
+
+
+    MONO-04:
+     type: shell
+     commands: 
+       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-kfe-mono-gige04/edm-ioc-kfe-mono-gige04.cmd
+
+
+    SL1K2:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/zlentz/ioc/lcls2-fee-cams/build/iocBoot/ioc-sl1k2-gige/edm-ioc-sl1k2-gige.cmd
+
+
+    IM1K2:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/zlentz/ioc/lcls2-fee-cams/build/iocBoot/ioc-im1k2-gige/edm-ioc-im1k2-gige.cmd  
+
+
+Hutch-webcams:
+  config:
+    cols: 7
+
+  buttons:
+    webcam-rix-east:
+     type: shell
+     commands: 
+       - /usr/bin/firefox --new-window http://webcam-rix-east/ 
+
+    webcam-rix-west:
+     type: shell
+     commands:
+       - /usr/bin/firefox --new-window http://webcam-rix-west/
+
+    webcam-rix-north:
+     type: shell
+     commands:
+       - /usr/bin/firefox --new-window http://webcam-rix-north/
+  
+    webcam-rix-south:
+     type: shell
+     commands:
+       - /usr/bin/firefox --new-window http://webcam-rix-south/
+
+    webcam-crixs-north:
+     type: shell
+     commands:
+       - /usr/bin/firefox --new-window http://webcam-crixs-north/
+
+    webcam-crixs-south:
+     type: shell
+     commands:
+       - /usr/bin/firefox --new-window http://webcam-crixs-south/
+
+    webcam-qrixs-south:
+     type: shell
+     commands:
+       - /usr/bin/firefox --new-window http://webcam-qrixs-south/
+
+
+Motion:
+  config:
+    cols: 3
+
+  buttons:
+    ChemRIXS Diag Paddle:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_dpaddle.cmd
+
+
+
+

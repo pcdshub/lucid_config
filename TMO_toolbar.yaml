@@ -1,6 +1,6 @@
 General:
   config:
-    cols: 4
+    cols: 5
   buttons:
     LCLS Home:
       type: shell
@@ -11,23 +11,29 @@ General:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/tmo/camviewer.sh
-
+    FIM Top:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/common/pgpWave8/latest/edm-tmo-fim-01-top.cmd
     PMPS Diagnostics:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui-KFE/pmps.py
+    Lightpath:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - python /reg/g/pcds/pyps/apps/dev/lightpath/bin/lightpath --hutches TMO KFE RIX
 
 Vacuum:
   config:
     cols: 2
-
   buttons:
    FEE Beamline Vacuum:
         type: shell 
         commands:
-          - pydm /reg/g/pcds/epics-dev/jyin/screens/tmoVacuum/TMOVac.ui
-
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/tmoFeeVac.ui
    TMO Beamline Vacuum:
         type: shell
         commands:
@@ -62,7 +68,7 @@ LAMP:
    LAMP Vacuum:
         type: shell
         commands:
-          - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lampVac.ui
+          - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lamp_mbes_Vac.ui
    LAMP SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
@@ -87,7 +93,7 @@ MRCO:
    MRCO Vacuum:
         type: shell
         commands:
-       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVac.ui
    MRCO SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
@@ -96,7 +102,7 @@ MRCO:
    MRCO HV Channels:
      type: shell
      commands:
-       #- /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+       - /reg/g/pcds/epics/ioc/common/isegPower/R0.6.0/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
 
 
 Slits:
@@ -114,11 +120,16 @@ Slits:
         commands:
           - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL2K4-SCATTER.ui
 
-Lser:
+Laser:
   config:
     cols: 5
 
   buttons:
+   Lecroy:
+     type: shell
+     commands:
+       - /cds/home/opr/tmoopr/bin/lecroy_desktop
+
    Laser:
      type: shell
      commands:
@@ -139,10 +150,20 @@ Tools:
     cols: 5
 
   buttons:
+   Agilent E3632A:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/tmo/AgilentE3632A/R1.0.0/build/iocBoot/ioc-tmo-agilent/edm-ioc-tmo-agilent.cmd
+
+   BK Precision:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/adpai/tmo_screens/edm-ioc-tmo-bk-01.cmd
+
    TMO Summary:
      type: shell
      commands:
-       - pydm --stylesheet /cds/group/pcds/epics-dev/aegger/tmo_screens/user_screens/style.css /cds/group/pcds/epics-dev/aegger/tmo_screens/user_screens/tmo_summary.py
+       - pydm --stylesheet /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/user_screens/style.css /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/user_screens/tmo_summary.py
 
    ST4K4:
      type: shell
@@ -193,6 +214,11 @@ Tools:
      type: shell
      commands:
        - /reg/g/pcds/pyps/config/kfe/iocmanager.sh
+
+   AMO RGA KBO:
+     type: shell
+     commands:
+       - firefox http://rga-amo-kbo
 
 User Devices:
   config:
