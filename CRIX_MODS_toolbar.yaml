@@ -1,0 +1,35 @@
+General:
+  config:
+    cols: 4
+  buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/las/camviewer.sh
+
+
+#EVRs:
+#  config:
+#    cols: 1
+#
+#  buttons:
+#    ioc-las-lm1k4-evr-01:
+#      type: shell
+#      commands:
+#        - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lm1k4-evr-01/edm-ioc-las-lm1k4-evr-01.cmd
+#
+
+Tools:
+  config:
+    cols: 2
+  buttons:
+    iocmanager:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/las/iocmanager.sh
+ 
