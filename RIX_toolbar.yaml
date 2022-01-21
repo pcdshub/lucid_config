@@ -7,6 +7,11 @@ General:
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/setup/pydm_lclshome.sh
+    Experiment State Tracker:
+      type: shell
+      directCommandOutput: true
+      commands:
+        - /cds/group/pcds/pyps/config/rix/expstate.sh
     Cam Viewer:
       type: shell
       commands:
