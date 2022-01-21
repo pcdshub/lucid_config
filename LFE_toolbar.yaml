@@ -20,7 +20,7 @@ General:
       type: shell
       redirectCommandOutput: true
       commands:
-        - python /reg/g/pcds/pyps/apps/dev/lightpath/bin/lightpath --hutches LFE
+        - lightpath --hutches LFE
 
 Instrumentation:
   config:
@@ -39,6 +39,10 @@ Instrumentation:
         type: shell
         commands:
           - /reg/g/pcds/epics-dev/adpai/screens/launch_k_mono_main.sh
+    Gdet Kmono PDU:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/screens/edm/lfe/edm-ioc-lfe-pwd-02.cmd
 
 Vacuum:
   config:
@@ -57,6 +61,10 @@ Vacuum:
         type: shell
         commands:
           - pydm screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
+    Ion Pump Power Controls:
+        type: shell
+        commands:
+          - pydm -m DEV=LFE:PWR:R03:01 /reg/g/pcds/epics/ioc/lfe/Leviton/R1.2.0/emb-pip-power-control.ui
 
 Slits:
   config:
@@ -77,4 +85,25 @@ RTDSL0:
         type: shell
         commands:
           - pydm /reg/g/pcds/epics-dev/jyin/screens/RTDSL0.ui
+
+XRT-OPTICS:
+ config:
+    cols: 4
+
+ buttons:
+    MR1L3-HOMS:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_mr1l3_ui.cmd
+    MR1L4-HOMS:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_mr1l4_ui.sh
+    MR2L3-HOMS:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_mr2l3_ui.sh
+
+
+    
 

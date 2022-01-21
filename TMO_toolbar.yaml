@@ -7,6 +7,11 @@ General:
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/setup/pydm_lclshome.sh
+    Experiment State Tracker:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/pyps/config/tmo/expstate.sh
     Cam Viewer:
       type: shell
       commands:
@@ -19,12 +24,17 @@ General:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui-KFE/pmps.py
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
     Lightpath:
       type: shell
       redirectCommandOutput: true
       commands:
-        - python /reg/g/pcds/pyps/apps/dev/lightpath/bin/lightpath --hutches TMO KFE RIX
+        - lightpath --hutches TMO KFE RIX
+    High Voltage (Beta):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/hv_screens/launch.sh
 
 Vacuum:
   config:
@@ -37,7 +47,7 @@ Vacuum:
    TMO Beamline Vacuum:
         type: shell
         commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/tmoHutchVac.ui
+        - pydm /reg/g/pcds/epics-dev/tongju/vacuum_screens/TMObeamline.ui
 
 
 CVMI:
@@ -48,7 +58,7 @@ CVMI:
    CVMI Vacuum:
         type: shell
         commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLV39.ui
    CVMI SQ1 PLC Remote Desktop Session:
         type: shell
         commands:
@@ -57,7 +67,9 @@ CVMI:
    CVMI HV Channels:
         type: shell
         commands:
-        - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+       # - /reg/g/pcds/epics/ioc/common/isegPower/R0.7.0/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd 
+       # - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+        - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
 
 
 LAMP:
@@ -68,7 +80,7 @@ LAMP:
    LAMP Vacuum:
         type: shell
         commands:
-          - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lamp_mbes_Vac.ui
+          - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lampVac.ui
    LAMP SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
@@ -77,14 +89,19 @@ LAMP:
    LAMP HV Channels:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+       #- /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
+       - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
 
    LAMP In-vacuum Piezo Motors:
      type: shell
      commands:
        - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
 
-
+   LAMP BK Precision:
+     type: shell
+     commands:
+       - /cds/home/r/rsmm97/BK-Precision/current/build/iocBoot/ioc-tmo-lamp-BK/edm-ioc-tmo-lamp-BK.cmd
+ 
 MRCO:
   config:
     cols: 2
@@ -93,16 +110,39 @@ MRCO:
    MRCO Vacuum:
         type: shell
         commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVac.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVac_jan22.ui
    MRCO SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
-       #- /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+       - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-03_RDP_launcher.sh
 
    MRCO HV Channels:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/common/isegPower/R0.6.0/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+       - /reg/g/pcds/epics/ioc/common/isegPower/R0.7.0/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+#       - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+   MRCO HV Web interface:
+     type: shell
+     commands:
+       - firefox http://ioc-tmo-mpod01
+
+   MRCO Thermocouples:
+     type: shell
+     commands:
+       - pydm -m '{"ENDSTATION":"MRCO"}' /cds/group/pcds/epics-dev/adpai/tmo_screens/vac_screens/eightSensorTC.ui 
+
+#   MRCO_KEN:
+#     type: display
+#     macros: '{"ENDSTATION":"MRCO"}'
+#     filenames:
+#       - /cds/group/pcds/epics-dev/adpai/tmo_screens/vac_screens/eightSensorTC.ui
+#
+#   MRCO_ZACH:
+#     type: display
+#     filenames:
+#       - /cds/group/pcds/epics-dev/adpai/tmo_screens/vac_screens/eightSen    sorTC.ui
+#     macros:
+#       - ENDSTATION=MRCO
 
 
 Slits:
@@ -137,7 +177,7 @@ Laser:
    Laser Motors:
      type: shell
      commands:
-       - /cds/home/t/tjohnson/heinz/tmo_mods_motors.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/tmo_mods_motors.cmd
 
    Time Tool:
      type: shell
@@ -219,6 +259,27 @@ Tools:
      type: shell
      commands:
        - firefox http://rga-amo-kbo
+
+   LAKESHORE 335 IP1:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/janezg/tmo/lakeshore335/current/ioc-tmo-ip1/build/iocBoot/ioc-tmo-ip1-temp/edm-ioc-tmo-ip1-temp.cmd
+
+   LAKESHORE 335 IP2:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/janezg/tmo/lakeshore335/current/ioc-tmo-ip2/build/iocBoot/ioc-tmo-ip2-temp/edm-ioc-tmo-ip2-temp.cmd
+
+   RohdeShwarzNGP824:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/rsmm97/ioc/tmo/RohdeSchwarzHMP/current/build/iocBoot/ioc-tmo-hmp-test/edm-ioc-tmo-hmp-test.cmd
+ 
+   TMO Output Coupler:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/payers/ioc/coupler/current/children/build/iocBoot/ioc-tmo-coupler/edm-ioc-tmo-coupler.cmd
+
 
 User Devices:
   config:

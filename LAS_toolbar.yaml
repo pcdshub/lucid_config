@@ -1,0 +1,149 @@
+General:
+  config:
+    cols: 2
+  buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/las/camviewer.sh
+    LAS iocmanager:
+      type: shell
+      commands:
+        - iocmanager --hutch las
+    Striptool:
+      type: shell
+      commands:
+        - StripTool
+    Gateway Home:
+      type: shell
+      commands:
+        - gw
+    Elog:
+      type: shell
+      commands:
+        - /reg/g/pcds/engineering_tools/mec/scripts/eloggrabber
+
+MODS:
+  config:
+    cols: 2
+  buttons:
+    IP1 MODS:
+      type: shell
+      commands:
+        - /reg/g/pcds/setup/lucid-launcher.sh IP1_MODS
+    CRIX MODS:
+      type: shell
+      commands:
+        - /reg/g/pcds/setup/lucid-launcher.sh CRIX_MODS
+    XPP "INJ TILE":
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/screens/xpp_inj/xpp_inj_tile.cmd
+
+Vacuum:
+  config:
+    cols: 2
+  buttons:
+   NEH Laser Hall Vacuum:
+      type: shell 
+      commands:
+        - pydm /reg/g/pcds/epics-dev/sfsyunus/screens/l2si_beam_transport_system_displays/home.ui &
+
+Laser Lockers:
+  config:
+    cols: 2
+  buttons:
+   NEH FS11:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-lhn-vitara-tt-01.cmd
+   NEH FS14 - TMO:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-lhn-vitara-tt-04-tmo.cmd
+   NEH FS14 - ChemRIXS:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-lhn-vitara-tt-04-crixs.cmd
+   XCS FS4:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-xcs-vitara-tt.cmd
+   MFX FS4.5:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-mfx-vitara-tt.cmd
+   CXI FS5:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-cxi-vitara-tt.cmd
+   MEC FS6:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-mec-vitara-tt.cmd
+
+Timing:
+  config:
+    cols: 2
+  buttons:
+   ASC Wave8:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/asc-wave8.cmd
+
+#EVRs:
+#  config:
+#    cols: 2
+#  buttons:
+#   CXI EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+#   NEH FS11 EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+#   XCS EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+#   NEH FS14 EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+#   MEC Vitara EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+#   MEC FS EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+#   MEC NS EVR:
+#      type: shell
+#      commands:
+#        - /path/to/evr/screen/launcher
+
+
+NEH Beam Transport:
+  config:
+    cols: 2
+  buttons:
+   Zone1 Motors:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/heinz/bts_smaract_bay1.cmd
+   Zone4 Motors:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/heinz/bts_smaract_bay4.cmd
+   Shutters:
+      type: shell
+      commands:
+        - /cds/home/s/sfsyunus/lhn/edm-las-shutters
+

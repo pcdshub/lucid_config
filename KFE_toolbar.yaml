@@ -16,6 +16,11 @@ General:
       redirectCommandOutput: true
       commands:
         - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
+    Lightpath:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - lightpath --hutches KFE TMO RIX
 
 
 
@@ -29,6 +34,10 @@ Vacuum:
         filenames:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
           - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
+    TMO FEE Vacuum:
+         type: display
+         filenames:
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/tmoFeeVac.ui
     RIX FEE Vacuum:
         type: display
         filenames:
@@ -85,7 +94,9 @@ EM1K0-GMD:
     EM1K0-GMD Signals:
         type: shell
         commands:
-          - bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh 
+          # Version 2.0.0 of this screen was not liked by the scientists
+          #- bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh 
+          - bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_gmd_main_pcds.sh
 
 
 EM2K0-XGMD:
@@ -111,7 +122,9 @@ EM2K0-XGMD:
     EM2K0-XGMD Signals:
         type: shell
         commands:
-          - bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
+          # Version 2.0.0 of this screen was not liked by the scientists
+          #- bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
+          - bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_xgmd_main_pcds.sh
 
 RTDSK0:
   config:
