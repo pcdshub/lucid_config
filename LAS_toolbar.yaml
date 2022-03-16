@@ -61,31 +61,31 @@ Laser Lockers:
    NEH FS11:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-lhn-vitara-tt-01.cmd
-   NEH FS14 - TMO:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
+   NEH FS14:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-lhn-vitara-tt-04-tmo.cmd
-   NEH FS14 - ChemRIXS:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-lhn-vitara-tt-04-crixs.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04-tmo.cmd
+#   NEH FS14 - ChemRIXS:
+#      type: shell
+#      commands:
+#        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/edm-ioc-las-lhn-vitara-tt-04-crixs.cmd
    XCS FS4:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-xcs-vitara-tt.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-xcs-vitara-tt.cmd
    MFX FS4.5:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-mfx-vitara-tt.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-mfx-vitara-tt.cmd
    CXI FS5:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-cxi-vitara-tt.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-cxi-vitara-tt.cmd
    MEC FS6:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/R2.13.0/edm-ioc-las-mec-vitara-tt.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-mec-vitara-tt.cmd
 
 Timing:
   config:
