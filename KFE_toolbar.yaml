@@ -21,8 +21,26 @@ General:
       redirectCommandOutput: true
       commands:
         - lightpath --hutches KFE TMO RIX
-
-
+    KFE Elog Site:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - firefox https://pswww.slac.stanford.edu/lgbk/lgbk/kfe/#infosec
+    KFE Grubber:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - bash /reg/g/pcds/pyps/apps/hutch-python/lucid_config/launch_grubber_kfe
+    PMPS Troubleshooting:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - firefox https://confluence.slac.stanford.edu/display/PCDS/FEE+PMPS+Troubleshooting+Information
+    FEE Troubleshooting:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - firefox https://confluence.slac.stanford.edu/display/PCDS/FEE+Operation+and+Troubleshooting
 
 Vacuum:
   config:
@@ -68,6 +86,16 @@ AT1K0-GAS:
         redirectCommandOutput: true
         commands:
           - pydm /reg/g/pcds/epics-dev/mghaly/screens/vacuumscreens/AT1K0-GAS.ui
+    AT1K0-GAS Aperture Array, Y-Stages:
+        type: shell
+        redirectCommandOutput: true
+        commands:
+          - bash /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_AT1K0_Y_aperture
+    #AT1K0-GAS Aperture Array, X-Stages:
+        #type: shell
+        #redirectCommandOutput: true
+        #commands:
+        #  - bash /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_AT1K0_X_aperture
 
 
 
@@ -136,3 +164,28 @@ RTDSK0:
         filenames:
           - /reg/g/pcds/epics-dev/jyin/screens/RTDSK0.ui
 
+
+FEE-OPTICS:
+  config:
+    cols: 2
+  buttons:
+    mr1k4_homs:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+          - /reg/g/pcds/epics/ioc/tmo/lcls-plc-tmo-optics/latest/somsScreens/launch_mr1k4_ui.sh
+
+
+Radiation Monitoring:
+  config:
+    cols: 2
+
+  buttons:
+    Radiation Controls:
+        type: shell
+        commands:
+            - /reg/g/pcds/epics/ioc/fee/dosfet/R0.0.11/current/children/build/iocBoot/ioc-fee-dosfet-01/edm-ioc-fee-dosfet-01.cmd
+    Grafana Dash:
+        type: shell
+        commands:
+            - firefox https://pswww.slac.stanford.edu/ctl/grafana/d/-HPzOL8nz/radiation-monitoring?orgId=1&from=now-2d&to=now

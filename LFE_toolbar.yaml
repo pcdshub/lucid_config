@@ -21,6 +21,26 @@ General:
       redirectCommandOutput: true
       commands:
         - lightpath --hutches LFE
+    Elog Site:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - firefox https://pswww.slac.stanford.edu/lgbk/lgbk/lfe/#info
+    LFE Grubber:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - bash /reg/g/pcds/pyps/apps/hutch-python/lucid_config/launch_grubber_lfe
+    PMPS Troubleshooting:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - firefox https://confluence.slac.stanford.edu/display/PCDS/FEE+PMPS+Troubleshooting+Information
+    FEE Troubleshooting:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - firefox https://confluence.slac.stanford.edu/display/PCDS/FEE+Operation+and+Troubleshooting
 
 Instrumentation:
   config:
@@ -85,25 +105,60 @@ RTDSL0:
         type: shell
         commands:
           - pydm /reg/g/pcds/epics-dev/jyin/screens/RTDSL0.ui
-
-XRT-OPTICS:
+    DiodeMotion:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/screens/pydm/scripts/RTDSL0_diode_motion.cmd
+    
+LFE-OPTICS:
  config:
     cols: 4
 
  buttons:
+    MR1L0-HOMS:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l0_ui.sh
+    MR2L0-HOMS:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr2l0_ui.sh
     MR1L3-HOMS:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_mr1l3_ui.cmd
-    MR1L4-HOMS:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_mr1l4_ui.sh
+          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l3_ui.sh
     MR2L3-HOMS:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_mr2l3_ui.sh
+          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr2l3_ui.sh
+    MR1L4-HOMS:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l4_ui.sh
+    Optics Homs Notepad:
+        type: shell
+        commands:
+          - typhos optics_homs_notepad 
+    HOMS Troubleshooting:
+        type: shell
+        commands:
+          - firefox https://confluence.slac.stanford.edu/display/PCDS/HOMS+Troubleshooting
 
 
-    
+Radiation Monitoring:
+ config:
+    cols: 2
+
+ buttons:
+    Radiation Controls:
+        type: shell
+        commands:
+            - /reg/g/pcds/epics/ioc/fee/dosfet/R0.0.11/current/children/build/iocBoot/ioc-fee-dosfet-01/edm-ioc-fee-dosfet-01.cmd
+    Grafana Dash:
+        type: shell
+        commands:
+            - firefox https://pswww.slac.stanford.edu/ctl/grafana/d/-HPzOL8nz/radiation-monitoring?orgId=1&from=now-2d&to=now 
+
+
+
 

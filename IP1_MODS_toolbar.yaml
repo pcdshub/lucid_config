@@ -24,6 +24,28 @@ EVRs:
         - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lm1k4-evr-01/edm-ioc-las-lm1k4-evr-01.cmd
 
 
+Digitizers:
+  config:
+    cols: 1
+
+  buttons:
+    ioc-las-ip1-pgpw8-01:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-01/edm-ioc-las-ip1-pgpw8-01.cmd
+    ioc-las-ip1-pgpw8-02:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
+    ioc-las-ip1-pgpw8-03:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
+    ioc-lm1k4-qadc134-01:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tjohnson/screens/lm1k4_qadc.cmd
+
 Tools:
   config:
     cols: 2

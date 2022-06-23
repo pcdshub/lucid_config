@@ -28,6 +28,15 @@ General:
       commands:
         - /reg/g/pcds/engineering_tools/mec/scripts/eloggrabber
 
+OPCPA:
+  config:
+    cols: 2
+  buttons:
+    LPS-01:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/payers/lcls-plc-las-lps-01/opcpa-lps-screens/lps_01.sh
+
 MODS:
   config:
     cols: 2
@@ -95,7 +104,14 @@ Timing:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/asc-wave8.cmd
-
+   fiberOven (old):
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/screens/fiberOven.cmd 
+   RF Over Fiber:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/wwright/ioc/common/iTech_RFOF/children/build/iocBoot/ioc-las-rfof-01/edm-ioc-las-rfof-01.cmd    
 #EVRs:
 #  config:
 #    cols: 2

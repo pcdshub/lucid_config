@@ -23,7 +23,9 @@ General:
     chemRIX Wave8:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/bhill/epics/ioc/common/pgpWave8/pgpWave8-git/children/build/iocBoot/ioc-rix-pgpw8-03/edm-ioc-rix-pgpw8-03.cmd
+        /reg/g/pcds/epics/ioc/rix/pgpWave8/R1.6.0/build/iocBoot/ioc-rix-pgpw8-03/edm-ioc-rix-pgpw8-03.cmd
+        #- /reg/g/pcds/epics-dev/wwright/ioc/rix/pgpWave8/build/iocBoot/ioc-rix-pgpw8-03/edm-ioc-rix-pgpw8-03.cmd
+        #- /reg/g/pcds/epics-dev/bhill/epics/ioc/common/pgpWave8/pgpWave8-git/children/build/iocBoot/ioc-rix-pgpw8-03/edm-ioc-rix-pgpw8-03.cmd
     PMPS Diagnostics:
       type: shell
       redirectCommandOutput: true
@@ -34,13 +36,12 @@ General:
       redirectCommandOutput: true
       commands:
         - lightpath --hutches RIX KFE TMO
-    ST3K2:
-     type: shell
-     commands:
-       - pydm /cds/group/pcds/epics-dev/jjoshi/screens/st3k2_temp.ui
+    #ST3K2:
+     #type: shell
+     #commands:
+       #- pydm /cds/group/pcds/epics-dev/jjoshi/screens/st3k2_temp.ui
 
  
-
 
 Vacuum:
   config:
@@ -50,23 +51,28 @@ Vacuum:
     SXR Beamline Vacuum:
         type: display
         filenames:
-          # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
           - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
     RIX FEE Vacuum:
         type: display
         filenames:
-          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/rixFeeVac.ui 
-          - /cds/group/pcds/epics-dev/jjoshi/screens/rixFeeVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixFeeVac.ui
     RIX Vacuum:
         type: display
         filenames:
           - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixVac.ui
-          # - /cds/group/pcds/epics-dev/jjoshi/screens/rixVac.ui
     ChemRIX Vacuum:
+        type: shell
+        commands:
+          - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/chemrixsVac.ui
+    QRIXS Vacuum:
         type: display
         filenames:
-          # - /reg/g/pcds/epics-dev/tjohnson/screens/chemrixsVac.ui
-          - /reg/g/pcds/epics-dev/jyin/screens/chemrixsVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/qrixs-sc-vac.ui
+    QRIXS Vacuum All:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/qrixs-vac.ui
+
     Ion Pump Power Controls:
         type: shell
         commands:
@@ -81,7 +87,7 @@ Tools:
      type: shell
      commands:
        - iocmanager
-
+ 
 
     KFE iocmanager:
      type: shell
@@ -98,6 +104,11 @@ Tools:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/jjoshi/screens/edm-ioc-rix-eventSequencer.cmd
+
+    BYKIKS Control:
+     type: shell
+     commands:
+       - pydm /cds/group/pcds/epics-dev/jjoshi/ioc/rix/bykiks/bykiks_burst.py
 
  
     EVR CAM 01:
@@ -130,46 +141,11 @@ Tools:
      commands:        
        - /reg/g/pcds/epics/ioc/rix/Sentry4/R2.4.1/build/iocBoot/ioc-rix-pwr-r02/edm-ioc-rix-pwr-r02.cmd
 
-Camera EDM-screens:
-  config:
-    cols: 6
-
-  buttons:
-    IM1K1:
+    NEH SetraAir5000:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-im1k1-gige/edm-ioc-im1k1-gige.cmd
-
-
-    IM2K1:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-im2k1-gige/edm-ioc-im2k1-gige.cmd
-
-    
-    MONO-03:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-kfe-mono-gige03/edm-ioc-kfe-mono-gige03.cmd
-
-
-    MONO-04:
-     type: shell
-     commands: 
-       - /reg/g/pcds/epics/ioc/kfe/gigECam/R1.0.0/build/iocBoot/ioc-kfe-mono-gige04/edm-ioc-kfe-mono-gige04.cmd
-
-
-    SL1K2:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics/ioc/rix/gigECam/R1.1.0/build/iocBoot/ioc-sl1k2-gige/edm-ioc-sl1k2-gige.cmd
-
-
-    IM1K2:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics/ioc/rix/gigECam/R1.1.0/build/iocBoot/ioc-im1k2-gige/edm-ioc-im1k2-gige.cmd
-
+       - /cds/group/pcds/epics/ioc/common/setra/R0.1.2/children/build/iocBoot/ioc-rix-setra/edm-ioc-rix-setra.cmd
+             
 
 Hutch-webcams:
   config:
@@ -212,7 +188,7 @@ Hutch-webcams:
        - /usr/bin/firefox --new-window http://webcam-qrixs-south/
 
 
-Motion:
+CRIXS Motion:
   config:
     cols: 7
 
@@ -236,38 +212,58 @@ Motion:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/tjohnson/screens/chemrixSmaract.cmd
+    
     ChemRIXS CryoStat:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/nrw/screens/cryoStat.cmd
+    
     ChemRIXS Outcoupling Y:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/nrw/screens/Outcouple.cmd
+    
     ChemRIXS Objectives:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_objectives.cmd
+    
     ChemRIXS Illumination:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_illumination.cmd
+    
     ChemRIXS Beamblock:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/nrw/screens/Beamblock.cmd
+    
     ChemRIXS Catcher:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixCatcher.cmd
+    
     ChemRIXS Injector:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixInjector.cmd
+    
     VLS Optics(mrad):
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixVLSOptics.cmd
+    
+    
+
+QRIXS Motion:
+  config:
+    cols: 1
+  
+  buttons:
+   QRIXS Sliding Seal:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/screens/pydm/scripts/qrixSSL.cmd
 
 
 Laser:
@@ -278,7 +274,23 @@ Laser:
     ChemRIXS MODS Motors:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/crixs_mods_motors.cmd
+       - /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_motors.cmd
+    ChemRIXS MODS Cameras:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_cameras.cmd
+    ChemRIXS MODS Power Meters:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_power_meters.cmd
+    Timing (FS11):
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/las/vitara/R2.16.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
+    Timing (FS14):
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/las/vitara/R2.16.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04-crixs.cmd
 
 HV:
   config:
@@ -295,10 +307,10 @@ Temperature Control:
     cols: 1
 
   buttons:
-    Lakeshore336:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics-dev/spencera/rix/lakeshore336/current/build/iocBoot/ioc-crix-usr-ls336/edm-ioc-crix-usr-ls336-1.cmd
+    #Lakeshore336:
+     #type: shell
+     #commands:
+       #- /reg/g/pcds/epics-dev/spencera/rix/lakeshore336/current/build/iocBoot/ioc-crix-usr-ls336/edm-ioc-crix-usr-ls336-1.cmd
     Cryo Lakeshore (01):
      type: shell
      commands:
@@ -325,4 +337,7 @@ SDS:
       type: shell
       commands:
         - edm -x -m "IOC=RIX:LC20:IOC:01,DEV=RIX:SDS:LC20:02" -eolc /reg/g/pcds/epics/ioc/common/shimadzu-lc20/R1.1.0/lc20Screens/lc20.edl
-
+    On/Off Valves:
+      type: display
+      filenames:
+        - /reg/g/pcds/epics-dev/screens/pydm/sds-ui/onoffvalves_rix.ui
