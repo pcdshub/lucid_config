@@ -1,0 +1,8 @@
+#!/bin/bash
+
+source /reg/g/psdm/sw/conda2/manage/bin/psconda.sh
+export PYTHONPATH=/reg/g/psdm/web/ws/prod/apps/LogBookClient:${PYTHONPATH}
+export PATH=/reg/g/psdm/web/ws/prod/apps/LogBookClient/LogBookClient:${PATH}
+LogBookGrabber_qt  -i XCS:0 -w  https://pswww.slac.stanford.edu/ws-kerb/lgbk -e lfe &
+
+
