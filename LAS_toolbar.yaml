@@ -37,6 +37,15 @@ OPCPA:
       commands:
         - /reg/g/pcds/epics-dev/payers/lcls-plc-las-lps-01/opcpa-lps-screens/lps_01.sh
 
+FTL:
+  config:
+    cols: 2
+  buttons:
+    LEAK-DET-01:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/payers/FTL-LEAK-DET/ftl-leak-det-screens/ftl_01.sh
+
 MODS:
   config:
     cols: 2
@@ -54,14 +63,14 @@ MODS:
       commands:
         - /reg/g/pcds/epics-dev/cpino/screens/xpp_inj/xpp_inj_tile.cmd
 
-Vacuum:
-  config:
-    cols: 2
-  buttons:
-   NEH Laser Hall Vacuum:
-      type: shell 
-      commands:
-        - pydm /reg/g/pcds/epics-dev/sfsyunus/screens/l2si_beam_transport_system_displays/home.ui &
+# Vacuum:
+#   config:
+#     cols: 2
+#   buttons:
+#    NEH Laser Hall Vacuum:
+#       type: shell 
+#       commands:
+#         - pydm /reg/g/pcds/epics-dev/sfsyunus/screens/l2si_beam_transport_system_displays/home.ui &
 
 Laser Lockers:
   config:
@@ -74,7 +83,7 @@ Laser Lockers:
    NEH FS14:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04-tmo.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
 #   NEH FS14 - ChemRIXS:
 #      type: shell
 #      commands:
@@ -104,7 +113,7 @@ Timing:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/asc-wave8.cmd
-   fiberOven (old):
+   Fiber Oven:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/cpino/screens/fiberOven.cmd 
@@ -158,8 +167,23 @@ NEH Beam Transport:
       type: shell
       commands:
         - /cds/home/t/tjohnson/heinz/bts_smaract_bay4.cmd
+   NEH Laser Hall Vacuum:
+      type: shell 
+      commands:
+        - pydm /reg/g/pcds/epics-dev/sfsyunus/screens/l2si_beam_transport_system_displays/home.ui &
    Shutters:
       type: shell
       commands:
         - /cds/home/s/sfsyunus/lhn/edm-las-shutters
-
+   BTMS Overview:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/apps/dev/btms-ui/run.sh overview
+   BTPS Overview:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/apps/dev/btms-ui/run.sh btps
+   BTMS Hutch:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/apps/dev/btms-ui/run.sh hutch
