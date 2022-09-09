@@ -1,6 +1,6 @@
 General:
   config:
-    cols: 5
+    cols: 4
   buttons:
     LCLS Home:
       type: shell
@@ -30,7 +30,7 @@ General:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py --no-web
     Lightpath:
       type: shell
       redirectCommandOutput: true
@@ -51,28 +51,34 @@ Vacuum:
     SXR Beamline Vacuum:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
+          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/sxrVac.ui
     RIX FEE Vacuum:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixFeeVac.ui
+          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixFeeVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/rixFeeVac.ui
     RIX Vacuum:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixVac.ui
-    ChemRIX Vacuum:
+          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/rixVac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/rixVac.ui
+    chemRIXS Vacuum:
         type: shell
         commands:
-          - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/chemrixsVac.ui
+          #- pydm --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/chemrixsVac.ui
+          #- pydm --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/chemrixsVac.ui
+          - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/wwright/dev_screens/chemrixsVac_new_screen.ui
     QRIXS Vacuum:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/qrixs-sc-vac.ui
+          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/qrixs-sc-vac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/qrixs-sc-vac.ui
     QRIXS Vacuum All:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/qrixs-vac.ui
-
+          #- /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/RIX/qrixs-vac.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/qrixs-vac.ui
     Ion Pump Power Controls:
         type: shell
         commands:
@@ -103,8 +109,8 @@ Tools:
     EventSequencer:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/jjoshi/screens/edm-ioc-rix-eventSequencer.cmd
-
+       #- /cds/group/pcds/epics-dev/jjoshi/screens/edm-ioc-rix-eventSequencer.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/edm-ioc-rix-eventSequencer.cmd
     BYKIKS Control:
      type: shell
      commands:
@@ -115,36 +121,39 @@ Tools:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-01/edm-ioc-rix-evr-01.cmd
-
     EVR CAM 02:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-02/edm-ioc-rix-evr-02.cmd
-
     EVR CAM 03:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-03/edm-ioc-rix-evr-03.cmd 
-
     CRIX EVR CAM 01:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-crix-evr-01/edm-ioc-crix-evr-01.cmd
-
     Zero Order Beam Test:
-        type: display
-        filenames:
-          - /cds/group/pcds/epics-dev/mghaly/screens/devices/zob.ui
-    
-    R02 PDU Control:
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/mghaly/screens/devices/zob.ui
+    #R02 PDU Control:
+     #type: shell
+     #commands:        
+       #- /reg/g/pcds/epics/ioc/rix/Sentry4/R2.4.1/build/iocBoot/ioc-rix-pwr-r02/edm-ioc-rix-pwr-r02.cmd
+    Fiber-Lite Control:
      type: shell
-     commands:        
-       - /reg/g/pcds/epics/ioc/rix/Sentry4/R2.4.1/build/iocBoot/ioc-rix-pwr-r02/edm-ioc-rix-pwr-r02.cmd
-
+     commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixsFiberLite.cmd
     NEH SetraAir5000:
      type: shell
      commands:
        - /cds/group/pcds/epics/ioc/common/setra/R0.1.2/children/build/iocBoot/ioc-rix-setra/edm-ioc-rix-setra.cmd
+
+    RIX ICT Controls:
+      type: display
+      filenames:
+        - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/ict-screen/rix-ict-screens.ui
              
 
 Hutch-webcams:
@@ -155,37 +164,44 @@ Hutch-webcams:
     webcam-rix-east:
      type: shell
      commands: 
-       - /usr/bin/firefox --new-window http://webcam-rix-east/ 
+       - google-chrome --new-window http://webcam-rix-east/#view 
+      #- /usr/bin/firefox --new-window http://webcam-rix-east/ 
 
     webcam-rix-west:
      type: shell
      commands:
-       - /usr/bin/firefox --new-window http://webcam-rix-west/
+       - google-chrome --new-window http://webcam-rix-west/#view
+       #- /usr/bin/firefox --new-window http://webcam-rix-west/
 
     webcam-rix-north:
      type: shell
      commands:
-       - /usr/bin/firefox --new-window http://webcam-rix-north/
+       - google-chrome --new-window http://webcam-rix-north/#view 
+      #- /usr/bin/firefox --new-window http://webcam-rix-north/#view
   
     webcam-rix-south:
      type: shell
      commands:
-       - /usr/bin/firefox --new-window http://webcam-rix-south/
+       - google-chrome --new-window http://webcam-rix-south/#view
+       #- /usr/bin/firefox --new-window http://webcam-rix-south/
 
     webcam-crixs-north:
      type: shell
      commands:
-       - /usr/bin/firefox --new-window http://webcam-crixs-north/
+       - google-chrome --new-window http://webcam-crixs-north/#view
+       #- /usr/bin/firefox --new-window http://webcam-crixs-north/
 
     webcam-crixs-south:
      type: shell
      commands:
-       - /usr/bin/firefox --new-window http://webcam-crixs-south/
+       - google-chrome --new-window http://webcam-crixs-south/#view
+       #- /usr/bin/firefox --new-window http://webcam-crixs-south/
 
     webcam-qrixs-south:
      type: shell
      commands:
-       - /usr/bin/firefox --new-window http://webcam-qrixs-south/
+       - google-chrome --new-window http://webcam-qrixs-south/#view
+       #- /usr/bin/firefox --new-window http://webcam-qrixs-south/
 
 
 CRIXS Motion:
@@ -196,63 +212,63 @@ CRIXS Motion:
     ChemRIXS Diag Paddle:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_dpaddle.cmd
-
+       #- /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_dpaddle.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_dpaddle.cmd
     ChemRIXS Point Detector:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_pointdet.cmd
-
+       #- /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_pointdet.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_pointdet.cmd
     ChemRIXS Questar Lens:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_questar.cmd
-
+       #- /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_questar.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_questar.cmd
     ChemRIXS Questar SmarAct:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrixSmaract.cmd
-    
+       #- /reg/g/pcds/epics-dev/tjohnson/screens/chemrixSmaract.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrixSmaract.cmd
     ChemRIXS CryoStat:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/nrw/screens/cryoStat.cmd
-    
+       #- /reg/g/pcds/epics-dev/nrw/screens/cryoStat.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/cryoStat.cmd
     ChemRIXS Outcoupling Y:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/nrw/screens/Outcouple.cmd
-    
+       #- /reg/g/pcds/epics-dev/nrw/screens/Outcouple.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/Outcouple.cmd
     ChemRIXS Objectives:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_objectives.cmd
-    
+       #- /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_objectives.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_objectives.cmd
     ChemRIXS Illumination:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_illumination.cmd
-    
+       #- /reg/g/pcds/epics-dev/tjohnson/screens/chemrix_illumination.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_illumination.cmd
     ChemRIXS Beamblock:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/nrw/screens/Beamblock.cmd
-    
+       #- /reg/g/pcds/epics-dev/nrw/screens/Beamblock.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
     ChemRIXS Catcher:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixCatcher.cmd
-    
+       #- /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixCatcher.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrixCatcher.cmd
     ChemRIXS Injector:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixInjector.cmd
-    
+       #- /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixInjector.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrixInjector.cmd
     VLS Optics(mrad):
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixVLSOptics.cmd
-    
+       #- /reg/g/pcds/epics-dev/screens/pydm/scripts/chemrixVLSOptics.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrixVLSOptics.cmd
     
 
 QRIXS Motion:
@@ -263,8 +279,18 @@ QRIXS Motion:
    QRIXS Sliding Seal:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/screens/pydm/scripts/qrixSSL.cmd
-
+       #- /reg/g/pcds/epics-dev/screens/pydm/scripts/qrixSSL.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/qrixSSL.cmd
+   QRIXS OPTICS SLITS:
+     type: shell
+     commands:
+       #- /reg/g/pcds/epics-dev/screens/pydm/scripts/qrix_opt_sl1.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/qrix_opt_sl1.cmd
+   QRIXS DET SLITS:
+     type: shell
+     commands:
+       #- /reg/g/pcds/epics-dev/screens/pydm/scripts/qrix_det_sl1.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/qrix_det_sl1.cmd
 
 Laser:
   config:
@@ -274,23 +300,26 @@ Laser:
     ChemRIXS MODS Motors:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_motors.cmd
+       #- /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_motors.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_motors.cmd
     ChemRIXS MODS Cameras:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_cameras.cmd
+       #- /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_cameras.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_cameras.cmd
     ChemRIXS MODS Power Meters:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_power_meters.cmd
+       #- /reg/g/pcds/epics-dev/cpino/screens/crix_mods/crixs_mods_power_meters.cmd
+       - /reg/g/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_power_meters.cmd
     Timing (FS11):
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/las/vitara/R2.16.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
+       - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
     Timing (FS14):
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/las/vitara/R2.16.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04-crixs.cmd
+       - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
 
 HV:
   config:

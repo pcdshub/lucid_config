@@ -15,7 +15,7 @@ General:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=LFE" pmps-ui/pmps.py
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=LFE" pmps-ui/pmps.py --no-web
     Lightpath:
       type: shell
       redirectCommandOutput: true
