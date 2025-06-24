@@ -1,0 +1,58 @@
+General:
+  config:
+    cols: 4
+  buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
+    Cam Viewer:
+      type: shell
+      commands:
+        - /reg/g/pcds/pyps/config/las/camviewer.sh
+
+
+# EVRs:
+#   config:
+#     cols: 1
+
+#   buttons:
+#     ioc-las-lm2k4-tpr-01:
+#       type: shell
+#       commands:
+#         - 
+
+
+# Digitizers:
+#   config:
+#     cols: 1
+
+#   buttons:
+#     Wave8-01:
+#       type: shell
+#       commands:
+#         - 
+
+#     QADC Digitizer:
+#       type: shell
+#       commands:
+#         - 
+
+Tools:
+  config:
+    cols: 2
+  buttons:
+    iocmanager:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/config/las/iocmanager.sh
+    Dispersion Scan:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las-dispersion-scan/run-tmo-ip2.sh
+    # WFS Expert Screen:
+    #   type: shell
+    #   commands:
+    #     - /cds/group/pcds/epics-dev/mods/lm1k4/inj/Thorlabs-WFS/build/iocBoot/ioc-lm1k4-inj-wfs-01/edm-ioc-lm1k4-inj-wfs-01.cmd
+ 

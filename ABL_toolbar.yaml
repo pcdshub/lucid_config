@@ -1,0 +1,14 @@
+Tools:
+  config:
+    cols: 4
+
+  buttons:
+    iocmanager:
+      type: shell
+      commands: 
+        - iocmanager abl
+
+    high-speed vis:
+      type: shell
+      commands: 
+        - /reg/g/pcds/epics-dev/screens/pydm/sds/high-vis.sh

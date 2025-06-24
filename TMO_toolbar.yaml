@@ -1,4 +1,4 @@
-General:
+LCLS:
   config:
     cols: 5
   buttons:
@@ -7,34 +7,62 @@ General:
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/setup/pydm_lclshome.sh
-    Experiment State Tracker:
+    Elog Grubber:
       type: shell
       redirectCommandOutput: true
       commands:
-        - /cds/group/pcds/pyps/config/tmo/expstate.sh
-    Cam Viewer:
+        - /reg/g/pcds/engineering_tools/latest-released/scripts/eloggrabber
+    PMPS Diagnostics:
       type: shell
       commands:
-        - /reg/g/pcds/pyps/config/tmo/camviewer.sh
+        - /cds/group/pcds/setup/pmps-launcher.sh KFE
+    Lightpath:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+        - lightpath --hutches TMO CRIX QRIX
+        # a reference to the demo lightpath space
+        #- /cds/home/r/roberttk/lightpath_demo/test_lightpath.sh --hutches TMO CRIX QRIX
+
+Beamline:
+  config:
+    cols: 2
+
+  buttons:
     FIM Top:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/pgpWave8/latest/edm-tmo-fim-01-top.cmd
-    PMPS Diagnostics:
+        - /cds/group/pcds/epics/ioc/common/pgpWave8/R2.4.0/edm-tmo-fim-01-top.cmd
+
+    SL1K4-SCATTER:
+      type: shell
+      commands:
+        - pydm -m '{"DEVICE":"SL1K4:SCATTER","MOTOR":"SL1K4:SCATTER:MMS","HAPPI":"sl1k4"}' /reg/g/pcds/epics/screens/screens-tmo/devices/scatter-slits/slits-main.ui
+#       - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL1K4-SCATTER.ui
+
+    SL2K4-SCATTER:
+      type: shell
+      commands:
+        - pydm -m "MOTOR=SL2K4:SCATTER:MMS,DEVICE=SL2K4:SCATTER" /reg/g/pcds/epics/screens/screens-tmo/devices/SL2K4/slits-main.ui
+    mr1k4_soms:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=KFE" pmps-ui/pmps.py --no-web
-    Lightpath:
+        - /reg/g/pcds/epics/ioc/tmo/lcls-plc-tmo-optics/v3.2.0/somsScreens/launch_mr1k4_ui.sh
+
+    MR2K4 MIRROR CHILLER:
       type: shell
-      redirectCommandOutput: true
       commands:
-        - lightpath --hutches TMO KFE RIX
-    High Voltage (Beta):
+        - /reg/g/pcds/epics/ioc/tmo/thermocon/R2.0.0/build/iocBoot/ioc-tmo-thermocon/edm-ioc-tmo-thermocon.cmd
+   
+    MR1K1/MR1K4 Chiller:
       type: shell
-      redirectCommandOutput: true
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/hv_screens/launch.sh
+        - /reg/g/pcds/epics/ioc/kfe/thermocon/R3.0.1/build/iocBoot/ioc-mr1k1-thermocon/pydm-ioc-mr1k1-thermocon.cmd
+#    MR4K4/MR5K4 Chiller:
+#      type: shell
+#      commands:
+#        - /reg/g/pcds/epics-dev/kaushikm/ioc/tmo/thermocon/build/iocBoot/ioc-tmo-thermocon-02/edm-ioc-tmo-thermocon-02.cmd
 
 Vacuum:
   config:
@@ -47,7 +75,11 @@ Vacuum:
    TMO Beamline Vacuum:
         type: shell
         commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/TMObeamlineV2.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/TMObeamlineV7.ui
+   #GasJet Test:
+        #type: shell
+        #commands:
+        #- pydm /reg/g/pcds/epics-dev/divyak/DREAM_Vacuun_UI/gas_jet.ui 
 
 CVMI:
   config:
@@ -58,8 +90,9 @@ CVMI:
         type: shell
         commands:
        # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLV39.ui
-       #  - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLY91.ui
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac_LY45.ui
+       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLY91.ui
+       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac_LY45.ui
+         - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/ccVMI_v1.ui
    CVMI SQ1 PLC Remote Desktop Session:
         type: shell
         commands:
@@ -68,14 +101,18 @@ CVMI:
    CVMI HV Channels:
         type: shell
         commands:
-       # - /reg/g/pcds/epics/ioc/common/isegPower/R0.7.0/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd 
-       # - /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
-        - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+        - /reg/g/pcds/epics/ioc/common/isegPower/R1.3.2/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+       # - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
    
    CVMI In-vacuum Piezo Motors:
      type: shell
      commands:
-        - /reg/g/pcds/epics-dev/ctsoi/ioc/tmo/mmc/mmcScreens/edm-ioc-tmo-cvmi-mmc-2axis.sh
+        - /reg/g/pcds/epics/ioc/tmo/mmc/R1.1.1/mmcScreens/edm-ioc-tmo-cvmi-mmc-2axis.sh
+
+   CVMI PDU:
+     type: shell
+     commands:
+        - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
 
 LAMP:
   config:
@@ -87,38 +124,55 @@ LAMP:
         commands:
        #   - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lampVac.ui
        #    - pydm /reg/g/pcds/epics-dev/tongju/vacuum_screens/LV17_lampVac.ui
-          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lamp_mbes_Vac.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lamp_mbes_Vac_V3.ui
 
    LAMP MBES Variable Leak Valve:
      type: shell
      commands:
-     - /reg/g/pcds/epics-dev/janezg/vacuumTestScreens/vat590Screens/edm-ioc-vat590-test.cmd
+     - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-lamp-vat590.cmd
    
    LAMP SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
        - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
 
-   LAMP HV Channels:
-     type: shell
-     commands:
-       #- /reg/g/pcds/epics/ioc/common/isegPower/R0.1.0/children/build/iocBoot/ioc-tmo-mpod-portable02/edm-ioc-tmo-mpod-portable02.cmd
-       - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
-   LAMP HV Channels MPOD02:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod02/edm-ioc-tmo-mpod02.cmd    
-
    LAMP In-vacuum Piezo Motors:
      type: shell
      commands:
-       - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+       # - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+       - /reg/g/pcds/epics/ioc/tmo/mmc/R1.1.1/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
 
    LAMP Controllable PDU:
      type: shell
      redirectCommandOutput: true
      commands:
-       - /reg/g/pcds/epics-dev/bosum123/Tripplite/Screens/edm-ioc-power-tmo-pr01.cmd
+       #- /reg/g/pcds/epics/ioc/tmo/Leviton/R2.4.2/build/iocBoot/ioc-power-tmo-pr01/edm-ioc-power-tmo-pr01.cmd
+       - edm -x -eolc -m "PRE=TMO:PWR:01" -m "IOC=IOC:TMO:PWR:01" -m "HUTCH=TMO" /reg/g/pcds/epics/ioc/common/Leviton/R2.4.2/LevScreens/TrippLite_8.edl
+
+   LAMP MKS RGA:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
+
+   LAMP FPS 01:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-01/pydm-ioc-tmo-fps-01.cmd
+
+
+   LAMP FPS 02:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-02/pydm-ioc-tmo-fps-02.cmd
+
+   LAMP FPS 03:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-03/pydm-ioc-tmo-fps-03.cmd
 
 MRCO:
   config:
@@ -126,14 +180,33 @@ MRCO:
 
   buttons:
    MRCO Vacuum:
-        type: shell
-        commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVac_jan22.ui
+     type: shell
+     commands:
+     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacV2.ui
+
+   MRCO smaract:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smaract/build/iocBoot/ioc-tmo-mcs2-02/edm-ioc-tmo-mcs2-02.cmd
+
+   MRCO+SolidChamber Vacuum:
+     type: shell
+     commands:
+     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacSSChamber.ui
+
+   MRCO Variable Leak Valve:
+     type: shell
+     commands:
+     - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-mrco-vat590.cmd
+
    MRCO SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
        - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-03_RDP_launcher.sh
-
+   MRCO HV GUI:
+     type: shell
+     commands:
+        - /reg/g/pcds/epics/screens/screens-tmo/hv/mrco/launch.sh
    MRCO HV Channels:
      type: shell
      commands:
@@ -147,36 +220,118 @@ MRCO:
    MRCO Thermocouples:
      type: shell
      commands:
-       - pydm -m '{"ENDSTATION":"MRCO"}' /cds/group/pcds/epics-dev/adpai/tmo_screens/vac_screens/eightSensorTC.ui 
+       - pydm -m '{"ENDSTATION":"MRCO"}' /reg/g/pcds/epics/screens/screens-tmo/vacuum/MRCO/eightSensorTC.ui
 
-#   MRCO_KEN:
-#     type: display
-#     macros: '{"ENDSTATION":"MRCO"}'
-#     filenames:
-#       - /cds/group/pcds/epics-dev/adpai/tmo_screens/vac_screens/eightSensorTC.ui
-#
-#   MRCO_ZACH:
-#     type: display
-#     filenames:
-#       - /cds/group/pcds/epics-dev/adpai/tmo_screens/vac_screens/eightSen    sorTC.ui
-#     macros:
-#       - ENDSTATION=MRCO
+   MRCO Motion:
+      type: shell
+      commands:
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/mrco-screens/mrco-motion.py
+   
+   MRCO All Motors One Screen:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/mrco-screens/mrco-motors.cmd
 
+   MRCO PDU PR09:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/tmo/pdu_snmp/R2.4.8/build/iocBoot/ioc-tmo-pwr-pr09/edm-ioc-tmo-pwr-pr09.cmd 
 
-Slits:
+   MRCO PDU PR10:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-pr10/edm-ioc-tmo-pwr-pr10.cmd
+
+DREAM:
   config:
-    cols: 2
+    cols: 3
 
   buttons:
-   SL1K4-SCATTER:
+   DREAM Vacuum:
         type: shell
         commands:
-          - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL1K4-SCATTER.ui
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES.ui
 
-   SL2K4-SCATTER:
-        type: shell
-        commands:
-#          - pydm /cds/group/pcds/epics-dev/mghaly/screens/devices/SL2K4-SCATTER.ui
+   Leybold IM540 Controller:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/leyboldim540/R1.0.0/build/iocBoot/ioc-dream-im540/pydm-ioc-dream-im540.cmd
+
+   SmarPod:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smarpod/build/iocBoot/ioc-tmo-smarpod-01/edm-ioc-tmo-smarpod-01.cmd
+
+   Chamber RGA:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-srsrga/build/iocBoot/ioc-dream-srsrga-01/pydm-ioc-dream-srsrga-01.cmd
+
+   Catcher RGA:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-srsrga/build/iocBoot/ioc-dream-srsrga-02/pydm-ioc-dream-srsrga-02.cmd
+
+   LAKESHORE 335 IP2:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/lakeshore335/R1.0.0/build/iocBoot/ioc-tmo-ip2-temp/edm-ioc-tmo-ip2-temp.cmd
+
+   IP2 GC-HAZARD:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip2-hazard/edm-ioc-tmo-gcip2-hazard.cmd
+
+   IP2 GC-NON-HAZARD:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip2-nonhazard/edm-ioc-tmo-gcip2-nonhazard.cmd
+
+   TDK-Lambda GEN 16-310:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/tdkLambdaGen/R1.0.0/build/iocBoot/ioc-dream-genesys/pydm-ioc-dream-genesys.cmd 
+   
+   ##DREAM Y Chamber Motor:
+    ## type: shell
+    ## commands:
+    ##  - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/scripts/DreamYmotor.cmd
+
+   KB2 Chiller:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ctsoi/ioc/tmo/thermocon/build/iocBoot/ioc-tmo-thermocon-02/edm-ioc-tmo-thermocon-02.cmd
+
+   DREAM PDU:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-dream/edm-ioc-tmo-pwr-dream.cmd
+
+   SL3K4:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/dream_screens/sl3k4-motors.cmd
+
+   SAMPLE PADDLE:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/dream_screens/dgpd-motors.cmd
+
+   GAS JET SLIT:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/dream_screens/gsjs-motors.cmd
+
+   Grafana:
+      type: shell
+      commands:
+        - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/ctl/grafana/d/c6101012-9618-4112-b6ba-23f1adc23367/tmo-dream-vacuum-system-wip-jgovednik
+
+   DREAM sample paddle HV:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-interlock/build/iocBoot/ioc-tmo-ip2-ilk/pydm-ioc-tmo-ip2-ilk.cmd
 
 Laser:
   config:
@@ -191,7 +346,7 @@ Laser:
    Laser:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
+       - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
    Laser Motors:
      type: shell
      commands:
@@ -202,10 +357,180 @@ Laser:
      commands:
        - /cds/group/pcds/epics-dev/aegger/tmo_screens/edm-ioc-las-tmo-vitara-tt.cmd
 
-   IP1 QADC:
+   LM1K4 QADC:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/tjohnson/screens/lm1k4_qadc.cmd
+     #  - /cds/group/pcds/epics-dev/tjohnson/screens/lm1k4_qadc.cmd
+        - /cds/group/pcds/epics/ioc/las/qadc/R1.4.1/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
+
+   OPCPA Laser:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/common/locker_manager/R0.13.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
+
+Detectors:
+  config:
+    cols: 5
+
+  buttons:
+
+   FZP Image intensifier:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/common/tricatt/R1.0.2/children/build/iocBoot/ioc-tmo-tricam-01/pydm-ioc-tmo-tricam-01.cmd
+   FZP Expert screen:
+     type: shell
+     commands:
+       - pydm /cds/home/b/baljamal/screens/cam_viewer/fzp.ui
+
+   Cam Viewer:
+     type: shell
+     commands:
+       - /reg/g/pcds/pyps/config/tmo/camviewer.sh
+
+   Cam Viewer - Config:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/MONO-03.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/MONO-04.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/LAMP-01.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/LAMP-02.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/CVMI-01.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM1K0.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM2K0.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM1K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM2K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/AT1K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/ST1K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM3K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM4K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM5K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IMATM.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IMATM-02.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/IM6K4.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/VLS.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/TMO-07.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/TMO-08.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/SP1K4_ATT.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/SP1K4_FZP.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/SP1K4_YAG_B.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/SP1K4_YAG_F.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/TMO-13.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/LI3K4-GIGE.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/TMO-16.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/Alvium_Test.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/PEPPEX-01.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/DREAM-CHAMBER.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/DREAM-MICROSCOPE.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/SP1K4-GIGE.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/MRCO-GIGE-01.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/MRCO-GIGE-02.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/MRCO-GIGE-03.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/MRCO-GIGE-04.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/camViewer-config/TMO-19C.cmd
+     titles:
+       - MONO-03
+       - MONO-04
+       - LAMP-01
+       - LAMP-02
+       - CVMI-01
+       - IM1K0
+       - IM2K0
+       - IM1K4
+       - IM2K4
+       - AT1K4
+       - ST1K4
+       - IM3K4
+       - IM4K4
+       - IM5K4
+       - IMATM
+       - IMATM-02
+       - IM6K4
+       - VLS
+       - TMO-07
+       - TMO-08
+       - SP1K4_ATT
+       - SP1K4_FZP
+       - SP1K4_YAG_B
+       - SP1K4_YAG_F
+       - TMO-13
+       - LI3K4-GIGE
+       - TMO-16
+       - Alvium_Test
+       - PEPPEX-01
+       - DREAM-CHAMBER
+       - DREAM-MICROSCOPE
+       - SP1K4-GIGE
+       - MRCO-GIGE-01
+       - MRCO-GIGE-02
+       - MRCO-GIGE-03
+       - MRCO-GIGE-04
+       - TMO-19C
+
+   webcam-tmo-west:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.61.15/
+
+   webcam-tmo-ip1:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.61.16/
+
+   webcam-tmo-ip2:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.61.17/
+
+   webcam-tmo-kbo-horiz:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.132.62/
+
+   webcam-tmo-kbo-vert:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.132.135/
+
+HV:
+  config:
+    cols: 5
+  
+  buttons:
+   HV Channels MPOD-01:
+     type: shell
+     commands:
+       # - /reg/g/pcds/epics/ioc/common/isegPower/R1.3.2/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+       - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+   HV Channels MPOD-02:
+     type: shell
+     commands:
+       # - /reg/g/pcds/epics/ioc/common/isegPower/R1.3.2/children/build/iocBoot/ioc-tmo-mpod02/edm-ioc-tmo-mpod02.cmd
+       - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod02/edm-ioc-tmo-mpod02.cmd    
+  
+   HV IP1:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/hv_screens/tmo_hv_ip1.sh
+
+   HV IP2:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/hv_screens/tmo_hv_ip2.sh
+
+   MPOD PDU R02:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.7/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
+
+   MPOD PDU R03:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.7/build/iocBoot/ioc-tmo-pwr-r03/edm-ioc-tmo-pwr-r03.cmd
 
 Tools:
   config:
@@ -220,8 +545,13 @@ Tools:
    BK Precision:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/bosum123/BK-Precision/edm-ioc-tmo-bk-01.cmd
+       - /reg/g/pcds/epics/ioc/common/bk-1697/R1.0.0/lamp-bk-ps.cmd #/reg/g/pcds/epics-dev/bosum123/BK-Precision/edm-ioc-tmo-bk-01.cmd
 
+   SP1K4 Thorlabs Motors:
+     type: shell
+     commands:
+      # - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/tmo_spectrometer_thorlabs_motors.cmd
+ 
    TMO Summary:
      type: shell
      commands:
@@ -232,20 +562,10 @@ Tools:
      commands:
        - pydm /cds/group/pcds/epics-dev/aegger/screens/tmo/st4k4_temp.ui
 
-   grubber:
-     type: shell
-     commands:
-       - eloggrabber -s grubber_script
-
-   EVR:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-evr-01.cmd
-
-   EventSequencer:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-eventSequencer.cmd
+#   grubber:
+#     type: shell
+#     commands:
+#       - eloggrabber -s grubber_script
 
    MPOD Crate:
      type: shell
@@ -255,7 +575,8 @@ Tools:
    MPOD AC Power:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/sfsyunus/tmo/Leviton/Screens/edm-ioc-power-tmo-portable02.cmd
+       #- /reg/g/pcds/epics/ioc/tmo/Leviton/R2.4.2/build/iocBoot/ioc-power-tmo-portable02/edm-ioc-power-tmo-portable02.cmd
+       -  edm -x -eolc -m "IOC=IOC:TMO:PWR:01" -m "HUTCH=TMO" -m "PRE=TMO:PWR:01" /reg/g/pcds/epics/ioc/common/Leviton/R2.4.2/LevScreens/TrippLite_8.edl
 
    Striptools:
      type: shell
@@ -295,20 +616,95 @@ Tools:
    RohdeShwarzNGP824:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/rsmm97/ioc/tmo/RohdeSchwarzHMP/current/build/iocBoot/ioc-tmo-hmp-test/edm-ioc-tmo-hmp-test.cmd
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R1.2.2/build/iocBoot/ioc-tmo-hmp-test/edm-ioc-tmo-hmp-test.cmd
 
-   IP1 Haz/Non Haz Gas:
+   IP1 GC-HAZARD:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/common/gasCabinet/R1.0.1/children/build/iocBoot/ioc-tmo-gcip1/edm-ioc-tmo-gcip1.cmd
+       - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip1-hazard/edm-ioc-tmo-gcip1-hazard.cmd
 
-   IP2 Haz/Non Haz Gas:
+   IP1 GC-NON-HAZARD:
      type: shell
-     commands: 
-       - /reg/g/pcds/epics/ioc/common/gasCabinet/R1.0.1/children/build/iocBoot/ioc-tmo-gcip2/edm-ioc-tmo-gcip2.cmd
- 
+     commands:
+       - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip1-nonhazard/edm-ioc-tmo-gcip1-nonhazard.cmd
 
-User Devices:
+   IP2 GC-HAZARD:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip2-hazard/edm-ioc-tmo-gcip2-hazard.cmd
+
+   IP2 GC-NON-HAZARD:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip2-nonhazard/edm-ioc-tmo-gcip2-nonhazard.cmd
+
+   TMO ICT Controls:
+     type: display
+     filenames:
+       - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/ict-screen/tmo-ict-screen.ui
+
+   TMO QPC Controls (FEE Alcove):
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/qpc-control-screen/tmo-fee-alcove-qpc.ui
+
+
+Timing:
+  config:
+    cols: 3
+  buttons:
+   EVR:
+     type: shell
+
+     commands:
+       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-evr-01.cmd
+
+   EventSequencer:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-eventSequencer.cmd
+
+   CAM-01 TPR:
+     type: shell
+     commands:
+       - ~mcbrowne/bin/tpr_new.sh TMO:CAM:TPR:01
+
+   CAM-02 TPR:
+     type: shell
+     commands:
+       - ~mcbrowne/bin/tpr_new.sh TMO:CAM:TPR:02
+
+
+   ANDOR TPR:
+     type: shell
+     commands:
+       - ~mcbrowne/bin/tpr_new.sh TMO:ANDOR:TPR:01
+
+   MISC TPR:
+     type: shell
+     commands:
+       - ~mcbrowne/bin/tpr_new.sh TMO:MISC:TPR:01
+
+Alarm System and ATEF:
+  config:
+    cols: 2
+  buttons:
+    NALMS:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/nalms-tmo/launch-nalms-tmo-screen.sh
+    ATEF:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/scripts/atef.sh
+    ATEF-Optics:
+     type: shell
+     commands:
+       - atef config /cds/group/pcds/pyps/apps/atef/config/tmo/TMO-Limits.json
+
+Miscellaneous:
   config:
     cols: 2
   buttons:
@@ -323,19 +719,18 @@ User Devices:
       commands:
         - /reg/g/pcds/epics/ioc/tmo/ek9000/R1.0.3/children/peppex_screen/edm-ioc-peppex-test-bhc-01 
 
-
-OPTICS:
+Testing:
   config:
     cols: 2
   buttons:
-    mr1k4_soms:
+    TMO QPC 01:
       type: shell
       redirectCommandOutput: true
       commands:
-          - /reg/g/pcds/epics/ioc/tmo/lcls-plc-tmo-optics/v2.0.0/somsScreens/launch_mr1k4_ui.sh
+        - /reg/g/pcds/epics-dev/baljamal/ioc/dev/qpc/children/build/iocBoot/ioc-tmo-vac-pci-01/pydm-ioc-tmo-vac-pci-01.cmd
 
-    MR2K4 MIRROR CHILLER:
+    TMO QPC 02:
       type: shell
+      redirectCommandOutput: true
       commands:
-          - /reg/g/pcds/epics-dev/janezg/tmo/thermocon/current/build/iocBoot/ioc-tmo-thermocon/edm-ioc-tmo-thermocon.cmd
- 
+        - /reg/g/pcds/epics-dev/baljamal/ioc/dev/qpc/children/build/iocBoot/ioc-tmo-vac-pci-02/pydm-ioc-tmo-vac-pci-02.cmd

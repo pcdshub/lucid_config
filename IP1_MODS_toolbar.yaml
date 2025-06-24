@@ -29,22 +29,26 @@ Digitizers:
     cols: 1
 
   buttons:
-    ioc-las-ip1-pgpw8-01:
+    Wave8-01:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-01/edm-ioc-las-ip1-pgpw8-01.cmd
-    ioc-las-ip1-pgpw8-02:
+    Wave8-02:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
-    ioc-las-ip1-pgpw8-03:
+    Wave8-03:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
-    ioc-lm1k4-qadc134-01:
+    Wave8-04:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tjohnson/screens/lm1k4_qadc.cmd
+        - /cds/home/t/tjohnson/trunk/las/pgpWave8/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
+    QADC Digitizer:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/qadc/R1.3.0/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
 
 Tools:
   config:
@@ -54,4 +58,19 @@ Tools:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/iocmanager.sh
- 
+    Dispersion Scan:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las-dispersion-scan/run-tmo.sh
+    WFS Expert Screen:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/mods/lm1k4/inj/Thorlabs-WFS/build/iocBoot/ioc-lm1k4-inj-wfs-01/edm-ioc-lm1k4-inj-wfs-01.cmd
+    EJX non-LSS Shutter:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/trunk/screens/lm1k4_ejx_shutter/launchgui_lm1k4_ejx_shutter.cmd
+    ATM non-LSS Shutter:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/trunk/screens/lm1k4_ejx_shutter/launchgui_lm1k4_atm_shutter.cmd

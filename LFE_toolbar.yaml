@@ -13,14 +13,13 @@ General:
         - /reg/g/pcds/pyps/config/lfe/camviewer.sh
     PMPS Diagnostics:
       type: shell
-      redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar -m "CFG=LFE" pmps-ui/pmps.py --no-web
+        - /cds/group/pcds/setup/pmps-launcher.sh LFE
     Lightpath:
       type: shell
       redirectCommandOutput: true
       commands:
-        - lightpath --hutches LFE
+        - lightpath --hutches XPP XCS CXI MEC MFX
     Elog Site:
       type: shell
       redirectCommandOutput: true
@@ -63,6 +62,14 @@ Instrumentation:
         type: shell
         commands:
           - /reg/g/pcds/epics-dev/screens/edm/lfe/edm-ioc-lfe-pwd-02.cmd
+    DCCM Temperatures:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/tparas/ioc/lfe/ioc-lfe-lakeshore336/build/iocBoot/ioc-lfe-sp1l0-ls336/edm-ioc-lfe-sp1l0-ls336.cmd
+    Lakeshore PDU:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/tparas/ioc/lfe/ioc-lfe-pdu/build/iocBoot/ioc-lfe-pwr-r07/edm-ioc-lfe-pwr-r07.cmd
 
 Vacuum:
   config:
@@ -72,12 +79,12 @@ Vacuum:
     GEM:
         type: shell
         commands:
-          - pydm mghaly/screens/vacuumscreens/AT1L0.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/lfe/AT1L0.ui
     HXR Beamline Vac:
         type: shell
         commands:
-          - pydm screens/pydm/vacuumscreens/screens/hxrVac.ui
-    HXR Beamline Vac in H1.1&H1.2:
+          - pydm screens/pydm/vacuumscreens/screens/hxrVac-v2.ui
+    HXR Beamline Vac in H1.1-H1.3:
         type: shell
         commands:
           - pydm screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
@@ -122,19 +129,19 @@ LFE-OPTICS:
     MR2L0-HOMS:
         type: shell
         commands:
-          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr2l0_ui.sh
+          - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr2l0_ui.sh
     MR1L3-HOMS:
         type: shell
         commands:
-          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l3_ui.sh
+          - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr1l3_ui.sh
     MR2L3-HOMS:
         type: shell
         commands:
-          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr2l3_ui.sh
+            - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr2l3_ui.sh
     MR1L4-HOMS:
         type: shell
         commands:
-          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l4_ui.sh
+          - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr1l4_ui.sh
     Optics Homs Notepad:
         type: shell
         commands:
@@ -144,10 +151,24 @@ LFE-OPTICS:
         commands:
           - firefox https://confluence.slac.stanford.edu/display/PCDS/HOMS+Troubleshooting
 
+    MR1L1/MR2L0 Chiller:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/janezg/kfe/thermocon/build/iocBoot/ioc-mr1l1-thermocon/edm-ioc-mr1l1-thermocon.cmd
+
+    MR1L0 Chiller:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/janezg/kfe/thermocon/build/iocBoot/ioc-mr1l0-thermocon/edm-ioc-mr1l0-thermocon.cmd
+
+    ATEF-Optics:
+      type: shell
+      commands:
+        - atef config /cds/group/pcds/pyps/apps/atef/config/lfe/LFE-Limits.json 
 
 Radiation Monitoring:
  config:
-    cols: 2
+    cols: 3
 
  buttons:
     Radiation Controls:
@@ -157,7 +178,21 @@ Radiation Monitoring:
     Grafana Dash:
         type: shell
         commands:
-            - firefox https://pswww.slac.stanford.edu/ctl/grafana/d/-HPzOL8nz/radiation-monitoring?orgId=1&from=now-2d&to=now 
+            - firefox https://pswww.slac.stanford.edu/ctl/grafana/d/-HPzOL8nz/radiation-monitoring?orgId=1&from=now-2d&to=now
+    Radiation Physics LED controls:    
+        type: shell
+        commands:
+            - pydm /cds/home/m/mkestra/LED_screen.ui
+
+Tools:
+  config:
+    cols: 2
+  buttons:
+    LFE ICT Controls:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/lfe_screens/ict-screens/lfe-ict-screen.ui
 
 
 

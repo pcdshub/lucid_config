@@ -1,0 +1,14 @@
+General:
+  config:
+    cols: 4
+
+
+Hutch Maps:
+  config:
+    cols: 4
+
+  buttons:
+    MEC:
+        type: shell
+        commands:
+            - xdg-open /cds/home/n/nrw/fms/hutch_maps/MEC_FMS_Map.png

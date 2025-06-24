@@ -10,15 +10,19 @@ General:
     Cam Viewer:
       type: shell
       commands:
-        - /reg/g/pcds/pyps/config/las/camviewer.sh
+        - /cds/group/pcds/pyps/config/las/camviewer.sh
     LAS iocmanager:
       type: shell
       commands:
-        - iocmanager --hutch las
+        - /cds/group/pcds/pyps/config/las/iocmanager.sh
     Striptool:
       type: shell
       commands:
         - StripTool
+    Timechart:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/config/las/timechart
     Gateway Home:
       type: shell
       commands:
@@ -35,27 +39,27 @@ Laser Lockers:
    NEH FS11:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
    NEH FS14:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04-tmo.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
    XCS FS4:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-xcs-vitara-tt.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-xcs-vitara-tt.cmd
    MFX FS4.5:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-mfx-vitara-tt.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-mfx-vitara-tt.cmd
    CXI FS5:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-cxi-vitara-tt.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-cxi-vitara-tt.cmd
    MEC FS6:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/vitara/vitara-git/vitaraScreens/edm-ioc-las-mec-vitara-tt.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-mec-vitara-tt.cmd
 
 Timing:
   config:
@@ -68,7 +72,49 @@ Timing:
    Fiber Oven:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/screens/fiberOven.cmd 
+        - /cds/home/t/tjohnson/trunk/workarea/fiberOven/fiberOven-git/fiberOvenScreens/fiberOven.cmd
+   Fiber Oven Scope (XCS):
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/dso4000/build/iocBoot/ioc-las-dso4000-01/edm-ioc-las-dso4000-01.cmd
+   Fiber Oven Scope (LHN):
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
+   Bay 4 PDU:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
+   PFTS Manager Simulation:
+      type: shell
+      commands:
+        - /cds/home/m/mcbrowne/trunk2/ioc/common/pfts_manager/children/build/iocBoot/ioc-las-pftssim-01/edm-ioc-las-pftssim-01.cmd
+
+Event Timing:
+  config:
+    cols: 2
+  buttons:
+   Hutch LCLS-I EVR Status:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/screens/evr/evrStatii
+   LAS LCLS-I EVR Status:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/screens/evr/evrLasStatus
+   XPM Seqcodes:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/tjohnson/screens/timing/daq_seqcodes.sh
+
+Undulator Hall:
+  config:
+    cols: 2
+  buttons:
+   UND AC PDU:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pdu_snmp/R1.3.0/build/iocBoot/ioc-las-und-power-01/edm-ioc-las-und-power-01.cmd
 
 Phase Cavities:
   config:
@@ -99,6 +145,19 @@ Phase Cavities:
       commands:
         - /reg/g/pcds/epics-dev/cpino/ioc/las/pcav/edm/launch.rf_waveform_unds
 
+Sector 2: 
+  config:
+    cols: 2
+  buttons:
+   PDU: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/edm-ioc-las-sector2-pwr-01.cmd
+   Env Monitoring: 
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/raritan/raritan-git/build/iocBoot/ioc-las-src800-01/pydm-ioc-las-src800-01.cmd
+
 RF: 
   config:
     cols: 2
@@ -106,7 +165,40 @@ RF:
    ITech RFoF:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tjohnson/screens/rfofScreens/edm-ioc-las-rfof-01.cmd
+        - /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.2/build/iocBoot/ioc-las-rfof-itech-01/edm-ioc-las-rfof-itech-01.cmd
+   Cycle RFoF PyDM TX 1:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-tx-01.cmd
+   Cycle RFoF PyDM RX 1:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-rx-01.cmd
+   Cycle RFoF PyDM TX 2:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-tx-02.cmd
+   Cycle RFoF PyDM RX 2:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-rx-02.cmd
+   Cycle Wavelink Set 1 GUI:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/screens/las/cycle-laser-screens/v1.0.0/wavelink_set1.sh
+   Cycle Wavelink Set 2 GUI:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/screens/las/cycle-laser-screens/v1.0.0/wavelink_set2.sh
+   Feed Forward:
+      type: shell
+      commands:
+        #- /cds/group/pcds/epics/ioc/common/fiber_stretcher/R1.1.0/children/build/iocBoot/ioc-ftl-rfof-ff-01/edm-ioc-ftl-rfof-ff-01.cmd
+        - /cds/home/t/tjohnson/trunk/common/fiber_stretcher/children/build/iocBoot/ioc-ftl-rfof-ff-01/edm-ioc-ftl-rfof-ff-01.cmd
+   RFOF OL-MDL:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/smaract/R1.0.7/build/iocBoot/ioc-las-ftl-mcs2-03/launchgui-ioc-las-ftl-mcs2-03.cmd
 
 FTL: 
   config:
@@ -115,7 +207,7 @@ FTL:
    PFTS Expert Screen:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/pfts_caqtdm.sh
+        - /cds/group/pcds/epics/screens/las/cycle-laser-screens/v1.1.0/pfts.sh
    Dicon Screen:
       type: shell
       commands:
@@ -123,7 +215,11 @@ FTL:
    OL-MDL Screen:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/ftl-olmdl.cmd
+        - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-01-launchgui.cmd
+   OL-MDL 2 Screen:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-02-launchgui.cmd
    Frequency Counter:
       type: shell
       commands:
@@ -135,48 +231,183 @@ FTL:
    ATCA Laser Locker: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/ftl-locker.cmd
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-asc-ls01_gui.sh
    ATCA DAQMUX: 
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/tjohnson/screens/ftl_atca_daqmux.cmd
-   Frequency Loop: 
+   Frequency and Phase Loop: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/lockerGen2/children/build/iocBoot/ioc-ftl-llg2-01/edm-ioc-ftl-llg2-01.cmd
-   Frequency Loop Striptool: 
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.9.1/children/build/iocBoot/ioc-ftl-llman-01/edm-ioc-ftl-llman-01.cmd
+   Menhir Status: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/striptoolfiles/llg2_striptool
+        - /cds/group/pcds/epics/ioc/las/menhir-1550/R1.0.0/build/iocBoot/ioc-las-ftl-menhir-01/pydm-ioc-las-ftl-menhir-01.cmd
+   Link Alignment: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/link_align_gui.sh
+   RFOF Chiller: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/thermocon/build/iocBoot/ioc-las-rfof-thermocon-01/edm-ioc-las-rfof-thermocon-01.cmd
+   SMA100B: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/common/rsSMX100X/children/build/iocBoot/ioc-tst-sma100b-01/pydm-ioc-tst-sma100b-01.cmd
+   CAST Vtune Voltage: 
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/tjohnson/screens/timing/cast_vtune.cmd
+
+   LEAK-DET-01:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
+
+   FTL DAC:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/tjohnson/screens/timing/hengjie-dac.cmd
+
+   FTL TEM Locker:
+      type: shell
+      commands:
+        #- /cds/group/pcds/epics/ioc/common/TEM_PhaseLock/R1.0.1/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
+        - /cds/home/t/tjohnson/trunk/common/TEM_PhaseLock/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
 
 LHN: 
+  config:
+    cols: 2
+  buttons:
+   Wave8:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.2.1/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
+   TCBOC ADC:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
+
+LHN Bay 3: 
   config:
     cols: 2
   buttons:
    Piezo Driver:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/lhn-slice.cmd
-   Frequency Counter:
+        - /cds/group/pcds/epics/ioc/las/slice-dhv/R1.0.2/build/iocBoot/ioc-las-lhn-slice-01/edm-ioc-las-lhn-slice-01.cmd
+   Bay 3 Frequency Counter:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/lhn-counter-03.cmd
-   Frequency Loop: 
+   Locker HLA: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/lockerGen2/children/build/iocBoot/ioc-lhn-llg2-01/edm-ioc-lhn-llg2-01.cmd
-   Frequency Loop Striptool: 
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.15.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
+ #       - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
+   Bay 3 ATCA Laser Locker: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/striptoolfiles/lhn_llg2_striptool
-   ATCA Laser Locker: 
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls01_gui.sh
+   Bay 3 ATCA PyDM  Laser Locker: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/lhn-locker.cmd
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls01_pydm-gui.sh
+   ATCA DAQMUX: 
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/tjohnson/screens/lhn_atca_daqmux.cmd
    PGP Data Switch: 
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/common/pgp_switch/R1.0.0/children/build/iocBoot/ioc-las-pgpswitch-01/edm-ioc-las-pgpswitch-01.cmd
+   Bay 3 TPR:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/tprStandalone/R1.0.5/build/iocBoot/ioc-las-lhn-tpr-01/edm-ioc-las-lhn-tpr-01.cmd
+   FS13 TIC:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/screens/sr620/edm-ioc.cmd
+   Amphos to Carbide Delay Counter:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/screens/edm-ioc-las-opcpa-ctr-01.cmd
+   Amphos:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/amphos.cmd
+   Bay 3 TPR Rep Rate Config:
+      type: shell
+      commands:
+       #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay3_launcher.sh
+       - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.1/neh_bay3_launcher.sh
+
+LHN Bay 2: 
+  config:
+    cols: 2
+  buttons:
+   Piezo Driver:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/slice-dhv/R1.0.2/build/iocBoot/ioc-las-lhn-slice-02/edm-ioc-las-lhn-slice-02.cmd
+   Bay 2 TPR:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/tprStandalone/R1.0.5/build/iocBoot/ioc-las-lhn-tpr-02/edm-ioc-las-lhn-tpr-02.cmd
+   Bay 2 Frequency Counter:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/cpino/screens/ioc-las-lhn-ctr-02.cmd
+   Bay 2 Locker HLA: 
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.15.0/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
+#        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
+   Bay 2 ATCA PyDM  Laser Locker: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls02_pydm-gui.sh
+   Bay 2 ATCA Laser Locker: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls02_gui.sh
+   FS12 TIC:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/sr620/R1.1.5/build/iocBoot/ioc-las-lhn-sr620-02/edm-ioc-las-lhn-sr620-02.cmd
+   Amphos to Carbide Delay Counter:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/agilent5322/agilent5322-git/build/iocBoot/ioc-las-lhn-ctr-05/edm-ioc-las-lhn-ctr-05.cmd
+   Bay 2 TPR Rep Rate Config:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.1/neh_bay2_launcher.sh
+        #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay2_launcher.sh
+
+NEH Laser Lab: 
+  config:
+    cols: 2
+  buttons:
+   Laser Lab Piezo Driver:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/slice-dhv/build/iocBoot/ioc-las-lln-slice-01/edm-ioc-las-lln-slice-01.cmd
+   Laser Lab ATCA Laser Locker: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
+   Laser Lab Frequency Counter:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/agilent5322-git/build/iocBoot/ioc-las-lln-ctr-01/edm-ioc-las-lln-ctr-01.cmd
+   Laser Lab Locker HLA:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lln-llman-01/edm-ioc-lln-llman-01.cmd
 
 EVRs:
   config:
@@ -186,10 +417,10 @@ EVRs:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lln-evr-01/edm-ioc-las-lln-evr-01.cmd
-   Laser Lab EVR2:
+   Laser Lab TPR2:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lln-evr-02/edm-ioc-las-lln-evr-02.cmd
+        - /cds/group/pcds/epics/ioc/las/tprStandalone/R1.0.5/build/iocBoot/ioc-las-lln-tpr-02/edm-ioc-las-lln-tpr-02.cmd
    Laser Lab EVR3:
       type: shell
       commands:
