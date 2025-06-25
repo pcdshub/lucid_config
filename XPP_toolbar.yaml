@@ -1,0 +1,39 @@
+LCLS:
+  config:
+    cols: 4
+
+  buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/setup/pydm_lclshome.sh
+    Elog Grabber:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        -/reg/g/pcds/engineering_tools/latest-released/scripts/eloggrabber
+    PMPS Diagnostics:
+      type: shell
+      commands:
+        - /cds/group/pcds/setup/pmps-launcher.sh LFE
+
+
+Beamline:
+  config:
+    cols: 4
+
+Laser:
+  config:
+    cols: 4
+
+
+Detectors:
+  config:
+    cols: 4
+
+
+Users:
+  config:
+    cols: 4
+
