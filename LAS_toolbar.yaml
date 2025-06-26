@@ -298,7 +298,8 @@ PDUs:
    XCS Timing PDU:
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-xcs-pwr-01.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-xcs-pwr-01/edm-ioc-las-xcs-pwr-01.cmd
+        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-xcs-pwr-01.cmd
    CXI Timing PDU:
       type: shell
       commands:

@@ -12,7 +12,6 @@ General:
       commands:
         - /reg/g/pcds/pyps/config/las/camviewer.sh
 
-
 EVRs:
   config:
     cols: 1
@@ -22,33 +21,6 @@ EVRs:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lm1k4-evr-01/edm-ioc-las-lm1k4-evr-01.cmd
-
-
-Digitizers:
-  config:
-    cols: 1
-
-  buttons:
-    Wave8-01:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-01/edm-ioc-las-ip1-pgpw8-01.cmd
-    Wave8-02:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
-    Wave8-03:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
-    Wave8-04:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/las/pgpWave8/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
-    QADC Digitizer:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/qadc/R1.3.0/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
 
 Tools:
   config:
@@ -74,3 +46,28 @@ Tools:
       type: shell
       commands:
         - /cds/home/a/aberges/trunk/screens/lm1k4_ejx_shutter/launchgui_lm1k4_atm_shutter.cmd
+
+Digitizers:
+  config:
+    cols: 2
+  buttons:
+    Wave8-01:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-01/edm-ioc-las-ip1-pgpw8-01.cmd
+    Wave8-02:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
+#     Wave8-03:
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
+    Wave8-04 (TIMING):
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/pgpWave8/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
+    QADC Digitizer:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/qadc/R1.3.0/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
