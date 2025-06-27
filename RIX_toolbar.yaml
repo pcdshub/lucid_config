@@ -195,10 +195,6 @@ chemRIXS:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Outcouple.cmd
-    Beamblock:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
     VLS Optics(mrad):
      type: shell
      commands:
@@ -278,6 +274,12 @@ chemRIXS:
      type: shell
      commands:
        -  /reg/g/pcds/epics/ioc/rix/thorlabs-ell/R1.0.0/build/iocBoot/ioc-rix-crix-ell-02/edm-ioc-rix-crix-ell-02.cmd
+    
+    Dewar Scale:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/common/upscale/R1.0.0/children/build/iocBoot/ioc-crix-upscale/pydm-ioc-crix-upscale.cmd
+
 
 chemRIXS-Laser:
   config:
@@ -628,6 +630,14 @@ TXAS-FZP:
       commands:
       - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
 
+    FZP XYZ:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
+    SP2K2 TXAS YAG FOCUS:
+     type: shell
+     commands:
+       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:YAG:01','name':'YAG FOCUS'}]"
 
 Tools:
   config:
@@ -860,3 +870,8 @@ Tools:
      type: shell
      commands:
        - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/rix/pdu-screens/pdu-screen.ui
+
+    DAQ-Grafana:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/system/grafana/d/TqlIHxqWz/l2si-daq?orgId=1&refresh=5s&from=now-5m&to=now&var-instrument=rix&var-partition=All&var-group=All&var-detname=All
