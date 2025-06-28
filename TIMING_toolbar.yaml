@@ -32,7 +32,7 @@ General:
       commands:
         - /reg/g/pcds/engineering_tools/mec/scripts/eloggrabber
 
-Laser Lockers:
+LCLS-1 Laser Lockers:
   config:
     cols: 2
   buttons:
@@ -65,14 +65,18 @@ Timing:
   config:
     cols: 2
   buttons:
-   ASC Wave8:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/bin/asc-wave8.cmd
+#    ASC Wave8:
+#       type: shell
+#       commands:
+#         - /cds/home/t/tjohnson/bin/asc-wave8.cmd
    Fiber Oven:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/workarea/fiberOven/fiberOven-git/fiberOvenScreens/fiberOven.cmd
+   Bay 4 PDU:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
    Fiber Oven Scope (XCS):
       type: shell
       commands:
@@ -81,10 +85,6 @@ Timing:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
-   Bay 4 PDU:
-      type: shell
-      commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
    PFTS Manager Simulation:
       type: shell
       commands:
@@ -106,15 +106,6 @@ Event Timing:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/tjohnson/screens/timing/daq_seqcodes.sh
-
-Undulator Hall:
-  config:
-    cols: 2
-  buttons:
-   UND AC PDU:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pdu_snmp/R1.3.0/build/iocBoot/ioc-las-und-power-01/edm-ioc-las-und-power-01.cmd
 
 Phase Cavities:
   config:
@@ -144,6 +135,10 @@ Phase Cavities:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/cpino/ioc/las/pcav/edm/launch.rf_waveform_unds
+   UND AC PDU:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pdu_snmp/R1.3.0/build/iocBoot/ioc-las-und-power-01/edm-ioc-las-und-power-01.cmd
 
 Sector 2: 
   config:
@@ -158,7 +153,7 @@ Sector 2:
       commands:
         - /reg/g/pcds/epics-dev/cpino/ioc/las/raritan/raritan-git/build/iocBoot/ioc-las-src800-01/pydm-ioc-las-src800-01.cmd
 
-RF: 
+RFOF: 
   config:
     cols: 2
   buttons:
@@ -166,27 +161,31 @@ RF:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.2/build/iocBoot/ioc-las-rfof-itech-01/edm-ioc-las-rfof-itech-01.cmd
-   Cycle RFoF PyDM TX 1:
+   RFOF OL-MDL:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/smaract/R1.0.7/build/iocBoot/ioc-las-ftl-mcs2-03/launchgui-ioc-las-ftl-mcs2-03.cmd
+   Cycle RFoF TX 1:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-tx-01.cmd
-   Cycle RFoF PyDM RX 1:
+   Cycle RFoF RX 1:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-rx-01.cmd
-   Cycle RFoF PyDM TX 2:
+   Cycle RFoF TX 2:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-tx-02.cmd
-   Cycle RFoF PyDM RX 2:
+   Cycle RFoF RX 2:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/tjohnson/screens/cycle_rfof/edm-las-cycle-rfof-rx-02.cmd
-   Cycle Wavelink Set 1 GUI:
+   Cycle Wavelink Set 1:
       type: shell
       commands:
         - /cds/group/pcds/epics/screens/las/cycle-laser-screens/v1.0.0/wavelink_set1.sh
-   Cycle Wavelink Set 2 GUI:
+   Cycle Wavelink Set 2:
       type: shell
       commands:
         - /cds/group/pcds/epics/screens/las/cycle-laser-screens/v1.0.0/wavelink_set2.sh
@@ -195,10 +194,6 @@ RF:
       commands:
         #- /cds/group/pcds/epics/ioc/common/fiber_stretcher/R1.1.0/children/build/iocBoot/ioc-ftl-rfof-ff-01/edm-ioc-ftl-rfof-ff-01.cmd
         - /cds/home/t/tjohnson/trunk/common/fiber_stretcher/children/build/iocBoot/ioc-ftl-rfof-ff-01/edm-ioc-ftl-rfof-ff-01.cmd
-   RFOF OL-MDL:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/smaract/R1.0.7/build/iocBoot/ioc-las-ftl-mcs2-03/launchgui-ioc-las-ftl-mcs2-03.cmd
 
 FTL: 
   config:
@@ -298,11 +293,15 @@ LHN Bay 3:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/slice-dhv/R1.0.2/build/iocBoot/ioc-las-lhn-slice-01/edm-ioc-las-lhn-slice-01.cmd
+   Bay 3 TPR:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/tprStandalone/R1.0.5/build/iocBoot/ioc-las-lhn-tpr-01/edm-ioc-las-lhn-tpr-01.cmd
    Bay 3 Frequency Counter:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/lhn-counter-03.cmd
-   Locker HLA: 
+   Bay 3 Locker HLA: 
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/common/locker_manager/R0.15.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
@@ -311,22 +310,10 @@ LHN Bay 3:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls01_gui.sh
-   Bay 3 ATCA PyDM  Laser Locker: 
+   Bay 3 ATCA PyDM Laser Locker: 
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls01_pydm-gui.sh
-   ATCA DAQMUX: 
-      type: shell
-      commands:
-        - /cds/group/pcds/epics-dev/tjohnson/screens/lhn_atca_daqmux.cmd
-   PGP Data Switch: 
-      type: shell
-      commands:
-        - /reg/g/pcds/epics/ioc/common/pgp_switch/R1.0.0/children/build/iocBoot/ioc-las-pgpswitch-01/edm-ioc-las-pgpswitch-01.cmd
-   Bay 3 TPR:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/tprStandalone/R1.0.5/build/iocBoot/ioc-las-lhn-tpr-01/edm-ioc-las-lhn-tpr-01.cmd
    FS13 TIC:
       type: shell
       commands:
@@ -335,15 +322,23 @@ LHN Bay 3:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/cpino/screens/edm-ioc-las-opcpa-ctr-01.cmd
-   Amphos:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/bin/amphos.cmd
    Bay 3 TPR Rep Rate Config:
       type: shell
       commands:
        #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay3_launcher.sh
        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.1/neh_bay3_launcher.sh
+   ATCA DAQMUX: 
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/tjohnson/screens/lhn_atca_daqmux.cmd
+   PGP Data Switch: 
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/common/pgp_switch/R1.0.0/children/build/iocBoot/ioc-las-pgpswitch-01/edm-ioc-las-pgpswitch-01.cmd
+   Amphos:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/amphos.cmd
 
 LHN Bay 2: 
   config:
@@ -366,14 +361,14 @@ LHN Bay 2:
       commands:
         - /cds/group/pcds/epics/ioc/common/locker_manager/R0.15.0/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
 #        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
-   Bay 2 ATCA PyDM  Laser Locker: 
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls02_pydm-gui.sh
    Bay 2 ATCA Laser Locker: 
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls02_gui.sh
+   Bay 2 ATCA PyDM Laser Locker: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lhn-ls02_pydm-gui.sh
    FS12 TIC:
       type: shell
       commands:
@@ -387,6 +382,14 @@ LHN Bay 2:
       commands:
         - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.1/neh_bay2_launcher.sh
         #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay2_launcher.sh
+   Bay 2 TPR/RF TIC:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/sr620/ioc-las-sr620/build/iocBoot/ioc-las-lhn-sr620-05/edm-ioc-las-lhn-sr620-05.cmd
+   Bay 2 TPR/RF DG645:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dg/build/iocBoot/ioc-las-lhn-dg-02/edm-ioc-las-lhn-dg-02.cmd
 
 NEH Laser Lab: 
   config:

@@ -66,7 +66,7 @@ Digitizers:
     Wave8-04 (TIMING):
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/pgpWave8/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
+        - /cds/group/pcds/epics-dev/kaushikm/ioc/common/pgpWave8/children/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
     QADC Digitizer:
       type: shell
       commands:
