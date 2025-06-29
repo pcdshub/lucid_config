@@ -32,7 +32,7 @@ General:
       commands:
         - /reg/g/pcds/engineering_tools/mec/scripts/eloggrabber
 
-LCLS-1 Laser Lockers:
+Laser Lockers:
   config:
     cols: 2
   buttons:
@@ -207,11 +207,11 @@ FTL:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/dicon.cmd
-   OL-MDL Screen:
+   OL-MDL SmarActs 1-3:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-01-launchgui.cmd
-   OL-MDL 2 Screen:
+   OL-MDL SmarActs 4-6:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-02-launchgui.cmd
@@ -239,15 +239,11 @@ FTL:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/menhir-1550/R1.0.0/build/iocBoot/ioc-las-ftl-menhir-01/pydm-ioc-las-ftl-menhir-01.cmd
-   Link Alignment: 
+   OL-MDL Link Alignment: 
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/link_align_gui.sh
-   RFOF Chiller: 
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/las/thermocon/build/iocBoot/ioc-las-rfof-thermocon-01/edm-ioc-las-rfof-thermocon-01.cmd
-   SMA100B: 
+   SMA100B Signal Generator: 
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/common/rsSMX100X/children/build/iocBoot/ioc-tst-sma100b-01/pydm-ioc-tst-sma100b-01.cmd
@@ -255,22 +251,23 @@ FTL:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/tjohnson/screens/timing/cast_vtune.cmd
-
-   LEAK-DET-01:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
-
    FTL DAC:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/tjohnson/screens/timing/hengjie-dac.cmd
-
    FTL TEM Locker:
       type: shell
       commands:
         #- /cds/group/pcds/epics/ioc/common/TEM_PhaseLock/R1.0.1/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
         - /cds/home/t/tjohnson/trunk/common/TEM_PhaseLock/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
+   RFOF Chiller: 
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/thermocon/build/iocBoot/ioc-las-rfof-thermocon-01/edm-ioc-las-rfof-thermocon-01.cmd
+   FTL Leak Detection:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
 
 LHN: 
   config:
