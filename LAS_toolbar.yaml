@@ -265,8 +265,9 @@ PDUs:
   buttons:
    Zone 1 TiSaph Timing PDU (R08):
       type: shell
-      commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-01.cmd
+      commands: 
+        - bash -c 'cd /cds/group/pcds/epics/ioc/common/pdu_snmp/R3.1.0 && edm -x -eolc -m "IOC=IOC:LAS:LHN:PWR:01" -m "HUTCH=las" -m "PRE=LAS:LHN:PWR:01" pduScreens/TrippLite_24.edl'
+        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-01.cmd
    Zone 1 TiSaph PSU/Chiller PDU (R07):
       type: shell
       commands:
