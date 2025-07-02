@@ -271,31 +271,38 @@ PDUs:
    Zone 1 TiSaph PSU/Chiller PDU (R07):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-07.cmd  
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-07/edm-ioc-las-lhn-pwr-07.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-07.cmd  
    Zone 1 BTS PDU (R06):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-06.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-06/edm-ioc-las-lhn-pwr-06.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-06.cmd
    Zone 2 OPCPA Controls PDU (R03):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-02.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-02/edm-ioc-las-lhn-pwr-02.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-02.cmd
    Zone 2 OPCPA Timing PDU (R01):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-05.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-05/edm-ioc-las-lhn-pwr-05.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-05.cmd
    Zone 3 OPCPA Timing PDU (R18):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-03.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-03/edm-ioc-las-lhn-pwr-03.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-03.cmd
    Zone 4 TiSaph Timing PDU (R13):
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-04/edm-ioc-las-lhn-pwr-04.cmd
+        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
    MFX Timing PDU:
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-mfx-pwr-01.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-mfx-pwr-01/edm-ioc-las-mfx-pwr-01.cmd
+        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-mfx-pwr-01.cmd
    XCS Timing PDU:
       type: shell
       commands:
@@ -304,23 +311,29 @@ PDUs:
    CXI Timing PDU:
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-cxi-pwr-01.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-cxi-pwr-01/edm-ioc-las-cxi-pwr-01.cmd
+        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-cxi-pwr-01.cmd
    MEC Timing PDU:
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-mec-pwr-01.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-mec-pwr-01/edm-ioc-las-mec-pwr-01.cmd
+        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-mec-pwr-01.cmd
    FEH CAST Timing PDU:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-mezz-pwr-01.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-mezz-pwr-01/edm-ioc-las-mezz-pwr-01.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-mezz-pwr-01.cmd
    FTL R52-E25 PDU:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-02/edm-ioc-las-ftl-pwr-02.cmd
+        - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-02/edm-ioc-las-ftl-pwr-02.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-02/edm-ioc-las-ftl-pwr-02.cmd
    FTL R52-E47 PDU:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-01/edm-ioc-las-ftl-pwr-01.cmd
+        - /reg/g/pcds/epics/ioc/las/pdu_snmp/R1.6.0/build/iocBoot/ioc-las-ftl-pwr-01/edm-ioc-las-ftl-pwr-01.cmd
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-01/edm-ioc-las-ftl-pwr-01.cmd
+        
 SDG's:
   config:
     cols: 2
