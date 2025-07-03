@@ -18,6 +18,14 @@ FEL SIM:
   config:
     cols: 3
   buttons:
+    RCC VAC:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-VAC.ui
+    RCC Controls:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
     RCC Outlet:
       type: shell
       commands:
