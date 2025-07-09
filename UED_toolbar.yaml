@@ -148,7 +148,7 @@ XPS Motion:
     XPS03 Expert:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-03/edm-ioc-ued-xps-03.cmd
+          - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.5.0/build/iocBoot/ioc-ued-xps-03/edm-ioc-ued-xps-03.cmd
     XPS04 Expert:
         type: shell
         commands:
