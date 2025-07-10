@@ -12,3 +12,8 @@ Tools:
       type: shell
       commands: 
         - /reg/g/pcds/epics-dev/screens/pydm/sds/high-vis.sh
+
+    Interlocks:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/abl/interlock/R2.0.0/build/iocBoot/ioc-abl-interlock/pydm-ioc-abl-interlock.cmd

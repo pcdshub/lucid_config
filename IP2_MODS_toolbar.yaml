@@ -51,6 +51,15 @@ Tools:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/las-dispersion-scan/run-tmo-ip2.sh
+    ATM non-LSS Shutter:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/trunk/screens/tmo_mods_shutter/launchgui_lm2k4_atm_shutter.cmd
+    EJX non-LSS Shutter:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/trunk/screens/tmo_mods_shutter/launchgui_lm2k4_ejx_shutter.cmd
+
     # WFS Expert Screen:
     #   type: shell
     #   commands:

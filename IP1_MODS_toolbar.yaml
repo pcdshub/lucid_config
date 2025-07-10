@@ -41,11 +41,11 @@ Tools:
     EJX non-LSS Shutter:
       type: shell
       commands:
-        - /cds/home/a/aberges/trunk/screens/lm1k4_ejx_shutter/launchgui_lm1k4_ejx_shutter.cmd
+        - /cds/home/a/aberges/trunk/screens/tmo_mods_shutter/launchgui_lm1k4_ejx_shutter.cmd
     ATM non-LSS Shutter:
       type: shell
       commands:
-        - /cds/home/a/aberges/trunk/screens/lm1k4_ejx_shutter/launchgui_lm1k4_atm_shutter.cmd
+        - /cds/home/a/aberges/trunk/screens/tmo_mods_shutter/launchgui_lm1k4_atm_shutter.cmd
 
 Digitizers:
   config:
