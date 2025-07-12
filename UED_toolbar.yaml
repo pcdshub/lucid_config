@@ -23,6 +23,10 @@ SUED:
       commands:
        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/suedMotors.cmd
 
+    First Chamber Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/firstChamberMotors.cmd
 
 LUED:
 
