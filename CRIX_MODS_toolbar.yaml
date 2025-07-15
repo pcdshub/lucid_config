@@ -83,4 +83,4 @@ Digitizers:
     QADC Digitizer:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/qadc/R1.4.1/build/iocBoot/ioc-lm2k2-qadc134-01/pydm-ioc-lm2k2-qadc134-01.cmd
+        - /cds/group/pcds/epics/ioc/las/qadc/R1.4.3/build/iocBoot/ioc-lm2k2-qadc134-01/pydm-ioc-lm2k2-qadc134-01.cmd

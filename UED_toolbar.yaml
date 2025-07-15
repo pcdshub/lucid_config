@@ -256,6 +256,11 @@ Tools:
         commands:
           - /cds/group/pcds/epics-dev/iroque/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen1/edm-ioc-ued-delaygen1.cmd
 
+    DG645 02:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen2/edm-ioc-ued-delaygen2.cmd
+
     LCLS-Gateway(on psbuild):
         type: shell
         commands:
