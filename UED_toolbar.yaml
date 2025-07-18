@@ -18,15 +18,26 @@ SUED:
         filenames:
           - /cds/group/pcds/epics-dev/iroque/pydm_screens/set_detector_rate.py
 
-    SUED Motors:
-      type: shell
-      commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/suedMotors.cmd
-
-    First Chamber Motors:
+    SUED First Chamber Motors:
       type: shell
       commands:
        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/firstChamberMotors.cmd
+
+    SUED Second Chamber Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/secondChamberMotors.cmd
+
+    SUED Pump In-Out Coupling:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/inoutcouplingMotors.cmd
+
+    SUED Aperture Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/apertureMotors.cmd
+
 
 LUED:
 
