@@ -381,7 +381,7 @@ Detectors:
    FZP Expert screen:
      type: shell
      commands:
-       - pydm /cds/home/b/baljamal/screens/cam_viewer/fzp.ui
+       - pydm -m "ui_filename=fzp.ui" /cds/home/b/baljamal/screens/cam_viewer/fzp.py
 
    Cam Viewer:
      type: shell

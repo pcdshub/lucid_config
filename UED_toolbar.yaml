@@ -287,6 +287,10 @@ Tools:
         filenames:
           - /cds/group/pcds/epics-dev/iroque/pydm_screens/set_detector_rate.py
 
+    Lambda Ek9k:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/lambda-ek9k.ui 
 
 
 Legacy_UED:
