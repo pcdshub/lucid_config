@@ -32,7 +32,7 @@ Beamline:
     FIM Top:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/pgpWave8/R2.4.0/edm-tmo-fim-01-top.cmd
+        - /cds/group/pcds/epics/ioc/common/pgpWave8/R2.8.0/edm-tmo-fim-01-top.cmd
 
     SL1K4-SCATTER:
       type: shell
@@ -524,7 +524,7 @@ HV:
      type: shell
      redirectCommandOutput: true
      commands:
-       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.7/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
+       - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
 
    MPOD PDU R03:
      type: shell

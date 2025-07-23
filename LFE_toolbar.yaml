@@ -70,6 +70,10 @@ Instrumentation:
         type: shell
         commands:
           - /reg/g/pcds/epics-dev/tparas/ioc/lfe/ioc-lfe-pdu/build/iocBoot/ioc-lfe-pwr-r07/edm-ioc-lfe-pwr-r07.cmd
+    Wave 8: 
+        type: shell
+        commands:
+          - 
 
 Vacuum:
   config:

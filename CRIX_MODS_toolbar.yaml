@@ -71,15 +71,15 @@ Digitizers:
     Wave8-01:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.2.0/build/iocBoot/ioc-las-crix-pgpw8-01/edm-ioc-las-crix-pgpw8-01.cmd
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-crix-pgpw8-01/edm-ioc-las-crix-pgpw8-01.cmd
     Wave8-02:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.2.0/build/iocBoot/ioc-las-crix-pgpw8-02/edm-ioc-las-crix-pgpw8-02.cmd
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-crix-pgpw8-02/edm-ioc-las-crix-pgpw8-02.cmd
     Wave8-03 (TIMING):
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/kaushikm/ioc/common/pgpWave8/children/build/iocBoot/ioc-las-crix-pgpw8-03/edm-ioc-las-crix-pgpw8-03.cmd
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-crix-pgpw8-03/edm-ioc-las-crix-pgpw8-03.cmd
     QADC Digitizer:
       type: shell
       commands:

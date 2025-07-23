@@ -40,7 +40,7 @@ OPCPA:
     Bay 2 Laser Protection (LPS-02):
       type: shell
       commands:
-       #- /cds/group/pcds/epics-dev/divyak/LPS_Bay_2/lps_02.sh
+              #- /cds/group/pcds/epics-dev/divyak/LPS_Bay_2/lps_02.sh
         - /cds/group/pcds/epics-dev/aberges/LPS_Bay_2/lps_02.sh
     Bay 3 Delay Feedback:
       type: shell

@@ -52,7 +52,7 @@ Beamline:
     FIM Top:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/pgpWave8/R2.4.0/edm-rix-fim-01-top.cmd
+        - /cds/group/pcds/epics/ioc/common/pgpWave8/R2.8.0/edm-rix-fim-01-top.cmd
 
     RIX ICT Controls:
       type: display
@@ -152,7 +152,7 @@ chemRIXS:
     Wave8:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/rix/pgpWave8/R2.3.0/build/iocBoot/ioc-rix-pgpw8-03/edm-ioc-rix-pgpw8-03.cmd
+        - /cds/group/pcds/epics/ioc/rix/pgpWave8/R2.8.0/build/iocBoot/ioc-rix-pgpw8-03/edm-ioc-rix-pgpw8-03.cmd
 
     ANDOR TPR:
       type: shell
@@ -477,7 +477,7 @@ qRIXS:
    Wave8:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/opperman/rix/ioc/ioc-rix-pgpWave8/build/iocBoot/ioc-rix-pgpw8-04/edm-ioc-rix-pgpw8-04.cmd
+       - /cds/group/pcds/epics/ioc/rix/pgpWave8/R2.8.0/build/iocBoot/ioc-rix-pgpw8-04/edm-ioc-rix-pgpw8-04.cmd
 
    Lakeshore:
      type: shell

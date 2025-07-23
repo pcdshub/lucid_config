@@ -276,7 +276,7 @@ LHN:
    Wave8:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.2.1/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
    TCBOC ADC:
       type: shell
       commands:
