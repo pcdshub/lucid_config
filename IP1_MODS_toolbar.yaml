@@ -59,10 +59,10 @@ Digitizers:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
-#     Wave8-03:
-#       type: shell
-#       commands:
-#         - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
+    Wave8-03:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
     Wave8-04 (TIMING):
       type: shell
       commands:

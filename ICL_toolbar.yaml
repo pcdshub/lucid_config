@@ -35,6 +35,11 @@ FEL SIM:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m 'hutch=ICL' /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
+
+    FEL HPLCs:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-status-bar -m 'base_pv=ICL:FEL:LC20, hplc_count=2' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc-screen.py
 # // Adding New Tab
 #
 # NewTabName:

@@ -18,6 +18,11 @@ SUED:
         filenames:
           - /cds/group/pcds/epics-dev/iroque/pydm_screens/set_detector_rate.py
 
+    reprate rate set:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/reprate/reprate.py
+
     SUED First Chamber Motors:
       type: shell
       commands:

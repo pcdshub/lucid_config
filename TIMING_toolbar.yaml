@@ -336,6 +336,15 @@ LHN Bay 3:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/amphos.cmd
+   Wave8:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
+   TCBOC ADC:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
+
 
 LHN Bay 2: 
   config:
@@ -387,6 +396,11 @@ LHN Bay 2:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dg/build/iocBoot/ioc-las-lhn-dg-02/edm-ioc-las-lhn-dg-02.cmd
+   Bay 2 TCBOC ADC:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_2.cmd 
+
 
 NEH Laser Lab: 
   config:
