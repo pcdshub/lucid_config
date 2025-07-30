@@ -388,7 +388,8 @@ NEH Beam Transport:
    BTMS Overview:
       type: shell
       commands:
-        - /cds/group/pcds/epics/screens/las/btms-ui/v1.2.0/run.sh overview
+        #- /cds/group/pcds/epics/screens/las/btms-ui/v1.2.0/run.sh overview
+        - /cds/group/pcds/epics-dev/aberges/btms-ui/run.sh overview
    BTPS Overview:
       type: shell
       commands:

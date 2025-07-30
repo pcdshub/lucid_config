@@ -165,7 +165,7 @@ XPS Motion:
         type: shell
         commands:
           - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.4.0/build/iocBoot/ioc-ued-xps-02/edm-ioc-ued-xps-02.cmd
-    XPS03 Expert:
+    XPS03 Stages_X_Y:
         type: shell
         commands:
           - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.5.0/build/iocBoot/ioc-ued-xps-03/edm-ioc-ued-xps-03.cmd
@@ -173,16 +173,16 @@ XPS Motion:
         type: shell
         commands:
           - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-04/edm-ioc-ued-xps-04.cmd
-    XPS05 Expert:
+    XPS05 HWP_Powermet:
         type: shell
         commands:
           - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-05/edm-ioc-ued-xps-05.cmd
-    XPS06 Expert:
+    XPS06 Lens_Delay:
         type: shell
         commands:
           - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-06/edm-ioc-ued-xps-06.cmd
 
-    XPS08 Expert:
+    XPS08 Pump throttle:
         type: shell
         commands:
           - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-08/edm-ioc-ued-xps-08.cmd
@@ -270,12 +270,13 @@ Tools:
     DG645 01:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/iroque/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen1/edm-ioc-ued-delaygen1.cmd
+          - /cds/group/pcds/epics/ioc/ued/dg/R1.0.0/build/iocBoot/ioc-ued-delaygen1/edm-ioc-ued-delaygen1.cmd
+ 
 
     DG645 02:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/iroque/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen2/edm-ioc-ued-delaygen2.cmd
+          - /cds/group/pcds/epics/ioc/ued/dg/R1.0.0/build/iocBoot/ioc-ued-delaygen2/edm-ioc-ued-delaygen2.cmd
 
     LCLS-Gateway(on psbuild):
         type: shell
