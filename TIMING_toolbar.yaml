@@ -269,18 +269,18 @@ FTL:
       commands:
         - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
 
-LHN: 
-  config:
-    cols: 2
-  buttons:
-   Wave8:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
-   TCBOC ADC:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
+#LHN: 
+ # config:
+  #  cols: 2
+ # buttons:
+ #  Wave8:
+  #    type: shell
+   #   commands:
+    #    - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
+  # TCBOC ADC:
+   #   type: shell
+    #  commands:
+     #   - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
 
 LHN Bay 3: 
   config:
