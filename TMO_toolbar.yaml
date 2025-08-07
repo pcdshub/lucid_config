@@ -333,6 +333,11 @@ DREAM:
       commands:
         - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-interlock/build/iocBoot/ioc-tmo-ip2-ilk/pydm-ioc-tmo-ip2-ilk.cmd
 
+   Test Valve:
+      type: shell
+      commands:
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/tmo/vac_screens/dream_test_vrc.ui
+
 Laser:
   config:
     cols: 5
