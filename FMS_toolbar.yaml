@@ -6,6 +6,10 @@ General:
         type: shell
         commands:
             - /reg/g/pcds/epics-dev/nrw/iocs/mec/ioc-fms-interlock/build/iocBoot/ioc-fms-interlock/pydm-ioc-fms-interlock.cmd
+    "#grafana-alerts-fms":
+        type: shell
+        commands:
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://app.slack.com/client/E7SAV7LAD/C08140F1NG1 
 MEC:
   config:
     cols: 3
@@ -22,6 +26,14 @@ MEC:
         type: shell
         commands:
             - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://app.slack.com/client/E7SAV7LAD/C01QS8V0L8H
+    MEC Hutch Map:
+        type: shell
+        commands:
+            - xdg-open /cds/home/n/nrw/fms/hutch_maps/MEC_FMS_Map.png
+Engineering:
+  config:
+    cols: 3
+  buttons:
     MEC SRC800:
         type: shell
         commands:
@@ -30,9 +42,5 @@ MEC:
         type: shell
         commands:
             - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window 172.21.77.47:80
-    MEC Hutch Map:
-        type: shell
-        commands:
-            - xdg-open /cds/home/n/nrw/fms/hutch_maps/MEC_FMS_Map.png
 
 
