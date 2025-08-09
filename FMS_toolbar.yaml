@@ -41,6 +41,6 @@ Engineering:
     MEC Beckhoff:
         type: shell
         commands:
-            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window 172.21.77.47:80
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window 172.21.77.47/config
 
 
