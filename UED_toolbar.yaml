@@ -60,6 +60,18 @@ LUED:
       commands:
        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/luedMotors.cmd
 
+SINGLESHOT:
+
+  config:
+    cols: 3
+
+  buttons:
+
+    Single shot Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/ssMotors.cmd
+
 SDS:
   config:
     cols: 3
