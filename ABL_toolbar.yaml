@@ -8,12 +8,28 @@ Tools:
       commands: 
         - iocmanager abl
 
+    Interlocks:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/abl/interlock/R2.0.0/build/iocBoot/ioc-abl-interlock/pydm-ioc-abl-interlock.cmd
+
+Lab 01:
+  config:
+    cols: 4
+
+  buttons:
     high-speed vis:
       type: shell
       commands: 
         - /reg/g/pcds/epics-dev/screens/pydm/sds/high-vis.sh
 
-    Interlocks:
+    HPLC 01:
       type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/abl/interlock/R2.0.0/build/iocBoot/ioc-abl-interlock/pydm-ioc-abl-interlock.cmd
+      commands: 
+        - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:01' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
+        - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:02' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
+      allowMultipleExecutions: true
+    HPLC 02:
+      type: shell
+      commands: 
+        - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:02' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
