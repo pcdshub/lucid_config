@@ -24,15 +24,15 @@ General:
 #         - 
 
 
-# Digitizers:
-#   config:
-#     cols: 1
+Digitizers:
+  config:
+    cols: 1
 
-#   buttons:
-#     Wave8-01:
-#       type: shell
-#       commands:
-#         - 
+  buttons:
+    Wave8-01:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-pgpWave8/build/iocBoot/ioc-las-ip2-pgpw8-01/edm-ioc-las-ip2-pgpw8-01.cmd
 
 #     QADC Digitizer:
 #       type: shell

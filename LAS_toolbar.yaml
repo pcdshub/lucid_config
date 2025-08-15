@@ -378,7 +378,7 @@ NEH Beam Transport:
    NEH Laser Hall Vacuum:
       type: shell 
       commands:
-        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.2.1/open_home.sh
+        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.2.2/open_home.sh
    Shutters:
       type: shell
       commands:

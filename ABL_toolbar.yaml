@@ -28,8 +28,7 @@ Lab 01:
       commands: 
         - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:01' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
         - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:02' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
+      titles:
+        - HPLC 01 
+        - HPLC 02 
       allowMultipleExecutions: true
-    HPLC 02:
-      type: shell
-      commands: 
-        - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:02' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
