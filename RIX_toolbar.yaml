@@ -467,7 +467,7 @@ qRIXS:
    SmarPod-Motors-Terahertz:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/qrixsTHZSmarPod.cmd
+       - /cds/group/pcds/epics-dev/opperman/rix/ioc/ioc-common-SmarPod/children/build/iocBoot/ioc-qrix-smarpod-01/edm-ioc-qrix-smarpod-01.cmd
 
    Circuit-Breaker-Status-and-Reset:
      type: display
