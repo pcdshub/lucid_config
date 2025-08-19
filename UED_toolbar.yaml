@@ -310,6 +310,12 @@ Tools:
         filenames:
           - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/lambda-ek9k.ui 
 
+    XPMPVA:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/screens/pydm/ued/scripts/xpmpva.cmd
+
+
 
 Legacy_UED:
 
