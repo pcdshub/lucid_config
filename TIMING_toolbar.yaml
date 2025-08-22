@@ -80,11 +80,11 @@ Timing:
    Fiber Oven Scope (XCS):
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/dso4000/build/iocBoot/ioc-las-dso4000-01/edm-ioc-las-dso4000-01.cmd
+        - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-dso4000-01/edm-ioc-las-dso4000-01.cmd
    Fiber Oven Scope (LHN):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
+        - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
    PFTS Manager Simulation:
       type: shell
       commands:
@@ -422,6 +422,11 @@ NEH Laser Lab:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lln-llman-01/edm-ioc-lln-llman-01.cmd
+   
+   Laser Lab TCBOC ADC:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
 
 EVRs:
   config:

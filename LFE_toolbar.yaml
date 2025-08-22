@@ -50,10 +50,10 @@ Instrumentation:
         type: shell
         commands:
           - /reg/g/pcds/epics-dev/rajan-01/screens/launch_gdet_edm.sh
-    AT1L0-SOLID Instrumentation:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics-dev/mghaly/screens/launch_at1l0_solid_edm.sh
+#    AT1L0-SOLID Instrumentation:
+#        type: shell
+#        commands:
+#          - /reg/g/pcds/epics-dev/mghaly/screens/launch_at1l0_solid_edm.sh
     Kmono Diode Instrumentation:
         type: shell
         commands:

@@ -110,7 +110,7 @@ Detector:
     EPIX:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/iroque/ioc-ued-epix/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
+        - /cds/group/pcds/epics-dev/opperman/ued/ioc-ued-epix/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
     EPIX Interlock:
      type: shell
      commands:
