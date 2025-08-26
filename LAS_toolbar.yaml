@@ -60,12 +60,12 @@ OPCPA:
     Bay 3 TPR Rep Rate Config:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.0/neh_bay3_launcher.sh
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.2.0/neh_bay3_launcher.sh
         #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay3_launcher.sh
     Bay 2 TPR Rep Rate Config:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.0/neh_bay2_launcher.sh
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.2.0/neh_bay2_launcher.sh
         #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay2_launcher.sh
     Bay 3 Switching Mirror:
       type: shell
@@ -386,8 +386,8 @@ NEH Beam Transport:
    BTMS Overview:
       type: shell
       commands:
-         #- /cds/group/pcds/epics/screens/las/btms-ui/v1.2.1/run.sh overview
-          - /cds/group/pcds/epics-dev/aberges/btms-ui/run.sh overview
+         - /cds/group/pcds/epics/screens/las/btms-ui/v1.2.2/run.sh overview
+       # - /cds/group/pcds/epics-dev/aberges/btms-ui/run.sh overview
    BTPS Overview:
       type: shell
       commands:

@@ -323,7 +323,7 @@ LHN Bay 3:
       type: shell
       commands:
        #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay3_launcher.sh
-       - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.1/neh_bay3_launcher.sh
+       - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.2.0/neh_bay3_launcher.sh
    ATCA DAQMUX: 
       type: shell
       commands:
@@ -386,7 +386,7 @@ LHN Bay 2:
    Bay 2 TPR Rep Rate Config:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.1.1/neh_bay2_launcher.sh
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v2.2.0/neh_bay2_launcher.sh
         #- /cds/home/t/tjohnson/trunk/opcpa-tpr-config/neh_bay2_launcher.sh
    Bay 2 TPR/RF TIC:
       type: shell

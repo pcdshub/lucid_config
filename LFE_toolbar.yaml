@@ -170,6 +170,11 @@ LFE-OPTICS:
       commands:
         - atef config /cds/group/pcds/pyps/apps/atef/config/lfe/LFE-Limits.json 
 
+    HOMS Overview:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/lfe/homs_overview/launcher.sh
+
 Radiation Monitoring:
  config:
     cols: 3
