@@ -127,7 +127,7 @@ Detector:
 Lasers:
 
   config:
-    cols: 1
+    cols: 2
   buttons:
     #Smaract laser motors (must be on ued-monitor or ued-daq):
     #  type: shell
@@ -148,6 +148,11 @@ Lasers:
       type: shell
       commands:
       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.36.63/
+
+    OPA Laptop:
+      type: shell
+      commands:
+      - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /dynamic-resolution -sec-nla +clipboard &
 
 Webcams:
   config:
