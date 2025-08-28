@@ -7,11 +7,12 @@ SUED:
     LAKESHORE336-01:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/iroque/ioc-ued-lakeshore336/build/iocBoot/ioc-ued-ls336-01/edm-ioc-ued-ls336-01.cmd
+          - /cds/group/pcds/epics/ioc/ued/lakeshore336/R1.0.1/build/iocBoot/ioc-ued-ls336-01/edm-ioc-ued-ls336-01.cmd
+
     LAKESHORE336-02:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/iroque/ioc-ued-lakeshore336/build/iocBoot/ioc-ued-ls336-02/edm-ioc-ued-ls336-02.cmd
+          - /cds/group/pcds/epics/ioc/ued/lakeshore336/R1.0.1/build/iocBoot/ioc-ued-ls336-02/edm-ioc-ued-ls336-02.cmd
 
     camera rate set:
         type: display
@@ -152,7 +153,7 @@ Lasers:
     OPA Laptop:
       type: shell
       commands:
-      - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /dynamic-resolution -sec-nla +clipboard &
+      - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /dynamic-resolution -sec-nla +clipboard
 
 Webcams:
   config:
