@@ -54,10 +54,10 @@ Instrumentation:
 #        type: shell
 #        commands:
 #          - /reg/g/pcds/epics-dev/mghaly/screens/launch_at1l0_solid_edm.sh
-    Kmono Diode Instrumentation:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics-dev/adpai/screens/launch_k_mono_main.sh
+#    Kmono Diode Instrumentation:
+#        type: shell
+#        commands:
+#          - /reg/g/pcds/epics-dev/adpai/screens/launch_k_mono_main.sh
     Gdet Kmono PDU:
         type: shell
         commands:
