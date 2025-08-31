@@ -58,7 +58,7 @@ Instrumentation:
 #        type: shell
 #        commands:
 #          - /reg/g/pcds/epics-dev/adpai/screens/launch_k_mono_main.sh
-    Gdet Kmono PDU:
+    Gdet PDU:
         type: shell
         commands:
           - /reg/g/pcds/epics-dev/screens/edm/lfe/edm-ioc-lfe-pwd-02.cmd
