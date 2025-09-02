@@ -12,7 +12,6 @@ General:
       commands:
         - /reg/g/pcds/pyps/config/las/camviewer.sh
 
-
 EVRs:
   config:
     cols: 1
@@ -23,29 +22,6 @@ EVRs:
       commands:
         - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lm1k4-evr-01/edm-ioc-las-lm1k4-evr-01.cmd
 
-
-Digitizers:
-  config:
-    cols: 1
-
-  buttons:
-    ioc-las-ip1-pgpw8-01:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-01/edm-ioc-las-ip1-pgpw8-01.cmd
-    ioc-las-ip1-pgpw8-02:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
-    ioc-las-ip1-pgpw8-03:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R1.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
-    ioc-lm1k4-qadc134-01:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/tjohnson/screens/lm1k4_qadc.cmd
-
 Tools:
   config:
     cols: 2
@@ -54,4 +30,44 @@ Tools:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/iocmanager.sh
- 
+    Dispersion Scan:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las-dispersion-scan/run-tmo.sh
+    WFS Expert Screen:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/mods/lm1k4/inj/Thorlabs-WFS/build/iocBoot/ioc-lm1k4-inj-wfs-01/edm-ioc-lm1k4-inj-wfs-01.cmd
+    EJX non-LSS Shutter:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/trunk/screens/tmo_mods_shutter/launchgui_lm1k4_ejx_shutter.cmd
+    ATM non-LSS Shutter:
+      type: shell
+      commands:
+        - /cds/home/a/aberges/trunk/screens/tmo_mods_shutter/launchgui_lm1k4_atm_shutter.cmd
+
+Digitizers:
+  config:
+    cols: 2
+  buttons:
+    Wave8-01:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-ip1-pgpw8-01/edm-ioc-las-ip1-pgpw8-01.cmd
+    Wave8-02:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
+    Wave8-03:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
+    Wave8-04 (TIMING):
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.1/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
+    QADC Digitizer:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/las/qadc/R1.4.3/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd

@@ -1,0 +1,516 @@
+LCLS:
+  config:
+    cols: 4
+  buttons:
+    LCLS Home:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/setup/pydm_lclshome.sh
+    Elog Grabber:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        -/reg/g/pcds/engineering_tools/latest-released/scripts/eloggrabber
+    PMPS Diagnostics:
+      type: shell
+      commands:
+        - /cds/group/pcds/setup/pmps-launcher.sh LFE
+    Lightpath:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+        - lightpath --hutches TMO CRIX QRIX
+        # a reference to the demo lightpath space
+        #- /cds/home/r/roberttk/lightpath_demo/test_lightpath.sh --hutches TMO CRIX QRIX
+    Experiment State Tracker:
+      type: shell
+      directCommandOutput: true
+      commands:
+        - /cds/group/pcds/pyps/config/rix/expstate.sh
+
+    
+Laser:
+  config:
+      cols: 2
+  buttons:
+    FS Timing:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Laser Newport 1:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Laser Newport 2:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    EVR LAS:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    XCS SmarAct:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Qmini Spec 1:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Alignment Picomotors:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+Detectors:
+  config:
+      cols: 3
+  buttons:
+    Web Cameras:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    epix1:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    DET HMP (Jungrau):
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Viewer - Beamline:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    epix2:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    DET HMPs:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Viewer - XCS:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    epix3:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    DET Chillers:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Viewer - User Gige:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    epix4:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    DET MPOD:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Yag Zoom:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    epix10ka2m:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    LADM MPOD:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    LED Illum:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    Detector Protection:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+    MOBILE MPOD:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+User:
+  config:
+    cols: 4
+  buttons:
+    User Smart Motors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Cryojet: 
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Lakeshore 340:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Mass Flow Control:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Dumb Motors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Cryojet 02:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Lakeshore 335:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Oxygen Sensor:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Dumb Motors 33-48:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    VonHamos Spec:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Lakeshore 336:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    EVR REC01:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    LAM User Motors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    BK-P Power Supply:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    PRT Lakeshore:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    EVR USER2:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Newport (Gon):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Digital In:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    MON Lakeshore:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    EVR REC02:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Newport (R41 PP):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Digital Out:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    DG645:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Rowland:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Gauges:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Analog PCIE:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Thermocouples:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Mobile Cryojet 02:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    MKS Baratron:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    PID loop:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Solenoids:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Piezo Motor 1:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    QADC:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    HPLCs:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    LeCroy Scope:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Piezo Motor 2:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+Beamline:
+  config:
+    cols: 4
+  buttons:
+    MEC Multiplexing:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    UM6 PIM 1 & IPM1: 
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    MON DS CAM:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    REFLASER 1:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    X-Ray/Laser Status:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    PeriscopeBT/M3H:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    MONO DIAGNOSTICS:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 1:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    DG2 PIM 2 & IPM 2:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 2:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    DG3 PIM 3 & IPM 3:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    MONO CCM:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 3:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Prefocus:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    DG3M PIM 3M:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    MONO CCM Alignment:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 3M:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Timetool:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    IPM MON:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 4:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    ATT:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SB1 PIM4 & IPM4:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    LADM:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 5:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    XCS Be Lens:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SB2 PIM5 and IPM5:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    BEAMSTOPS LAM:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SLITS 6:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    PP - Pulse Picker:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SB2 LIB:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    LAM Slit & Detector:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    DIFF:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    SND Motors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Detector Translation:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    TAB:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+Favorites:
+  config:
+    cols: 4
+  buttons:
+    ATT:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Smart Motors: 
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Pulse Picker:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    IOC Manager:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    CXI ATT:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    User Dumb Motors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    X-Ray/Laser Status:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    IOC Manager XRT:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    CXI PICKER:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    BL Diag Plots (EventBuilder):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    M1H Mirror:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Correlation Plots (EventBuilder):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    M2H Mirror:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    IPM Plots (EventBuilder):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    M3H Mirror:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    XCS LeCroy Scope RDP:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Liquid Jet Exp Plots:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    HOMS Overview:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    XCS Portable Scope RDP:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+    Experiment Tracker:
+      type: shell
+      redirectCommandOutput: true
+      commands:

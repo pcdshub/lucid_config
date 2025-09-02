@@ -1,0 +1,46 @@
+General:
+  config:
+    cols: 3
+  buttons:
+    FMS Annunciator:
+        type: shell
+        commands:
+            - /reg/g/pcds/epics-dev/nrw/iocs/mec/ioc-fms-interlock/build/iocBoot/ioc-fms-interlock/pydm-ioc-fms-interlock.cmd
+    "#grafana-alerts-fms":
+        type: shell
+        commands:
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://app.slack.com/client/E7SAV7LAD/C08140F1NG1 
+MEC:
+  config:
+    cols: 3
+  buttons:
+    MEC NALMS:
+        type: shell
+        commands:
+            - /reg/g/pcds/pyps/apps/fms/fms-mec-nalms.sh
+    MEC Grafana:
+        type: shell
+        commands:
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/ctl/grafana/d/deq9f9qv1xq80f/mec-facility-monitoring-system?orgId=1&from=now-24h&to=now&timezone=browser&refresh=5s 
+    "#grafana-alerts-mec":
+        type: shell
+        commands:
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://app.slack.com/client/E7SAV7LAD/C01QS8V0L8H
+    MEC Hutch Map:
+        type: shell
+        commands:
+            - xdg-open /cds/home/n/nrw/fms/hutch_maps/MEC_FMS_Map.png
+Engineering:
+  config:
+    cols: 3
+  buttons:
+    MEC SRC800:
+        type: shell
+        commands:
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window 172.21.77.41:80
+    MEC Beckhoff:
+        type: shell
+        commands:
+            - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window 172.21.77.47/config
+
+

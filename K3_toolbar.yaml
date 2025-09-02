@@ -20,16 +20,6 @@ General:
       redirectCommandOutput: true
       commands:
         - lightpath --hutches KFE TMO RIX
-    KFE Elog Site:
-      type: shell
-      redirectCommandOutput: true
-      commands:
-        - firefox https://pswww.slac.stanford.edu/lgbk/lgbk/kfe/#infosec
-    KFE Grubber:
-      type: shell
-      redirectCommandOutput: true
-      commands:
-        - bash /reg/g/pcds/pyps/apps/hutch-python/lucid_config/launch_grubber_kfe
     PMPS Troubleshooting:
       type: shell
       redirectCommandOutput: true
@@ -40,6 +30,10 @@ General:
       redirectCommandOutput: true
       commands:
         - firefox https://confluence.slac.stanford.edu/display/PCDS/FEE+Operation+and+Troubleshooting
+    TXI01 CAM:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/opperman/txi/gigeCam/build/iocBoot/ioc-txi-gige-01/edm-ioc-txi-gige-01.cmd
 
 Vacuum:
   config:
@@ -51,34 +45,10 @@ Vacuum:
         filenames:
           # - /reg/g/pcds/epics-dev/nwbrown/lcls-plc-kfe-vac/ui/sxrVac.ui
          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/sxrVac.ui
-    TMO FEE Vacuum:
+    K3 Vacuum:
          type: display
          filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/tmoFeeVac.ui
-    RIX FEE Vacuum:
-        type: display
-        filenames:
-          - /cds/group/pcds/epics-dev/jjoshi/screens/rixFeeVac.ui
-    TXI Beamline Vacuum:
-        type: display
-        filenames:
-         - /reg/g/pcds/epics-dev/screens/pydm/txi_screens/vacuum_screens/TXI_FEE.ui 
-
-Slits:
-  config:
-    cols: 4
-
-  buttons:
-    SL1K0:
-        type: shell
-        redirectCommandOutput: true
-        commands:
-          - pydm mghaly/screens/devices/SL1K0-POWER.ui
-    SL2K0:
-        type: shell
-        redirectCommandOutput: true
-        commands:
-          - pydm mghaly/screens/devices/SL2K0-POWER.ui
+          - /reg/g/pcds/epics-dev/screens/pydm/txi_screens/vacuum_screens/K3_VAC.ui
 
 AT1K0-GAS:
   config:
@@ -88,7 +58,7 @@ AT1K0-GAS:
         type: shell
         redirectCommandOutput: true
         commands:
-          - pydm /reg/g/pcds/epics-dev/screens/pydm/kfe/AT1K0-GAS.ui
+          - pydm /reg/g/pcds/epics-dev/mghaly/screens/vacuumscreens/AT1K0-GAS.ui
     AT1K0-GAS Aperture Array, Y-Stages:
         type: shell
         redirectCommandOutput: true
@@ -99,7 +69,6 @@ AT1K0-GAS:
         #redirectCommandOutput: true
         #commands:
           #- bash /reg/g/pcds/epics-dev/screens/pydm/scripts/launch_AT1K0_X_aperture
-
 
 
 EM1K0-GMD:
@@ -129,10 +98,6 @@ EM1K0-GMD:
           #- bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh 
           #- bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_gmd_main_pcds.sh
            - bash /cds/group/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh
-    Two Pulse:
-        type: shell
-        commands:
-            - pydm /cds/home/k/kaushikm/tpcalc/2avg.ui
 
 EM2K0-XGMD:
   config:
@@ -161,34 +126,12 @@ EM2K0-XGMD:
           #- bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
           #- bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_xgmd_main_pcds.sh
            - bash /cds/group/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh
-RTDSK0:
-  config:
-    cols: 4
 
-  buttons:
-    RTDSK0:
-        type: display
-        filenames:
-          - /reg/g/pcds/epics-dev/jyin/screens/RTDSK0.ui
-    Solid Drilling Motion:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics-dev/screens/pydm/scripts/RTDSX0_SCRP_motion.cmd
 
 FEE-OPTICS:
   config:
     cols: 2
   buttons:
-    mr1k4_homs:
-      type: shell
-      redirectCommandOutput: true
-      commands:
-          - /reg/g/pcds/epics/ioc/tmo/lcls-plc-tmo-optics/latest/somsScreens/launch_mr1k4_ui.sh
-
-    MR1K1/MR1K4 Chiller:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics/ioc/kfe/thermocon/R3.0.1/build/iocBoot/ioc-mr1k1-thermocon/pydm-ioc-mr1k1-thermocon.cmd
 
     SP1K1/MR2K3 Chiller:
       type: shell
@@ -219,19 +162,77 @@ Radiation Monitoring:
         commands:
             - pydm /cds/home/m/mkestra/LED_screen.ui
 
+   
+
 Tools:
   config:
-    cols: 2
-  buttons:
-    KFE ICT Controls:
-      type: shell
-      redirectCommandOutput: true
-      commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/ict-screens/kfe-ict-screen.ui
+    cols: 4
 
-    KFE QPC Controls (FEE Alcove):
+  buttons:
+    PDU:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/txi/Sentry4/R1.0.0/build/iocBoot/ioc-txi-pwr-r17/edm-ioc-txi-pwr-r17.cmd
+
+    Wave8:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/txi/pgpWave8/R2.3.0/build/iocBoot/ioc-txi-pgpw8-01/edm-ioc-txi-pgpw8-01.cmd
+
+    Wave8-TPR:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/iroque/txi/ioc-txi-tprStandalone/build/iocBoot/ioc-txi-wave8-tpr1/edm-ioc-txi-wave8-tpr1.cmd
+
+
+    SQR1(Remote Desktop):
+      type: shell
+      commands:
+        - /cds/home/b/baljamal/sqr1/plc-txi-mcq-01_RDP_launcher.sh
+
+    TXI ICT Controls:
       type: shell
       redirectCommandOutput: true
       commands:
-        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/qpc-control-screen/kfe-fee-alcove-qpc.ui
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/txi_screens/ict-screens/txi-ict-screens.ui
+
+    Power Meter:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/jozamudi/txi/txi-pm-screen.sh
+
+    TXI QPC Controls (FEE Alcove):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/txi_screens/qpc-control-screen/txi-fee-alcove-qpc.ui
+
+    iocmanager:
+     type: shell
+     commands:
+       - iocmanager txi
+
+    KFE iocmanager:
+     type: shell
+     commands:
+       - /cds/group/pcds/pyps/config/kfe/iocmanager.sh
+
+    Cam Viewer:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/config/txi/camviewer.sh
+
+    XTCAV - NC:
+      type: shell
+      commands:
+        - /cds/home/opr/tmoopr/scripts/xtcav_nc_timing.sh
+
+    XTCAV - SC:
+      type: shell
+      commands:
+        - /cds/home/opr/tmoopr/scripts/xtcav_sc_timing.sh
+
+
+
+
 

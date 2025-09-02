@@ -1,0 +1,77 @@
+Pulser:
+  config:
+    cols: 4
+
+  buttons:
+    Pulser1:
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/ioc-pulser/children/build/iocBoot/ioc-pulser/pydm-ioc-pulser.cmd
+
+Oscilloscope:
+  config:
+    cols: 4
+
+  buttons:
+    Tektronix 4000 EDM (RRL test):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/Tektronix/R1.0.1/children/build/iocBoot/ioc-dso4000-tst/edm-ioc-dso4000-tst.cmd
+    Tektronix 4000 EDM (LAS 01):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/Tektronix/R1.0.1/children/build/iocBoot/ioc-dso4000-tst/edm-ioc-dso4000-las-01.cmd
+    Tektronix 4000 PyDM (LAS 01):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/Tektronix/R1.0.1/children/build/iocBoot/ioc-dso4000-tst/pydm-ioc-dso4000-las-01.cmd
+
+Energy Meter:
+  config:
+    cols: 4
+
+  buttons:
+    Gentec EDM (RRL Test):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/ioc-mecu-gentec/children/build/iocBoot/ioc-mecu-tst-gentec/edm-ioc-mecu-tst-gentec.cmd
+    Gentec PyDM (RRL Test):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/ioc-mecu-gentec/children/build/iocBoot/ioc-mecu-tst-gentec/pydm-ioc-mecu-tst-gentec.cmd
+    Gentec PyDM (MEC 01):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/ioc-mecu-gentec/children/build/iocBoot/ioc-mecu-tst-gentec/pydm-ioc-mec-gentec-01.cmd
+
+Camera:
+  config:
+    cols: 4
+
+  buttons:
+    Cam1 EDM (with damage detection):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/ioc-mecu-basler/build/iocBoot/ioc-mecu-tst-cam-01/edm-ioc-mecu-tst-cam-01.cmd
+    Cam3 EDM (original gigE config):
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/ioc-mecu-basler/build/iocBoot/ioc-mecu-tst-cam-03/edm-ioc-mecu-tst-cam-03.cmd
+    CamViewer PyDM (TMO without stylesheet):
+      type: shell
+      commands:
+          - /reg/g/pcds/pyps/config/tmo/camviewer.sh
+    CamViewer PyDM (RRL with stylesheet):
+      type: shell
+      commands:
+          - /reg/g/pcds/pyps/config/rrl/camviewer.sh
+TPR:
+  config:
+    cols: 4
+
+  buttons:
+    TPR:
+      type: shell
+      commands:
+          - /cds/home/j/jvamosi/workspace/tprStandalone/R1.1.5/build/iocBoot/ioc-tst-mecu-tpr1/edm-ioc-tst-mecu-tpr1.cmd
+

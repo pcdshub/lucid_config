@@ -1,0 +1,54 @@
+Tools:
+
+  config:
+    cols: 3
+
+  buttons:
+    iocmanager:
+      type: shell
+      commands:
+        - iocmanager icl
+    universal screen:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - pydm -m "title=ICL, hutch=ICL, config=/reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/config/icl/icl-sds.json" --hide-nav-bar --hide-menu-bar /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/sds.py
+
+FEL SIM:
+  config:
+    cols: 3
+  buttons:
+    RCC VAC:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-VAC.ui
+    RCC Controls:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+    RCC Outlet:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/4port-vici-valve-clockface.py
+
+    Switching Valves:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m 'hutch=ICL' /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
+
+    FEL HPLCs:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-status-bar -m 'base_pv=ICL:FEL:LC20, hplc_count=2' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc-screen.py
+# // Adding New Tab
+#
+# NewTabName:
+#   config:
+#   cols: 3
+#
+# // New Button within Tab
+#   Test:
+#      type: shell
+#      redirectCommandOutput: true
+#      commands:
+#        - echo "Test" 
