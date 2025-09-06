@@ -75,7 +75,7 @@ Vacuum:
    TMO Beamline Vacuum:
         type: shell
         commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/TMObeamlineV7.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/TMObeamlineV6.ui
    #GasJet Test:
         #type: shell
         #commands:
