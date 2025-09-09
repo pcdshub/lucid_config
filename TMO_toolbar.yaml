@@ -261,6 +261,11 @@ DREAM:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smarpod/build/iocBoot/ioc-tmo-smarpod-01/edm-ioc-tmo-smarpod-01.cmd
+   
+   SmarPod Manual:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aberges/ioc/tmo/smaract/screens/launchgui-ioc-tmo-mcs2-03.cmd
 
    Chamber RGA:
      type: shell
