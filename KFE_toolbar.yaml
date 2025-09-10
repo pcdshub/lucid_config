@@ -235,3 +235,8 @@ Tools:
       commands:
         - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/qpc-control-screen/kfe-fee-alcove-qpc.ui
 
+    N2 System:
+      type: display
+      filenames:
+        - /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/n2/n2-pair.ui
+
