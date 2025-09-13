@@ -139,17 +139,17 @@ EM2K0-XGMD:
     cols: 5
   buttons:
     EM2K0-XGMD Vacuum:
-        type: display
-        filenames:
-          - /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-xgmd-vac/ui/XGMDVacScreen.ui
+        type: shell
+        commands:
+          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-xgmd-vac/ui/XGMDVacScreen.ui
     EM2K0-XGMD Injector:
-        type: display
-        filenames:
-          - /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-xgmd-vac/ui/XGMDInjectscreen.ui
+        type: shell
+        commands:
+          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-xgmd-vac/ui/XGMDInjectscreen.ui
     EM2K0-XGMD-VGP-50:
-        type: display
-        filenames:
-          - /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-xgmd-vac/ui/EM2K0-VGP.ui
+        type: shell
+        commands:
+          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-xgmd-vac/ui/EM2K0-VGP.ui
     Spinning Rotor Gauge:
         type: shell
         commands:
@@ -234,4 +234,9 @@ Tools:
       redirectCommandOutput: true
       commands:
         - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/qpc-control-screen/kfe-fee-alcove-qpc.ui
+
+    N2 System:
+      type: display
+      filenames:
+        - /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/n2/n2-pair.ui
 
