@@ -301,7 +301,7 @@ LHN Bay 3:
    Bay 3 Locker HLA: 
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.15.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
  #       - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
    Bay 3 ATCA Laser Locker: 
       type: shell
@@ -365,7 +365,7 @@ LHN Bay 2:
    Bay 2 Locker HLA: 
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.15.0/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.0/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
 #        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
    Bay 2 ATCA Laser Locker: 
       type: shell
