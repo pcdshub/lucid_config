@@ -113,3 +113,7 @@ Tools:
       commands:
         - /cds/group/pcds/pyps/config/txi/camviewer.sh
 
+    KBO Ion Pumps:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tparas/ioc/txi/ioc-txi-qpc/build/iocBoot/ioc-txi-kbo-pci-01/pydm-ioc-txi-kbo-pci-01.cmd
