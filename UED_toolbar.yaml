@@ -314,7 +314,7 @@ Tools:
     Ek9k AI/AO:
         type: display
         filenames:
-          - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/lambda-ek9k.ui 
+          - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/bhc-usr-ek9k.ui 
 
     XPMPVA:
         type: shell

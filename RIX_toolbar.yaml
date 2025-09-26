@@ -316,10 +316,6 @@ chemRIXS-Laser:
     LXT_TTC Tweak:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/hutch-python/rix/rixpython /cds/group/pcds/epics-dev/screens/pydm/rix/lxt-txt/launch_gui.py
-    DEV LXT_TTC Tweak:
-      type: shell
-      commands:
         - /cds/group/pcds/pyps/apps/hutch-python/rix/rixpython /cds/group/pcds/epics-dev/screens/pydm/rix/lxt-txt/launch_gui_dev.py
 
 
@@ -517,7 +513,7 @@ qRIXS-Laser:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/alvium_timetool.sh
 #       - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m "BASE=RIX:QRIX:ALV:01" /cds/group/pcds/epics-dev/screens/pydm/rix_screens/tt-screens/alviumtt/att.ui
 
-    DEV LXT_TTC Tweak:
+    LXT_TTC Tweak:
      type: shell
      commands:
        - /cds/group/pcds/pyps/apps/hutch-python/rix/rixpython /cds/group/pcds/epics-dev/screens/pydm/rix/lxt-txt/launch_gui_dev.py
