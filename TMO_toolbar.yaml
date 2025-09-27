@@ -112,7 +112,7 @@ CVMI:
    CVMI PDU:
      type: shell
      commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
 
 LAMP:
   config:
@@ -240,7 +240,7 @@ MRCO:
    MRCO PDU PR10:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-pr10/edm-ioc-tmo-pwr-pr10.cmd
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-pr10/edm-ioc-tmo-pwr-pr10.cmd
 
 DREAM:
   config:
@@ -310,7 +310,7 @@ DREAM:
    DREAM PDU:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-dream/edm-ioc-tmo-pwr-dream.cmd
+        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-dream/edm-ioc-tmo-pwr-dream.cmd
 
    SL3K4:
       type: shell
@@ -534,7 +534,7 @@ HV:
      type: shell
      redirectCommandOutput: true
      commands:
-       - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
 
    MPOD PDU R03:
      type: shell
