@@ -155,6 +155,11 @@ Lasers:
       commands:
       - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /dynamic-resolution -sec-nla +clipboard
 
+    REGEN Laptop:
+      type: shell
+      commands:
+      - xfreerdp /u:customer /p:121234 /v:laptop-ued-ics-02 /dynamic-resolution -sec-nla +clipboard
+
 Webcams:
   config:
     cols: 4
