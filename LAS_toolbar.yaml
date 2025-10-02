@@ -177,6 +177,7 @@ Laser Lockers:
    NEH FS14:
       type: shell
       commands:
+        #- /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-vitara/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
         - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
    XCS FS4:
       type: shell
