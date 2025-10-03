@@ -219,6 +219,21 @@ Radiation Monitoring:
         commands:
             - pydm /cds/home/m/mkestra/LED_screen.ui
 
+Timing:
+  config:
+    cols: 2
+
+  buttons:
+    ctl-kfe-cam-02:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/kfe/tprStandalone/R2.0.0/build/iocBoot/ioc-kfe-tpr2/edm-ioc-kfe-tpr2.cmd
+
+    ctl-kfe-cam-03:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/kfe/tprStandalone/R2.0.0/build/iocBoot/ioc-kfe-tpr3/edm-ioc-kfe-tpr3.cmd
+
 Tools:
   config:
     cols: 2

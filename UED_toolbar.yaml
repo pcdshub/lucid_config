@@ -230,6 +230,11 @@ XPS Motion:
         commands:
           - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-13/edm-ioc-ued-xps-13.cmd 
 
+    XPS14 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-14/edm-ioc-ued-xps-14.cmd
+
 Tools:
 
   config:
@@ -246,22 +251,28 @@ Tools:
       commands:
         - camViewer
 
-    camViewer - Config:
+    Cam Viewer - Config:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-01.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-andor-01.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-andor-03.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-alv-01.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asar03.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asar04.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asps08.cmd
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asps04.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-01.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-andor-01.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-andor-03.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-alv-01.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-sample-bottom.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-sample-back.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-sample-front.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asar03.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asar04.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asps08.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asps04.cmd
       titles:
         - ued-gige-01
         - ued-andor-01
         - ued-andor-03
         - ued-alv-01
+        - ued-gige-sample-bottom
+        - ued-gige-sample-back
+        - ued-gige-sample-front
         - ued-asar03
         - ued-asar04
         - ued-asps08

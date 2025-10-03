@@ -22,13 +22,12 @@ LCLS:
 Beamline:
   config:
     cols: 4
-    
-   buttons:
-	XPP Beamline VAcuum:
-    	    type:shell
-    	    commands:
-	    -pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
-    
+  buttons:
+    XPP Beamline Vacuum:
+      type: shell
+      commands:
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui    
+
 
 Laser:
   config:
