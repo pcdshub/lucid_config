@@ -193,6 +193,21 @@ Radiation Monitoring:
         commands:
             - pydm /cds/home/m/mkestra/LED_screen.ui
 
+Timing:
+ config:
+    cols: 3
+
+ buttons:
+    ctl-lfe-cam-03:
+        type: shell
+        commands:
+            - /reg/g/pcds/epics-dev/joshc/lfe/ioc-lfe-tprStandalone/build/iocBoot/ioc-lfe-tpr1/edm-ioc-lfe-tpr1.cmd
+
+    ctl-lfe-cam-04:
+        type: shell
+        commands:
+            - /reg/g/pcds/epics-dev/kaushikm/ioc/lfe/tprStandalone/build/iocBoot/ioc-lfe-tpr2/edm-ioc-lfe-tpr2.cmd
+
 Tools:
   config:
     cols: 2

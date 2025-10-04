@@ -250,7 +250,7 @@ DREAM:
    DREAM Vacuum:
         type: shell
         commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES.ui
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES_Second.ui
 
    Leybold IM540 Controller:
      type: shell
