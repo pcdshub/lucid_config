@@ -14,6 +14,10 @@ Tools:
       commands:
         - pydm -m "title=ICL, hutch=ICL, config=/reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/config/icl/icl-sds.json" --hide-nav-bar --hide-menu-bar /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/sds.py
 
+    Flow Meters:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "BASE=ICL:SDS:SFM" /reg/g/pcds/epics-dev/screens/pydm/sds/senserion-flow-meter.ui
 FEL SIM:
   config:
     cols: 3
