@@ -293,10 +293,6 @@ chemRIXS-Laser:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_cameras.cmd
-    ChemRIXS MODS Power Meters:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_power_meters.cmd
     Timing (FS11):
      type: shell
      commands:
