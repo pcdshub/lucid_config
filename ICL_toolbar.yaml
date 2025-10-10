@@ -14,6 +14,10 @@ Tools:
       commands:
         - pydm -m "title=ICL, hutch=ICL, config=/reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/config/icl/icl-sds.json" --hide-nav-bar --hide-menu-bar /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/sds.py
 
+    Flow Meters:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "BASE=ICL:SDS:SFM" /reg/g/pcds/epics-dev/screens/pydm/sds/senserion-flow-meter.ui
 FEL SIM:
   config:
     cols: 3
@@ -22,10 +26,22 @@ FEL SIM:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-VAC.ui
-    RCC Controls:
+
+    RCC FEL SIM Controls:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM',BASE=ICL:FEL:SIM:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+
+    RCC FEL SIM PUMP:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM PUMP',BASE=ICL:FEL:HPLC:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+
+    RCC-WALL Controls:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='RCC WALL',BASE=ICL:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+
     RCC Outlet:
       type: shell
       commands:

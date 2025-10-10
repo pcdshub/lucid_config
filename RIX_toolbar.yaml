@@ -293,10 +293,6 @@ chemRIXS-Laser:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_cameras.cmd
-    ChemRIXS MODS Power Meters:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/crixs_mods_power_meters.cmd
     Timing (FS11):
      type: shell
      commands:
@@ -314,10 +310,6 @@ chemRIXS-Laser:
       commands:
         - /cds/group/pcds/epics/ioc/common/locker_manager/R0.13.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
     LXT_TTC Tweak:
-      type: shell
-      commands:
-        - /cds/group/pcds/pyps/apps/hutch-python/rix/rixpython /cds/group/pcds/epics-dev/screens/pydm/rix/lxt-txt/launch_gui.py
-    DEV LXT_TTC Tweak:
       type: shell
       commands:
         - /cds/group/pcds/pyps/apps/hutch-python/rix/rixpython /cds/group/pcds/epics-dev/screens/pydm/rix/lxt-txt/launch_gui_dev.py
@@ -514,9 +506,10 @@ qRIXS-Laser:
     Alvium-tt:
      type: shell
      commands:
-       - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m "BASE=RIX:QRIX:ALV:01" /cds/group/pcds/epics-dev/screens/pydm/rix_screens/tt-screens/alviumtt/att.ui
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/alvium_timetool.sh
+#       - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m "BASE=RIX:QRIX:ALV:01" /cds/group/pcds/epics-dev/screens/pydm/rix_screens/tt-screens/alviumtt/att.ui
 
-    DEV LXT_TTC Tweak:
+    LXT_TTC Tweak:
      type: shell
      commands:
        - /cds/group/pcds/pyps/apps/hutch-python/rix/rixpython /cds/group/pcds/epics-dev/screens/pydm/rix/lxt-txt/launch_gui_dev.py
@@ -779,38 +772,37 @@ Tools:
       commands:
         - /reg/g/pcds/epics/ioc/kfe/Leviton/R1.0.0/build/iocBoot/ioc-kfe-pwr-r07/edm-ioc-kfe-pwr-r07.cmd
 
-    QRIX PDU:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/rix/leviton/R1.0.0/build/iocBoot/ioc-rix-pwr-wall-s-r05-01/edm-ioc-rix-pwr-wall-s-r05-01.cmd
+#    QRIX PDU:
+#      type: shell
+#      commands:
+#        - /cds/group/pcds/epics/ioc/rix/leviton/R1.0.0/build/iocBoot/ioc-rix-pwr-wall-s-r05-01/edm-ioc-rix-pwr-wall-s-r05-01.cmd
+
     ATEF-Optics:
       type: shell
       commands:
           - atef config /cds/group/pcds/pyps/apps/atef/config/rix/RIX-Limits.json 
 
-   # EventSequencer:
-   #  type: shell
-   #  commands:
-       #- /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/edm-ioc-rix-eventSequencer.cmd
-   #    - /cds/group/pcds/epics/ioc/rix/eventSeqCfg/R1.0.1/edm-ioc-rix-eventSequencer.cmd
+#    EventSequencer:
+#      type: shell
+#      commands:
+#        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/edm-ioc-rix-eventSequencer.cmd
+#        - /cds/group/pcds/epics/ioc/rix/eventSeqCfg/R1.0.1/edm-ioc-rix-eventSequencer.cmd
 #    BYKIKS Control:
 #     type: shell
 #     commands:
 #       - pydm /cds/group/pcds/epics-dev/jjoshi/ioc/rix/bykiks/bykiks_burst.py
-
-
- #   EVR CAM 01:
- #    type: shell
- #    commands:
- #      - /cds/group/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-01/edm-ioc-rix-evr-01.cmd
- #   EVR CAM 02:
- #    type: shell
- #    commands:
- #      - /cds/group/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-02/edm-ioc-rix-evr-02.cmd
- #   EVR CAM 03:
- #    type: shell
- #    commands:
- #      - /cds/group/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-03/edm-ioc-rix-evr-03.cmd
+#   EVR CAM 01:
+#    type: shell
+#    commands:
+#      - /cds/group/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-01/edm-ioc-rix-evr-01.cmd
+#   EVR CAM 02:
+#    type: shell
+#    commands:
+#      - /cds/group/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-02/edm-ioc-rix-evr-02.cmd
+#   EVR CAM 03:
+#    type: shell
+#    commands:
+#      - /cds/group/pcds/epics/ioc/rix/evr/R1.1.0/build/iocBoot/ioc-rix-evr-03/edm-ioc-rix-evr-03.cmd
 #    Zero Order Beam Test:
 #     type: display
 #     filenames:
@@ -883,3 +875,8 @@ Tools:
      type: shell
      commands:
        - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/system/grafana/d/TqlIHxqWz/l2si-daq?orgId=1&refresh=5s&from=now-5m&to=now&var-instrument=rix&var-partition=All&var-group=All&var-detname=All
+
+    TPR-Statii:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/common/evr-tpr/tprStatii.cmd

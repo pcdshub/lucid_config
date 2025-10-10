@@ -75,7 +75,7 @@ Vacuum:
    TMO Beamline Vacuum:
         type: shell
         commands:
-        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/TMObeamlineV7.ui
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/TMObeamlineV6.ui
    #GasJet Test:
         #type: shell
         #commands:
@@ -112,7 +112,7 @@ CVMI:
    CVMI PDU:
      type: shell
      commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
 
 LAMP:
   config:
@@ -240,7 +240,7 @@ MRCO:
    MRCO PDU PR10:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-pr10/edm-ioc-tmo-pwr-pr10.cmd
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-pr10/edm-ioc-tmo-pwr-pr10.cmd
 
 DREAM:
   config:
@@ -250,7 +250,7 @@ DREAM:
    DREAM Vacuum:
         type: shell
         commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES.ui
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES_Second.ui
 
    Leybold IM540 Controller:
      type: shell
@@ -261,6 +261,11 @@ DREAM:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smarpod/build/iocBoot/ioc-tmo-smarpod-01/edm-ioc-tmo-smarpod-01.cmd
+   
+#   SmarPod Manual:
+#     type: shell
+#     commands:
+#       - /cds/group/pcds/epics-dev/aberges/ioc/tmo/smaract/screens/launchgui-ioc-tmo-mcs2-03.cmd
 
    Chamber RGA:
      type: shell
@@ -305,7 +310,7 @@ DREAM:
    DREAM PDU:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-dream/edm-ioc-tmo-pwr-dream.cmd
+        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-dream/edm-ioc-tmo-pwr-dream.cmd
 
    SL3K4:
       type: shell
@@ -367,6 +372,10 @@ Laser:
      commands:
      #  - /cds/group/pcds/epics-dev/tjohnson/screens/lm1k4_qadc.cmd
         - /cds/group/pcds/epics/ioc/las/qadc/R1.4.3/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
+   LM2K4 QADC:
+     type: shell
+     commands:
+        - /cds/group/pcds/epics-dev/cpino/ioc/las/ioc-las-qadc/build/iocBoot/ioc-lm2k4-qadc134-01/pydm-ioc-lm2k4-qadc134-01.cmd
 
    OPCPA Laser:
      type: shell
@@ -529,7 +538,7 @@ HV:
      type: shell
      redirectCommandOutput: true
      commands:
-       - /reg/g/pcds/epics-dev/tparas/ioc/tmo/ioc-tmo-pdu/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-r02/edm-ioc-tmo-pwr-r02.cmd
 
    MPOD PDU R03:
      type: shell

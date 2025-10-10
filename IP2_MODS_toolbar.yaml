@@ -34,10 +34,10 @@ Digitizers:
       commands:
         - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-pgpWave8/build/iocBoot/ioc-las-ip2-pgpw8-01/edm-ioc-las-ip2-pgpw8-01.cmd
 
-#     QADC Digitizer:
-#       type: shell
-#       commands:
-#         - 
+    QADC Digitizer:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/cpino/ioc/las/ioc-las-qadc/build/iocBoot/ioc-lm2k4-qadc134-01/pydm-ioc-lm2k4-qadc134-01.cmd
 
 Tools:
   config:

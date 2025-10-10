@@ -22,6 +22,12 @@ LCLS:
 Beamline:
   config:
     cols: 4
+  buttons:
+    XPP Beamline Vacuum:
+      type: shell
+      commands:
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui    
+
 
 Laser:
   config:
@@ -36,4 +42,37 @@ Detectors:
 Users:
   config:
     cols: 4
+
+
+Tools:
+  config:
+    cols: 4
+  buttons:
+    PDUs:
+      type: shell
+      commands:
+        - typhos xpp_pwr_r04_01 --display-type detailed
+        - typhos xpp_pwr_r04_02 --display-type detailed
+        - typhos xpp_pwr_r05_01 --display-type detailed
+        - typhos xpp_pwr_r05_02 --display-type detailed
+        - typhos xpp_pwr_r06_01 --display-type detailed
+        - typhos xpp_pwr_r07_01 --display-type detailed
+        - typhos xpp_pwr_r07_02 --display-type detailed
+        - typhos xpp_pwr_r08_01 --display-type detailed
+      titles:
+        - PWR-R04-01
+        - PWR-R04-02
+        - PWR-R05-01
+        - PWR-R05-02
+        - PWR-R06-01
+        - PWR-R07-01
+        - PWR-R07-02
+        - PWR-R08-01
+  
+    XPP ICT Controls:
+      type: display
+      filenames:
+        - /reg/g/pcds/epics-dev/screens/pydm/xpp/ict-screens/xpp-ict-screens.ui
+
+      
 
