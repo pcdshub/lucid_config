@@ -218,6 +218,12 @@ Tools:
       commands:
         - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/lfe_screens/ict-screens/lfe-ict-screen.ui
 
-
-
-
+Testing:
+  config:
+    cols: 2
+  buttons:
+    DCCM Dev GUI (MFX):
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/lfe/dccm-dev-gui.sh
