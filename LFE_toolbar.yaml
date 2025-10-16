@@ -222,7 +222,7 @@ Testing:
   config:
     cols: 2
   buttons:
-    DCCM Dev GUI (MFX):
+    DCCM Dev GUI:
       type: shell
       redirectCommandOutput: true
       commands:
