@@ -179,10 +179,10 @@ MRCO:
     cols: 2
 
   buttons:
-   MRCO Vacuum:
-     type: shell
-     commands:
-     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacV2.ui
+#   MRCO Vacuum:
+#     type: shell
+#     commands:
+#     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacV2.ui
 
    MRCO smaract:
      type: shell
