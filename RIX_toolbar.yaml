@@ -635,6 +635,10 @@ TXAS-FZP:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
+    FZP TXAS LED Controls:
+     type: shell
+     commands:
+       - pydm /reg/g/pcds/epics-dev/rnazir/ioc/test/test_led.ui
     SP2K2 TXAS YAG FOCUS:
      type: shell
      commands:
