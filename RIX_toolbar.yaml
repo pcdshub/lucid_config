@@ -664,7 +664,8 @@ Tools:
     grubber:
      type: shell
      commands:
-       - eloggrabber -s grubber_script
+#       - eloggrabber -s grubber_script
+       - eloggrabber -s grubber_script2
 
     Cam Viewer:
       type: shell
