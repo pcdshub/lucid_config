@@ -171,6 +171,11 @@ Lasers:
       commands:
         - xfreerdp /u:customer /p:121234 /v:laptop-ued-ics-02 /w:1366 /h:768 /dynamic-resolution -sec-nla +clipboard
 
+    Shutters:
+      type: display
+      filenames:
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/las_shutter.ui
+
 Webcams:
   config:
     cols: 4

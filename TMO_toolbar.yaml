@@ -632,6 +632,11 @@ Tools:
      commands:
        - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R1.2.2/build/iocBoot/ioc-tmo-hmp-test/edm-ioc-tmo-hmp-test.cmd
 
+   RohdeShwarz2:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/kborne/power-supply/ioc-tmo-RohdeSchwarzHMP/build/iocBoot/ioc-tmo-hmp-test_02/edm-ioc-tmo-hmp-test_02.cmd
+
    IP1 GC-HAZARD:
      type: shell
      commands:
