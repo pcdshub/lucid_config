@@ -234,7 +234,7 @@ chemRIXS:
     EPIX-M MPOD:
      type: shell
      commands:
-       - bash -c 'cd /cds/group/pcds/epics/ioc/common/mpod/R4.0.0 && edm -x -eolc -m PRE=RIX:EPIXM:MPD /cds/group/pcds/epics/ioc/common/mpod/R4.0.0/mpodScreens/two-modules-h8l4.edl'
+       - bash -c 'cd /cds/group/pcds/epics-dev/kaushikm/ioc/common/mpod && edm -x -eolc -m PRE=RIX:EPIXM:MPD mpodScreens/two-modules-h8-2gap-l4.edl'
 
     EPIX-M Interlock:
      type: shell
@@ -638,7 +638,7 @@ TXAS-FZP:
     FZP TXAS LED Controls:
      type: shell
      commands:
-       - pydm /reg/g/pcds/epics-dev/rnazir/ioc/test/test_led.ui
+       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui
     SP2K2 TXAS YAG FOCUS:
      type: shell
      commands:
