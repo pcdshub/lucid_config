@@ -58,10 +58,12 @@ Tools:
     PDUs:
       type: shell
       commands:
+        - typhos xpp_pwr_r01_01 --display-type detailed
+        - typhos xpp_pwr_r02_01 --display-type detailed
+        - typgos xpp_pwr_r03_01 --display-type detailed
         - typhos xpp_pwr_r04_01 --display-type detailed
         - typhos xpp_pwr_r04_02 --display-type detailed
         - typhos xpp_pwr_r05_01 --display-type detailed
-        - typhos xpp_pwr_r05_02 --display-type detailed
         - typhos xpp_pwr_r06_01 --display-type detailed
         - typhos xpp_pwr_r07_01 --display-type detailed
         - typhos xpp_pwr_r07_02 --display-type detailed
