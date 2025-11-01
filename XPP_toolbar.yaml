@@ -69,10 +69,12 @@ Tools:
         - typhos xpp_pwr_r07_02 --display-type detailed
         - typhos xpp_pwr_r08_01 --display-type detailed
       titles:
+        - PWR-R01-01
+        - PWR-R02-01
+        - PWR-R03-01
         - PWR-R04-01
         - PWR-R04-02
         - PWR-R05-01
-        - PWR-R05-02
         - PWR-R06-01
         - PWR-R07-01
         - PWR-R07-02
