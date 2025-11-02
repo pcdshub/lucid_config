@@ -72,7 +72,7 @@ Timing:
    Fiber Oven:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/workarea/fiberOven/fiberOven-git/fiberOvenScreens/fiberOven.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/fiberOven/ioc-las-fiberOven/edm.cmd
    Bay 4 PDU:
       type: shell
       commands:
