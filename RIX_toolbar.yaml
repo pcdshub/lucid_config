@@ -234,7 +234,7 @@ chemRIXS:
     EPIX-M MPOD:
      type: shell
      commands:
-       - bash -c 'cd /cds/group/pcds/epics-dev/kaushikm/ioc/common/mpod && edm -x -eolc -m PRE=RIX:EPIXM:MPD mpodScreens/two-modules-h8-2gap-l4.edl'
+       - bash -c 'cd /cds/group/pcds/epics/ioc/common/mpod/R5.1.0 && edm -x -eolc -m PRE=RIX:EPIXM:MPD mpodScreens/two-modules-h8-2gap-l4.edl'
 
     EPIX-M Interlock:
      type: shell
