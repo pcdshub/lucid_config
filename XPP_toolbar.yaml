@@ -26,7 +26,7 @@ Beamline:
     XPP Beamline Vacuum:
       type: shell
       commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui    
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
     XPP-PCI-02:
       type: shell
       commands:
@@ -35,6 +35,15 @@ Beamline:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+    LODCM:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-01/edm-ioc-xpp-lodcm-ls336-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-02/edm-ioc-xpp-lodcm-ls336-02.cmd
+      titles:
+        - LakeShore - Crystal 1
+        - LakeShore - Crystal 2 
+
 
 Laser:
   config:

@@ -241,6 +241,10 @@ chemRIXS:
      commands:
        - /cds/group/pcds/epics-dev/kaushikm/ioc/rix/interlock/build/iocBoot/ioc-rix-epixm-interlock/pydm-ioc-rix-epixm-interlock.cmd
 
+    EPIX-M:
+      type: shell
+      commands:
+        - bash -c 'cd /cds/group/pcds/epics-dev/kaushikm/ioc/common/epix && edm -x -eolc -m "PRE=RIX:EPIXM:,MON=DRP:EPIX:CMP055:01,NMOD=01,PREM=RIX:EPIXM,ALVCHN=301,DLVCHN=300,HVCHN=000" epixScreens/det_epixm_ctrl.edl'
        
     Illumination:
      type: shell
@@ -660,12 +664,16 @@ Tools:
      commands:
        - /cds/group/pcds/pyps/config/kfe/iocmanager.sh
 
-
     grubber:
-     type: shell
-     commands:
-#       - eloggrabber -s grubber_script
-       - eloggrabber -s grubber_script2
+      type: shell
+      commands:
+        - eloggrabber -s "grubber_script2 All"
+        - eloggrabber -s "grubber_script2 crix"
+        - eloggrabber -s "grubber_script2 qrix"
+      titles:
+        - All
+        - chemRIX
+        - qRIX
 
     Cam Viewer:
       type: shell
