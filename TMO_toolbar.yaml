@@ -16,6 +16,10 @@ LCLS:
       type: shell
       commands:
         - /cds/group/pcds/setup/pmps-launcher.sh KFE
+    TMO PMPS Diagnostics:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tongju/GUI/setup/pmps-launcher.sh KFE
     Lightpath:
       type: shell
       redirectCommandOutput: false
