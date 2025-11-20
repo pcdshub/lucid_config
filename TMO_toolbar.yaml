@@ -16,10 +16,10 @@ LCLS:
       type: shell
       commands:
         - /cds/group/pcds/setup/pmps-launcher.sh KFE
-    TMO PMPS Diagnostics:
+    TMO PMPS Transmission Adjust:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tongju/GUI/setup/pmps-launcher.sh KFE
+        - pydm /reg/g/pcds/epics-dev/tongju/GUI/tmo_trans_ovrrd.ui
     Lightpath:
       type: shell
       redirectCommandOutput: false
@@ -639,7 +639,7 @@ Tools:
    RohdeShwarz2:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/kborne/power-supply/ioc-tmo-RohdeSchwarzHMP/build/iocBoot/ioc-tmo-hmp-test_02/edm-ioc-tmo-hmp-test_02.cmd
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.1.0/build/iocBoot/ioc-tmo-ip2-hmp-02/edm-ioc-tmo-ip2-hmp-02.cmd
 
    IP1 GC-HAZARD:
      type: shell

@@ -344,6 +344,10 @@ LHN Bay 3:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
+   TIC Test (#6):
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/sr620/ioc-las-sr620/build/iocBoot/ioc-las-lhn-sr620-06/edm-ioc-las-lhn-sr620-06.cmd
 
 
 LHN Bay 2: 
