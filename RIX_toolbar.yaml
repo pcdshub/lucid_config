@@ -244,7 +244,7 @@ chemRIXS:
     EPIX-M:
       type: shell
       commands:
-        - bash -c 'cd /cds/group/pcds/epics-dev/kaushikm/ioc/common/epix && edm -x -eolc -m "PRE=RIX:EPIXM:,MON=DRP:EPIX:CMP055:01,MONIOC=IOC:DRP:EPIX:CMP055,NMOD=01,PREM=RIX:EPIXM,ALVCHN=301,DLVCHN=300,HVCHN=000" epixScreens/det_epixm_ctrl.edl'
+        - /cds/group/pcds/epics/ioc/rix/epix/R2.3.0/build/iocBoot/ioc-rix-epixm/edm-ioc-rix-epixm.cmd
        
     Illumination:
      type: shell
