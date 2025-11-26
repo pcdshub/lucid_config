@@ -183,7 +183,7 @@ Radiation Monitoring:
     Radiation Controls:
         type: shell
         commands:
-            - /reg/g/pcds/epics/ioc/fee/dosfet/R0.0.11/current/children/build/iocBoot/ioc-fee-dosfet-01/edm-ioc-fee-dosfet-01.cmd
+            - /reg/g/pcds/epics/ioc/fee/dosfet/R1.0.0/children/build/iocBoot/ioc-fee-dosfet-01/edm-ioc-fee-dosfet-01.cmd
     Grafana Dash:
         type: shell
         commands:
