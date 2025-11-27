@@ -177,6 +177,11 @@ Lasers:
       filenames:
         - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/las_shutter.ui
 
+    Laser Room SDG:
+      type: display
+      filenames:
+        - /cds/group/pcds/epics/ioc/common/SDG_Elite/R2.0.1/children/build/iocBoot/ioc-ued-sdg-01/pydm-ioc-ued-sdg-01.cmd
+
 Webcams:
   config:
     cols: 4
