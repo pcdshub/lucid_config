@@ -179,6 +179,10 @@ chemRIXS:
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/motion-screens/chemrixDpaddle/chemrixDpaddle.sh
        #- /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_dpaddle.cmd
+    Diag Paddle (New):
+     type: display
+     filenames:
+       - /cds/home/k/kaushikm/diagpaddle.ui
     Point Detector:
      type: shell
      commands:

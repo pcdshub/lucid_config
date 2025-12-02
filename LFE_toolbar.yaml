@@ -49,7 +49,7 @@ Instrumentation:
     Gas Detector Instrumentation:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/rajan-01/screens/launch_gdet_edm.sh
+          - /reg/g/pcds/epics/screens/edm/lfe/launch_gdet_edm.sh
 #    AT1L0-SOLID Instrumentation:
 #        type: shell
 #        commands:
