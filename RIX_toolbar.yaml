@@ -175,14 +175,9 @@ chemRIXS:
         - /reg/g/pcds/epics/ioc/rix/tprStandalone/R1.2.1/build/iocBoot/ioc-crix-tpr3/edm-ioc-crix-tpr3.cmd
 
     Diag Paddle:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/motion-screens/chemrixDpaddle/chemrixDpaddle.sh
-       #- /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_dpaddle.cmd
-    Diag Paddle (New):
      type: display
      filenames:
-       - /cds/home/k/kaushikm/diagpaddle.ui
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/motion-screens/chemrixDpaddle/diagpaddle.ui
     Point Detector:
      type: shell
      commands:
@@ -256,9 +251,6 @@ chemRIXS:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_illumination.cmd
 
     SVLS:
-      #type: shell
-      #commands:
-      #  - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/vls/svls.sh
       type: display
       filenames:
        - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/vls/svls.ui
