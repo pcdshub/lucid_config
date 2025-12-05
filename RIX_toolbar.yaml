@@ -136,7 +136,7 @@ PAX:
     Omicron:
      type: shell
      commands:
-       - vncviewer 172.21.46.201
+       - ssh rix-control "vncviewer 172.21.46.201"
 
 
 
@@ -280,6 +280,10 @@ chemRIXS:
      commands:
        - /cds/group/pcds/epics/ioc/common/upscale/R1.0.0/children/build/iocBoot/ioc-crix-upscale/pydm-ioc-crix-upscale.cmd
 
+    Yano-Laptop:
+     type: shell
+     commands:
+       - ssh rix-control "vncviewer 172.21.46.51"
 
 chemRIXS-Laser:
   config:
@@ -369,9 +373,10 @@ chemRIXS-SDS:
         - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m 'hutch=RIX' /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
 
     RCC Outlet:
-      type: shell
-      commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "pv=CRIX:SDS:VICI:01,valve=RCC-Outlet" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/4port-vici-valve-clockface.py
+      type: display
+      filenames:
+          - /cds/home/j/jozamudi/dev/rix/sds/4PortDC/4PortValveDC2.ui
+          #- pydm --hide-nav-bar --hide-menu-bar -m "pv=CRIX:SDS:VICI:01,valve=RCC-Outlet" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/4port-vici-valve-clockface.py
     Liquids CryoPump:
       type: display
       filenames:
@@ -501,7 +506,7 @@ qRIXS-Laser:
     LeCroy:
      type: shell
      commands:
-       - vncviewer 172.21.46.100
+       - ssh rix-control "vncviewer 172.21.46.100"
 
     Alvium-tt:
      type: shell

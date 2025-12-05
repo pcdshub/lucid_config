@@ -312,6 +312,11 @@ Tools:
      commands:
        - StripTool
 
+    UV feedback:
+     type: shell
+     commands:
+       - /cds/home/opr/uedopr/cjd/uv_feedback.py
+
 
     grubber:
      type: shell
