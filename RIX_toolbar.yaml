@@ -175,9 +175,10 @@ chemRIXS:
         - /reg/g/pcds/epics/ioc/rix/tprStandalone/R1.2.1/build/iocBoot/ioc-crix-tpr3/edm-ioc-crix-tpr3.cmd
 
     Diag Paddle:
-     type: display
-     filenames:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/motion-screens/chemrixDpaddle/diagpaddle.ui
+      type: display
+      filenames:
+        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/motion-screens/chemrixDpaddle/diagpaddle.ui
+
     Point Detector:
      type: shell
      commands:

@@ -85,6 +85,10 @@ Timing:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
+   Bay 2 Scope:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-dso4000-03/edm-ioc-las-dso4000-03.cmd
    PFTS Manager Simulation:
       type: shell
       commands:
