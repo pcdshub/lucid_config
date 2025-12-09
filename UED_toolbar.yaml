@@ -271,7 +271,30 @@ Tools:
     camViewer:
       type: shell
       commands:
-        - camViewer
+        - camViewer -c ued-gige-01
+        - camViewer -c ued-andor-01
+        - camViewer -c ued-andor-03
+        - camViewer -c ued-alv-01
+        - camViewer -c ued-gige-sample-bottom
+        - camViewer -c ued-gige-sample-back
+        - camViewer -c ued-gige-sample-front
+        - camViewer -c ued-asar03
+        - camViewer -c ued-asar04
+        - camViewer -c ued-asps08
+        - camViewer -c ued-asps04
+      titles:
+        - ued-gige-01
+        - ued-andor-01
+        - ued-andor-03
+        - ued-alv-01
+        - ued-gige-sample-bottom
+        - ued-gige-sample-back
+        - ued-gige-sample-front
+        - ued-asar03
+        - ued-asar04
+        - ued-asps08
+        - ued-asps04
+
 
     Cam Viewer - Config:
       type: shell
@@ -317,6 +340,10 @@ Tools:
      commands:
        - /cds/home/opr/uedopr/cjd/uv_feedback.py
 
+    Klystron:
+     type: shell
+     commands:
+       - /cds/home/opr/uedopr/bin/start_scandi
 
     grubber:
      type: shell
@@ -363,6 +390,11 @@ Tools:
         type: shell
         commands:
           - /cds/group/pcds/epics-dev/screens/pydm/ued/scripts/xpmpva.cmd
+
+    Script Launcher:
+        type: shell
+        commands:
+          - /cds/home/opr/uedopr/cjd/ScriptLauncher.py
 
 
 
