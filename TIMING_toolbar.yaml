@@ -72,7 +72,7 @@ Timing:
    Fiber Oven:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/workarea/fiberOven/fiberOven-git/fiberOvenScreens/fiberOven.cmd
+        - /cds/group/pcds/epics/ioc/las/fiberOven/R3.2.1/edm.cmd
    Bay 4 PDU:
       type: shell
       commands:
@@ -85,6 +85,10 @@ Timing:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
+   Bay 2 Scope:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-dso4000-03/edm-ioc-las-dso4000-03.cmd
    PFTS Manager Simulation:
       type: shell
       commands:
@@ -301,7 +305,7 @@ LHN Bay 3:
    Bay 3 Locker HLA: 
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.1/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
  #       - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
    Bay 3 ATCA Laser Locker: 
       type: shell
@@ -344,6 +348,10 @@ LHN Bay 3:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
+   TIC Test (#6):
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/sr620/ioc-las-sr620/build/iocBoot/ioc-las-lhn-sr620-06/edm-ioc-las-lhn-sr620-06.cmd
 
 
 LHN Bay 2: 
@@ -365,7 +373,7 @@ LHN Bay 2:
    Bay 2 Locker HLA: 
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.0/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.1/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
 #        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
    Bay 2 ATCA Laser Locker: 
       type: shell

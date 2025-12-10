@@ -122,7 +122,8 @@ Detector:
     EPIX:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/opperman/ued/ioc-ued-epix/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
+        - /cds/group/pcds/epics-dev/ddamiani/ioc/ued/epix/current/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
+#        - /cds/group/pcds/epics-dev/opperman/ued/ioc-ued-epix/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
     EPIX Interlock:
      type: shell
      commands:
@@ -170,6 +171,16 @@ Lasers:
       type: shell
       commands:
         - xfreerdp /u:customer /p:121234 /v:laptop-ued-ics-02 /w:1366 /h:768 /dynamic-resolution -sec-nla +clipboard
+
+    Shutters:
+      type: display
+      filenames:
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/las_shutter.ui
+
+    Laser Room SDG:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/common/SDG_Elite/R2.0.1/children/build/iocBoot/ioc-ued-sdg-01/pydm-ioc-ued-sdg-01.cmd
 
 Webcams:
   config:
@@ -260,7 +271,32 @@ Tools:
     camViewer:
       type: shell
       commands:
-        - camViewer
+        - camViewer -c ued-gige-01
+        - camViewer -c ued-andor-01
+        - camViewer -c ued-andor-03
+        - camViewer -c ued-alv-01
+        - camViewer -c ued-gige-sample-bottom
+        - camViewer -c ued-gige-sample-back
+        - camViewer -c ued-gige-sample-front
+        - camViewer -c ued-asar03
+        - camViewer -c ued-asar04
+        - camViewer -c ued-asps08
+        - camViewer -c ued-asps04
+        - camViewer -c ued-gige-vcc
+      titles:
+        - ued-gige-01
+        - ued-andor-01
+        - ued-andor-03
+        - ued-alv-01
+        - ued-gige-sample-bottom
+        - ued-gige-sample-back
+        - ued-gige-sample-front
+        - ued-asar03
+        - ued-asar04
+        - ued-asps08
+        - ued-asps04
+        - ued-gige-vcc
+
 
     Cam Viewer - Config:
       type: shell
@@ -301,6 +337,15 @@ Tools:
      commands:
        - StripTool
 
+    UV feedback:
+     type: shell
+     commands:
+       - /cds/home/opr/uedopr/cjd/uv_feedback.py
+
+    Klystron:
+     type: shell
+     commands:
+       - /cds/home/opr/uedopr/bin/start_scandi
 
     grubber:
      type: shell
@@ -347,6 +392,11 @@ Tools:
         type: shell
         commands:
           - /cds/group/pcds/epics-dev/screens/pydm/ued/scripts/xpmpva.cmd
+
+    Script Launcher:
+        type: shell
+        commands:
+          - /cds/home/opr/uedopr/cjd/ScriptLauncher.py
 
 
 

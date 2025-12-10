@@ -26,8 +26,39 @@ Beamline:
     XPP Beamline Vacuum:
       type: shell
       commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui    
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
+    
+    XPP-PCI-02:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+    
+    XPP-PCI-01:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+    
+    LODCM Temperature:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-01/edm-ioc-xpp-lodcm-ls336-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-02/edm-ioc-xpp-lodcm-ls336-02.cmd
+      titles:
+        - LakeShore - Crystal 1
+        - LakeShore - Crystal 2
 
+    LODCM Motion:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_T1.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_D1.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_T2.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_D2.sh
+      titles:
+        - Tower 1
+        - Diag 1
+        - Tower 2
+        - Diag 2
 
 Laser:
   config:
@@ -51,19 +82,23 @@ Tools:
     PDUs:
       type: shell
       commands:
+        - typhos xpp_pwr_r01_01 --display-type detailed
+        - typhos xpp_pwr_r02_01 --display-type detailed
+        - typgos xpp_pwr_r03_01 --display-type detailed
         - typhos xpp_pwr_r04_01 --display-type detailed
         - typhos xpp_pwr_r04_02 --display-type detailed
         - typhos xpp_pwr_r05_01 --display-type detailed
-        - typhos xpp_pwr_r05_02 --display-type detailed
         - typhos xpp_pwr_r06_01 --display-type detailed
         - typhos xpp_pwr_r07_01 --display-type detailed
         - typhos xpp_pwr_r07_02 --display-type detailed
         - typhos xpp_pwr_r08_01 --display-type detailed
       titles:
+        - PWR-R01-01
+        - PWR-R02-01
+        - PWR-R03-01
         - PWR-R04-01
         - PWR-R04-02
         - PWR-R05-01
-        - PWR-R05-02
         - PWR-R06-01
         - PWR-R07-01
         - PWR-R07-02

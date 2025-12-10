@@ -25,9 +25,9 @@ FEL SIM:
     RCC VAC:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:VICI:01,valve=RCC-Outlet" /cds/home/j/jozamudi/dev/icl/rcc/RCC-VAC.ui
+        - pydm --hide-nav-bar --hide-menu-bar /cds/home/j/jozamudi/dev/icl/rcc/RCC-VAC.ui
 
-    RCC FEL SIM Controls:
+    RCC FEL SIM:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM',BASE=ICL:FEL:SIM:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
@@ -37,7 +37,7 @@ FEL SIM:
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM PUMP',BASE=ICL:FEL:HPLC:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
 
-    RCC-WALL Controls:
+    RCC WALL:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='RCC WALL',BASE=ICL:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui

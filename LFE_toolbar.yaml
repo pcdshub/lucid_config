@@ -49,7 +49,7 @@ Instrumentation:
     Gas Detector Instrumentation:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/rajan-01/screens/launch_gdet_edm.sh
+          - /reg/g/pcds/epics/screens/edm/lfe/launch_gdet_edm.sh
 #    AT1L0-SOLID Instrumentation:
 #        type: shell
 #        commands:
@@ -175,6 +175,12 @@ LFE-OPTICS:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/lfe/homs_overview/launcher.sh
 
+    DCCM:
+      type: shell
+      commands:
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/lfe/dccm_hutch.py
+      
+
 Radiation Monitoring:
  config:
     cols: 3
@@ -183,7 +189,7 @@ Radiation Monitoring:
     Radiation Controls:
         type: shell
         commands:
-            - /reg/g/pcds/epics/ioc/fee/dosfet/R0.0.11/current/children/build/iocBoot/ioc-fee-dosfet-01/edm-ioc-fee-dosfet-01.cmd
+            - /reg/g/pcds/epics/ioc/fee/dosfet/R1.0.0/children/build/iocBoot/ioc-fee-dosfet-01/edm-ioc-fee-dosfet-01.cmd
     Grafana Dash:
         type: shell
         commands:
@@ -217,7 +223,3 @@ Tools:
       redirectCommandOutput: true
       commands:
         - pydm  --hide-nav-bar --hide-menu-bar --hide-status-bar /reg/g/pcds/epics-dev/screens/pydm/lfe_screens/ict-screens/lfe-ict-screen.ui
-
-
-
-

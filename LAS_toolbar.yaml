@@ -165,11 +165,11 @@ Laser Lockers:
    Bay 2 Locker HLA:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.0/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.1/children/build/iocBoot/ioc-lhn-llman-02/edm-ioc-lhn-llman-02.cmd
    Bay 3 Locker HLA:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.0/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
+        - /cds/group/pcds/epics/ioc/common/locker_manager/R0.16.1/children/build/iocBoot/ioc-lhn-llman-01/edm-ioc-lhn-llman-01.cmd
    NEH FS11:
       type: shell
       commands:
@@ -177,8 +177,7 @@ Laser Lockers:
    NEH FS14:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-vitara/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
-        #- /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
    XCS FS4:
       type: shell
       commands:
@@ -363,6 +362,7 @@ SDG's:
       type: shell 
       commands:
         - /cds/group/pcds/epics/ioc/common/SDG_Elite/R1.1.2/children/build/iocBoot/ioc-las-mec-sdg-01/pydm-ioc-las-mec-sdg-01.cmd
+
 
 NEH Beam Transport:
   config:
