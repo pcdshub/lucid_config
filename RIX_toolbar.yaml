@@ -180,21 +180,21 @@ chemRIXS:
         - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/motion-screens/chemrixDpaddle/diagpaddle.ui
 
     Point Detector:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_pointdet.cmd
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/pointdet.ui
     Questar Lens:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_questar.cmd
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/questar.ui
     Questar SmarAct:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrixSmaract.cmd
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/smaract.ui
     Outcoupling Y:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Outcouple.cmd
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/outcouple.ui
     VLS Optics(mrad):
      type: shell
      commands:
@@ -247,9 +247,9 @@ chemRIXS:
         - /cds/group/pcds/epics/ioc/rix/epix/R2.3.0/build/iocBoot/ioc-rix-epixm/edm-ioc-rix-epixm.cmd
        
     Illumination:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/chemrix_illumination.cmd
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/illumination.ui
 
     SVLS:
       type: display
