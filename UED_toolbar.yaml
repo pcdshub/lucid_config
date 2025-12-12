@@ -182,6 +182,11 @@ Lasers:
       commands:
         - /cds/group/pcds/epics/ioc/common/SDG_Elite/R2.0.1/children/build/iocBoot/ioc-ued-sdg-01/pydm-ioc-ued-sdg-01.cmd
 
+    Qmini:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-qmini/build/iocBoot/ioc-ued-spec-01/edm-ioc-ued-spec-01.cmd
+
 Webcams:
   config:
     cols: 4
