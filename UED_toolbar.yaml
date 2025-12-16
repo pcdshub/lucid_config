@@ -403,6 +403,17 @@ Tools:
         commands:
           - /cds/home/opr/uedopr/cjd/ScriptLauncher.py
 
+    Terminal:
+        type: shell
+        commands:
+          - /cds/home/opr/uedopr/cjd/xterm.sh
+
+    h4x0r:
+        type: shell
+        commands:
+          - /cds/home/opr/uedopr/cjd/xterm.sh -fullscreen -fs 36
+        
+
 
 
 Legacy_UED:
