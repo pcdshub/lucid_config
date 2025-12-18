@@ -83,10 +83,10 @@ Tools:
       type: shell
       commands:
         - typhos xpp_pwr_r01_01 --display-type detailed
-        - typhos xpp_pwr_r02_01 --display-type detailed
-        - typgos xpp_pwr_r03_01 --display-type detailed
+        - /reg/g/pcds/epics/ioc/xpp/pdu_snmp/R1.0.0/build/iocBoot/ioc-xpp-pwr-r02-01/edm-ioc-xpp-pwr-r02-01.cmd
+        - /reg/g/pcds/epics/ioc/xpp/pdu_snmp/R1.0.0/build/iocBoot/ioc-xpp-pwr-r03-01/edm-ioc-xpp-pwr-r03-01.cmd
         - typhos xpp_pwr_r04_01 --display-type detailed
-        - typhos xpp_pwr_r04_02 --display-type detailed
+        - /reg/g/pcds/epics/ioc/xpp/pdu_snmp/R1.0.0/build/iocBoot/ioc-xpp-pwr-r04-02/edm-ioc-xpp-pwr-r04-02.cmd
         - typhos xpp_pwr_r05_01 --display-type detailed
         - typhos xpp_pwr_r06_01 --display-type detailed
         - typhos xpp_pwr_r07_01 --display-type detailed
