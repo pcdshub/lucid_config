@@ -28,15 +28,14 @@ Beamline:
       commands:
         - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
     
-    XPP-PCI-02:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
-    
-    XPP-PCI-01:
+    Ion pump controllers:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+      titles:
+        - XPP-PCI-01
+        - XPP-PCI-02
     
     LODCM Temperature:
       type: shell
