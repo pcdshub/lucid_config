@@ -395,7 +395,7 @@ Detectors:
    FZP Image intensifier:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/common/tricatt/R1.0.2/children/build/iocBoot/ioc-tmo-tricam-01/pydm-ioc-tmo-tricam-01.cmd
+       - /reg/g/pcds/epics-dev/kborne/ioc/common/ioc-common-tricatt/children/build/iocBoot/ioc-tmo-tricam-01/pydm-ioc-tmo-tricam-01.cmd
    FZP Expert screen:
      type: shell
      commands:
@@ -746,14 +746,14 @@ Testing:
   config:
     cols: 2
   buttons:
-    TMO QPC 01:
-      type: shell
-      redirectCommandOutput: true
-      commands:
-        - /reg/g/pcds/epics-dev/baljamal/ioc/dev/qpc/children/build/iocBoot/ioc-tmo-vac-pci-01/pydm-ioc-tmo-vac-pci-01.cmd
-
     TMO QPC 02:
       type: shell
       redirectCommandOutput: true
       commands:
-        - /reg/g/pcds/epics-dev/baljamal/ioc/dev/qpc/children/build/iocBoot/ioc-tmo-vac-pci-02/pydm-ioc-tmo-vac-pci-02.cmd
+        - /reg/g/pcds/epics/ioc/tmo/qpc/R1.0.0/build/iocBoot/ioc-tmo-vac-pci-02/pydm-ioc-tmo-vac-pci-02.cmd
+
+    TMO QPC 03:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics/ioc/tmo/qpc/R1.0.0/build/iocBoot/ioc-tmo-vac-pci-03/pydm-ioc-tmo-vac-pci-03.cmd
