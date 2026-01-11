@@ -64,10 +64,20 @@ Laser:
     cols: 4
 
 
+
 Detectors:
   config:
     cols: 4
-
+  buttons:
+    HMP Power Supplies:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-01/edm-ioc-xpp-det-hmp-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-02/edm-ioc-xpp-det-hmp-02.cmd
+      titles:
+        - HMP-01
+        - HMP-02
 
 Users:
   config:
