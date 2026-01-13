@@ -31,11 +31,13 @@ Beamline:
     Ion pump controllers:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
-        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+        - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.1/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
       titles:
-        - XPP-PCI-01
-        - XPP-PCI-02
+        - pci-xpp-01
+        - pci-xpp-02
+        - pci-xrt-01
     
     LODCM Temperature:
       type: shell
