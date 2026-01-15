@@ -28,15 +28,16 @@ Beamline:
       commands:
         - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
     
-    XPP-PCI-02:
+    Ion pump controllers:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
-    
-    XPP-PCI-01:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+        - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.1/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
+      titles:
+        - pci-xpp-01
+        - pci-xpp-02
+        - pci-xrt-01
     
     LODCM Temperature:
       type: shell
@@ -65,10 +66,20 @@ Laser:
     cols: 4
 
 
+
 Detectors:
   config:
     cols: 4
-
+  buttons:
+    HMP Power Supplies:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-01/edm-ioc-xpp-det-hmp-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-02/edm-ioc-xpp-det-hmp-02.cmd
+      titles:
+        - HMP-01
+        - HMP-02
 
 Users:
   config:
@@ -83,10 +94,10 @@ Tools:
       type: shell
       commands:
         - typhos xpp_pwr_r01_01 --display-type detailed
-        - typhos xpp_pwr_r02_01 --display-type detailed
-        - typgos xpp_pwr_r03_01 --display-type detailed
+        - /reg/g/pcds/epics/ioc/xpp/pdu_snmp/R1.0.0/build/iocBoot/ioc-xpp-pwr-r02-01/edm-ioc-xpp-pwr-r02-01.cmd
+        - /reg/g/pcds/epics/ioc/xpp/pdu_snmp/R1.0.0/build/iocBoot/ioc-xpp-pwr-r03-01/edm-ioc-xpp-pwr-r03-01.cmd
         - typhos xpp_pwr_r04_01 --display-type detailed
-        - typhos xpp_pwr_r04_02 --display-type detailed
+        - /reg/g/pcds/epics/ioc/xpp/pdu_snmp/R1.0.0/build/iocBoot/ioc-xpp-pwr-r04-02/edm-ioc-xpp-pwr-r04-02.cmd
         - typhos xpp_pwr_r05_01 --display-type detailed
         - typhos xpp_pwr_r06_01 --display-type detailed
         - typhos xpp_pwr_r07_01 --display-type detailed

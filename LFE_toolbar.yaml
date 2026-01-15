@@ -96,6 +96,11 @@ Vacuum:
         type: shell
         commands:
           - pydm -m DEV=LFE:PWR:R03:01 /reg/g/pcds/epics/ioc/lfe/Leviton/R1.2.0/emb-pip-power-control.ui
+    Pink Line QPC:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.0/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
+
 
 Slits:
   config:
