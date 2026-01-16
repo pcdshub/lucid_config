@@ -618,9 +618,14 @@ TXAS-FZP:
 
   buttons:
     SP2K2 TXAS TAR RX:
-     type: shell
-     commands:
-       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:RX:01'}]"
+      type: shell
+      commands:
+        - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:RX:01'}]"
+
+    SP2K2 TXAS Manipulator:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/txas/txas.sh
 
     AT3K2:
      type: shell
