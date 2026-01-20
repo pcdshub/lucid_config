@@ -407,18 +407,10 @@ Tools:
         commands:
           - /cds/home/opr/uedopr/cjd/ScriptLauncher.py
 
-    Terminal:
+    wave8:
         type: shell
         commands:
-          - /cds/home/opr/uedopr/cjd/xterm.sh
-
-    h4x0r:
-        type: shell
-        commands:
-          - /cds/home/opr/uedopr/cjd/xterm.sh -fullscreen -fs 36
-        
-
-
+          - /reg/g/pcds/epics-dev/iroque/ued/ioc-ued-pgpWave8/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
 
 Legacy_UED:
 
