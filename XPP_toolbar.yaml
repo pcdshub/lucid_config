@@ -119,6 +119,13 @@ Tools:
       type: display
       filenames:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/ict-screens/xpp-ict-screens.ui
-
       
+    Wave8s:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em1l2-pgpw8/edm-ioc-xpp-em1l2-pgpw8.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em2l2-pgpw8/edm-ioc-xpp-em2l2-pgpw8.cmd
+      titles:
+        - EM1L2-WV8
+        - EM2L2-WV8
 
