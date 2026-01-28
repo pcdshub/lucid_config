@@ -332,7 +332,7 @@ chemRIXS-SDS:
     RCC Operation:
       type: shell
       commands:
-        - pydm --hide-nav-bar /reg/g/pcds/epics-dev/screens/pydm/sds/rcc-vac/RCC-Controls.py
+          - pydm --hide-nav-bar -m 'BASE=CRIX:RCC,TITLE=RCC' /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/RCC-Controls.ui
     In Vac LED:
      type: shell
      commands:
