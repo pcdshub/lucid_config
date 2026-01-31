@@ -51,11 +51,13 @@ Beamline:
     LODCM Motion:
       type: shell
       commands:
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/he_lodcm.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_T1.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_D1.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_T2.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_D2.sh
       titles:
+        - LODCM
         - Tower 1
         - Diag 1
         - Tower 2
@@ -80,6 +82,16 @@ Detectors:
       titles:
         - HMP-01
         - HMP-02
+    EPICS detectors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-01/edm-ioc-xpp-alvium-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/andor3Cam/build/iocBoot/ioc-xpp-zyla-01/edm-ioc-xpp-zyla-01.cmd
+      titles:
+        - Alvium-01
+        - Zyla-01
+
 
 Users:
   config:
