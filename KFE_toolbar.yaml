@@ -255,4 +255,14 @@ Tools:
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/n2/launch.sh
 
+HV:
+  config:
+    cols: 2
+  buttons:
+    GMD/XGMD MPOD:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics/ioc/common/isegPower/R1.3.2/children/build/iocBoot/ioc-kfe-mpod-gmd-xgmd/edm-ioc-kfe-mpod-gmd-xgmd.cmd
+
 

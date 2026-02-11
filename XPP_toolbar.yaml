@@ -42,8 +42,8 @@ Beamline:
     LODCM Temperature:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-01/edm-ioc-xpp-lodcm-ls336-01.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-02/edm-ioc-xpp-lodcm-ls336-02.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-01/edm-ioc-xpp-lodcm-ls336-01.cmd
       titles:
         - LakeShore - Crystal 1
         - LakeShore - Crystal 2
@@ -96,6 +96,17 @@ Detectors:
 Users:
   config:
     cols: 4
+  buttons:
+    ATDS Motion:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/atds_base.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/atds_gon.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/atds_sample.sh
+      titles:
+        - ATDS base
+        - ATDS GON
+        - ATDS sample
 
 
 Tools:
