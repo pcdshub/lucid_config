@@ -152,3 +152,16 @@ Tools:
         - EM1L2-WV8
         - EM2L2-WV8
 
+    TPRs:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-01/edm-ioc-xpp-tpr-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-02/edm-ioc-xpp-tpr-02.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-03/edm-ioc-xpp-tpr-03.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-04/edm-ioc-xpp-tpr-04.cmd
+      titles:
+        - cam-01
+        - cam-02
+        - cam-03
+        - wave8
+

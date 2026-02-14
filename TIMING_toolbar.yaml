@@ -7,30 +7,27 @@ General:
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/setup/pydm_lclshome.sh
+    Elog:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/engineering_tools/latest-released/scripts/eloggrabber -e NEH_Laser_Hall_Laser_Systems
     Cam Viewer:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/config/las/camviewer.sh
+        - /reg/g/pcds/pyps/config/las/camviewer.sh
     LAS iocmanager:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/config/las/iocmanager.sh
+        - iocmanager --hutch las
     Striptool:
       type: shell
       commands:
         - StripTool
-    Timechart:
-      type: shell
-      commands:
-        - /cds/group/pcds/pyps/config/las/timechart
     Gateway Home:
       type: shell
       commands:
         - gw
-    Elog:
-      type: shell
-      commands:
-        - /reg/g/pcds/engineering_tools/mec/scripts/eloggrabber
 
 Laser Lockers:
   config:
@@ -65,10 +62,6 @@ Timing:
   config:
     cols: 2
   buttons:
-#    ASC Wave8:
-#       type: shell
-#       commands:
-#         - /cds/home/t/tjohnson/bin/asc-wave8.cmd
    Fiber Oven:
       type: shell
       commands:
@@ -272,19 +265,26 @@ FTL:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
-
-#LHN: 
- # config:
-  #  cols: 2
- # buttons:
- #  Wave8:
-  #    type: shell
-   #   commands:
-    #    - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-lhn-pgpw8-01/edm-ioc-las-lhn-pgpw8-01.cmd
-  # TCBOC ADC:
-   #   type: shell
-    #  commands:
-     #   - /cds/home/t/tjohnson/bin/tcboc_1510_adc.cmd
+   Laser Lab Piezo Driver:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/slice-dhv/build/iocBoot/ioc-las-lln-slice-01/edm-ioc-las-lln-slice-01.cmd
+   Laser Lab ATCA Laser Locker:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
+   Laser Lab Frequency Counter:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/las/agilent5322-git/build/iocBoot/ioc-las-lln-ctr-01/edm-ioc-las-lln-ctr-01.cmd
+   Laser Lab Locker HLA:
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lln-llman-01/edm-ioc-lln-llman-01.cmd
+   Laser Lab TCBOC ADC:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
 
 LHN Bay 3: 
   config:
@@ -410,31 +410,31 @@ LHN Bay 2:
         - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_2.cmd 
 
 
-NEH Laser Lab: 
-  config:
-    cols: 2
-  buttons:
-   Laser Lab Piezo Driver:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/las/slice-dhv/build/iocBoot/ioc-las-lln-slice-01/edm-ioc-las-lln-slice-01.cmd
-   Laser Lab ATCA Laser Locker: 
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
-   Laser Lab Frequency Counter:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/las/agilent5322-git/build/iocBoot/ioc-las-lln-ctr-01/edm-ioc-las-lln-ctr-01.cmd
-   Laser Lab Locker HLA:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lln-llman-01/edm-ioc-lln-llman-01.cmd
+# NEH Laser Lab: 
+#   config:
+#     cols: 2
+#   buttons:
+  # Laser Lab Piezo Driver:
+   #   type: shell
+    #  commands:
+     #   - /cds/home/t/tjohnson/trunk/las/slice-dhv/build/iocBoot/ioc-las-lln-slice-01/edm-ioc-las-lln-slice-01.cmd
+ #  Laser Lab ATCA Laser Locker: 
+  #    type: shell
+   #   commands:
+   #     - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
+ #  Laser Lab Frequency Counter:
+  #    type: shell
+  #    commands:
+   #     - /cds/home/t/tjohnson/trunk/las/agilent5322-git/build/iocBoot/ioc-las-lln-ctr-01/edm-ioc-las-lln-ctr-01.cmd
+ #  Laser Lab Locker HLA:
+  #    type: shell
+  #    commands:
+  #      - /cds/home/t/tjohnson/trunk/common/locker_manager/children/build/iocBoot/ioc-lln-llman-01/edm-ioc-lln-llman-01.cmd
    
-   Laser Lab TCBOC ADC:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
+  # Laser Lab TCBOC ADC:
+  #    type: shell
+  #    commands:
+  #      - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
 
 EVRs:
   config:
