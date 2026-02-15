@@ -107,6 +107,12 @@ Users:
         - ATDS base
         - ATDS GON
         - ATDS sample
+    User Motors:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_1.sh
+      titles:
+        - Dumb motor 01
 
 
 Tools:
