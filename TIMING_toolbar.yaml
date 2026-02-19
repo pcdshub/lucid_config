@@ -104,7 +104,7 @@ Event Timing:
       commands:
         - /cds/group/pcds/epics-dev/tjohnson/screens/timing/daq_seqcodes.sh
 
-Phase Cavities:
+UND:
   config:
     cols: 2
   buttons:
