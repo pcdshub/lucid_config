@@ -91,7 +91,10 @@ Detectors:
       titles:
         - Alvium-01
         - Zyla-01
-
+    MPOD Portable:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-portable-det-mpod-01.cmd
 
 Users:
   config:
