@@ -192,6 +192,11 @@ MRCO:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smaract/build/iocBoot/ioc-tmo-mcs2-02/edm-ioc-tmo-mcs2-02.cmd
+ 
+   MRCO smaract_typhos:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/mrco-screens/mrco-smarAct.cmd
 
    MRCO+SolidChamber Vacuum:
      type: shell
