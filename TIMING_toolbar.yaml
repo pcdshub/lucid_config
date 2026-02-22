@@ -301,7 +301,7 @@ LHN Bay 3:
    Bay 3 Frequency Counter:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/lhn-counter-03.cmd
+        - /reg/g/pcds/epics/ioc/las/agilent5322/R2.0.5/build/iocBoot/ioc-las-lhn-ctr-03/edm-ioc-las-lhn-ctr-03.cmd
    Bay 3 Locker HLA: 
       type: shell
       commands:
