@@ -147,7 +147,7 @@ chemRIXS:
     Vacuum:
       type: display
       filenames:
-        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/chemrixsVac_new_screen.ui
+        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/chemrixsVac_new_screen_v2.ui
 
     Wave8:
       type: shell

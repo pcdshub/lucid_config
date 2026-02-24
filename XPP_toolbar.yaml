@@ -63,6 +63,11 @@ Beamline:
         - Tower 2
         - Diag 2
 
+    Solid Attenuator:
+      type: shell
+      commands:
+        - /cds/home/k/kaushikm/satt.sh
+
 Laser:
   config:
     cols: 4
@@ -94,7 +99,12 @@ Detectors:
     MPOD Portable:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-portable-det-mpod-01.cmd
+        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-prtdet-mpod-01.cmd
+
+    Chiller Portable:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-thermotek/build/iocBoot/ioc-xpp-prtdet-thermotek-01/edm-ioc-xpp-prtdet-thermotek-01.cmd
 
 Users:
   config:
