@@ -100,6 +100,10 @@ Vacuum:
         type: shell
         commands:
           - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.0/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
+    Pink Line PDU:
+        type: shell
+        commands: 
+          - /reg/g/pcds/epics-dev/tparas/ioc/xrt/ioc-xrt-pdu_snmp/build/iocBoot/ioc-xrt-pwr-b101w-r04-01/edm-ioc-xrt-pwr-b101w-r04-01.cmd
 
 
 Slits:
