@@ -40,8 +40,7 @@ FEL SIM:
     RCC WALL:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='RCC WALL',BASE=ICL:RCC, PCM=ICL:SDS:RCC:PCM:A" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/Pumpless-RCC-Controls.ui
-
+        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='RCC WALL',BASE=ICL:RCC:PUMP, PCM=ICL:SDS:RCC:PCM:A" /cds/home/j/jozamudi/dev/icl/rcc/RCC-PUMP.ui
     RCC Outlet:
       type: shell
       commands:
