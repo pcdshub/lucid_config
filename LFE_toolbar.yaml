@@ -103,7 +103,7 @@ Vacuum:
     Pink Line PDU:
         type: shell
         commands: 
-          - /reg/g/pcds/epics-dev/tparas/ioc/xrt/ioc-xrt-pdu_snmp/build/iocBoot/ioc-xrt-pwr-b101w-r04-01/edm-ioc-xrt-pwr-b101w-r04-01.cmd
+          - typhos xrt_pwr_101w_r04_01 --display-type detailed
 
 
 Slits:
