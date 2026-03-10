@@ -292,6 +292,7 @@ Tools:
         - camViewer -c ued-asps08
         - camViewer -c ued-asps04
         - camViewer -c ued-gige-vcc
+        - camViewer -c ued-gige-thz-sample
       titles:
         - ued-gige-01
         - ued-andor-01
@@ -305,6 +306,7 @@ Tools:
         - ued-asps08
         - ued-asps04
         - ued-gige-vcc
+        - ued-gige-thz-sample
 
 
     Cam Viewer - Config:
