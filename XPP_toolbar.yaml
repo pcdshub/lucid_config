@@ -110,6 +110,13 @@ Users:
   config:
     cols: 4
   buttons:
+    LIB SmarAct:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/smaract/build/iocBoot/ioc-xpp-mcs2-01/launchgui-ioc-xpp-mcs2-01.cmd
+      titles:
+        - LIB SmarAct
     ATDS Motion:
       type: shell
       commands:
@@ -165,9 +172,11 @@ Tools:
     Wave8s:
       type: shell
       commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-sp1l2-pgpw8/edm-ioc-xpp-sp1l2-pgpw8.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em1l2-pgpw8/edm-ioc-xpp-em1l2-pgpw8.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em2l2-pgpw8/edm-ioc-xpp-em2l2-pgpw8.cmd
       titles:
+        - SP1L2-WV8
         - EM1L2-WV8
         - EM2L2-WV8
 
