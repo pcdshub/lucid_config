@@ -639,12 +639,18 @@ Tools:
    RohdeShwarzNGP824:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R1.2.2/build/iocBoot/ioc-tmo-hmp-test/edm-ioc-tmo-hmp-test.cmd
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.2.0/build/iocBoot/ioc-tmo-ip1-hmp-01/edm-ioc-tmo-ip1-hmp-01.cmd
 
    RohdeShwarz2:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.1.0/build/iocBoot/ioc-tmo-ip2-hmp-02/edm-ioc-tmo-ip2-hmp-02.cmd
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.2.0/build/iocBoot/ioc-tmo-ip2-hmp-02/edm-ioc-tmo-ip2-hmp-02.cmd
+
+
+   RohdeShwarz3:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.2.0/build/iocBoot/ioc-tmo-hmp-03/edm-ioc-tmo-hmp-03.cmd
 
    IP1 GC-HAZARD:
      type: shell
