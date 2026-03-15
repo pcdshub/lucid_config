@@ -66,12 +66,20 @@ Beamline:
     Solid Attenuator:
       type: shell
       commands:
-        - /cds/home/k/kaushikm/satt.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
 
 Laser:
   config:
     cols: 4
-
+  buttons:
+    SmarAct:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/smaract/build/iocBoot/ioc-xpp-mcs2-las-01/launchgui-ioc-xpp-mcs2-las-01.cmd
+      titles:
+        - xpp-mcs2-las-01
+ 
 
 
 Detectors:
