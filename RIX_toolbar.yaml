@@ -120,7 +120,6 @@ Beamline:
     #  filenames:
     #    - /cds/group/pcds/epics/ioc/common/thermocon/R2.0.0/thermoconScreens/thermocon.ui
 
-
 PAX:
   config:
     cols: 3
