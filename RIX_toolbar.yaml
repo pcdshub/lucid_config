@@ -119,6 +119,10 @@ Beamline:
     #  type: display
     #  filenames:
     #    - /cds/group/pcds/epics/ioc/common/thermocon/R2.0.0/thermoconScreens/thermocon.ui
+    PPSTP:
+      type: shell
+      commands:
+        - /cds/home/opr/rixopr/bin/PPSTouchPanel 
 
 PAX:
   config:
