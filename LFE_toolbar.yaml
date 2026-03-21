@@ -73,7 +73,7 @@ Instrumentation:
     EM3L0 Wave 8: 
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/mcabral/ioc-lfe-pgpWave8/build/iocBoot/ioc-lfe-pgpw8-01/edm-ioc-lfe-pgpw8-01.cmd
+          - /cds/group/pcds/epics/ioc/lfe/pgpWave8/R3.0.1/build/iocBoot/ioc-lfe-em3l0-pgpw8/edm-ioc-lfe-em3l0-pgpw8.cmd
 
 Vacuum:
   config:
