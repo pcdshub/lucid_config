@@ -187,7 +187,10 @@ MBES:
       type: shell
       commands:
         - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mbesVac.ui 
-
+    MBES Motion:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/rnazir/ioc/screens/mbes.sh
     MBES Variable Leak Valve:
       type: shell
       commands:
