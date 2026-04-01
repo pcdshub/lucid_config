@@ -183,10 +183,12 @@ Tools:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-sp1l2-pgpw8/edm-ioc-xpp-sp1l2-pgpw8.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em1l2-pgpw8/edm-ioc-xpp-em1l2-pgpw8.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em2l2-pgpw8/edm-ioc-xpp-em2l2-pgpw8.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-usr-pgpw8-01/edm-ioc-xpp-usr-pgpw8-01.cmd
       titles:
         - SP1L2-WV8
         - EM1L2-WV8
         - EM2L2-WV8
+        - USR-WV8-01
 
     TPRs:
       type: shell
