@@ -93,8 +93,8 @@ Detectors:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-01/edm-ioc-xpp-det-hmp-01.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-02/edm-ioc-xpp-det-hmp-02.cmd
       titles:
-        - HMP-01
-        - HMP-02
+        - HMP-01 (ceiling)
+        - HMP-02 (mobile)
     EPICS detectors:
       type: shell
       redirectCommandOutput: true
@@ -113,6 +113,8 @@ Detectors:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-thermotek/build/iocBoot/ioc-xpp-prtdet-thermotek-01/edm-ioc-xpp-prtdet-thermotek-01.cmd
+
+
 
 Users:
   config:
@@ -141,6 +143,7 @@ Users:
         - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_1.sh
       titles:
         - Dumb motor 01
+
 
 
 Tools:
@@ -197,9 +200,11 @@ Tools:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-02/edm-ioc-xpp-tpr-02.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-03/edm-ioc-xpp-tpr-03.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-04/edm-ioc-xpp-tpr-04.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-las-01/edm-ioc-xpp-tpr-las-01.cmd
       titles:
         - cam-01
         - cam-02
         - cam-03
-        - wave8
+        - wave8-01
+        - las-01
 

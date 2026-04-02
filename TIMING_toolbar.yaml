@@ -260,7 +260,7 @@ FTL:
    RFOF Chiller: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/thermocon/build/iocBoot/ioc-las-rfof-thermocon-01/edm-ioc-las-rfof-thermocon-01.cmd
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-rfof-thermocon-01/pydm-ioc-las-rfof-thermocon-01.cmd
    FTL Leak Detection:
       type: shell
       commands:
