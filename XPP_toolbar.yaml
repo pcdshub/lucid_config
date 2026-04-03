@@ -144,6 +144,12 @@ Users:
       titles:
         - Dumb motor 01
 
+    Granite Table Motion:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/rnazir/ioc/screens/Granite.sh
+      titles:
+        - motion
 
 
 Tools:
