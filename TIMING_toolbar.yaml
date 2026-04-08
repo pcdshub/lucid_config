@@ -36,7 +36,7 @@ Laser Lockers:
    NEH FS11:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
+        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.4/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
    NEH FS14:
       type: shell
       commands:
@@ -65,7 +65,7 @@ Timing:
    Fiber Oven:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/fiberOven/R3.3.0/edm.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/fiberOven/ioc-las-fiberOven/edm.cmd
    Bay 4 PDU:
       type: shell
       commands:
@@ -73,8 +73,8 @@ Timing:
    Fiber Oven Scope (XCS):
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/dso4000/R3.0.0/build/iocBoot/ioc-las-dso4000-01/edm-ioc-las-dso4000-01.cmd
-   Fiber Oven Scope (LHN):
+        - /reg/g/pcds/epics-dev/ipotanin/ioc/common/ioc-common-dso4000/children/build/iocBoot/ioc-las-dso4000-04/pydm-ioc-las-dso4000-04.cmd
+   Laser Hall Scope:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-dso4000-02/edm-ioc-las-dso4000-02.cmd
@@ -243,7 +243,7 @@ FTL:
    SMA100B Signal Generator: 
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/common/rsSMX100X/children/build/iocBoot/ioc-tst-sma100b-01/pydm-ioc-tst-sma100b-01.cmd
+        - /cds/group/pcds/epics/ioc/common/rsSMX100X/R2.0.2/children/build/iocBoot/ioc-tst-sma100b-01/pydm-ioc-tst-sma100b-01.cmd
    CAST Vtune Voltage: 
       type: shell
       commands:
