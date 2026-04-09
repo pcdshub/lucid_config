@@ -65,7 +65,7 @@ Timing:
    Fiber Oven:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/fiberOven/ioc-las-fiberOven/edm.cmd
+        - /reg/g/pcds/epics/ioc/las/fiberOven/R3.4.0/edm.cmd
    Bay 4 PDU:
       type: shell
       commands:

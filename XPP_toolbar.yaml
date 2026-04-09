@@ -147,8 +147,10 @@ Users:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_1.sh
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_2.sh
       titles:
         - Dumb motor 01
+        - Dumb motor 02
 
     Granite Table Motion:
       type: shell
