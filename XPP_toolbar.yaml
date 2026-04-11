@@ -232,3 +232,8 @@ Tools:
       type: shell
       commands:
         - /sdf/home/x/xppopr/bin/xppscope
+    Stäubli:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/edm/xpp/current/staubliScreens/staubli_main.sh
+
