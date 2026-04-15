@@ -194,7 +194,7 @@ MBES:
     MBES Variable Leak Valve:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-lamp-vat590.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-mbes-vat590.cmd
    
     MBES SQ1 PLC Remote Desktop Session:
       type: shell
