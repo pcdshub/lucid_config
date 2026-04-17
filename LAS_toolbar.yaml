@@ -94,7 +94,7 @@ VNC:
     Bay 1 Vitara:
       type: shell
       commands:
-        - /cds/home/opr/lasopr/scripts/vnc-bay1-vitara.sh
+        - ssh las-neh-monitor "vncviewer 172.21.46.121"
     Bay 1 Evo:
       type: shell
       commands:

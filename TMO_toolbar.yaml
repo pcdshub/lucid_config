@@ -190,7 +190,7 @@ MBES:
     MBES Motion:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/rnazir/ioc/screens/mbes.sh
+        - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/mbes/mbes.sh
     MBES Variable Leak Valve:
       type: shell
       commands:
