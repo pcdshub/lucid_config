@@ -94,19 +94,19 @@ VNC:
     Bay 1 Vitara:
       type: shell
       commands:
-        - ssh las-neh-monitor "vncviewer 172.21.46.121"
+        - xterm -hold -e "ssh -X las-neh-monitor 'vncviewer 172.21.46.121'"
     Bay 1 Evo:
       type: shell
       commands:
-        - /cds/home/opr/lasopr/scripts/vnc-bay1-evo.sh
+        - xterm -hold -e "ssh -X las-neh-monitor 'vncviewer 172.21.46.86'"
     Bay 1 Evo HE1:
       type: shell
       commands:
-        - /cds/home/opr/lasopr/scripts/vnc-bay1-evo-HE1.sh
+        - xterm -hold -e "ssh -X las-neh-monitor 'vncviewer 172.21.46.90'"
     Bay 1 Evo HE2:
       type: shell
       commands:
-        - /cds/home/opr/lasopr/scripts/vnc-bay1-evo-HE2.sh
+        - xterm -hold -e "ssh -X las-neh-monitor 'vncviewer 172.21.46.46'"
 
 # Laser Lab:
 #   config:
