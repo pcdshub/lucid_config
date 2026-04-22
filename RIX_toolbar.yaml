@@ -634,10 +634,10 @@ TXAS-FZP:
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/txas/txas.sh
 
-    AT3K2:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-at3k2-calc/screen.sh
+#    AT3K2:
+#     type: shell
+#     commands:
+#       - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-at3k2-calc/screen.sh
        #- typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'AT3K2:SOLID:MMS:Y:01', 'name':'AT3K2:SOLID:MMS:Y:01'}]" "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'AT3K2:SOLID:MMS:Y:02', 'name':'AT3K2:SOLID:MMS:Y:02'}]")
 
     FZP Intensifier:
