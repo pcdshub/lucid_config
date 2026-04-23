@@ -657,6 +657,10 @@ TXAS-FZP:
      type: shell
      commands:
        - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:YAG:01','name':'YAG FOCUS'}]"
+    FZP+TXAS Motion:
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/fzp.ui
 
 Tools:
   config:
@@ -903,3 +907,10 @@ Tools:
      type: shell
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/common/evr-tpr/tprStatii.cmd
+
+    Scan GUI:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+       - /cds/group/pcds/pyps/apps/lcls-scan-gui/rix/config/rix/launch_gui.sh
+

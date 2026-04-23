@@ -165,6 +165,10 @@ Users:
         - /reg/g/pcds/epics-dev/rnazir/ioc/screens/Granite.sh
       titles:
         - motion
+    Stäubli:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/edm/xpp/current/staubliScreens/staubli_main.sh
 
 
 Tools:
@@ -232,8 +236,9 @@ Tools:
       type: shell
       commands:
         - /sdf/home/x/xppopr/bin/xppscope
-    Stäubli:
+
+    xpmpva:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/edm/xpp/current/staubliScreens/staubli_main.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/xpmpva.sh
 

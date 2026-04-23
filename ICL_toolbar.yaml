@@ -27,20 +27,17 @@ FEL SIM:
       commands:
         - pydm --hide-nav-bar --hide-menu-bar /cds/home/j/jozamudi/dev/icl/rcc/RCC-VAC.ui
 
-    RCC FEL SIM:
+    Timer Catcher:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM',BASE=ICL:FEL:SIM:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
 
-    RCC FEL SIM PUMP:
+    Timer PUMP:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM PUMP',BASE=ICL:FEL:HPLC:RCC" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM PUMP',BASE=ICL:FEL:HPLC:RCC,PCM=ICL:SDS:RCC:PCM:A" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
+        #- pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM',BASE=ICL:FEL:HPLC:RCC, PCM=ICL:SDS:RCC:PCM:B" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/Pumpless-RCC-Controls.ui
 
-    RCC WALL:
-      type: shell
-      commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='RCC WALL',BASE=ICL:RCC:PUMP, PCM=ICL:SDS:RCC:PCM:A" /cds/home/j/jozamudi/dev/icl/rcc/RCC-PUMP.ui
     RCC Outlet:
       type: shell
       commands:
@@ -51,10 +48,21 @@ FEL SIM:
       commands:
         - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m 'hutch=ICL' /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
 
-    FEL HPLCs:
+    FEL SIM HPLCs:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-status-bar -m 'base_pv=ICL:FEL:LC20, hplc_count=2' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc-screen.py
+
+Ambiant:
+  config:
+    cols: 3
+  buttons:
+
+    Timer:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='RCC WALL',BASE=ICL:RCC:PUMP, PCM=ICL:SDS:RCC:PCM:A" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/Pumpless-RCC-Controls.ui
+
 # // Adding New Tab
 #
 # NewTabName:
