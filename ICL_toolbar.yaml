@@ -37,6 +37,10 @@ FEL SIM:
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM PUMP',BASE=ICL:FEL:HPLC:RCC,PCM=ICL:SDS:RCC:PCM:A" /cds/home/j/jozamudi/dev/icl/rcc/RCC-Controls.ui
         #- pydm --hide-nav-bar --hide-menu-bar -m "TITLE='FEL SIM',BASE=ICL:FEL:HPLC:RCC, PCM=ICL:SDS:RCC:PCM:B" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/Pumpless-RCC-Controls.ui
+    Timer PUMP PCM:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:RCC:PCM:A" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/proportionair_base.ui
 
     RCC Outlet:
       type: shell

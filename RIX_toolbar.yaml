@@ -283,7 +283,22 @@ chemRIXS:
      type: shell
      commands:
        - /cds/group/pcds/epics/ioc/common/upscale/R1.0.0/children/build/iocBoot/ioc-crix-upscale/pydm-ioc-crix-upscale.cmd
+    
+    FZP+TXAS Motion:
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/fzp.ui
 
+    FZP Intensifier:
+     type: shell
+     commands:
+      - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
+
+    FZP TXAS LED Controls:
+     type: shell
+     commands:
+       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui 
+        
 
 chemRIXS-Laser:
   config:
@@ -619,20 +634,20 @@ Webcams:
 #     commands:
 #       - /cds/group/pcds/epics-dev/baljamal/ioc/common/OceanOpticsSpectrometer/children/build/iocBoot/ioc-crix-spc-03/edm-ioc-crix-spc-03.cmd
 
-TXAS-FZP:
-  config:
-    cols: 4
+#TXAS-FZP:
+#  config:
+#    cols: 4
 
-  buttons:
-    SP2K2 TXAS TAR RX:
-      type: shell
-      commands:
-        - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:RX:01'}]"
+#  buttons:
+#    SP2K2 TXAS TAR RX:
+#      type: shell
+#      commands:
+#        - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:RX:01'}]"
 
-    SP2K2 TXAS Manipulator:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/txas/txas.sh
+#    SP2K2 TXAS Manipulator:
+#      type: shell
+#      commands:
+#        - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/txas/txas.sh
 
 #    AT3K2:
 #     type: shell
@@ -640,27 +655,27 @@ TXAS-FZP:
 #       - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-at3k2-calc/screen.sh
        #- typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'AT3K2:SOLID:MMS:Y:01', 'name':'AT3K2:SOLID:MMS:Y:01'}]" "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'AT3K2:SOLID:MMS:Y:02', 'name':'AT3K2:SOLID:MMS:Y:02'}]")
 
-    FZP Intensifier:
-      type: shell
-      commands:
-      - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
+#    FZP Intensifier:
+#      type: shell
+#      commands:
+#      - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
 
-    FZP XYZ:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
-    FZP TXAS LED Controls:
-     type: shell
-     commands:
-       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui
-    SP2K2 TXAS YAG FOCUS:
-     type: shell
-     commands:
-       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:YAG:01','name':'YAG FOCUS'}]"
-    FZP+TXAS Motion:
-     type: display
-     filenames:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/fzp.ui
+#    FZP XYZ:
+#     type: shell
+#     commands:
+#       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
+#    FZP TXAS LED Controls:
+#     type: shell
+#     commands:
+#       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui
+#    SP2K2 TXAS YAG FOCUS:
+#     type: shell
+#     commands:
+#       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:YAG:01','name':'YAG FOCUS'}]"
+#    FZP+TXAS Motion:
+#     type: display
+#     filenames:
+#       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/fzp.ui
 
 Tools:
   config:
