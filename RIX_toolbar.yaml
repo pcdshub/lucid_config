@@ -903,6 +903,11 @@ Tools:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/rix/scripts/xpmpva.cmd
 
+    beamline-poe-inj:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://plv-rix-poe-01.pcdsn/
+
     qrixs-poe-inj:
      type: shell
      commands:
