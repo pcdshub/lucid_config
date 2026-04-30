@@ -40,7 +40,7 @@ FEL SIM:
     Timer PUMP PCM:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:RCC:PCM:A" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/proportionair_base.ui
+        - pydm --hide-nav-bar --hide-menu-bar -m "pv=ICL:SDS:RCC:PCM:B" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/proportionair_base.ui
 
     RCC Outlet:
       type: shell

@@ -139,7 +139,7 @@ PAX:
     Omicron:
      type: shell
      commands:
-       - ssh rix-control "vncviewer 172.21.46.201"
+       - ssh rix-control "vncviewer 172.21.21.140"
 
 
 
@@ -299,6 +299,10 @@ chemRIXS:
      commands:
        - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui 
         
+    VLS Vac:
+      type: shell
+      commands:
+       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
 
 chemRIXS-Laser:
   config:
@@ -525,7 +529,7 @@ qRIXS-Laser:
     LeCroy:
      type: shell
      commands:
-       - ssh rix-control "vncviewer 172.21.46.100"
+       - ssh rix-control "vncviewer 172.21.21.61"
 
     Alvium-tt:
      type: shell
