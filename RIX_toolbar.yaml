@@ -547,6 +547,10 @@ qRIXS-Laser:
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/qrixs_mods_cameras.cmd
 
+    Lock-in Amplifier:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aberges/mods/temp-mods/lm1k2/srs810/build/iocBoot/ioc-lm1k2-srs810/pydm-ioc-lm1k2-srs810.cmd
 
 
 Webcams:

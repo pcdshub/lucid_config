@@ -118,11 +118,11 @@ Detectors:
       redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-01/edm-ioc-xpp-alvium-01.cmd
-      titles:
-        - Epix-01
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-02/edm-ioc-xpp-alvium-02.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/andor3Cam/build/iocBoot/ioc-xpp-zyla-01/edm-ioc-xpp-zyla-01.cmd
       titles:
         - Alvium-01
+        - Alvium-02
         - Zyla-01
     MPOD Portable:
       type: shell
