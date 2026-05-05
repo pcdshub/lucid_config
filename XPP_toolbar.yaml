@@ -86,7 +86,7 @@ Laser:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-picoMotion/build/iocBoot/ioc-xpp-pico-las01/edm-ioc-xpp-pico-las01.cmd
       titles:
         - xpp-pico-las-01
-    Newport XPS1:
+    Newport XPS:
       type: shell
       redirectCommandOutput: true
       commands:
@@ -165,6 +165,13 @@ Users:
       titles:
         - Dumb motor 01
         - Dumb motor 02
+
+    Newport:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/NewportXPS8/build/iocBoot/ioc-xpp-user-xps1/edm-ioc-xpp-user-xps1.cmd
+      titles:
+        - USR Newport 1
 
     Granite Table Motion:
       type: shell
