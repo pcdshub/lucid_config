@@ -433,7 +433,7 @@ LHN Bay 2:
   #    commands:
   #      - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
 
-EVRs:
+EVRs TPRs:
   config:
     cols: 2
   buttons:
@@ -449,7 +449,7 @@ EVRs:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lln-evr-03/edm-ioc-las-lln-evr-03.cmd
-   FTL EVR:
+   FTL TPR:
       type: shell
       commands:
-        - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-ftl-evr-01/edm-ioc-las-ftl-evr-01.cmd
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-tprStandalone/build/iocBoot/ioc-las-ftl-tpr-01/edm-ioc-las-ftl-tpr-01.cmd  
