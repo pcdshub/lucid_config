@@ -400,7 +400,20 @@ NEH Beam Transport:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/las/srsrga/R1.0.0/build/iocBoot/ioc-las-bts-rga-01/pydm-ioc-las-bts-rga-01.cmd
- 
+
+   BTS QPCs:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-01/pydm-ioc-las-vac-pci-01.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-02/pydm-ioc-las-vac-pci-02.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-03/pydm-ioc-las-vac-pci-03.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-04/pydm-ioc-las-vac-pci-04.cmd
+      titles:
+        - las-pci-01
+        - las-pci-02
+        - las-pci-03
+        - las-pci-04
+
 Camera EDM:
   config:
     cols: 2

@@ -303,6 +303,10 @@ chemRIXS:
       type: shell
       commands:
        - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
+    VLS Slit:
+      type: shell
+      commands:
+       - typhos --layout grid --cols 1 --display-type embedded --scrollable auto --size 600,800 rix_vls_slit &
 
 chemRIXS-Laser:
   config:

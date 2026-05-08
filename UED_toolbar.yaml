@@ -428,7 +428,7 @@ Tools:
     wave8:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/iroque/ued/ioc-ued-pgpWave8/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
+          - /reg/g/pcds/epics-dev/divya/ioc/ued/ioc-ued-pgpWave8/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
 
 Legacy_UED:
 

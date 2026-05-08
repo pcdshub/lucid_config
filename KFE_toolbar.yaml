@@ -130,9 +130,9 @@ EM1K0-GMD:
           #- bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_gmd_main_pcds.sh
            - bash /cds/group/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_gmd_main_pcds.sh
     Two Pulse:
-        type: shell
-        commands:
-            - pydm /cds/home/k/kaushikm/tpcalc/2avg.ui
+        type: display
+        filenames:
+            - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/tpcalc/2avg.ui
 
 EM2K0-XGMD:
   config:
