@@ -68,6 +68,12 @@ Beamline:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
 
+    Transfocator:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
+
+
 Laser:
   config:
     cols: 4

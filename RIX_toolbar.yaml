@@ -938,7 +938,7 @@ Tools:
     TPR-Statii:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/common/evr-tpr/tprStatii.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/common/tpr_v2/TPRStatuses_ver2.cmd
 
     Scan GUI:
      type: shell
