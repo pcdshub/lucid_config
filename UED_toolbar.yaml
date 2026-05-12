@@ -195,17 +195,17 @@ Lasers:
     Pump Laser (Bunker) LabMax Power Meter:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/ued/ioc-ued-labmax/build/iocBoot/ioc-ued-labmax-01/edm-ioc-ued-labmax-01.cmd      
+        - /cds/group/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-01/edm-ioc-ued-labMax-01.cmd      
 
     UV Driver LabMax Power Meter:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/ued/ioc-ued-labmax/build/iocBoot/ioc-ued-labmax-02/edm-ioc-ued-labmax-02.cmd
+        - /cds/group/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-02/edm-ioc-ued-labMax-02.cmd
 
     Laser Room LabMax Power Meter:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/ued/ioc-ued-labmax/build/iocBoot/ioc-ued-labmax-03/edm-ioc-ued-labmax-03.cmd
+        - /reg/g/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-03/edm-ioc-ued-labMax-03.cmd
 
 Webcams:
   config:
