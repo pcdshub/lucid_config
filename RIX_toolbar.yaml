@@ -428,6 +428,11 @@ chemRIXS-SDS:
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/rix/rix-sds/user-screen/launch-screen.sh
 
+    BK PowerSupply:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-bk-1967/build/iocBoot/ioc-rix-bk-01/edm-ioc-rix-bk-01.cmd
+
 qRIXS:
   config:
     cols: 3

@@ -265,6 +265,11 @@ FTL:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
+
+LRL: 
+  config:
+    cols: 2
+  buttons:
    Laser Lab Piezo Driver:
       type: shell
       commands:
