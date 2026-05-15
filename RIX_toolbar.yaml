@@ -949,5 +949,5 @@ Tools:
      type: shell
      redirectCommandOutput: true
      commands:
-       - /cds/group/pcds/pyps/apps/lcls-scan-gui/rix/config/rix/launch_gui.sh
-
+#       - /cds/group/pcds/pyps/apps/lcls-scan-gui/rix/config/rix/launch_gui.sh
+       - /cds/home/k/kaushikm/lcls-scan-gui/config/rix/launch_gui.sh

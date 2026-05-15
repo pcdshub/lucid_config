@@ -11,6 +11,10 @@ General:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/camviewer.sh
+    Environmental Sensors:
+       type: shell
+       commands:
+        - /cds/group/pcds/epics-dev/aberges/mods/temp-mods/lm1k2/raritan/screens/pydm-ioc-lm1k2-src800-01.cmd 
 
 Tools:
   config:
