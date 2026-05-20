@@ -431,7 +431,7 @@ chemRIXS-SDS:
     BK PowerSupply:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-bk-1967/build/iocBoot/ioc-rix-bk-01/edm-ioc-rix-bk-01.cmd
+        - /reg/g/pcds/epics/ioc/rix/bk-1967/v1.0.0/build/iocBoot/ioc-rix-bk-01/edm-ioc-rix-bk-01.cmd
 
 qRIXS:
   config:

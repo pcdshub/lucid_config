@@ -290,6 +290,10 @@ LRL:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
+   LRL ATCA DAQMUX: 
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/tjohnson/screens/lln_atca_daqmux.cmd
 
 LHN Bay 3: 
   config:
