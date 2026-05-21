@@ -100,7 +100,7 @@ CVMI:
    CVMI SQ1 PLC Remote Desktop Session:
         type: shell
         commands:
-        - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
+      #  - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
 
    CVMI HV Channels:
         type: shell
@@ -199,8 +199,8 @@ MBES:
     MBES SQ1 PLC Remote Desktop Session:
       type: shell
       commands:
-        - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
-
+       # - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+       - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
     MBES Controllable PDU:
       type: shell
       redirectCommandOutput: true

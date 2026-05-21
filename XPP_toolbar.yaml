@@ -198,6 +198,12 @@ Users:
       commands:
         - /cds/group/pcds/epics-dev/screens/edm/xpp/current/staubliScreens/staubli_main.sh
 
+    SND:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/snd.sh
+      titles:
+        - Aerotech-01
 
 Tools:
   config:
