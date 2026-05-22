@@ -73,6 +73,10 @@ Beamline:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
+        - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
+      titles:
+        - TFS motion
+        - TFS interlock
 
     Pulse Picker:
       type: shell

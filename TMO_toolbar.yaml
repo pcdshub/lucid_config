@@ -57,7 +57,7 @@ Beamline:
     MR2K4 MIRROR CHILLER:
       type: shell
       commands:
-        - /reg/g/pcds/epics/ioc/tmo/thermocon/R2.0.0/build/iocBoot/ioc-tmo-thermocon/edm-ioc-tmo-thermocon.cmd
+        - /reg/g/pcds/epics/ioc/tmo/thermocon/R4.0.0/build/iocBoot/ioc-tmo-thermocon/pydm-ioc-tmo-thermocon.cmd
    
     MR1K1/MR1K4 Chiller:
       type: shell

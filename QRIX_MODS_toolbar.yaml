@@ -15,6 +15,10 @@ General:
        type: shell
        commands:
          - /cds/group/pcds/epics-dev/mods/lm1k2/raritan/screens/pydm-ioc-lm1k2-src800-01.cmd 
+    TPR:
+     type: shell
+     commands:
+         - /cds/group/pcds/epics-dev/mods/lm1k2/tprStandalone/build/iocBoot/ioc-qrix-las-tpr2/edm-ioc-qrix-las-tpr2.cmd
 
 Tools:
   config:
