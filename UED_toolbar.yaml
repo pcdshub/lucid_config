@@ -96,7 +96,7 @@ SDS:
     HPLC:
       type: shell
       commands:
-        - pydm --hide-nav-bar -m 'base_pv=UED:SDS:LC20, hplc_count=2' /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/base-screens/hplc-screen.py
+        - pydm --hide-nav-bar -m 'base_pv=UED:SDS:LC20, hplc_count=3' /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/base-screens/hplc-screen.py
 
     ON/OFF Valves:
       type: shell

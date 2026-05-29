@@ -729,7 +729,8 @@ Tools:
     Cam Viewer Kfe:
       type: shell
       commands:
-        - camViewerKfe
+#        - camViewerKfe
+        - camViewer_K
 
     Cam Viewer - Config:
       type: shell
