@@ -88,10 +88,11 @@ SDS:
   config:
     cols: 3
   buttons:
-    RCC Valves:
+    RCC:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar /cds/home/j/jozamudi/dev/ued/rcv-screens/ued-rcv-screen.ui
+        - pydm --hide-nav-bar --hide-menu-bar -m "BASE=UED:RCC, TITLE=RCC" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/RCC-Controls.ui
+
 
     HPLC:
       type: shell
@@ -101,12 +102,18 @@ SDS:
     ON/OFF Valves:
       type: shell
       commands:
-        - pydm --hide-nav-bar -m "hutch=UED, h1_id=01, h2_id=02" /cds/home/j/jozamudi/dev/sds/universal-onoff-screen/onoffvalves.py
+        - pydm --hide-nav-bar -m "hutch=UED, h1_id=01, h2_id=02" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-onoff-screen/onoffvalves.py
 
     4PortValve:
       type: shell
       commands:
-        - pydm --hide-nav-bar -m "pv=UED:SDS:VICI:01" /reg/g/pcds/epics-dev/screens/pydm/ued_screens/sds/4port-vici-valve.ui
+        - pydm --hide-nav-bar -m "BASE=UED:SDS:VICI:01" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/4port-vici-valve.ui
+
+    12PortValve:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar -m "BASE=UED:SDS:VICI:02" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/12PortValve.ui
+
           
     QEPro:
       type: shell

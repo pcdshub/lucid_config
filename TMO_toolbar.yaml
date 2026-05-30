@@ -205,9 +205,7 @@ MBES:
       type: shell
       redirectCommandOutput: true
       commands:
-#        - /reg/g/pcds/epics/ioc/tmo/Leviton/R2.4.2/build/iocBoot/ioc-power-tmo-pr01/edm-ioc-power-tmo-pr01.cmd
-       - edm -x -eolc -m "PRE=TMO:PWR:01" -m "IOC=IOC:TMO:PWR:01" -m "HUTCH=TMO" /reg/g/pcds/epics/ioc/common/Leviton/R2.4.2/LevScreens/TrippLite_8.edl
-
+        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R3.2.0/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
     MBES  MKS RGA:
       type: shell
       redirectCommandOutput: true
