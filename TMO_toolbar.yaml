@@ -186,7 +186,8 @@ MBES:
     MBES Vacuum:
       type: shell
       commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mbesVac.ui 
+       # - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mbesVac.ui
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuum/screens/TMO/mbesVacWolf.ui 
     MBES Motion:
       type: shell
       commands:
