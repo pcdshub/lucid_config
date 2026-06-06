@@ -211,7 +211,8 @@ MBES:
       type: shell
       redirectCommandOutput: true
       commands:
-        - /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
+       # - /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
+        - /reg/g/pcds/epics-dev/kborne/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-mbes-rga-01/edm-ioc-tmo-mbes-rga-01.cmd  
 
     MBES FPS 01:
       type: shell
