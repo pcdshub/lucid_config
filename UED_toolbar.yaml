@@ -374,7 +374,7 @@ Tools:
     UV feedback:
      type: shell
      commands:
-       - /cds/home/opr/uedopr/cjd/uv_feedback.py
+       - /cds/home/opr/uedopr/cjd/uv_feedback_ioc/uv_feedback_gui.py
 
     Klystron:
      type: shell
