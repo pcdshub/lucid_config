@@ -88,6 +88,12 @@ SDS:
   config:
     cols: 3
   buttons:
+
+    SDS User Screen:
+      type: display
+      filenames:
+        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/user-screen.ui
+
     RCC:
       type: shell
       commands:
