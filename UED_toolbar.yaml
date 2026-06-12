@@ -54,7 +54,7 @@ LUED:
     LUED:
       type: display
       filenames:
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/lued.ui
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/lued_new.ui
 
     LUED Motors:
       type: shell
@@ -90,9 +90,9 @@ SDS:
   buttons:
 
     SDS User Screen:
-      type: display
-      filenames:
-        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/user-screen.ui
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/launch.sh
 
     RCC:
       type: shell
