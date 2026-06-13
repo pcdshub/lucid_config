@@ -1,8 +1,6 @@
 Tools:
-
   config:
     cols: 3
-
   buttons:
     iocmanager:
       type: shell
@@ -18,6 +16,7 @@ Tools:
       type: shell
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "BASE=ICL:SDS:SFM" /reg/g/pcds/epics-dev/screens/pydm/sds/senserion-flow-meter.ui
+
 FEL SIM:
   config:
     cols: 3
@@ -50,7 +49,7 @@ FEL SIM:
     Switching Valves:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m 'hutch=ICL' /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
+        - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m "hutch=ICL" /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
 
     FEL SIM HPLCs:
       type: shell

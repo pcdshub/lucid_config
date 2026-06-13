@@ -84,7 +84,7 @@ Beamline:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
 Laser:
   config:
-    cols: 4
+    cols: 5
   buttons:
     SmarAct:
       type: shell
@@ -107,7 +107,20 @@ Laser:
         - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps1/edm-ioc-xpp-las-xps1.cmd
       titles:
         - xpp-las-xps1
-
+    Analog In Out:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-ek9000/screens/launch_gui.cmd
+      titles:
+        - xpp-las-ek9000-01
+    Newport XPS2:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
+      titles:
+        - xpp-las-xps2
 
 Detectors:
   config:

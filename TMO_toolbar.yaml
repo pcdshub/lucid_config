@@ -209,7 +209,7 @@ MBES:
         - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R3.2.0/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
     MBES MKS RGA:
       type: shell
-      redirectCommandOutput: true
+      redirectCommandOutput: false
       commands:
         - /reg/g/pcds/epics-dev/kborne/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-mbes-rga-01/pydm-ioc-tmo-mbes-rga-01.cmd  
         #- /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
