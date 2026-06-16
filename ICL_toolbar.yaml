@@ -49,7 +49,9 @@ FEL SIM:
     Switching Valves:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar --hide-status-bar -m "hutch=ICL" /cds/group/pcds/epics-dev/screens/pydm/sds-ui/universal-onoff-screen/onoffvalves.py
+        - /reg/g/pcds/epics-dev/screens/pydm/sds/universal-onoff-screen/launch.sh ICL
+      redirectCommandOutput: true
+        #- pydm --log_level DEBUG --hide-nav-bar --hide-menu-bar --hide-status-bar -m "hutch=ICL" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-onoff-screen/onoffvalves.py
 
     FEL SIM HPLCs:
       type: shell

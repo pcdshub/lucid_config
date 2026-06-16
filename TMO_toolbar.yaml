@@ -378,8 +378,8 @@ DREAM:
    Smaract PDU:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/rnazir/ioc/tmo/ioc-tmo-pdu_snmp/build/iocBoot/ioc-tmo-pwr-dream-02/edm-ioc-tmo-pwr-dream-02.cmd
-
+        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R3.3.0/build/iocBoot/ioc-tmo-pwr-dream-02/edm-ioc-tmo-pwr-dream-02.cmd
+        
    SL3K4:
       type: shell
       commands:
