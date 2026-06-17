@@ -380,7 +380,8 @@ chemRIXS-SDS:
     Injector to IP:
      type: shell
      commands:
-       - pydm --hide-nav-bar /cds/home/j/jozamudi/dev/sds/injector-screen/auto-injector.py 
+       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/injector-screen/auto-injector.py
+       #- pydm --hide-nav-bar /cds/home/j/jozamudi/dev/sds/injector-screen/auto-injector.py 
 
     HPLCs:
       type: shell
