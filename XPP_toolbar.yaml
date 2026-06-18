@@ -66,8 +66,8 @@ Beamline:
     Solid Attenuator:
       type: shell
       commands:
-#        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
-        - /cds/home/k/kaushikm/satt.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
+#        - /cds/home/k/kaushikm/satt.sh
 
     Transfocator:
       type: shell

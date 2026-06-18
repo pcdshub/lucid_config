@@ -313,15 +313,15 @@ Tools:
         - camViewer -c ued-andor-01
         - camViewer -c ued-andor-03
         - camViewer -c ued-alv-01
-        - camViewer -c ued-gige-sample-bottom
-        - camViewer -c ued-gige-sample-back
+        - camViewer -c ued-gige-sample-30deg
         - camViewer -c ued-gige-sample-front
+        - camViewer -c ued-gige-sample-side
         - camViewer -c ued-asar03
         - camViewer -c ued-asar04
         - camViewer -c ued-asps08
         - camViewer -c ued-asps04
         - camViewer -c ued-gige-vcc
-        - camViewer -c ued-gige-thz-sample
+        - camViewer -c ued-gige-catcher-tube
       titles:
         - ued-gige-01
         - ued-andor-01

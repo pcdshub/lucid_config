@@ -255,8 +255,8 @@ FTL:
    FTL TEM Locker:
       type: shell
       commands:
-        #- /cds/group/pcds/epics/ioc/common/TEM_PhaseLock/R1.0.1/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
-        - /cds/home/t/tjohnson/trunk/common/TEM_PhaseLock/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
+        - /cds/group/pcds/epics/ioc/common/TEM_PhaseLock/R2.1.0/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
+        #- /cds/home/t/tjohnson/trunk/common/TEM_PhaseLock/children/build/iocBoot/ioc-las-tem-01/pydm-ioc-las-tem-01.cmd
    RFOF Chiller: 
       type: shell
       commands:
