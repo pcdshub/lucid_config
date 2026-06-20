@@ -105,8 +105,10 @@ Laser:
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps1/edm-ioc-xpp-las-xps1.cmd
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
       titles:
         - xpp-las-xps1
+        - xpp-las-xps2
     Analog In Out:
       type: shell
       redirectCommandOutput: true
@@ -114,14 +116,13 @@ Laser:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-ek9000/screens/launch_gui.cmd
       titles:
         - xpp-las-ek9000-01
-    Newport XPS2:
-      type: shell
-      redirectCommandOutput: true
-      commands:
-        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
-      titles:
-        - xpp-las-xps2
-
+    Laser Sequence:
+        type: shell
+        redirectCommandOutput: true
+        commands:
+          - /cds/home/i/ipotanin/opcpa-tpr-config/neh_bay1_launcher.sh
+        titles:
+          - Bay 1
 Detectors:
   config:
     cols: 4
