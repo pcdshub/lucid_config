@@ -84,7 +84,7 @@ Beamline:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
 Laser:
   config:
-    cols: 5
+    cols: 4
   buttons:
     SmarAct:
       type: shell
@@ -123,6 +123,13 @@ Laser:
           - /cds/home/i/ipotanin/opcpa-tpr-config/neh_bay1_launcher.sh
         titles:
           - Bay 1
+    Fast Encoder:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-usdusb4/build/iocBoot/ioc-xpp-las-usdusb4/edm-ioc-xpp-las-usdusb4.cmd
+      titles:
+        - xpp-las-usdusb4
 Detectors:
   config:
     cols: 4
