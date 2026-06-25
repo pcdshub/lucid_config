@@ -82,6 +82,8 @@ Beamline:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
+
+
 Laser:
   config:
     cols: 4
@@ -93,6 +95,7 @@ Laser:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-smaract/screens/launchgui-ioc-xpp-mcs2-las-01.cmd
       titles:
         - xpp-mcs2-las-01
+    
     Pico Motor:
       type: shell
       redirectCommandOutput: true
@@ -100,6 +103,7 @@ Laser:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-picoMotion/build/iocBoot/ioc-xpp-pico-las01/edm-ioc-xpp-pico-las01.cmd
       titles:
         - xpp-pico-las-01
+    
     Newport XPS:
       type: shell
       redirectCommandOutput: true
@@ -109,6 +113,7 @@ Laser:
       titles:
         - xpp-las-xps1
         - xpp-las-xps2
+    
     Analog In Out:
       type: shell
       redirectCommandOutput: true
@@ -116,6 +121,7 @@ Laser:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-ek9000/screens/launch_gui.cmd
       titles:
         - xpp-las-ek9000-01
+    
     Laser Sequence:
         type: shell
         redirectCommandOutput: true
@@ -123,6 +129,7 @@ Laser:
           - /cds/home/i/ipotanin/opcpa-tpr-config/neh_bay1_launcher.sh
         titles:
           - Bay 1
+    
     Fast Encoder:
       type: shell
       redirectCommandOutput: true
@@ -130,6 +137,15 @@ Laser:
         - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-usdusb4/build/iocBoot/ioc-xpp-las-usdusb4/edm-ioc-xpp-las-usdusb4.cmd
       titles:
         - xpp-las-usdusb4
+    
+    Timetool:
+      type: shell
+      redicrectCOmmandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/timetool_plugin.sh
+
+
+
 Detectors:
   config:
     cols: 4
@@ -154,10 +170,12 @@ Detectors:
       commands:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-01/edm-ioc-xpp-alvium-01.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-02/edm-ioc-xpp-alvium-02.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-tt/edm-ioc-xpp-alvium-tt.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/andor3Cam/build/iocBoot/ioc-xpp-zyla-01/edm-ioc-xpp-zyla-01.cmd
       titles:
         - Alvium-01
         - Alvium-02
+        - Alvium-tt
         - Zyla-01
     MPOD Portable:
       type: shell
@@ -182,6 +200,7 @@ Users:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/smaract/build/iocBoot/ioc-xpp-mcs2-01/launchgui-ioc-xpp-mcs2-01.cmd
       titles:
         - LIB SmarAct
+    
     ATDS Motion:
       type: shell
       commands:
@@ -192,6 +211,7 @@ Users:
         - ATDS base
         - ATDS GON
         - ATDS sample
+
     User Motors:
       type: shell
       commands:
