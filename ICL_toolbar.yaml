@@ -21,6 +21,11 @@ FEL SIM:
   config:
     cols: 3
   buttons:
+    User Screen:
+      type: shell
+      commands:
+        - bash /reg/g/pcds/epics-dev/screens/pydm/sds/user-screen/icl/launch.sh
+
     RCC VAC:
       type: shell
       commands:

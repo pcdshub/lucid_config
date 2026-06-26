@@ -250,6 +250,12 @@ Users:
       titles:
         - Aerotech-01
 
+    Kappa Lakeshore:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-lakeshore336/build/iocBoot/ioc-xpp-usr-ls336/edm-ioc-xpp-usr-ls336.cmd
+
+
 Tools:
   config:
     cols: 4
