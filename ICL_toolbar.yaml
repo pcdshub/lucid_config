@@ -63,6 +63,11 @@ FEL SIM:
       commands:
         - pydm --hide-nav-bar --hide-status-bar -m 'base_pv=ICL:FEL:LC20, hplc_count=2' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc-screen.py
 
+    BK PowerSupply:
+      type: shell
+      commands:
+          - /reg/g/pcds/epics-dev/jozamudi/icl/ioc-icl-bk-1967/build/iocBoot/ioc-icl-bk-01/edm-ioc-icl-bk-01.cmd
+
 Ambiant:
   config:
     cols: 3
