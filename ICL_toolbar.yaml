@@ -17,6 +17,10 @@ Tools:
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "BASE=ICL:SDS:SFM" /reg/g/pcds/epics-dev/screens/pydm/sds/senserion-flow-meter.ui
 
+    camViewer:
+      type: shell
+      commands:
+        - bash /cds/group/pcds/pyps/config/icl/camviewer.sh
 FEL SIM:
   config:
     cols: 3
