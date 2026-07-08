@@ -119,7 +119,10 @@ Beamline:
     #  type: display
     #  filenames:
     #    - /cds/group/pcds/epics/ioc/common/thermocon/R2.0.0/thermoconScreens/thermocon.ui
-
+    PPSTP:
+      type: shell
+      commands:
+        - /cds/home/opr/rixopr/bin/PPSTouchPanel 
 
 PAX:
   config:
@@ -136,7 +139,7 @@ PAX:
     Omicron:
      type: shell
      commands:
-       - ssh rix-control "vncviewer 172.21.46.201"
+       - ssh rix-control "vncviewer 172.21.21.140"
 
 
 
@@ -147,7 +150,7 @@ chemRIXS:
     Vacuum:
       type: display
       filenames:
-        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/chemrixsVac_new_screen.ui
+        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/chemrixsVac_new_screen_v2.ui
 
     Wave8:
       type: shell
@@ -280,7 +283,30 @@ chemRIXS:
      type: shell
      commands:
        - /cds/group/pcds/epics/ioc/common/upscale/R1.0.0/children/build/iocBoot/ioc-crix-upscale/pydm-ioc-crix-upscale.cmd
+    
+    FZP+TXAS Motion:
+     type: display
+     filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/fzp.ui
 
+    FZP Intensifier:
+     type: shell
+     commands:
+      - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
+
+    FZP TXAS LED Controls:
+     type: shell
+     commands:
+       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui 
+        
+    VLS Vac:
+      type: shell
+      commands:
+       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
+    VLS Slit:
+      type: shell
+      commands:
+       - typhos --layout grid --cols 1 --display-type embedded --scrollable auto --size 600,800 rix_vls_slit &
 
 chemRIXS-Laser:
   config:
@@ -332,7 +358,7 @@ chemRIXS-SDS:
     RCC Operation:
       type: shell
       commands:
-        - pydm --hide-nav-bar /reg/g/pcds/epics-dev/screens/pydm/sds/rcc-vac/RCC-Controls.py
+          - pydm --hide-nav-bar -m 'BASE=CRIX:RCC,TITLE=RCC' /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/RCC-Controls.ui
     In Vac LED:
      type: shell
      commands:
@@ -354,7 +380,8 @@ chemRIXS-SDS:
     Injector to IP:
      type: shell
      commands:
-       - pydm --hide-nav-bar /cds/home/j/jozamudi/dev/sds/injector-screen/auto-injector.py 
+       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/injector-screen/auto-injector.py
+       #- pydm --hide-nav-bar /cds/home/j/jozamudi/dev/sds/injector-screen/auto-injector.py 
 
     HPLCs:
       type: shell
@@ -397,6 +424,15 @@ chemRIXS-SDS:
       commands:
         - pydm --hide-nav-bar --hide-menu-bar -m "pv=CRIX:SDS:PCM:A" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/proportionair_base.ui 
 
+    User Screen:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/rix/rix-sds/user-screen/launch-screen.sh
+
+    BK PowerSupply:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/rix/bk-1967/v1.0.0/build/iocBoot/ioc-rix-bk-01/edm-ioc-rix-bk-01.cmd
 
 qRIXS:
   config:
@@ -503,7 +539,7 @@ qRIXS-Laser:
     LeCroy:
      type: shell
      commands:
-       - ssh rix-control "vncviewer 172.21.46.100"
+       - ssh rix-control "vncviewer 172.21.21.61"
 
     Alvium-tt:
      type: shell
@@ -521,6 +557,10 @@ qRIXS-Laser:
      commands:
        - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/qrixs_mods_cameras.cmd
 
+    Lock-in Amplifier:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/aberges/mods/temp-mods/lm1k2/srs810/build/iocBoot/ioc-lm1k2-srs810/pydm-ioc-lm1k2-srs810.cmd
 
 
 Webcams:
@@ -612,39 +652,48 @@ Webcams:
 #     commands:
 #       - /cds/group/pcds/epics-dev/baljamal/ioc/common/OceanOpticsSpectrometer/children/build/iocBoot/ioc-crix-spc-03/edm-ioc-crix-spc-03.cmd
 
-TXAS-FZP:
-  config:
-    cols: 4
+#TXAS-FZP:
+#  config:
+#    cols: 4
 
-  buttons:
-    SP2K2 TXAS TAR RX:
-     type: shell
-     commands:
-       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:RX:01'}]"
+#  buttons:
+#    SP2K2 TXAS TAR RX:
+#      type: shell
+#      commands:
+#        - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:RX:01'}]"
 
-    AT3K2:
-     type: shell
-     commands:
-       - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-at3k2-calc/screen.sh
+#    SP2K2 TXAS Manipulator:
+#      type: shell
+#      commands:
+#        - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/txas/txas.sh
+
+#    AT3K2:
+#     type: shell
+#     commands:
+#       - /reg/g/pcds/epics-dev/jozamudi/rix/ioc-rix-at3k2-calc/screen.sh
        #- typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'AT3K2:SOLID:MMS:Y:01', 'name':'AT3K2:SOLID:MMS:Y:01'}]" "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'AT3K2:SOLID:MMS:Y:02', 'name':'AT3K2:SOLID:MMS:Y:02'}]")
 
-    FZP Intensifier:
-      type: shell
-      commands:
-      - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
+#    FZP Intensifier:
+#      type: shell
+#      commands:
+#      - /cds/group/pcds/epics/ioc/rix/tricatt/R1.0.2/build/iocBoot/ioc-rix-tricam-01/pydm-ioc-rix-tricam-01.cmd
 
-    FZP XYZ:
-     type: shell
-     commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
-    FZP TXAS LED Controls:
-     type: shell
-     commands:
-       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui
-    SP2K2 TXAS YAG FOCUS:
-     type: shell
-     commands:
-       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:YAG:01','name':'YAG FOCUS'}]"
+#    FZP XYZ:
+#     type: shell
+#     commands:
+#       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/Beamblock.cmd
+#    FZP TXAS LED Controls:
+#     type: shell
+#     commands:
+#       - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui
+#    SP2K2 TXAS YAG FOCUS:
+#     type: shell
+#     commands:
+#       - typhos "pcdsdevices.epics_motor.BeckhoffAxis[{'prefix':'SP2K2:TXAS:MMS:YAG:01','name':'YAG FOCUS'}]"
+#    FZP+TXAS Motion:
+#     type: display
+#     filenames:
+#       - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/scripts/fzp.ui
 
 Tools:
   config:
@@ -682,6 +731,7 @@ Tools:
       type: shell
       commands:
         - camViewerKfe
+#        - camViewer_K
 
     Cam Viewer - Config:
       type: shell
@@ -872,6 +922,11 @@ Tools:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/rix/scripts/xpmpva.cmd
 
+    beamline-poe-inj:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://plv-rix-poe-01.pcdsn/
+
     qrixs-poe-inj:
      type: shell
      commands:
@@ -890,4 +945,11 @@ Tools:
     TPR-Statii:
      type: shell
      commands:
-       - /cds/group/pcds/epics-dev/screens/pydm/common/evr-tpr/tprStatii.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/common/tpr_v2/TPRStatuses_ver2.cmd
+
+    Scan GUI:
+     type: shell
+     redirectCommandOutput: true
+     commands:
+#       - /cds/group/pcds/pyps/apps/lcls-scan-gui/rix/config/rix/launch_gui.sh
+       - /cds/home/k/kaushikm/lcls-scan-gui/config/rix/launch_gui.sh

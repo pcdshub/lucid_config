@@ -57,7 +57,7 @@ Beamline:
     MR2K4 MIRROR CHILLER:
       type: shell
       commands:
-        - /reg/g/pcds/epics/ioc/tmo/thermocon/R2.0.0/build/iocBoot/ioc-tmo-thermocon/edm-ioc-tmo-thermocon.cmd
+        - /reg/g/pcds/epics/ioc/tmo/thermocon/R4.0.0/build/iocBoot/ioc-tmo-thermocon/pydm-ioc-tmo-thermocon.cmd
    
     MR1K1/MR1K4 Chiller:
       type: shell
@@ -100,7 +100,7 @@ CVMI:
    CVMI SQ1 PLC Remote Desktop Session:
         type: shell
         commands:
-        - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
+      #  - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
 
    CVMI HV Channels:
         type: shell
@@ -118,65 +118,120 @@ CVMI:
      commands:
        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
 
-LAMP:
+#LAMP:
+# config:
+#    cols: 2
+#
+#  buttons:
+#   LAMP Vacuum:
+#        type: shell
+#        commands:
+#       #   - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lampVac.ui
+#       #    - pydm /reg/g/pcds/epics-dev/tongju/vacuum_screens/LV17_lampVac.ui
+#          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lamp_mbes_Vac_V3.ui
+#
+#   LAMP MBES Variable Leak Valve:
+#     type: shell
+#     commands:
+#     - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-lamp-vat590.cmd
+#   
+#   LAMP SQ1 PLC Remote Desktop Session:
+#     type: shell
+#     commands:
+#       - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+#
+#   LAMP In-vacuum Piezo Motors:
+#     type: shell
+#     commands:
+#       # - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+#       - /reg/g/pcds/epics/ioc/tmo/mmc/R1.1.1/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+#
+#   LAMP Controllable PDU:
+#     type: shell
+#     redirectCommandOutput: true
+#     commands:
+#       #- /reg/g/pcds/epics/ioc/tmo/Leviton/R2.4.2/build/iocBoot/ioc-power-tmo-pr01/edm-ioc-power-tmo-pr01.cmd
+#       - edm -x -eolc -m "PRE=TMO:PWR:01" -m "IOC=IOC:TMO:PWR:01" -m "HUTCH=TMO" /reg/g/pcds/epics/ioc/common/Leviton/R2.4.2/LevScreens/TrippLite_8.edl
+#
+#   LAMP MKS RGA:
+#     type: shell
+#     redirectCommandOutput: true
+#     commands:
+#       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
+#
+#   LAMP FPS 01:
+#     type: shell
+#     redirectCommandOutput: true
+#     commands:
+#       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-01/pydm-ioc-tmo-fps-01.cmd
+#
+# 
+#   LAMP FPS 02:
+#     type: shell
+#     redirectCommandOutput: true
+#     commands:
+#       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-02/pydm-ioc-tmo-fps-02.cmd
+#
+#   LAMP FPS 03:
+#     type: shell
+#    redirectCommandOutput: true
+#     commands:
+#       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-03/pydm-ioc-tmo-fps-03.cmd
+
+MBES:
   config:
     cols: 2
 
   buttons:
-   LAMP Vacuum:
-        type: shell
-        commands:
-       #   - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lampVac.ui
-       #    - pydm /reg/g/pcds/epics-dev/tongju/vacuum_screens/LV17_lampVac.ui
-          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/lamp_mbes_Vac_V3.ui
-
-   LAMP MBES Variable Leak Valve:
-     type: shell
-     commands:
-     - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-lamp-vat590.cmd
+    MBES Vacuum:
+      type: shell
+      commands:
+       # - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mbesVac.ui
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuum/screens/TMO/mbesVacWolf.ui 
+    MBES Motion:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/tmo_screens/mbes/mbes.sh
+    MBES Variable Leak Valve:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/VAT590/pydm-tmo-mbes-vat590.cmd
    
-   LAMP SQ1 PLC Remote Desktop Session:
-     type: shell
-     commands:
-       - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+    MBES SQ1 PLC Remote Desktop Session:
+      type: shell
+      commands:
+       # - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-01_RDP_launcher.sh
+       - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
+    MBES Controllable PDU:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R3.2.0/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
+    MBES MKS RGA:
+      type: shell
+      redirectCommandOutput: false
+      commands:
+        - /reg/g/pcds/epics-dev/kborne/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-mbes-rga-01/pydm-ioc-tmo-mbes-rga-01.cmd  
+        #- /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
+    MBES FPS 01:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-01/pydm-ioc-tmo-fps-01.cmd
 
-   LAMP In-vacuum Piezo Motors:
-     type: shell
-     commands:
-       # - /cds/home/a/adpai/Documents/ioc/amo/mmc/current/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
-       - /reg/g/pcds/epics/ioc/tmo/mmc/R1.1.1/mmcScreens/edm-ioc-tmo-lamp-mmc-7axis.sh
+ 
+    MBES FPS 02:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-02/pydm-ioc-tmo-fps-02.cmd
 
-   LAMP Controllable PDU:
-     type: shell
-     redirectCommandOutput: true
-     commands:
-       #- /reg/g/pcds/epics/ioc/tmo/Leviton/R2.4.2/build/iocBoot/ioc-power-tmo-pr01/edm-ioc-power-tmo-pr01.cmd
-       - edm -x -eolc -m "PRE=TMO:PWR:01" -m "IOC=IOC:TMO:PWR:01" -m "HUTCH=TMO" /reg/g/pcds/epics/ioc/common/Leviton/R2.4.2/LevScreens/TrippLite_8.edl
-
-   LAMP MKS RGA:
-     type: shell
-     redirectCommandOutput: true
-     commands:
-       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-mksrga/children/build/iocBoot/ioc-tmo-lamp-rga-01/pydm-ioc-tmo-lamp-rga-01.cmd
-
-   LAMP FPS 01:
-     type: shell
-     redirectCommandOutput: true
-     commands:
-       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-01/pydm-ioc-tmo-fps-01.cmd
-
-
-   LAMP FPS 02:
-     type: shell
-     redirectCommandOutput: true
-     commands:
-       - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-02/pydm-ioc-tmo-fps-02.cmd
-
-   LAMP FPS 03:
-     type: shell
-     redirectCommandOutput: true
-     commands:
+    MBES FPS 03:
+      type: shell
+      redirectCommandOutput: true
+      commands:
        - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-03/pydm-ioc-tmo-fps-03.cmd
+
 
 MRCO:
   config:
@@ -188,10 +243,15 @@ MRCO:
 #     commands:
 #     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacV2.ui
 
-   MRCO smaract:
+#   MRCO smaract:
+#     type: shell
+#     commands:
+#       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smaract/build/iocBoot/ioc-tmo-mcs2-02/edm-ioc-tmo-mcs2-02.cmd
+ 
+   MRCO smaract_typhos:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smaract/build/iocBoot/ioc-tmo-mcs2-02/edm-ioc-tmo-mcs2-02.cmd
+       - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/mrco-screens/mrco-smarAct.cmd
 
    MRCO+SolidChamber Vacuum:
      type: shell
@@ -254,7 +314,7 @@ DREAM:
    DREAM Vacuum:
         type: shell
         commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES_Second.ui
+        - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/DREAM_ES_Second_V3.ui
 
    Leybold IM540 Controller:
      type: shell
@@ -315,7 +375,11 @@ DREAM:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-dream/edm-ioc-tmo-pwr-dream.cmd
-
+   Smaract PDU:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R3.3.0/build/iocBoot/ioc-tmo-pwr-dream-02/edm-ioc-tmo-pwr-dream-02.cmd
+        
    SL3K4:
       type: shell
       commands:
@@ -634,12 +698,18 @@ Tools:
    RohdeShwarzNGP824:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R1.2.2/build/iocBoot/ioc-tmo-hmp-test/edm-ioc-tmo-hmp-test.cmd
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.2.0/build/iocBoot/ioc-tmo-ip1-hmp-01/edm-ioc-tmo-ip1-hmp-01.cmd
 
    RohdeShwarz2:
      type: shell
      commands:
-       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.1.0/build/iocBoot/ioc-tmo-ip2-hmp-02/edm-ioc-tmo-ip2-hmp-02.cmd
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.2.0/build/iocBoot/ioc-tmo-ip2-hmp-02/edm-ioc-tmo-ip2-hmp-02.cmd
+
+
+   RohdeShwarz3:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/RohdeSchwarzHMP/R2.2.0/build/iocBoot/ioc-tmo-hmp-03/edm-ioc-tmo-hmp-03.cmd
 
    IP1 GC-HAZARD:
      type: shell

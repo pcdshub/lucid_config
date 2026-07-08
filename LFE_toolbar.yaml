@@ -73,7 +73,7 @@ Instrumentation:
     EM3L0 Wave 8: 
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/mcabral/ioc-lfe-pgpWave8/build/iocBoot/ioc-lfe-pgpw8-01/edm-ioc-lfe-pgpw8-01.cmd
+          - /cds/group/pcds/epics/ioc/lfe/pgpWave8/R3.0.1/build/iocBoot/ioc-lfe-em3l0-pgpw8/edm-ioc-lfe-em3l0-pgpw8.cmd
 
 Vacuum:
   config:
@@ -100,6 +100,10 @@ Vacuum:
         type: shell
         commands:
           - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.0/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
+    Pink Line PDU:
+        type: shell
+        commands: 
+          - typhos xrt_pwr_101w_r04_01 --display-type detailed
 
 
 Slits:
@@ -131,26 +135,26 @@ LFE-OPTICS:
     cols: 4
 
  buttons:
-    MR1L0-HOMS:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l0_ui.sh
-    MR2L0-HOMS:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr2l0_ui.sh
-    MR1L3-HOMS:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr1l3_ui.sh
-    MR2L3-HOMS:
-        type: shell
-        commands:
-            - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr2l3_ui.sh
-    MR1L4-HOMS:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr1l4_ui.sh
+   # MR1L0-HOMS:
+   #      type: shell
+   #      commands:
+   #        - /reg/g/pcds/epics/ioc/xrt/HOMS_XRT/latest/homsScreens/launch_mr1l0_ui.sh
+   #  MR2L0-HOMS:
+   #      type: shell
+   #      commands:
+   #        - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr2l0_ui.sh
+   #  MR1L3-HOMS:
+   #      type: shell
+   #      commands:
+   #        - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr1l3_ui.sh
+   #  MR2L3-HOMS:
+   #     type: shell
+   #     commands:
+   #         - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr2l3_ui.sh
+   #  MR1L4-HOMS:
+   #      type: shell
+   #      commands:
+   #        - /reg/g/pcds/epics/ioc/xrt/lcls-plc-xrt-optics/latest/homsScreens/launch_mr1l4_ui.sh
     Optics Homs Notepad:
         type: shell
         commands:
@@ -178,7 +182,7 @@ LFE-OPTICS:
     HOMS Overview:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/lfe/homs_overview/launcher.sh
+        - /cds/group/pcds/epics/screens/pydm/lfe/homs_overview/latest/launcher.sh
 
     DCCM:
       type: shell

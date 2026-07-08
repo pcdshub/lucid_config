@@ -11,6 +11,14 @@ General:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/camviewer.sh
+    Environmental Sensors:
+       type: shell
+       commands:
+         - /cds/group/pcds/epics-dev/mods/lm1k2/raritan/screens/pydm-ioc-lm1k2-src800-01.cmd 
+    TPR:
+     type: shell
+     commands:
+         - /cds/group/pcds/epics-dev/mods/lm1k2/tprStandalone/build/iocBoot/ioc-qrix-las-tpr2/edm-ioc-qrix-las-tpr2.cmd
 
 Tools:
   config:
@@ -28,6 +36,10 @@ Tools:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/las-dispersion-scan/run-qrixs-atm.sh
+    THz 1D-scan:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/pcdshub/lcls-pydm-common/1d_scan/launch_1d_scan 'motor="LM1K2:OPA_MP1_DLY1",detector="LM1K2:SRS810:01:X"'
 
 #TPRs:
 #  config:

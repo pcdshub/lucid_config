@@ -38,12 +38,12 @@ Beamline:
         - pci-xpp-01
         - pci-xpp-02
         - pci-xrt-01
-    
+ 
     LODCM Temperature:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-01/edm-ioc-xpp-lodcm-ls336-01.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-02/edm-ioc-xpp-lodcm-ls336-02.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/lakeshore336/build/iocBoot/ioc-xpp-lodcm-ls336-01/edm-ioc-xpp-lodcm-ls336-01.cmd
       titles:
         - LakeShore - Crystal 1
         - LakeShore - Crystal 2
@@ -51,19 +51,98 @@ Beamline:
     LODCM Motion:
       type: shell
       commands:
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/he_lodcm.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_T1.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_D1.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_T2.sh
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/lodcm_screen_D2.sh
       titles:
+        - LODCM
         - Tower 1
         - Diag 1
         - Tower 2
         - Diag 2
 
+    Solid Attenuator:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
+#        - /cds/home/k/kaushikm/satt.sh
+
+    Transfocator:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
+        - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
+      titles:
+        - TFS motion
+        - TFS interlock
+
+    Pulse Picker:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
+
+
 Laser:
   config:
     cols: 4
+  buttons:
+    SmarAct:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-smaract/screens/launchgui-ioc-xpp-mcs2-las-01.cmd
+      titles:
+        - xpp-mcs2-las-01
+    
+    Pico Motor:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-picoMotion/build/iocBoot/ioc-xpp-pico-las01/edm-ioc-xpp-pico-las01.cmd
+      titles:
+        - xpp-pico-las-01
+    
+    Newport XPS:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps1/edm-ioc-xpp-las-xps1.cmd
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
+      titles:
+        - xpp-las-xps1
+        - xpp-las-xps2
+    
+    Analog In Out:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-ek9000/screens/launch_gui.cmd
+      titles:
+        - xpp-las-ek9000-01
+    
+    Laser Sequence:
+        type: shell
+        redirectCommandOutput: true
+        commands:
+          - /cds/home/i/ipotanin/opcpa-tpr-config/neh_bay1_launcher.sh
+        titles:
+          - Bay 1
+    
+    Fast Encoder:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-usdusb4/build/iocBoot/ioc-xpp-las-usdusb4/edm-ioc-xpp-las-usdusb4.cmd
+      titles:
+        - xpp-las-usdusb4
+    
+    Timetool:
+      type: shell
+      redicrectCOmmandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/timetool_plugin.sh
 
 
 
@@ -78,12 +157,103 @@ Detectors:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-01/edm-ioc-xpp-det-hmp-01.cmd
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-02/edm-ioc-xpp-det-hmp-02.cmd
       titles:
-        - HMP-01
-        - HMP-02
+        - HMP-01 (ceiling)
+        - HMP-02 (mobile)
+    Epix100:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/epix/build/iocBoot/ioc-xpp-epix-01/edm-ioc-xpp-epix-01.cmd
+    EPICS detectors:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-01/edm-ioc-xpp-alvium-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-02/edm-ioc-xpp-alvium-02.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/vimbacam/build/iocBoot/ioc-xpp-alvium-tt/edm-ioc-xpp-alvium-tt.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/andor3Cam/build/iocBoot/ioc-xpp-zyla-01/edm-ioc-xpp-zyla-01.cmd
+      titles:
+        - Alvium-01
+        - Alvium-02
+        - Alvium-tt
+        - Zyla-01
+    MPOD Portable:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-prtdet-mpod-01.cmd
+
+    Chiller Portable:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-thermotek/build/iocBoot/ioc-xpp-prtdet-thermotek-01/edm-ioc-xpp-prtdet-thermotek-01.cmd
+
+
 
 Users:
   config:
     cols: 4
+  buttons:
+    LIB SmarAct:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/smaract/build/iocBoot/ioc-xpp-mcs2-01/launchgui-ioc-xpp-mcs2-01.cmd
+      titles:
+        - LIB SmarAct
+    
+    ATDS Motion:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/atds_base.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/atds_gon.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/atds_sample.sh
+      titles:
+        - ATDS base
+        - ATDS GON
+        - ATDS sample
+
+    User Motors:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_1.sh
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_2.sh
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/dumb_motor_3.sh
+      titles:
+        - Dumb motor 01
+        - Dumb motor 02
+        - Dumb motor 03
+
+    Newport:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/NewportXPS8/build/iocBoot/ioc-xpp-user-xps1/edm-ioc-xpp-user-xps1.cmd
+        - /cds/group/pcds/epics-dev/kaushikm/ioc/xpp/NewportXPS8/build/iocBoot/ioc-xpp-user-xps3/edm-ioc-xpp-user-xps3.cmd
+      titles:
+        - USR Newport 1
+        - USR Newport 3
+
+    Granite Table Motion:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/rnazir/ioc/screens/Granite.sh
+      titles:
+        - motion
+    Stäubli:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/edm/xpp/current/staubliScreens/staubli_main.sh
+
+    SND:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ecs-pydm-ui/xpp_screens/snd.sh
+      titles:
+        - Aerotech-01
+
+    Kappa Lakeshore:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-lakeshore336/build/iocBoot/ioc-xpp-usr-ls336/edm-ioc-xpp-usr-ls336.cmd
 
 
 Tools:
@@ -119,6 +289,41 @@ Tools:
       type: display
       filenames:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/ict-screens/xpp-ict-screens.ui
-
       
+    Wave8s:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-sp1l2-pgpw8/edm-ioc-xpp-sp1l2-pgpw8.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em1l2-pgpw8/edm-ioc-xpp-em1l2-pgpw8.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em2l2-pgpw8/edm-ioc-xpp-em2l2-pgpw8.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-usr-pgpw8-01/edm-ioc-xpp-usr-pgpw8-01.cmd
+      titles:
+        - SP1L2-WV8
+        - EM1L2-WV8
+        - EM2L2-WV8
+        - USR-WV8-01
+
+    TPRs:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-01/edm-ioc-xpp-tpr-01.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-02/edm-ioc-xpp-tpr-02.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-03/edm-ioc-xpp-tpr-03.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-04/edm-ioc-xpp-tpr-04.cmd
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-las-01/edm-ioc-xpp-tpr-las-01.cmd
+      titles:
+        - cam-01
+        - cam-02
+        - cam-03
+        - wave8-01
+        - las-01
+    Scopes:
+      type: shell
+      commands:
+        - /sdf/home/x/xppopr/bin/xppscope
+
+    xpmpva:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/xpmpva.sh
 

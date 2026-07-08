@@ -265,11 +265,6 @@ FTL:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
-
-LRL: 
-  config:
-    cols: 2
-  buttons:
    Laser Lab Piezo Driver:
       type: shell
       commands:
@@ -290,10 +285,6 @@ LRL:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
-   LRL ATCA DAQMUX: 
-      type: shell
-      commands:
-        - /cds/group/pcds/epics-dev/tjohnson/screens/lln_atca_daqmux.cmd
 
 LHN Bay 3: 
   config:
@@ -442,7 +433,7 @@ LHN Bay 2:
   #    commands:
   #      - /reg/g/pcds/epics-dev/ljansen7/bin/tcboc_1510_adc_lln.cmd
 
-EVRs TPRs:
+EVRs:
   config:
     cols: 2
   buttons:
@@ -458,7 +449,7 @@ EVRs TPRs:
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-lln-evr-03/edm-ioc-las-lln-evr-03.cmd
-   FTL TPR:
+   FTL EVR:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-tprStandalone/build/iocBoot/ioc-las-ftl-tpr-01/edm-ioc-las-ftl-tpr-01.cmd  
+        - /cds/home/t/tjohnson/trunk/las/evr/build/iocBoot/ioc-las-ftl-evr-01/edm-ioc-las-ftl-evr-01.cmd

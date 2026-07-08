@@ -54,7 +54,7 @@ LUED:
     LUED:
       type: display
       filenames:
-        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/lued.ui
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/lued_new.ui
 
     LUED Motors:
       type: shell
@@ -88,25 +88,38 @@ SDS:
   config:
     cols: 3
   buttons:
-    RCC Valves:
+
+    SDS User Screen:
       type: shell
       commands:
-        - pydm --hide-nav-bar --hide-menu-bar /cds/home/j/jozamudi/dev/ued/rcv-screens/ued-rcv-screen.ui
+        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/launch.sh
+
+    RCC:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "BASE=UED:RCC, TITLE=RCC" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/RCC-Controls.ui
+
 
     HPLC:
       type: shell
       commands:
-        - pydm --hide-nav-bar -m 'base_pv=UED:SDS:LC20, hplc_count=2' /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/base-screens/hplc-screen.py
+        - pydm --hide-nav-bar -m 'base_pv=UED:SDS:LC20, hplc_count=3' /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/base-screens/hplc-screen.py
 
     ON/OFF Valves:
       type: shell
       commands:
-        - pydm --hide-nav-bar -m "hutch=UED, h1_id=01, h2_id=02" /cds/home/j/jozamudi/dev/sds/universal-onoff-screen/onoffvalves.py
+        - pydm --hide-nav-bar -m "hutch=UED, h1_id=01, h2_id=02" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-onoff-screen/onoffvalves.py
 
     4PortValve:
       type: shell
       commands:
-        - pydm --hide-nav-bar -m "pv=UED:SDS:VICI:01" /reg/g/pcds/epics-dev/screens/pydm/ued_screens/sds/4port-vici-valve.ui
+        - pydm --hide-nav-bar -m "BASE=UED:SDS:VICI:01" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/4port-vici-valve.ui
+
+    12PortValve:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar -m "BASE=UED:SDS:VICI:02" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/12PortValve.ui
+
           
     QEPro:
       type: shell
@@ -191,6 +204,22 @@ Lasers:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/divya/ioc/ued/ioc-ued-picoMotion/build/iocBoot/ioc-ued-pico-01/edm-ioc-ued-pico-01.cmd
+    
+    Pump Laser (Bunker) LabMax Power Meter:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-01/edm-ioc-ued-labMax-01.cmd      
+
+    UV Driver LabMax Power Meter:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-02/edm-ioc-ued-labMax-02.cmd
+
+    Laser Room LabMax Power Meter:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-03/edm-ioc-ued-labMax-03.cmd
+
 Webcams:
   config:
     cols: 4
@@ -284,14 +313,15 @@ Tools:
         - camViewer -c ued-andor-01
         - camViewer -c ued-andor-03
         - camViewer -c ued-alv-01
-        - camViewer -c ued-gige-sample-bottom
-        - camViewer -c ued-gige-sample-back
+        - camViewer -c ued-gige-sample-30deg
         - camViewer -c ued-gige-sample-front
+        - camViewer -c ued-gige-sample-side
         - camViewer -c ued-asar03
         - camViewer -c ued-asar04
         - camViewer -c ued-asps08
         - camViewer -c ued-asps04
         - camViewer -c ued-gige-vcc
+        - camViewer -c ued-gige-catcher-tube
       titles:
         - ued-gige-01
         - ued-andor-01
@@ -305,6 +335,7 @@ Tools:
         - ued-asps08
         - ued-asps04
         - ued-gige-vcc
+        - ued-gige-thz-sample
 
 
     Cam Viewer - Config:
@@ -349,7 +380,7 @@ Tools:
     UV feedback:
      type: shell
      commands:
-       - /cds/home/opr/uedopr/cjd/uv_feedback.py
+       - /cds/home/opr/uedopr/cjd/uv_feedback_ioc/uv_feedback_gui.py
 
     Klystron:
      type: shell
@@ -369,13 +400,13 @@ Tools:
     DG645 01:
         type: shell
         commands:
-          - /cds/group/pcds/epics/ioc/ued/dg/R1.0.0/build/iocBoot/ioc-ued-delaygen1/edm-ioc-ued-delaygen1.cmd
+          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen1/edm-ioc-ued-delaygen1.cmd
  
 
     DG645 02:
         type: shell
         commands:
-          - /cds/group/pcds/epics/ioc/ued/dg/R1.0.0/build/iocBoot/ioc-ued-delaygen2/edm-ioc-ued-delaygen2.cmd
+          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen2/edm-ioc-ued-delaygen2.cmd
 
     LCLS-Gateway(on psbuild):
         type: shell
@@ -407,18 +438,10 @@ Tools:
         commands:
           - /cds/home/opr/uedopr/cjd/ScriptLauncher.py
 
-    Terminal:
+    wave8:
         type: shell
         commands:
-          - /cds/home/opr/uedopr/cjd/xterm.sh
-
-    h4x0r:
-        type: shell
-        commands:
-          - /cds/home/opr/uedopr/cjd/xterm.sh -fullscreen -fs 36
-        
-
-
+          - /reg/g/pcds/epics-dev/divya/ioc/ued/ioc-ued-pgpWave8/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
 
 Legacy_UED:
 
