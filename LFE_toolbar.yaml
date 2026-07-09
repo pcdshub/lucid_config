@@ -74,6 +74,10 @@ Instrumentation:
         type: shell
         commands:
           - /cds/group/pcds/epics/ioc/lfe/pgpWave8/R3.0.1/build/iocBoot/ioc-lfe-em3l0-pgpw8/edm-ioc-lfe-em3l0-pgpw8.cmd
+    RTDS Diode QADC: 
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-qadc/build/iocBoot/ioc-lfe-qadc-01/pydm-ioc-lfe-qadc-01.cmd
 
 Vacuum:
   config:

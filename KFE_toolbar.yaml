@@ -133,6 +133,10 @@ EM1K0-GMD:
         type: display
         filenames:
             - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/tpcalc/2avg.ui
+    Auto Attenuation:
+        type: shell
+        commands:
+            - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/fakeGmd/children/build/iocBoot/ioc-tst-gmd-02/edm-ioc-tst-gmd-02.cmd
 
 EM2K0-XGMD:
   config:
@@ -161,6 +165,11 @@ EM2K0-XGMD:
           #- bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
           #- bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_xgmd_main_pcds.sh
            - bash /cds/group/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh
+    Auto Attenuation:
+        type: shell
+        commands:
+            - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/fakeGmd/children/build/iocBoot/ioc-tst-gmd-01/edm-ioc-tst-gmd-01.cmd
+
 RTDSK0:
   config:
     cols: 4
