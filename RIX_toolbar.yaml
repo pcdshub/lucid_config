@@ -299,10 +299,10 @@ chemRIXS:
      commands:
        - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui 
         
-    VLS Vac:
-      type: shell
-      commands:
-       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
+         #    VLS Vac:
+         #type: shell
+         #commands:
+         #       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
     VLS Slit:
       type: shell
       commands:
