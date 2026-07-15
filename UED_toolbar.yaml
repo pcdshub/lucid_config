@@ -219,6 +219,12 @@ Lasers:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-03/edm-ioc-ued-labMax-03.cmd
+    
+    Laser Room MDO34 Scope:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/ioc/ued/ioc-ued-dso4000/build/iocBoot/ioc-ued-dso4000-01/pydm-ioc-ued-dso4000-01.cmd
+
 
 Webcams:
   config:
