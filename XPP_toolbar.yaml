@@ -144,6 +144,11 @@ Laser:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/timetool_plugin.sh
 
+    Beam Profiler:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/beam_profiler.sh
 
 
 Detectors:
