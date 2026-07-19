@@ -29,7 +29,7 @@ General:
       commands:
         - gw
 
-OPCPA:
+Bays 3/2:
   config:
     cols: 2
   buttons:
@@ -76,11 +76,11 @@ OPCPA:
     Bay 3 SMC Chiller:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-lhn-thermocon-03/pydm-ioc-las-lhn-thermocon-03.cmd
+        - /cds/group/pcds/epics/ioc/las/thermocon/R1.0.0/build/iocBoot/ioc-las-lhn-thermocon-03/pydm-ioc-las-lhn-thermocon-03.cmd
     Bay 2 SMC Chiller:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-lhn-thermocon-02/pydm-ioc-las-lhn-thermocon-02.cmd
+        - /cds/group/pcds/epics/ioc/las/thermocon/R1.0.0/build/iocBoot/ioc-las-lhn-thermocon-02/pydm-ioc-las-lhn-thermocon-02.cmd
     OPCPA Scope:
       type: shell
       commands:
@@ -414,23 +414,23 @@ NEH Beam Transport:
         - las-pci-03
         - las-pci-04
 
-Camera EDM:
-  config:
-    cols: 2
-  buttons:
-   Bay 1 (NF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-nf-01/edm-ioc-lhn-bay1-nf-01.cmd
-   Bay 1 (FF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-ff-01/edm-ioc-lhn-bay1-ff-01.cmd
-   Bay 4 (NF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-nf-01/edm-ioc-lhn-bay4-nf-01.cmd
-   Bay 4 (FF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-ff-01/edm-ioc-lhn-bay4-ff-01.cmd
+# Camera EDM:
+#   config:
+#     cols: 2
+#   buttons:
+#    Bay 1 (NF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-nf-01/edm-ioc-lhn-bay1-nf-01.cmd
+#    Bay 1 (FF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-ff-01/edm-ioc-lhn-bay1-ff-01.cmd
+#    Bay 4 (NF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-nf-01/edm-ioc-lhn-bay4-nf-01.cmd
+#    Bay 4 (FF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-ff-01/edm-ioc-lhn-bay4-ff-01.cmd
