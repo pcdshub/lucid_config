@@ -709,7 +709,8 @@ Tools:
     KFE iocmanager:
      type: shell
      commands:
-       - /cds/group/pcds/pyps/config/kfe/iocmanager.sh
+       - iocmanager kfe
+#       - /cds/group/pcds/pyps/config/kfe/iocmanager.sh
 
     grubber:
       type: shell
