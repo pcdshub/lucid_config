@@ -112,9 +112,11 @@ Laser:
       commands:
         - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps1/edm-ioc-xpp-las-xps1.cmd
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
+        - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps3/edm-ioc-xpp-las-xps3.cmd
       titles:
         - xpp-las-xps1
         - xpp-las-xps2
+        - xpp-las-xps3
     
     Analog In Out:
       type: shell
