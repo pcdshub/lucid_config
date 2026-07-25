@@ -355,8 +355,9 @@ DREAM:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip2-nonhazard/edm-ioc-tmo-gcip2-nonhazard.cmd
-
-   TDK-Lambda GEN 16-310:
+   
+   HH coil:
+     #TDK-Lambda GEN 16-310:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/tmo/tdkLambdaGen/R1.0.0/build/iocBoot/ioc-dream-genesys/pydm-ioc-dream-genesys.cmd 
@@ -801,6 +802,11 @@ Miscellaneous:
   config:
     cols: 2
   buttons:
+    Ilhaams Chamber:
+      type: shell
+      commands:
+        - pydm /reg/g/pcds/epics-dev/tparas/screens/tmo/ilhaam_screen.ui
+
     User Beckhoff:
       type: shell
       redirectCommandOutput: true

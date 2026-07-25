@@ -61,7 +61,7 @@ Instrumentation:
     Gdet PDU:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/screens/edm/lfe/edm-ioc-lfe-pwd-02.cmd
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-pdu/build/iocBoot/ioc-lfe-pwr-02/edm-ioc-lfe-pwr-02.cmd
     DCCM Temperatures:
         type: shell
         commands:
