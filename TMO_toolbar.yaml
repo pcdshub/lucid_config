@@ -807,7 +807,12 @@ Miscellaneous:
       commands:
         - pydm /reg/g/pcds/epics-dev/tparas/screens/tmo/ilhaam_screen.ui
 
-    User Beckhoff:
+    IP2 User Beckhoff:
+      type: shell
+      commands:
+        - pydm /reg/g/pcds/epics-dev/tparas/screens/tmo/ip2_ek9000.ui
+
+    BHC User Beckhoff:
       type: shell
       redirectCommandOutput: true
       commands:
