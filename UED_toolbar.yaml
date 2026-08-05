@@ -403,10 +403,15 @@ Tools:
      commands:
        - eloggrabber -s grubber_script
 
-    UED PDU:
+    UED Bunker PDU:
         type: shell
         commands:
           - /reg/g/pcds/epics/ioc/ued/pdu_snmp/v1.0.0/build/iocBoot/ioc-ued-pwr-01/edm-ioc-ued-pwr-01.cmd
+
+    UED Laser PDU:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/ued/pdu_snmp/v1.1.0/build/iocBoot/ioc-ued-pwr-02/edm-ioc-ued-pwr-02.cmd
 
     DG645 01:
         type: shell
