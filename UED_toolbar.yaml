@@ -94,6 +94,11 @@ SDS:
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/launch.sh
 
+    SDS User Screen (LVR):
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/lvr_launch.sh
+
     RCC:
       type: shell
       commands:
