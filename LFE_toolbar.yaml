@@ -91,7 +91,7 @@ Vacuum:
     HXR Beamline Vac:
         type: shell
         commands:
-          - pydm screens/pydm/vacuumscreens/screens/hxrVac-v2.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/hxrVac-v2.ui
     HXR Beamline Vac in H1.1-H1.3:
         type: shell
         commands:
