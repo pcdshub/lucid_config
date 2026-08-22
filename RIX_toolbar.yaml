@@ -562,6 +562,16 @@ qRIXS-Laser:
      commands:
        - /cds/group/pcds/epics-dev/aberges/mods/temp-mods/lm1k2/srs810/build/iocBoot/ioc-lm1k2-srs810/pydm-ioc-lm1k2-srs810.cmd
 
+3RIXS:
+  config:
+    cols: 4
+  buttons:
+    HV:
+     type: shell
+     commands:
+       - ssh rix-control "vncviewer 172.21.21.xx"
+
+
 
 Webcams:
   config:
