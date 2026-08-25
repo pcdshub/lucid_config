@@ -109,15 +109,15 @@ EM1K0-GMD:
     EM1K0-GMD Vacuum:
         type: shell 
         commands:
-          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-gmd-vac/ui/GMD1bVacScreen.ui
+          - pydm /reg/g/pcds/epics-dev/tparas/plc/kfe/lcls-plc-kfe-gmd-vac/ui/GMD1bVacScreen.ui
     EM1K0-GMD Injector:
         type: shell
         commands:
-          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-gmd-vac/ui/GMD1bInjectScreen.ui
+          - pydm /reg/g/pcds/epics-dev/tparas/plc/kfe/lcls-plc-kfe-gmd-vac/ui/GMD1bInjectScreen.ui
     EM1K0-GMD-VGP-40:
         type: shell
         commands:
-          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-gmd-vac/ui/EM1K0-VGP.ui
+          - pydm /reg/g/pcds/epics-dev/tparas/plc/kfe/lcls-plc-kfe-gmd-vac/ui/EM1K0-VGP.ui
     Spinning Rotor Gauge:
         type: shell
         commands:
