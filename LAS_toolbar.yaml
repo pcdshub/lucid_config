@@ -381,16 +381,15 @@ NEH Beam Transport:
    Shutters:
       type: shell
       commands:
-        - /cds/group/pcds/epics/screens/las/bts-vac-ui/R1.0.0/open_shutters.sh
+        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.3.0/open_shutters.sh
    BTMS Overview:
       type: shell
       commands:
-         - /cds/group/pcds/epics/screens/las/btms-ui/v1.2.3/run.sh overview
-       # - /cds/group/pcds/epics-dev/aberges/btms-ui/run.sh overview
+         - /cds/group/pcds/epics-dev/screens/pydm/las/bts/run_btms.sh 
    BTPS Overview:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/dev/btms-ui/btps.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/las/bts/run_btps.sh
    BTS All Motors:
       type: shell
       commands:

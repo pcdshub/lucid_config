@@ -123,6 +123,10 @@ Beamline:
       type: shell
       commands:
         - /cds/home/opr/rixopr/bin/PPSTouchPanel 
+    RIX DAQ Grafana Web Page:
+      type: shell
+      commands:
+        - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/system/grafana/d/wihghwb/l2si-daq-sdf?from=now-5m&to=now&timezone=browser&var-instrument=rix&var-partition=0&var-group=0&var-group=1&var-group=2&var-detname=timing&var-detname=bld&var-detname=epics&var-prom=afotnjy2b05q8b&refresh=auto
 
 PAX:
   config:
