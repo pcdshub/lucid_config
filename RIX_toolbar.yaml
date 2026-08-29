@@ -59,7 +59,7 @@ Beamline:
       filenames:
         - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/ict-screen/rix-ict-screens.ui
 
-    Grafana:
+    RIX X-Ray Grafana:
      type: shell
      commands:
        - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/ctl/grafana/d/FWGG2Uo4z/rix-x-ray-dashboard?orgId=1
