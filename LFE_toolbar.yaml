@@ -95,7 +95,7 @@ Vacuum:
     HXR Beamline Vac in H1.1-H1.3:
         type: shell
         commands:
-          - pydm screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
     Ion Pump Power Controls:
         type: shell
         commands:
