@@ -75,16 +75,22 @@ Beamline:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
         - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/xpp-interlock-launcher.sh
+        - /cds/group/pcds/epics-dev/jcotter/xpp_tfs/tfs_gui_launch.sh
       titles:
         - TFS motion
         - TFS interlock
         - TFS Interlock GUI
+        - TFS Combined Motion
 
     Pulse Picker:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
 
+    Beamline GUI:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/xpp_beamline_screen/beamline_gui_launch.sh
 
 Laser:
   config:
