@@ -88,6 +88,23 @@ Vacuum:
         type: shell
         commands:
           - pydm /reg/g/pcds/epics-dev/screens/pydm/lfe/AT1L0.ui
+    GEM Rough Pumps:
+        type: shell
+        commands:
+          - pydm -m "prefix=LFE:NEODRYG:EM1L0:PRO:20" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar
+          - pydm -m "prefix=LFE:NEODRYG:EM1L0:PRO:30" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM1L0:PRO:50" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM2L0:PRO:30" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM2L0:PRO:50" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM2L0:PRO:60" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+        titles:
+          - EM1L0-PRO-20
+          - EM1L0-PRO-30
+          - EM1L0-PRO-50
+          - EM2L0-PRO-30
+          - EM2L0-PRO-50
+          - EM2L0-PRO-60
+
     HXR Beamline Vac:
         type: shell
         commands:

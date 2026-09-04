@@ -110,6 +110,10 @@ EM1K0-GMD:
         type: shell 
         commands:
           - pydm /reg/g/pcds/epics/ioc/kfe/lcls-plc-kfe-gmd-vac/v1.0.0/ui/GMD1bVacScreen.ui
+    GMD Rough Pump:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/tparas/ioc/kfe/ioc-kfe-drypump/build/iocBoot/ioc-kfe-gmd-drypump/pydm-ioc-kfe-gmd-drypump.cmd
     EM1K0-GMD Injector:
         type: shell
         commands:

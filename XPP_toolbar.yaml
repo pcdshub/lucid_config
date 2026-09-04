@@ -71,6 +71,7 @@ Beamline:
 
     Transfocator:
       type: shell
+      redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
         - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
