@@ -290,6 +290,7 @@ Tools:
         - typhos xpp_pwr_r07_01 --display-type detailed
         - typhos xpp_pwr_r07_02 --display-type detailed
         - typhos xpp_pwr_r08_01 --display-type detailed
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-pdu_snmp/build/iocBoot/ioc-xpp-pwr-r09-01/edm-ioc-xpp-pwr-r09-01.cmd
       titles:
         - PWR-R01-01
         - PWR-R02-01
@@ -301,6 +302,7 @@ Tools:
         - PWR-R07-01
         - PWR-R07-02
         - PWR-R08-01
+        - PWR-R09-01
   
     XPP ICT Controls:
       type: display
