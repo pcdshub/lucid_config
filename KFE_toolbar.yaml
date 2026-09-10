@@ -267,6 +267,17 @@ Tools:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/n2/launch.sh
+    KFE PDU's:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-r07
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-r08
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-r09
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s12-01
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s12-02
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s22-01
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s22-02
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s32-01
 
 HV:
   config:
