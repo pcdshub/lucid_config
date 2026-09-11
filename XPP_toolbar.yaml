@@ -26,7 +26,7 @@ Beamline:
     XPP Beamline Vacuum:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/XPPVac.sh
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
 
     Ion pump controllers:
       type: shell
