@@ -29,7 +29,7 @@ General:
       commands:
         - gw
 
-OPCPA:
+Bays 3/2:
   config:
     cols: 2
   buttons:
@@ -76,11 +76,11 @@ OPCPA:
     Bay 3 SMC Chiller:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-lhn-thermocon-03/pydm-ioc-las-lhn-thermocon-03.cmd
+        - /cds/group/pcds/epics/ioc/las/thermocon/R1.0.0/build/iocBoot/ioc-las-lhn-thermocon-03/pydm-ioc-las-lhn-thermocon-03.cmd
     Bay 2 SMC Chiller:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-lhn-thermocon-02/pydm-ioc-las-lhn-thermocon-02.cmd
+        - /cds/group/pcds/epics/ioc/las/thermocon/R1.0.0/build/iocBoot/ioc-las-lhn-thermocon-02/pydm-ioc-las-lhn-thermocon-02.cmd
     OPCPA Scope:
       type: shell
       commands:
@@ -377,20 +377,19 @@ NEH Beam Transport:
    NEH Laser Hall Vacuum:
       type: shell 
       commands:
-        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.2.3/open_home.sh
+        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.3.0/open_home.sh
    Shutters:
       type: shell
       commands:
-        - /cds/group/pcds/epics/screens/las/bts-vac-ui/R1.0.0/open_shutters.sh
+        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.3.0/open_shutters.sh
    BTMS Overview:
       type: shell
       commands:
-         - /cds/group/pcds/epics/screens/las/btms-ui/v1.2.3/run.sh overview
-       # - /cds/group/pcds/epics-dev/aberges/btms-ui/run.sh overview
+         - /cds/group/pcds/epics-dev/screens/pydm/las/bts/run_btms.sh 
    BTPS Overview:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/dev/btms-ui/btps.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/las/bts/run_btps.sh
    BTS All Motors:
       type: shell
       commands:
@@ -414,23 +413,23 @@ NEH Beam Transport:
         - las-pci-03
         - las-pci-04
 
-Camera EDM:
-  config:
-    cols: 2
-  buttons:
-   Bay 1 (NF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-nf-01/edm-ioc-lhn-bay1-nf-01.cmd
-   Bay 1 (FF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-ff-01/edm-ioc-lhn-bay1-ff-01.cmd
-   Bay 4 (NF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-nf-01/edm-ioc-lhn-bay4-nf-01.cmd
-   Bay 4 (FF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-ff-01/edm-ioc-lhn-bay4-ff-01.cmd
+# Camera EDM:
+#   config:
+#     cols: 2
+#   buttons:
+#    Bay 1 (NF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-nf-01/edm-ioc-lhn-bay1-nf-01.cmd
+#    Bay 1 (FF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-ff-01/edm-ioc-lhn-bay1-ff-01.cmd
+#    Bay 4 (NF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-nf-01/edm-ioc-lhn-bay4-nf-01.cmd
+#    Bay 4 (FF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-ff-01/edm-ioc-lhn-bay4-ff-01.cmd

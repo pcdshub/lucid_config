@@ -26,13 +26,13 @@ Beamline:
     XPP Beamline Vacuum:
       type: shell
       commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
-    
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
+
     Ion pump controllers:
       type: shell
       commands:
-        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
-        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
         - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.1/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
       titles:
         - pci-xpp-01
@@ -71,17 +71,27 @@ Beamline:
 
     Transfocator:
       type: shell
+      redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
         - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
+        - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/xpp-interlock-launcher.sh
+        - /cds/group/pcds/epics-dev/jcotter/xpp_tfs/tfs_gui_launch.sh
       titles:
         - TFS motion
         - TFS interlock
+        - TFS Interlock GUI
+        - TFS Combined Motion
 
     Pulse Picker:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
+
+    Beamline GUI:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/xpp_beamline_screen/beamline_gui_launch.sh
 
 
 Laser:
@@ -110,9 +120,11 @@ Laser:
       commands:
         - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps1/edm-ioc-xpp-las-xps1.cmd
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
+        - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps3/edm-ioc-xpp-las-xps3.cmd
       titles:
         - xpp-las-xps1
         - xpp-las-xps2
+        - xpp-las-xps3
     
     Analog In Out:
       type: shell
@@ -144,6 +156,11 @@ Laser:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/timetool_plugin.sh
 
+    Beam Profiler:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/beam_profiler.sh
 
 
 Detectors:
@@ -273,6 +290,7 @@ Tools:
         - typhos xpp_pwr_r07_01 --display-type detailed
         - typhos xpp_pwr_r07_02 --display-type detailed
         - typhos xpp_pwr_r08_01 --display-type detailed
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-pdu_snmp/build/iocBoot/ioc-xpp-pwr-r09-01/edm-ioc-xpp-pwr-r09-01.cmd
       titles:
         - PWR-R01-01
         - PWR-R02-01
@@ -284,6 +302,7 @@ Tools:
         - PWR-R07-01
         - PWR-R07-02
         - PWR-R08-01
+        - PWR-R09-01
   
     XPP ICT Controls:
       type: display

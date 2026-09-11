@@ -59,7 +59,7 @@ Beamline:
       filenames:
         - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/ict-screen/rix-ict-screens.ui
 
-    Grafana:
+    RIX X-Ray Grafana:
      type: shell
      commands:
        - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/ctl/grafana/d/FWGG2Uo4z/rix-x-ray-dashboard?orgId=1
@@ -123,6 +123,10 @@ Beamline:
       type: shell
       commands:
         - /cds/home/opr/rixopr/bin/PPSTouchPanel 
+    RIX DAQ Grafana Web Page:
+      type: shell
+      commands:
+        - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window https://pswww.slac.stanford.edu/system/grafana/d/wihghwb/l2si-daq-sdf?from=now-5m&to=now&timezone=browser&var-instrument=rix&var-partition=0&var-group=0&var-group=1&var-group=2&var-detname=timing&var-detname=bld&var-detname=epics&var-prom=afotnjy2b05q8b&refresh=auto
 
 PAX:
   config:
@@ -299,10 +303,10 @@ chemRIXS:
      commands:
        - pydm  /reg/g/pcds/epics-dev/screens/pydm/rix_screens/TXAS-FZP-LED.ui 
         
-    VLS Vac:
-      type: shell
-      commands:
-       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
+         #    VLS Vac:
+         #type: shell
+         #commands:
+         #       - pydm /reg/g/pcds/epics-dev/screens/pydm/rix/vacuum_screens/crix_vls.ui
     VLS Slit:
       type: shell
       commands:
@@ -562,6 +566,16 @@ qRIXS-Laser:
      commands:
        - /cds/group/pcds/epics-dev/aberges/mods/temp-mods/lm1k2/srs810/build/iocBoot/ioc-lm1k2-srs810/pydm-ioc-lm1k2-srs810.cmd
 
+3RIXS:
+  config:
+    cols: 4
+  buttons:
+    HV:
+     type: shell
+     commands:
+       - ssh rix-control "vncviewer 172.21.21.xx"
+
+
 
 Webcams:
   config:
@@ -709,7 +723,8 @@ Tools:
     KFE iocmanager:
      type: shell
      commands:
-       - /cds/group/pcds/pyps/config/kfe/iocmanager.sh
+       - iocmanager kfe
+#       - /cds/group/pcds/pyps/config/kfe/iocmanager.sh
 
     grubber:
       type: shell

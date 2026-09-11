@@ -94,11 +94,6 @@ SDS:
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/launch.sh
 
-    SDS User Screen (LVR):
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/lvr_launch.sh
-
     RCC:
       type: shell
       commands:
@@ -183,12 +178,12 @@ Lasers:
     OPA Laptop:
       type: shell
       commands:
-      - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /w:1366 /h:768 /dynamic-resolution /drive:uedopr,/cds/home/opr/uedopr -sec-nla +clipboard
+      - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /w:1366 /h:768 /dynamic-resolution -sec-nla +clipboard
 
     REGEN Laptop:
       type: shell
       commands:
-        - xfreerdp /u:customer /p:121234 /v:laptop-ued-ics-02 /w:1366 /h:768 /dynamic-resolution /drive:uedopr,/cds/home/opr/uedopr -sec-nla +clipboard
+        - xfreerdp /u:customer /p:121234 /v:laptop-ued-ics-02 /w:1366 /h:768 /dynamic-resolution -sec-nla +clipboard
 
     Shutters:
       type: display
@@ -408,15 +403,10 @@ Tools:
      commands:
        - eloggrabber -s grubber_script
 
-    UED Bunker PDU:
+    UED PDU:
         type: shell
         commands:
           - /reg/g/pcds/epics/ioc/ued/pdu_snmp/v1.0.0/build/iocBoot/ioc-ued-pwr-01/edm-ioc-ued-pwr-01.cmd
-
-    UED Laser PDU:
-        type: shell
-        commands:
-          - /reg/g/pcds/epics/ioc/ued/pdu_snmp/v1.1.0/build/iocBoot/ioc-ued-pwr-02/edm-ioc-ued-pwr-02.cmd
 
     DG645 01:
         type: shell
@@ -462,12 +452,7 @@ Tools:
     wave8:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/kaushikm/ioc/ued/pgpWave8/children/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
-    TPR Screen:
-        type: shell
-        commands:
-          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-tprStandalone/build/iocBoot/ioc-ued-tpr-01//edm-ioc-ued-tpr-01.cmd
-
+          - /reg/g/pcds/epics/ioc/common/pgpWave8/R3.3.0/children/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
 Legacy_UED:
 
   config:

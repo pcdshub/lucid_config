@@ -61,7 +61,7 @@ Instrumentation:
     Gdet PDU:
         type: shell
         commands:
-          - /reg/g/pcds/epics-dev/screens/edm/lfe/edm-ioc-lfe-pwd-02.cmd
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-pdu/build/iocBoot/ioc-lfe-pwr-02/edm-ioc-lfe-pwr-02.cmd
     DCCM Temperatures:
         type: shell
         commands:
@@ -74,6 +74,10 @@ Instrumentation:
         type: shell
         commands:
           - /cds/group/pcds/epics/ioc/lfe/pgpWave8/R3.0.1/build/iocBoot/ioc-lfe-em3l0-pgpw8/edm-ioc-lfe-em3l0-pgpw8.cmd
+    RTDS Diode QADC: 
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-qadc/build/iocBoot/ioc-lfe-qadc-01/pydm-ioc-lfe-qadc-01.cmd
 
 Vacuum:
   config:
@@ -84,14 +88,31 @@ Vacuum:
         type: shell
         commands:
           - pydm /reg/g/pcds/epics-dev/screens/pydm/lfe/AT1L0.ui
+    GEM Rough Pumps:
+        type: shell
+        commands:
+          - pydm -m "prefix=LFE:NEODRYG:EM1L0:PRO:20" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar
+          - pydm -m "prefix=LFE:NEODRYG:EM1L0:PRO:30" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM1L0:PRO:50" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM2L0:PRO:30" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM2L0:PRO:50" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+          - pydm -m "prefix=LFE:NEODRYG:EM2L0:PRO:60" /reg/g/pcds/epics/ioc/common/drypump/R1.0.0/screens/neodryG.ui --hide-nav-bar --hide-menu-bar --hide-status-bar 
+        titles:
+          - EM1L0-PRO-20
+          - EM1L0-PRO-30
+          - EM1L0-PRO-50
+          - EM2L0-PRO-30
+          - EM2L0-PRO-50
+          - EM2L0-PRO-60
+
     HXR Beamline Vac:
         type: shell
         commands:
-          - pydm screens/pydm/vacuumscreens/screens/hxrVac-v2.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/hxrVac-v2.ui
     HXR Beamline Vac in H1.1-H1.3:
         type: shell
         commands:
-          - pydm screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/vacuumscreens/screens/hxrH1_1H1_2Vac.ui
     Ion Pump Power Controls:
         type: shell
         commands:

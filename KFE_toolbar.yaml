@@ -109,15 +109,19 @@ EM1K0-GMD:
     EM1K0-GMD Vacuum:
         type: shell 
         commands:
-          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-gmd-vac/ui/GMD1bVacScreen.ui
+          - pydm /reg/g/pcds/epics/ioc/kfe/lcls-plc-kfe-gmd-vac/v1.0.0/ui/GMD1bVacScreen.ui
+    GMD Rough Pump:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics-dev/tparas/ioc/kfe/ioc-kfe-drypump/build/iocBoot/ioc-kfe-gmd-drypump/pydm-ioc-kfe-gmd-drypump.cmd
     EM1K0-GMD Injector:
         type: shell
         commands:
-          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-gmd-vac/ui/GMD1bInjectScreen.ui
+          - pydm /reg/g/pcds/epics/ioc/kfe/lcls-plc-kfe-gmd-vac/v1.0.0/ui/GMD1bInjectScreen.ui
     EM1K0-GMD-VGP-40:
         type: shell
         commands:
-          - pydm /reg/g/pcds/epics-dev/ioc/kfe/lcls-plc-kfe-gmd-vac/ui/EM1K0-VGP.ui
+          - pydm /reg/g/pcds/epics/ioc/kfe/lcls-plc-kfe-gmd-vac/v1.0.0/ui/EM1K0-VGP.ui
     Spinning Rotor Gauge:
         type: shell
         commands:
@@ -133,6 +137,10 @@ EM1K0-GMD:
         type: display
         filenames:
             - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/tpcalc/2avg.ui
+    Auto Attenuation:
+        type: shell
+        commands:
+            - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/fakeGmd/children/build/iocBoot/ioc-tst-gmd-02/edm-ioc-tst-gmd-02.cmd
 
 EM2K0-XGMD:
   config:
@@ -161,6 +169,11 @@ EM2K0-XGMD:
           #- bash /reg/g/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh 
           #- bash /cds/group/pcds/epics-dev/screens/pydm/scripts/launch_xgmd_main_pcds.sh
            - bash /cds/group/pcds/epics/ioc/kfe/gmd/current/gmdScreens/launch_xgmd_main_pcds.sh
+    Auto Attenuation:
+        type: shell
+        commands:
+            - /cds/group/pcds/epics-dev/kaushikm/ioc/kfe/fakeGmd/children/build/iocBoot/ioc-tst-gmd-01/edm-ioc-tst-gmd-01.cmd
+
 RTDSK0:
   config:
     cols: 4
@@ -254,6 +267,17 @@ Tools:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/kfe_screens/n2/launch.sh
+    KFE PDU's:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-r07
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-r08
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-r09
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s12-01
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s12-02
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s22-01
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s22-02
+        - /reg/g/pcds/epics-dev/rnazir/ioc/kfe/ioc-kfe-pdu_snmp/build/iocBoot/ioc-kfe-pwr-s32-01
 
 HV:
   config:

@@ -84,40 +84,40 @@ Vacuum:
         #type: shell
         #commands:
         #- pydm /reg/g/pcds/epics-dev/divyak/DREAM_Vacuun_UI/gas_jet.ui 
-#
-#CVMI:
-#  config:
-#    cols: 2
-#
-#  buttons:
-#   CVMI Vacuum:
-#        type: shell
-#        commands:
-#       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLV39.ui
-#       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLY91.ui
-#       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac_LY45.ui
-#         - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/ccVMI_v1.ui
-#   CVMI SQ1 PLC Remote Desktop Session:
-#        type: shell
-#        commands:
-#      #  - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
-#
-#   CVMI HV Channels:
-#        type: shell
-#        commands:
-#        - /reg/g/pcds/epics/ioc/common/isegPower/R1.3.2/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
-#       # - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
-#   
-#   CVMI In-vacuum Piezo Motors:
-#     type: shell
-#     commands:
-#        - /reg/g/pcds/epics/ioc/tmo/mmc/R1.1.1/mmcScreens/edm-ioc-tmo-cvmi-mmc-2axis.sh
-#
-#   CVMI PDU:
-#     type: shell
-#     commands:
-#       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
-#
+
+CVMI:
+  config:
+    cols: 2
+
+  buttons:
+   CVMI Vacuum:
+        type: shell
+        commands:
+       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLV39.ui
+       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVacLY91.ui
+       # - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/cvmiVac_LY45.ui
+         - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/ccVMI_v1.ui
+   CVMI SQ1 PLC Remote Desktop Session:
+        type: shell
+        commands:
+      #  - /reg/neh/home/sfsyunus/plc-tmo-mcq-02_RDP_launcher.sh
+
+   CVMI HV Channels:
+        type: shell
+        commands:
+        - /reg/g/pcds/epics/ioc/common/isegPower/R1.3.2/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+       # - /reg/g/pcds/epics-dev/spencera/tmo/screens/isegPower/children/build/iocBoot/ioc-tmo-mpod01/edm-ioc-tmo-mpod01.cmd
+   
+   CVMI In-vacuum Piezo Motors:
+     type: shell
+     commands:
+        - /reg/g/pcds/epics/ioc/tmo/mmc/R1.1.1/mmcScreens/edm-ioc-tmo-cvmi-mmc-2axis.sh
+
+   CVMI PDU:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics/ioc/tmo/pdu_snmp/R2.4.9/build/iocBoot/ioc-tmo-pwr-cvmi/edm-ioc-tmo-pwr-cvmi.cmd
+
 #LAMP:
 # config:
 #    cols: 2
@@ -266,7 +266,7 @@ MRCO:
    MRCO SQ1 PLC Remote Desktop Session:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/kborne/xfreerdp_copy/plc-tmo-mcq-03_RDP_launcher.sh
+       - /reg/neh/home/nwbrown/Documents/xfreerdp_copy/plc-tmo-mcq-03_RDP_launcher.sh
    MRCO HV GUI:
      type: shell
      commands:
@@ -355,9 +355,8 @@ DREAM:
      type: shell
      commands:
        - /reg/g/pcds/epics-dev/tongju/ioc-gasCabinet/children/build/iocBoot/ioc-tmo-gcip2-nonhazard/edm-ioc-tmo-gcip2-nonhazard.cmd
-   
-   HH coil:
-     #TDK-Lambda GEN 16-310:
+
+   TDK-Lambda GEN 16-310:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/tmo/tdkLambdaGen/R1.0.0/build/iocBoot/ioc-dream-genesys/pydm-ioc-dream-genesys.cmd 
@@ -674,12 +673,12 @@ Tools:
    TMO iocmanager:
      type: shell
      commands:
-       - iocmanager tmo
+       - iocmanager --hutch tmo
 
    KFE iocmanager:
      type: shell
      commands:
-       - iocmanager kfe
+       - /reg/g/pcds/pyps/config/kfe/iocmanager.sh
 
    AMO RGA KBO:
      type: shell
@@ -802,17 +801,7 @@ Miscellaneous:
   config:
     cols: 2
   buttons:
-    Ilhaams Chamber:
-      type: shell
-      commands:
-        - pydm /reg/g/pcds/epics-dev/tparas/screens/tmo/ilhaam_screen.ui
-
-    IP2 User Beckhoff:
-      type: shell
-      commands:
-        - pydm /reg/g/pcds/epics-dev/tparas/screens/tmo/ip2_ek9000.ui
-
-    BHC User Beckhoff:
+    User Beckhoff:
       type: shell
       redirectCommandOutput: true
       commands:

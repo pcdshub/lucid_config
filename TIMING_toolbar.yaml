@@ -157,7 +157,8 @@ RFOF:
    ITech RFoF:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.2/build/iocBoot/ioc-las-rfof-itech-01/edm-ioc-las-rfof-itech-01.cmd
+        - /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.3/build/iocBoot/ioc-las-rfof-itech-01/pydm-ioc-las-rfof-itech-01.cmd
+          #- /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.2/build/iocBoot/ioc-las-rfof-itech-01/edm-ioc-las-rfof-itech-01.cmd
    RFOF OL-MDL:
       type: shell
       commands:
