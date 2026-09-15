@@ -79,6 +79,26 @@ Instrumentation:
         commands:
           - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-qadc/build/iocBoot/ioc-lfe-qadc-01/pydm-ioc-lfe-qadc-01.cmd
 
+GEM:
+  config:
+    cols: 1
+
+  buttons:
+    PMT HV Power supply:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/common/ioc-common-isegPower/children/build/iocBoot/ioc-lfe-gem-01/edm-ioc-lfe-gem-01.cmd
+
+    Solinoid DC power supply (SMPS 201):
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-Sorensen/build/iocBoot/ioc-lfe-gem-dcs-01/edm-ioc-lfe-gem-dcs-01.cmd
+
+    Solinoid DC power supply (SMPS 202):
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-Sorensen/build/iocBoot/ioc-lfe-gem-dcs-02/edm-ioc-lfe-gem-dcs-02.cmd
+
 Vacuum:
   config:
     cols: 3
