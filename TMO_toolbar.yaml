@@ -63,6 +63,11 @@ Beamline:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/kfe/thermocon/R3.0.1/build/iocBoot/ioc-mr1k1-thermocon/pydm-ioc-mr1k1-thermocon.cmd
+
+    ST1K0:
+      type: shell
+      commands:
+        - typhos st1k0
 #    MR4K4/MR5K4 Chiller:
 #      type: shell
 #      commands:
@@ -241,7 +246,7 @@ MRCO:
    MRCO Vacuum:
      type: shell
      commands:
-     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacV2.ui
+     - pydm /cds/group/pcds/epics-dev/screens/pydm/vacuumscreens/screens/TMO/mrcoVacV3.ui
 
 #   MRCO smaract:
 #     type: shell

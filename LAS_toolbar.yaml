@@ -407,11 +407,13 @@ NEH Beam Transport:
         - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-02/pydm-ioc-las-vac-pci-02.cmd
         - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-03/pydm-ioc-las-vac-pci-03.cmd
         - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-04/pydm-ioc-las-vac-pci-04.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-05/pydm-ioc-las-vac-pci-05.cmd
       titles:
         - las-pci-01
         - las-pci-02
         - las-pci-03
         - las-pci-04
+        - las-pci-05
 
 # Camera EDM:
 #   config:
