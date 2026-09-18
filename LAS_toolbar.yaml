@@ -86,7 +86,6 @@ Bays 3/2:
       commands:
         - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-opcpa-dso4000-01/edm-ioc-las-opcpa-dso4000-01.cmd
 
-
 VNC:
   config:
     cols: 2
@@ -222,7 +221,10 @@ Timing:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
-
+   Bay 1 TPR Rep Rate Config:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.0.0/neh_bay1_launcher.sh
 #EVRs:
 #  config:
 #    cols: 2

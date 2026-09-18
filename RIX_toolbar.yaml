@@ -788,6 +788,9 @@ Tools:
         - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/camViewer-screens/ARCHON.cmd
         - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/camViewer-screens/QRIX-ALV01.cmd
         - /cds/group/pcds/epics-dev/screens/pydm/rix/camViewer-screens/SVLS.cmd
+        - /cds/group/pcds/epics-dev/screens/pydm/rix/camViewer-screens/SVLS-DataStream.cmd
+        - /cds/group/pcds/epics-dev/screens/pydm/rix/camViewer-screens/3RIX-ALV01.cmd
+        - /cds/group/pcds/epics-dev/screens/pydm/rix/camViewer-screens/3RIX-ALV02.cmd
       titles:
         - ZOS-01
         - MONO-03
@@ -826,6 +829,9 @@ Tools:
         - ARCHON
         - QRIX-ALV01
         - SVLS
+        - SVLS-DataStream
+        - 3RIX-ALV01
+        - 3RIX-ALV02
 
 
 #    QPC Controller:
