@@ -138,7 +138,7 @@ Laser:
         type: shell
         redirectCommandOutput: true
         commands:
-          - /cds/home/i/ipotanin/opcpa-tpr-config/neh_bay1_launcher.sh
+          - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.1.0/neh_bay1_launcher.sh
         titles:
           - Bay 1
     
