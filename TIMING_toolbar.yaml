@@ -69,7 +69,8 @@ Timing:
    Bay 4 PDU:
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
+#        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-r13/edm-ioc-las-lhn-pwr-r13.cmd 
    Fiber Oven Scope (XCS):
       type: shell
       commands:
