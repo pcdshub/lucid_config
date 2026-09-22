@@ -99,6 +99,12 @@ GEM:
         commands:
           - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-Sorensen/build/iocBoot/ioc-lfe-gem-dcs-02/edm-ioc-lfe-gem-dcs-02.cmd
 
+    QADC Digitizer:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-qadc/build/iocBoot/ioc-lfe-qadc-02/pydm-ioc-lfe-qadc-02.cmd
+
+
 Vacuum:
   config:
     cols: 3

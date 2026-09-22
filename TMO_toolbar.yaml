@@ -776,15 +776,26 @@ Timing:
       - /cds/group/pcds/epics/ioc/tmo/tprStandalone/R2.1.0/build/iocBoot/ioc-tmo-tpr2/edm-ioc-tmo-tpr2.cmd
        # - /cds/home/m/mcbrowne/bin/tpr_new.sh TMO:CAM:TPR:02
 
-   ANDOR TPR (BROKEN):
+   CAM-03 TPR:
      type: shell
      commands:
-       - /cds/home/m/mcbrowne/bin/tpr_new.sh TMO:ANDOR:TPR:01
-   MISC TPR:
+      - /cds/group/pcds/epics/ioc/tmo/tprStandalone/R2.1.0/build/iocBoot/ioc-tmo-tpr3/edm-ioc-tmo-tpr3.cmd
+
+   DREAM CAM-01 TPR:
      type: shell
      commands:
-       #- /cds/home/m/mcbrowne/bin/tpr_new.sh TMO:MISC:TPR:01
+      - /cds/group/pcds/epics/ioc/tmo/tprStandalone/R2.1.0/build/iocBoot/ioc-tmo-dream-tpr1/edm-ioc-tmo-dream-tpr1.cmd
+
+   MISC-01 TPR:
+     type: shell
+     commands:
+      - /cds/group/pcds/epics/ioc/tmo/tprStandalone/R2.1.0/build/iocBoot/ioc-tmo-misc-tpr1/edm-ioc-tmo-misc-tpr1.cmd
+
+   MISC-02 TPR:
+     type: shell
+     commands:
       - /cds/group/pcds/epics/ioc/tmo/tprStandalone/R2.1.0/build/iocBoot/ioc-tmo-misc-tpr2/edm-ioc-tmo-misc-tpr2.cmd
+
 Alarm System and ATEF:
   config:
     cols: 2
