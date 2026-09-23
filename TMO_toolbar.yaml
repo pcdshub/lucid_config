@@ -759,6 +759,12 @@ Timing:
      commands:
        - /cds/group/pcds/epics-dev/aegger/screens/tmo/edm-ioc-tmo-evr-01.cmd
 
+   LCSLS-II TPR Status:
+      type: shell
+
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/common/tpr_v2/TPRStatuses_ver2.cmd
+
    EventSequencer:
      type: shell
      commands:
