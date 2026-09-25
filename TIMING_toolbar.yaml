@@ -206,14 +206,25 @@ FTL:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/dicon.cmd
-   OL-MDL SmarActs 1-3:
+   OL-MDL SmarActs:
       type: shell
+      redirectCommandOuput: false
       commands:
-        - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-01-launchgui.cmd
-   OL-MDL SmarActs 4-6:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-02-launchgui.cmd
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:01:m1 --base LAS:FTL:MCS:01 
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:01:m2 --base LAS:FTL:MCS:01
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:01:m3 --base LAS:FTL:MCS:01
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:02:m1 --base LAS:FTL:MCS:02 
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:02:m2 --base LAS:FTL:MCS:02
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:02:m3 --base LAS:FTL:MCS:02
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:03:m1 --base LAS:FTL:MCS:03
+      titles:
+        - OL-MDL-1
+        - OL-MDL-2
+        - OL-MDL-3
+        - OL-MDL-4
+        - OL-MDL-5
+        - OL-MDL-6
+        - OL-MDL-7
    Frequency Counter:
       type: shell
       commands:
