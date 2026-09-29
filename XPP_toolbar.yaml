@@ -76,12 +76,12 @@ Beamline:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
         - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/xpp-interlock-launcher.sh
-        - /cds/group/pcds/epics-dev/jcotter/xpp_tfs/tfs_gui_launch.sh
+#        - /cds/group/pcds/epics-dev/jcotter/xpp_tfs/tfs_gui_launch.sh
       titles:
         - TFS motion
         - TFS interlock
         - TFS Interlock GUI
-        - TFS Combined Motion
+#        - TFS Combined Motion
 
     Pulse Picker:
       type: shell
@@ -291,6 +291,7 @@ Tools:
         - typhos xpp_pwr_r07_02 --display-type detailed
         - typhos xpp_pwr_r08_01 --display-type detailed
         - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-pdu_snmp/build/iocBoot/ioc-xpp-pwr-r09-01/edm-ioc-xpp-pwr-r09-01.cmd
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-pdu_snmp/build/iocBoot/ioc-xpp-pwr-l2s13-01/edm-ioc-xpp-pwr-l2s13-01.cmd
       titles:
         - PWR-R01-01
         - PWR-R02-01
@@ -303,6 +304,7 @@ Tools:
         - PWR-R07-02
         - PWR-R08-01
         - PWR-R09-01
+        - PWR-L2S13-01
   
     XPP ICT Controls:
       type: display
