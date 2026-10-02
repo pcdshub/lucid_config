@@ -66,8 +66,7 @@ Beamline:
     Solid Attenuator:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
-#        - /cds/home/k/kaushikm/satt.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/satt.sh
 
     Transfocator:
       type: shell
@@ -103,8 +102,10 @@ Laser:
       redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-smaract/screens/launchgui-ioc-xpp-mcs2-las-01.cmd
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-smarpod/build/iocBoot/ioc-xpp-smarpod-01/edm-ioc-xpp-smarpod-01.cmd
       titles:
         - xpp-mcs2-las-01
+        - XPP-Smarpod
     
     Pico Motor:
       type: shell
