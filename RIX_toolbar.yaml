@@ -583,7 +583,10 @@ qRIXS-Laser:
      commands:
        - ssh rix-control "vncviewer 172.21.21.xx"
 
-
+    Wave8:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics-dev/opperman/rix/ioc/ioc-rix-pgpWave8/build/iocBoot/ioc-rix-pgpw8-05/edm-ioc-rix-pgpw8-05.cmd
 
 Webcams:
   config:
@@ -991,4 +994,4 @@ Tools:
      redirectCommandOutput: true
      commands:
 #       - /cds/group/pcds/pyps/apps/lcls-scan-gui/rix/config/rix/launch_gui.sh
-       - /cds/home/k/kaushikm/lcls-scan-gui/config/rix/launch_gui.sh
+       - /cds/group/pcds/epics-dev/kaushikm/ioc/rix/lcls-scan-gui/config/rix/launch_gui.sh

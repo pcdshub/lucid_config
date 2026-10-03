@@ -386,7 +386,10 @@ Tools:
       commands:
         - xfreerdp -g 1920x1280 /smartsizing -u AT -p 1234 -ignore-certificate scope-ued-02
 
-
+    AstaHome:
+     type: shell
+     commands:
+       - xterm -geometry 80x4+1200+1200 -fg green -bg black -fa Monospace -fs 18 -e /cds/home/opr/uedopr/cjd/logintotestfac.sh
 
     StripTool:
      type: shell
