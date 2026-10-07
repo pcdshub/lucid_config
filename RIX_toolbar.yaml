@@ -588,6 +588,11 @@ qRIXS-Laser:
      commands:
        - /cds/group/pcds/epics-dev/opperman/rix/ioc/ioc-rix-pgpWave8/build/iocBoot/ioc-rix-pgpw8-05/edm-ioc-rix-pgpw8-05.cmd
 
+    EMMU-3RIX:
+     type: shell
+     commands:
+       - /cds/group/pcds/pyps/apps/lcls-user-motor-gui/latest-released/bin/rhel9-x86_64/lcls-user-motor-gui gui --ioc ioc-plc-rix-um1
+
 Webcams:
   config:
     cols: 4
