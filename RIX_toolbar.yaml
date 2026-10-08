@@ -592,6 +592,10 @@ qRIXS-Laser:
      type: shell
      commands:
        - /cds/group/pcds/pyps/apps/lcls-user-motor-gui/latest-released/bin/rhel9-x86_64/lcls-user-motor-gui gui --ioc ioc-plc-rix-um1
+    SSE Manipulator:
+     type: shell
+     commands:
+       - /reg/g/pcds/epics-dev/screens/pydm/rix/motion-screens/3rix/3rix_motion.cmd
 
 Webcams:
   config:
