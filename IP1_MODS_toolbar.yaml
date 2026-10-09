@@ -29,6 +29,14 @@ Tools:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/iocmanager.sh
+    nf-ff-alignment:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/las/mods_ip1/launch_nf_ff_alignment.sh lm1k4_com_dp1.toml
+        - /cds/group/pcds/epics-dev/screens/pydm/las/mods_ip1/launch_nf_ff_alignment.sh lm1k4_atm_dp1.toml
+      titles:
+        - COM_DP1
+        - ATM_DP1
     Dispersion Scan:
       type: shell
       commands:

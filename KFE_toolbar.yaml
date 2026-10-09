@@ -58,7 +58,8 @@ Vacuum:
     RIX FEE Vacuum:
         type: display
         filenames:
-          - /cds/group/pcds/epics-dev/jjoshi/screens/rixFeeVac.ui
+        #  - /cds/group/pcds/epics-dev/jjoshi/screens/rixFeeVac.ui
+          - /cds/group/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/rixFeeVac.ui
     TXI Beamline Vacuum:
         type: display
         filenames:
