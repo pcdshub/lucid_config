@@ -44,6 +44,11 @@ SUED:
       commands:
        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/apertureMotors.cmd
 
+    SUED New:
+      type: display
+      filenames:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/sued_new.ui
+
 
 LUED:
 
