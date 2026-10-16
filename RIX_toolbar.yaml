@@ -48,10 +48,6 @@ Beamline:
         type: shell
         commands:
           - pydm /cds/group/pcds/epics-dev/screens/pydm/rix_screens/vacuum_screens/rixVac.ui
-    RIX Vac ECAT:
-        type: shell
-        commands:
-          - pydm -m "BASE=PLC:KFE:RIX:VAC:ECAT:01" /reg/g/pcds/epics-dev/jozamudi/common/twincat-general-screens/Ecat.ui 
     FIM Top:
       type: shell
       commands:
@@ -578,10 +574,10 @@ qRIXS-Laser:
   config:
     cols: 4
   buttons:
-    HV:
+    HV-XAS-VNCviewer:
      type: shell
      commands:
-       - ssh rix-control "vncviewer 172.21.21.xx"
+       - ssh rix-control "vncviewer 172.21.21.214"
 
     Wave8:
      type: shell

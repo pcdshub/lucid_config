@@ -157,11 +157,15 @@ Laser:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/timetool_plugin.sh
 
-    Beam Profiler:
+    Remote Desktop:
       type: shell
       redirectCommandOutput: true
       commands:
-        - /cds/group/pcds/epics-dev/jcotter/beam_profiler.sh
+        # - /cds/group/pcds/epics-dev/jcotter/win-laptop-01.sh
+        - /cds/group/pcds/epics-dev/jcotter/win-laptop-02.sh
+      titles:
+        # - win-laptop-01
+        - win-laptop-02
 
 
 Detectors:
