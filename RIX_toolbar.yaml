@@ -579,6 +579,11 @@ qRIXS-Laser:
      commands:
        - ssh rix-control "vncviewer 172.21.21.214"
 
+    Twincat-VNCviewer:
+     type: shell
+     commands:
+       - ssh rix-control "vncviewer 172.21.23.214"
+
     Wave8:
      type: shell
      commands:
