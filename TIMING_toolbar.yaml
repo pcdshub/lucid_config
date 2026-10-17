@@ -69,11 +69,12 @@ Timing:
    Bay 4 PDU:
       type: shell
       commands:
-        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
+#        - /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
+        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-r13/edm-ioc-las-lhn-pwr-r13.cmd 
    Fiber Oven Scope (XCS):
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/ipotanin/ioc/common/ioc-common-dso4000/children/build/iocBoot/ioc-las-dso4000-04/pydm-ioc-las-dso4000-04.cmd
+        - /cds/group/pcds/epics/ioc/las/dso4000/R1.1.0/build/iocBoot/ioc-las-dso4000-04/pydm-ioc-las-dso4000-04.cmd
    Laser Hall Scope:
       type: shell
       commands:
@@ -157,7 +158,8 @@ RFOF:
    ITech RFoF:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.2/build/iocBoot/ioc-las-rfof-itech-01/edm-ioc-las-rfof-itech-01.cmd
+        - /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.3/build/iocBoot/ioc-las-rfof-itech-01/pydm-ioc-las-rfof-itech-01.cmd
+          #- /cds/group/pcds/epics/ioc/las/iTech_RFOF/R1.0.2/build/iocBoot/ioc-las-rfof-itech-01/edm-ioc-las-rfof-itech-01.cmd
    RFOF OL-MDL:
       type: shell
       commands:
@@ -204,14 +206,25 @@ FTL:
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/dicon.cmd
-   OL-MDL SmarActs 1-3:
+   OL-MDL SmarActs:
       type: shell
+      redirectCommandOuput: false
       commands:
-        - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-01-launchgui.cmd
-   OL-MDL SmarActs 4-6:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics-dev/aberges/screens/ioc-las-ftl-mcs2-02-launchgui.cmd
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:01:m1 --base LAS:FTL:MCS:01 
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:01:m2 --base LAS:FTL:MCS:01
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:01:m3 --base LAS:FTL:MCS:01
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:02:m1 --base LAS:FTL:MCS:02 
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:02:m2 --base LAS:FTL:MCS:02
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:02:m3 --base LAS:FTL:MCS:02
+        - /cds/group/pcds/epics-dev/aberges/screens/launch_OL_MDL.sh --motor LAS:FTL:MCS:03:m1 --base LAS:FTL:MCS:03
+      titles:
+        - OL-MDL-1
+        - OL-MDL-2
+        - OL-MDL-3
+        - OL-MDL-4
+        - OL-MDL-5
+        - OL-MDL-6
+        - OL-MDL-7
    Frequency Counter:
       type: shell
       commands:

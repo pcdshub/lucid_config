@@ -11,7 +11,6 @@ General:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/camviewer.sh
-
 EVRs:
   config:
     cols: 1
@@ -30,6 +29,14 @@ Tools:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/iocmanager.sh
+    nf-ff-alignment:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/las/mods_ip1/launch_nf_ff_alignment.sh lm1k4_com_dp1.toml
+        - /cds/group/pcds/epics-dev/screens/pydm/las/mods_ip1/launch_nf_ff_alignment.sh lm1k4_atm_dp1.toml
+      titles:
+        - COM_DP1
+        - ATM_DP1
     Dispersion Scan:
       type: shell
       commands:
@@ -59,15 +66,15 @@ Digitizers:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-ip1-pgpw8-02/edm-ioc-las-ip1-pgpw8-02.cmd
-    Wave8-03:
+    Wave8-03 (TIMING):
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.0.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
-    Wave8-04 (TIMING):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.1/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
+        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
+          #    Wave8-04 (DO NOT USE):
+          #type: shell
+          #commands:
+          #- /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.1/build/iocBoot/ioc-las-ip1-pgpw8-04/edm-ioc-las-ip1-pgpw8-04.cmd
     QADC Digitizer:
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/qadc/R1.4.3/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
+        - /cds/group/pcds/epics/ioc/las/qadc/R3.0.5/build/iocBoot/ioc-lm1k4-qadc134-01/pydm-ioc-lm1k4-qadc134-01.cmd
