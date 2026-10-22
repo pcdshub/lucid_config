@@ -69,7 +69,7 @@ Digitizers:
     Wave8-03 (TIMING):
       type: shell
       commands:
-        - /cds/group/pcds/epics/ioc/las/pgpWave8/R2.8.0/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
+        - /reg/g/pcds/epics-dev/aberges/ioc/las/ioc-las-pgpWave8/build/iocBoot/ioc-las-ip1-pgpw8-03/edm-ioc-las-ip1-pgpw8-03.cmd
           #    Wave8-04 (DO NOT USE):
           #type: shell
           #commands:
