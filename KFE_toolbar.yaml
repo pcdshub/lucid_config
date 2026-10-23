@@ -74,12 +74,12 @@ Slits:
         type: shell
         redirectCommandOutput: true
         commands:
-          - pydm mghaly/screens/devices/SL1K0-POWER.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/kfe/SL1K0-POWER.ui
     SL2K0:
         type: shell
         redirectCommandOutput: true
         commands:
-          - pydm mghaly/screens/devices/SL2K0-POWER.ui
+          - pydm /reg/g/pcds/epics-dev/screens/pydm/kfe/SL2K0-POWER.ui
 
 AT1K0-GAS:
   config:

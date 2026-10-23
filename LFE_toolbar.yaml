@@ -104,6 +104,18 @@ GEM:
         commands:
           - /cds/group/pcds/epics-dev/baljamal/forks/ioc/lfe/ioc-lfe-qadc/build/iocBoot/ioc-lfe-qadc-02/pydm-ioc-lfe-qadc-02.cmd
 
+    Energy Calculation:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/screens/pydm/lfe/gem/gem_241.sh
+          - /cds/group/pcds/epics/screens/pydm/lfe/gem/gem_242.sh
+          - /cds/group/pcds/epics/screens/pydm/lfe/gem/gem_361.sh
+          - /cds/group/pcds/epics/screens/pydm/lfe/gem/gem_362.sh
+        titles:
+          - PMT 241 Energy Calculation
+          - PMT 242 Energy Calculation
+          - PMT 361 Energy Calculation
+          - PMT 362 Energy Calculation
 
 Vacuum:
   config:
