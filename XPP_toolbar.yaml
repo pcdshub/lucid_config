@@ -26,13 +26,13 @@ Beamline:
     XPP Beamline Vacuum:
       type: shell
       commands:
-        - pydm /reg/g/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
-    
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/xpp/XPPVac.ui
+
     Ion pump controllers:
       type: shell
       commands:
-        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
-        - /reg/g/pcds/epics/ioc/xpp/qpc/R1.0.0/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-01/pydm-ioc-xpp-pci-01.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/xpp/ioc-xpp-qpc/build/iocBoot/ioc-xpp-pci-02/pydm-ioc-xpp-pci-02.cmd
         - /reg/g/pcds/epics/ioc/xrt/qpc/R1.0.1/build/iocBoot/ioc-xrt-vac-pci/pydm-ioc-xrt-vac-pci.cmd
       titles:
         - pci-xpp-01
@@ -66,22 +66,31 @@ Beamline:
     Solid Attenuator:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/satt.sh
-#        - /cds/home/k/kaushikm/satt.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/satt.sh
 
     Transfocator:
       type: shell
+      redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/dev/tfs_screen.sh
         - /reg/g/pcds/epics-dev/nrw/scripts/interlock-screens.sh
+        - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/xpp-interlock-launcher.sh
+#       - /cds/group/pcds/epics-dev/jcotter/xpp_tfs/tfs_gui_launch.sh
       titles:
         - TFS motion
         - TFS interlock
+        - TFS Interlock GUI
+#        - TFS Combined Motion
 
     Pulse Picker:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/screens/pydm/xpp/dev/run_pp_screen.sh 
+
+    Beamline GUI:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/jcotter/xpp_beamline_screen/beamline_gui_launch.sh
 
 
 Laser:
@@ -93,8 +102,10 @@ Laser:
       redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-smaract/screens/launchgui-ioc-xpp-mcs2-las-01.cmd
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-smarpod/build/iocBoot/ioc-xpp-smarpod-01/edm-ioc-xpp-smarpod-01.cmd
       titles:
         - xpp-mcs2-las-01
+        - XPP-Smarpod
     
     Pico Motor:
       type: shell
@@ -110,9 +121,11 @@ Laser:
       commands:
         - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps1/edm-ioc-xpp-las-xps1.cmd
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps2/edm-ioc-xpp-las-xps2.cmd
+        - /reg/g/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-NewportXPS8/build/iocBoot/ioc-xpp-las-xps3/edm-ioc-xpp-las-xps3.cmd
       titles:
         - xpp-las-xps1
         - xpp-las-xps2
+        - xpp-las-xps3
     
     Analog In Out:
       type: shell
@@ -126,7 +139,7 @@ Laser:
         type: shell
         redirectCommandOutput: true
         commands:
-          - /cds/home/i/ipotanin/opcpa-tpr-config/neh_bay1_launcher.sh
+          - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.1.0/neh_bay1_launcher.sh
         titles:
           - Bay 1
     
@@ -144,6 +157,15 @@ Laser:
       commands:
         - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/timetool_plugin.sh
 
+    Remote Desktop:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        # - /cds/group/pcds/epics-dev/jcotter/win-laptop-01.sh
+        - /cds/group/pcds/epics-dev/jcotter/win-laptop-02.sh
+      titles:
+        # - win-laptop-01
+        - win-laptop-02
 
 
 Detectors:
@@ -273,6 +295,8 @@ Tools:
         - typhos xpp_pwr_r07_01 --display-type detailed
         - typhos xpp_pwr_r07_02 --display-type detailed
         - typhos xpp_pwr_r08_01 --display-type detailed
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-pdu_snmp/build/iocBoot/ioc-xpp-pwr-r09-01/edm-ioc-xpp-pwr-r09-01.cmd
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-pdu_snmp/build/iocBoot/ioc-xpp-pwr-l2s13-01/edm-ioc-xpp-pwr-l2s13-01.cmd
       titles:
         - PWR-R01-01
         - PWR-R02-01
@@ -284,6 +308,8 @@ Tools:
         - PWR-R07-01
         - PWR-R07-02
         - PWR-R08-01
+        - PWR-R09-01
+        - PWR-L2S13-01
   
     XPP ICT Controls:
       type: display
@@ -293,10 +319,10 @@ Tools:
     Wave8s:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-sp1l2-pgpw8/edm-ioc-xpp-sp1l2-pgpw8.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em1l2-pgpw8/edm-ioc-xpp-em1l2-pgpw8.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-em2l2-pgpw8/edm-ioc-xpp-em2l2-pgpw8.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/pgpWave8/build/iocBoot/ioc-xpp-usr-pgpw8-01/edm-ioc-xpp-usr-pgpw8-01.cmd
+        - /cds/group/pcds/epics/ioc/xpp/pgpWave8/R3.7.0/build/iocBoot/ioc-xpp-sp1l2-pgpw8/edm-ioc-xpp-sp1l2-pgpw8.cmd
+        - /cds/group/pcds/epics/ioc/xpp/pgpWave8/R3.7.0/build/iocBoot/ioc-xpp-em1l2-pgpw8/edm-ioc-xpp-em1l2-pgpw8.cmd
+        - /cds/group/pcds/epics/ioc/xpp/pgpWave8/R3.7.0/build/iocBoot/ioc-xpp-em2l2-pgpw8/edm-ioc-xpp-em2l2-pgpw8.cmd
+        - /cds/group/pcds/epics/ioc/xpp/pgpWave8/R3.7.0/build/iocBoot/ioc-xpp-usr-pgpw8-01/edm-ioc-xpp-usr-pgpw8-01.cmd
       titles:
         - SP1L2-WV8
         - EM1L2-WV8

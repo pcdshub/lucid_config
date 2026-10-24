@@ -29,7 +29,7 @@ General:
       commands:
         - gw
 
-OPCPA:
+Bays 3/2:
   config:
     cols: 2
   buttons:
@@ -60,11 +60,11 @@ OPCPA:
     Bay 3 TPR Rep Rate Config:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.0.0/neh_bay3_launcher.sh
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.1.0/neh_bay3_launcher.sh
     Bay 2 TPR Rep Rate Config:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.0.0/neh_bay2_launcher.sh
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.1.0/neh_bay2_launcher.sh
     Bay 3 Switching Mirror:
       type: shell
       commands:
@@ -76,16 +76,15 @@ OPCPA:
     Bay 3 SMC Chiller:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-lhn-thermocon-03/pydm-ioc-las-lhn-thermocon-03.cmd
+        - /cds/group/pcds/epics/ioc/las/thermocon/R1.0.0/build/iocBoot/ioc-las-lhn-thermocon-03/pydm-ioc-las-lhn-thermocon-03.cmd
     Bay 2 SMC Chiller:
       type: shell
       commands:
-        - /reg/g/pcds/epics-dev/cpino/ioc/las/ioc-las-thermocon/build/iocBoot/ioc-las-lhn-thermocon-02/pydm-ioc-las-lhn-thermocon-02.cmd
+        - /cds/group/pcds/epics/ioc/las/thermocon/R1.0.0/build/iocBoot/ioc-las-lhn-thermocon-02/pydm-ioc-las-lhn-thermocon-02.cmd
     OPCPA Scope:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/dso4000/R1.0.3/build/iocBoot/ioc-las-opcpa-dso4000-01/edm-ioc-las-opcpa-dso4000-01.cmd
-
 
 VNC:
   config:
@@ -222,7 +221,10 @@ Timing:
      type: shell
      commands:
        - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
-
+   Bay 1 TPR Rep Rate Config:
+      type: shell
+      commands:
+        - /cds/group/pcds/pyps/apps/opcpa-tpr-config/v3.1.0/neh_bay1_launcher.sh
 #EVRs:
 #  config:
 #    cols: 2
@@ -265,72 +267,60 @@ PDUs:
       type: shell
       commands: 
         - bash -c 'cd /cds/group/pcds/epics/ioc/common/pdu_snmp/R3.1.0 && edm -x -eolc -m "IOC=IOC:LAS:LHN:PWR:01" -m "HUTCH=las" -m "PRE=LAS:LHN:PWR:01" pduScreens/TrippLite_24.edl'
-        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-01.cmd
+#        - bash -c 'cd /cds/group/pcds/epics/ioc/common/pdu_snmp/R3.3.1 && edm -x -eolc -m "IOC=IOC:LAS:LHN:PWR:R01:01" -m "HUTCH=las" -m "PRE=LAS:LHN:PWR:R01:01" pduScreens/TrippLite_24.edl'
    Zone 1 TiSaph PSU/Chiller PDU (R07):
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-07/edm-ioc-las-lhn-pwr-07.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-07.cmd  
+#        - bash -c 'cd /cds/group/pcds/epics/ioc/common/pdu_snmp/R3.3.1 && edm -x -eolc -m "IOC=IOC:LAS:LHN:PWR" -m "HUTCH=las" -m "PRE=LAS:LHN:PWR" pduScreens/TrippLite_24.edl'
    Zone 1 BTS PDU (R06):
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-06/edm-ioc-las-lhn-pwr-06.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-06.cmd
    Zone 2 OPCPA Controls PDU (R03):
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-02/edm-ioc-las-lhn-pwr-02.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-02.cmd
    Zone 2 OPCPA Timing PDU (R01):
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-05/edm-ioc-las-lhn-pwr-05.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-05.cmd
    Zone 3 OPCPA Timing PDU (R18):
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-03/edm-ioc-las-lhn-pwr-03.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-lhn-pwr-03.cmd
    Zone 4 TiSaph Timing PDU (R13):
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-lhn-pwr-04/edm-ioc-las-lhn-pwr-04.cmd
-        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-lhn-pwr-04.cmd
    MFX Timing PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-mfx-pwr-01/edm-ioc-las-mfx-pwr-01.cmd
-        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-mfx-pwr-01.cmd
    XCS Timing PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-xcs-pwr-01/edm-ioc-las-xcs-pwr-01.cmd
-        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-xcs-pwr-01.cmd
    CXI Timing PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-cxi-pwr-01/edm-ioc-las-cxi-pwr-01.cmd
-        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-cxi-pwr-01.cmd
    MEC Timing PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-mec-pwr-01/edm-ioc-las-mec-pwr-01.cmd
-        #- /cds/home/a/aberges/bin/ioc/pdu_snmp/edm-ioc-las-mec-pwr-01.cmd
    FEH CAST Timing PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-mezz-pwr-01/edm-ioc-las-mezz-pwr-01.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/pdu_screens/edm-ioc-las-mezz-pwr-01.cmd
    FTL R52-E25 PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics-dev/rnazir/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-02/edm-ioc-las-ftl-pwr-02.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-02/edm-ioc-las-ftl-pwr-02.cmd
    FTL R52-E47 PDU:
       type: shell
       commands:
         - /reg/g/pcds/epics/ioc/las/pdu_snmp/R1.6.0/build/iocBoot/ioc-las-ftl-pwr-01/edm-ioc-las-ftl-pwr-01.cmd
-        #- /reg/g/pcds/epics-dev/ljansen7/ioc/las/ioc-las-pdu_snmp/build/iocBoot/ioc-las-ftl-pwr-01/edm-ioc-las-ftl-pwr-01.cmd
         
 SDG's:
   config:
@@ -377,20 +367,19 @@ NEH Beam Transport:
    NEH Laser Hall Vacuum:
       type: shell 
       commands:
-        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.2.3/open_home.sh
+        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.3.0/open_home.sh
    Shutters:
       type: shell
       commands:
-        - /cds/group/pcds/epics/screens/las/bts-vac-ui/R1.0.0/open_shutters.sh
+        - /cds/group/pcds/epics/screens/las/bts-vac-ui/v1.3.0/open_shutters.sh
    BTMS Overview:
       type: shell
       commands:
-         - /cds/group/pcds/epics/screens/las/btms-ui/v1.2.3/run.sh overview
-       # - /cds/group/pcds/epics-dev/aberges/btms-ui/run.sh overview
+         - /cds/group/pcds/epics-dev/screens/pydm/las/bts/run_btms.sh 
    BTPS Overview:
       type: shell
       commands:
-        - /cds/group/pcds/pyps/apps/dev/btms-ui/btps.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/las/bts/run_btps.sh
    BTS All Motors:
       type: shell
       commands:
@@ -408,29 +397,31 @@ NEH Beam Transport:
         - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-02/pydm-ioc-las-vac-pci-02.cmd
         - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-03/pydm-ioc-las-vac-pci-03.cmd
         - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-04/pydm-ioc-las-vac-pci-04.cmd
+        - /reg/g/pcds/epics-dev/tparas/ioc/las/ioc-las-qpc/build/iocBoot/ioc-las-vac-pci-05/pydm-ioc-las-vac-pci-05.cmd
       titles:
         - las-pci-01
         - las-pci-02
         - las-pci-03
         - las-pci-04
+        - las-pci-05
 
-Camera EDM:
-  config:
-    cols: 2
-  buttons:
-   Bay 1 (NF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-nf-01/edm-ioc-lhn-bay1-nf-01.cmd
-   Bay 1 (FF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-ff-01/edm-ioc-lhn-bay1-ff-01.cmd
-   Bay 4 (NF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-nf-01/edm-ioc-lhn-bay4-nf-01.cmd
-   Bay 4 (FF-01):
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-ff-01/edm-ioc-lhn-bay4-ff-01.cmd
+# Camera EDM:
+#   config:
+#     cols: 2
+#   buttons:
+#    Bay 1 (NF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-nf-01/edm-ioc-lhn-bay1-nf-01.cmd
+#    Bay 1 (FF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay1-ff-01/edm-ioc-lhn-bay1-ff-01.cmd
+#    Bay 4 (NF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-nf-01/edm-ioc-lhn-bay4-nf-01.cmd
+#    Bay 4 (FF-01):
+#       type: shell
+#       commands:
+#         - /cds/group/pcds/epics/ioc/las/gigECam/R0.3.1/build/iocBoot/ioc-lhn-bay4-ff-01/edm-ioc-lhn-bay4-ff-01.cmd
