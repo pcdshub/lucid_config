@@ -475,3 +475,36 @@ EVRs TPRs:
       type: shell
       commands:
         - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-tprStandalone/build/iocBoot/ioc-las-ftl-tpr-01/edm-ioc-las-ftl-tpr-01.cmd  
+
+Regen Diode Scopes:
+  config:
+    cols: 2
+  buttons:
+   CXI Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-cxi-dso4000-01/pydm-ioc-las-cxi-dso4000-01.cmd 
+   MEX Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-mec-dso4000-01/pydm-ioc-las-mec-dso4000-01.cmd 
+   MFX Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-mfx-dso4000-01/pydm-ioc-las-mfx-dso4000-01.cmd 
+   XCS Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-xcs-dso4000-01/pydm-ioc-las-xcs-dso4000-01.cmd 
+   Zone 1 Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-lhn-dso4000-01/pydm-ioc-las-lhn-dso4000-01.cmd 
+   Zone 2 Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-lhn-dso4000-02/pydm-ioc-las-lhn-dso4000-02.cmd 
+   Zone 3 Scope:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ipotanin/ioc/las/ioc-las-dso4000/build/iocBoot/ioc-las-lhn-dso4000-03/pydm-ioc-las-lhn-dso4000-03.cmd 

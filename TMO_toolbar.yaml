@@ -801,8 +801,7 @@ Timing:
    MISC-02 TPR:
      type: shell
      commands:
-      - /cds/group/pcds/epics/ioc/tmo/tprStandalone/R2.1.0/build/iocBoot/ioc-tmo-misc-tpr2/edm-ioc-tmo-misc-tpr2.cmd
-
+       - /reg/g/pcds/epics-dev/kborne/ioc/tmo/ioc-tmo-tprStandalone/build/iocBoot/ioc-tmo-misc-tpr2/edm-ioc-tmo-misc-tpr2.cmd
 Alarm System and ATEF:
   config:
     cols: 2

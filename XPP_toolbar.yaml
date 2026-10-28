@@ -103,9 +103,11 @@ Laser:
       commands:
         - /cds/group/pcds/epics-dev/aberges/ioc/xpp/ioc-xpp-smaract/screens/launchgui-ioc-xpp-mcs2-las-01.cmd
         - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-smarpod/build/iocBoot/ioc-xpp-smarpod-01/edm-ioc-xpp-smarpod-01.cmd
+        - /cds/group/pcds/epics-dev/jcotter/ioc/xpp/ioc-xpp-smarpod/build/iocBoot/ioc-xpp-smarpod-01/pydm-ioc-xpp-smarpod-01.cmd
       titles:
         - xpp-mcs2-las-01
-        - XPP-Smarpod
+        - XPP SmarPod (EDM)
+        - XPP SmarPod (PyDM)
     
     Pico Motor:
       type: shell
@@ -176,11 +178,23 @@ Detectors:
       type: shell
       redirectCommandOutput: true
       commands:
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-01/edm-ioc-xpp-det-hmp-01.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/RohdeSchwarzHMP/build/iocBoot/ioc-xpp-det-hmp-02/edm-ioc-xpp-det-hmp-02.cmd
+        - /cds/group/pcds/epics/ioc/xpp/RohdeSchwarzHMP/R2.0.0/build/iocBoot/ioc-xpp-det-hmp-01/edm-ioc-xpp-det-hmp-01.cmd
+        - /cds/group/pcds/epics/ioc/xpp/RohdeSchwarzHMP/R2.0.0/build/iocBoot/ioc-xpp-det-hmp-02/edm-ioc-xpp-det-hmp-02.cmd
       titles:
         - HMP-01 (ceiling)
         - HMP-02 (mobile)
+
+    PL516:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-wiener_pl5xx/build/iocBoot/ioc-xpp-pl516-01/pydm-ioc-xpp-pl516-01.cmd
+    MPOD Portable:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-prtdet-mpod-01.cmd
+
     Epix100:
       type: shell
       redirectCommandOutput: true
@@ -199,13 +213,10 @@ Detectors:
         - Alvium-02
         - Alvium-tt
         - Zyla-01
-    MPOD Portable:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-prtdet-mpod-01.cmd
-
+    
     Chiller Portable:
       type: shell
+      redirectCommandOutput: true
       commands:
         - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-thermotek/build/iocBoot/ioc-xpp-prtdet-thermotek-01/edm-ioc-xpp-prtdet-thermotek-01.cmd
 
@@ -248,8 +259,8 @@ Users:
     Newport:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/NewportXPS8/build/iocBoot/ioc-xpp-user-xps1/edm-ioc-xpp-user-xps1.cmd
-        - /cds/group/pcds/epics-dev/kaushikm/ioc/xpp/NewportXPS8/build/iocBoot/ioc-xpp-user-xps3/edm-ioc-xpp-user-xps3.cmd
+        - /cds/group/pcds/epics/ioc/xpp/NewportXPS8/R3.0.1/build/iocBoot/ioc-xpp-user-xps1/edm-ioc-xpp-user-xps1.cmd
+        - /cds/group/pcds/epics/ioc/xpp/NewportXPS8/R3.0.1/build/iocBoot/ioc-xpp-user-xps3/edm-ioc-xpp-user-xps3.cmd
       titles:
         - USR Newport 1
         - USR Newport 3
@@ -332,11 +343,11 @@ Tools:
     TPRs:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-01/edm-ioc-xpp-tpr-01.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-02/edm-ioc-xpp-tpr-02.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-03/edm-ioc-xpp-tpr-03.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-04/edm-ioc-xpp-tpr-04.cmd
-        - /cds/group/pcds/epics-dev/espov/ioc/xpp/tprStandalone/build/iocBoot/ioc-xpp-tpr-las-01/edm-ioc-xpp-tpr-las-01.cmd
+        - /cds/group/pcds/epics/ioc/xpp/tprStandalone/R1.0.0/build/iocBoot/ioc-xpp-tpr-01/edm-ioc-xpp-tpr-01.cmd
+        - /cds/group/pcds/epics/ioc/xpp/tprStandalone/R1.0.0/build/iocBoot/ioc-xpp-tpr-02/edm-ioc-xpp-tpr-02.cmd
+        - /cds/group/pcds/epics/ioc/xpp/tprStandalone/R1.0.0/build/iocBoot/ioc-xpp-tpr-03/edm-ioc-xpp-tpr-03.cmd
+        - /cds/group/pcds/epics/ioc/xpp/tprStandalone/R1.0.0/build/iocBoot/ioc-xpp-tpr-04/edm-ioc-xpp-tpr-04.cmd
+        - /cds/group/pcds/epics/ioc/xpp/tprStandalone/R1.0.0/build/iocBoot/ioc-xpp-tpr-las-01/edm-ioc-xpp-tpr-las-01.cmd
       titles:
         - cam-01
         - cam-02
