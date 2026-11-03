@@ -246,7 +246,8 @@ LFE-OPTICS:
     DCCM:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/pydm/lfe/dccm-dev-gui-new.sh
+        # - /cds/group/pcds/epics-dev/screens/pydm/lfe/dccm-dev-gui-new.sh
+        - pydm /cds/group/pcds/epics-dev/screens/pydm/lfe/dccm/dccm_hutch.py
       
 
 Radiation Monitoring:
