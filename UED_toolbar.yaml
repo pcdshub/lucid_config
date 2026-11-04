@@ -470,7 +470,7 @@ Tools:
     wave8:
         type: shell
         commands:
-          - /cds/group/pcds/epics-dev/kaushikm/ioc/ued/pgpWave8/children/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
+          - /reg/g/pcds/epics/ioc/ued/pgpWave8/R3.3.0/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
     TPR Screen:
         type: shell
         commands:

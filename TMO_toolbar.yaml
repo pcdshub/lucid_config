@@ -16,6 +16,14 @@ LCLS:
       type: shell
       commands:
         - /cds/group/pcds/setup/pmps-launcher.sh KFE
+    PMPSDB Mgmt:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/scripts/pmpsdb_gui.cmd
+    PMPSDB config:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/tmo_screens/scripts/pmpsdb_transfer.cmd
     TMO PMPS Transmission Adjust:
       type: shell
       commands:

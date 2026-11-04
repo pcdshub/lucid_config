@@ -184,11 +184,16 @@ Detectors:
         - HMP-01 (ceiling)
         - HMP-02 (mobile)
 
-    PL516:
+    epixUHR:
       type: shell
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-wiener_pl5xx/build/iocBoot/ioc-xpp-pl516-01/pydm-ioc-xpp-pl516-01.cmd
+        - /reg/g/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-mpod-01.cmd
+      titles:
+        - PL516 - alcove
+        - MPOD - alcove
+
     MPOD Portable:
       type: shell
       redirectCommandOutput: true
@@ -200,6 +205,7 @@ Detectors:
       redirectCommandOutput: true
       commands:
         - /cds/group/pcds/epics-dev/espov/ioc/xpp/epix/build/iocBoot/ioc-xpp-epix-01/edm-ioc-xpp-epix-01.cmd
+
     EPICS detectors:
       type: shell
       redirectCommandOutput: true
