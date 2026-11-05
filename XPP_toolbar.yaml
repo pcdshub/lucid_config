@@ -280,7 +280,7 @@ Users:
     Stäubli:
       type: shell
       commands:
-        - /cds/group/pcds/epics-dev/screens/edm/xpp/current/staubliScreens/staubli_main.sh
+        - /cds/group/pcds/epics-dev/screens/pydm/xpp/scripts/staubli_robot.sh
 
     SND:
       type: shell

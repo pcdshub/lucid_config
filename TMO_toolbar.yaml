@@ -338,7 +338,7 @@ DREAM:
    SmarPod:
      type: shell
      commands:
-       - /reg/g/pcds/epics-dev/baljamal/forks/ioc/tmo/ioc-tmo-smarpod/build/iocBoot/ioc-tmo-smarpod-01/edm-ioc-tmo-smarpod-01.cmd
+       - /reg/g/pcds/epics-dev/kborne/ioc/tmo/ioc-tmo-smarpod/build/iocBoot/ioc-tmo-smarpod-01/pydm-ioc-tmo-smarpod-01.cmd
    
 #   SmarPod Manual:
 #     type: shell
