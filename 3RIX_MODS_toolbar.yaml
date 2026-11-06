@@ -11,6 +11,15 @@ General:
       type: shell
       commands:
         - /reg/g/pcds/pyps/config/las/camviewer.sh
+    nf-ff-alignment:
+      type: shell
+      titles:
+        - INJ_MP1_TF1
+        - EJX_MP1_TF1
+      commands:
+        - /cds/group/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_nf_ff_alignment.sh lm3k2_inj_mp1.toml
+        - /cds/group/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_nf_ff_alignment.sh lm3k2_ejx_mp1.toml
+
     SmarActs:
       type: shell
       titles:
