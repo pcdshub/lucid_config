@@ -25,9 +25,19 @@ General:
       titles:
         - INJ_MP1_MR1
         - INJ_MP1_MR2
+        - INJ_MP1_ATT1_WP1
+        - EJX_MP1_LS1_X
+        - EJX_MP1_LS1_Y
+        - EJX_MP1_LS1_Z
       commands:
         - "/reg/g/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_inj_tip_tilts mr1"
         - "/reg/g/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_inj_tip_tilts mr2"
+        - "/cds/group/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_smaract_expert_screen LM3K2:INJ_MP1_ATT1_WP1"
+        - "/cds/group/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_smaract_expert_screen LM3K2:EJX_MP1_LS1_X"
+        - "/cds/group/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_smaract_expert_screen LM3K2:EJX_MP1_LS1_Y"
+        - "/cds/group/pcds/epics-dev/screens/pydm/las/mods_3rix/launch_smaract_expert_screen LM3K2:EJX_MP1_LS1_Z"
+
+Tools:
 Tools:
   config:
     cols: 2
