@@ -18,6 +18,11 @@ Lab 01:
     cols: 4
 
   buttons:
+    LVR:
+      type: shell
+      commands: 
+        - /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/abl_pumpless.sh
+
     high-speed vis:
       type: shell
       commands: 
@@ -26,8 +31,8 @@ Lab 01:
     HPLC 01:
       type: shell
       commands: 
-        - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:01' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
-        - pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:02' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py 
+        - bash -c "source /cds/group/pcds/engineering_tools/latest-released/scripts/ctrlenv_setup.sh  && ctrlenv-pathmunge && pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:01' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py"
+        - bash -c "source /cds/group/pcds/engineering_tools/latest-released/scripts/ctrlenv_setup.sh  && ctrlenv-pathmunge && pydm --hide-nav-bar --hide-menu-bar -m 'dev=ABL:SDS:LC20:02' /reg/g/pcds/epics-dev/screens/pydm/sds/universal-sds-screen/base-screens/hplc.py"
       titles:
         - HPLC 01 
         - HPLC 02 
