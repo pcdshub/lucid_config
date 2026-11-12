@@ -369,6 +369,10 @@ Tools:
       type: shell
       commands:
         - /sdf/home/x/xppopr/bin/xppscope
+        - /sdf/home/x/xppopr/bin/waverunner1
+      titles:
+        - Timing scope
+        - Waverunner 1
 
     xpmpva:
       type: shell
