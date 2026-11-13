@@ -246,6 +246,11 @@ MBES:
       commands:
        - /reg/g/pcds/epics/ioc/tmo/isegfps/R1.0.1/build/iocBoot/ioc-tmo-fps-03/pydm-ioc-tmo-fps-03.cmd
 
+    In-Vac MMC:
+      type: shell
+      commands:
+        - bash /reg/g/pcds/epics-dev/ctsoi/ioc/tmo/mmc/build/iocBoot/ioc-tmo-cvmi-6axis-mmc-01/launchgui-ioc-tmo-cvmi-6axis-mmc-01.cmd
+
 
 MRCO:
   config:

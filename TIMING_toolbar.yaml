@@ -29,7 +29,7 @@ General:
       commands:
         - gw
 
-Laser Lockers:
+LCLS-1 Timing Lockers:
   config:
     cols: 2
   buttons:
@@ -37,10 +37,6 @@ Laser Lockers:
       type: shell
       commands:
         - /cds/group/pcds/epics/ioc/las/vitara/R4.1.4/vitaraScreens/edm-ioc-las-lhn-vitara-tt-01.cmd
-   NEH FS14:
-      type: shell
-      commands:
-        - /cds/group/pcds/epics/ioc/las/vitara/R4.1.1/vitaraScreens/edm-ioc-las-lhn-vitara-tt-04.cmd
    XCS FS4:
       type: shell
       commands:
@@ -225,18 +221,30 @@ FTL:
         - OL-MDL-5
         - OL-MDL-6
         - OL-MDL-7
-   Frequency Counter:
+   "Frequency Counter #1":
       type: shell
       commands:
-        - /cds/home/t/tjohnson/bin/ftl-counter.cmd
-   Piezo Driver: 
+        - /cds/group/pcds/epics/ioc/las/agilent5322/R2.0.5/build/iocBoot/ioc-las-ftl-ctr-01/edm-ioc-las-ftl-ctr-01.cmd
+   "Frequency Counter #2":
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-agilent5322/build/iocBoot/ioc-las-ftl-ctr-02/edm-ioc-las-ftl-ctr-02.cmd
+   "SLICE Piezo Driver #1":
       type: shell
       commands:
         - /cds/home/t/tjohnson/bin/ftl-slice.cmd
-   ATCA Laser Locker: 
+   "SLICE Piezo Driver #2":
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-slice-dhv/build/iocBoot/ioc-las-ftl-slice-02/edm-ioc-las-ftl-slice-02.cmd
+   "ATCA Laser Locker #1": 
       type: shell
       commands:
         - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-asc-ls01_gui.sh
+   "ATCA Laser Locker #2":
+      type: shell
+      commands:
+        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
    ATCA DAQMUX: 
       type: shell
       commands:
@@ -279,22 +287,22 @@ FTL:
       commands:
         - /reg/g/pcds/epics/ioc/las/ftl-leak-det/v1.0.0/ftl-leak-det-screens/ftl_01.sh
 
-LRL: 
+LLN: 
   config:
     cols: 2
   buttons:
-   Laser Lab Piezo Driver:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-slice-dhv/build/iocBoot/ioc-las-ftl-slice-02/edm-ioc-las-ftl-slice-02.cmd
-   Laser Lab ATCA Laser Locker:
-      type: shell
-      commands:
-        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
-   Laser Lab Frequency Counter:
-      type: shell
-      commands:
-        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-agilent5322/build/iocBoot/ioc-las-ftl-ctr-02/edm-ioc-las-ftl-ctr-02.cmd
+#   Laser Lab Piezo Driver:
+#      type: shell
+#      commands:
+#        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-slice-dhv/build/iocBoot/ioc-las-ftl-slice-02/edm-ioc-las-ftl-slice-02.cmd
+#   Laser Lab ATCA Laser Locker:
+#      type: shell
+#      commands:
+#        - /cds/home/t/tjohnson/trunk/modules/laserLocker/edm/sioc-las-lln-ls01_gui.sh
+#   Laser Lab Frequency Counter:
+#      type: shell
+#      commands:
+#        - /reg/g/pcds/epics-dev/ljansen7/ioc/las_2/ioc-las-agilent5322/build/iocBoot/ioc-las-ftl-ctr-02/edm-ioc-las-ftl-ctr-02.cmd
    Laser Lab Locker HLA:
       type: shell
       commands:

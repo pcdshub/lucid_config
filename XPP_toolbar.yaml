@@ -190,9 +190,11 @@ Detectors:
       commands:
         - /reg/g/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-wiener_pl5xx/build/iocBoot/ioc-xpp-pl516-01/pydm-ioc-xpp-pl516-01.cmd
         - /reg/g/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-mpod/edm-ioc-xpp-mpod-01.cmd
+        - /reg/g/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-thermotek/build/iocBoot/ioc-xpp-uhrtest-thermotek-01/edm-ioc-xpp-uhrtest-thermotek-01.cmd
       titles:
         - PL516 - alcove
         - MPOD - alcove
+        - Thermotek chiller
 
     MPOD Portable:
       type: shell
