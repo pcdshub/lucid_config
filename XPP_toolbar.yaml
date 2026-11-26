@@ -229,6 +229,11 @@ Detectors:
       redirectCommandOutput: true
       commands:
         - /reg/g/pcds/epics-dev/mcabral/ioc/xpp/ioc-xpp-thermotek/build/iocBoot/ioc-xpp-prtdet-thermotek-01/edm-ioc-xpp-prtdet-thermotek-01.cmd
+    Interlocks:
+      type: shell
+      redirectCommandOutput: true
+      commands:
+        - /cds/group/pcds/epics-dev/espov/ioc/xpp/ioc-xpp-interlock/build/iocBoot/ioc-xpp-interlock-01/pydm-ioc-xpp-interlock-01.cmd
 
 
 
