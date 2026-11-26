@@ -1,0 +1,467 @@
+SUED:
+
+  config:
+    cols: 3
+
+  buttons:
+    LAKESHORE336-01:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/lakeshore336/R1.0.1/build/iocBoot/ioc-ued-ls336-01/edm-ioc-ued-ls336-01.cmd
+
+    LAKESHORE336-02:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/lakeshore336/R1.0.1/build/iocBoot/ioc-ued-ls336-02/edm-ioc-ued-ls336-02.cmd
+
+    camera rate set:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/iroque/pydm_screens/set_detector_rate.py
+
+    reprate rate set:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/reprate/reprate.py
+
+    SUED First Chamber Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/firstChamberMotors.cmd
+
+    SUED Second Chamber Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/secondChamberMotors.cmd
+
+    SUED Pump In-Out Coupling:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/inoutcouplingMotors.cmd
+
+    SUED Aperture Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/apertureMotors.cmd
+
+
+LUED:
+
+  config:
+    cols: 3
+
+  buttons:
+    LUED:
+      type: display
+      filenames:
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/lued_new.ui
+
+    LUED Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/luedMotors.cmd
+
+GUED:
+
+  config:
+    cols: 3
+
+  buttons:
+    GUED:
+      type: display
+      filenames:
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/gued.ui
+         
+SINGLESHOT:
+
+  config:
+    cols: 3
+
+  buttons:
+
+    Single shot Motors:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/ssMotors.cmd
+
+SDS:
+  config:
+    cols: 3
+  buttons:
+
+    SDS User Screen:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/ued/sds/user-screen/launch.sh
+
+    RCC:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar --hide-menu-bar -m "BASE=UED:RCC, TITLE=RCC" /reg/g/pcds/epics-dev/screens/pydm/sds/rcc/RCC-Controls.ui
+
+
+    HPLC:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar -m 'base_pv=UED:SDS:LC20, hplc_count=3' /reg/g/pcds/epics-dev/screens/pydm/sds-ui/universal-sds-screen/base-screens/hplc-screen.py
+
+    ON/OFF Valves:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar -m "hutch=UED, h1_id=01, h2_id=02" /reg/g/pcds/epics-dev/screens/pydm/sds/universal-onoff-screen/onoffvalves.py
+
+    4PortValve:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar -m "BASE=UED:SDS:VICI:01" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/4port-vici-valve.ui
+
+    12PortValve:
+      type: shell
+      commands:
+        - pydm --hide-nav-bar -m "BASE=UED:SDS:VICI:02" /reg/g/pcds/epics-dev/screens/pydm/sds/4port-vici-valve/12PortValve.ui
+
+          
+    QEPro:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/ued/OceanOpticsSpectrometer/R1.0.0/build/iocBoot/ioc-ued-spc-01/pydm-ioc-ued-spc-01.cmd
+
+
+Detector:
+
+  config:
+    cols: 1
+  buttons:
+    EPIX:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/ddamiani/ioc/ued/epix/current/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
+#        - /cds/group/pcds/epics-dev/opperman/ued/ioc-ued-epix/build/iocBoot/ioc-ued-epix-01/edm-ioc-ued-epix-01.cmd
+    EPIX Interlock:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/ued/interlock/R3.0.0/build/iocBoot/ioc-ued-epix-interlock/pydm-ioc-ued-epix-interlock.cmd
+    EPIX Chiller:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/ued/thermotek/R1.0.1/build/iocBoot/ioc-ued-thermotek-01/edm-ioc-ued-thermotek-01.cmd
+    MPOD:
+     type: shell
+     commands:
+       - /cds/group/pcds/epics/ioc/common/mpod/R2.2.12/edm-ioc-ued-mpod-01.cmd
+
+Lasers:
+
+  config:
+    cols: 2
+  buttons:
+    #Smaract laser motors (must be on ued-monitor or ued-daq):
+    #  type: shell
+    #  commands:
+    #    - /afs/slac.stanford.edu/u/re/mcbrowne/trunk2/ioc/ued/smaract/current/smaract_ued.cmd all openloop
+    
+    Smaract MCS2 (mcs-ued-01):
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/iroque/ued/ioc-ued-smaract/build/iocBoot/ioc-ued-mcs1/edm-ioc-ued-mcs1_open.cmd
+
+    XPS Motor:
+      type: shell
+      commands:
+       - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/script/laserMotors.cmd
+
+    Laser cameras POE injector:
+      type: shell
+      commands:
+      - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.36.63/
+
+    OPA Laptop:
+      type: shell
+      commands:
+      - xfreerdp /u:customer /p:785623 /v:laptop-ued-ics-01 /w:1366 /h:768 /dynamic-resolution -sec-nla +clipboard
+
+    REGEN Laptop:
+      type: shell
+      commands:
+        - xfreerdp /u:customer /p:121234 /v:laptop-ued-ics-02 /w:1366 /h:768 /dynamic-resolution -sec-nla +clipboard
+
+    Shutters:
+      type: display
+      filenames:
+        - /cds/group/pcds/epics-dev/screens/pydm/ued_screens/las_shutter.ui
+
+    Laser Room SDG:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/common/SDG_Elite/R2.0.1/children/build/iocBoot/ioc-ued-sdg-01/pydm-ioc-ued-sdg-01.cmd
+
+    Qmini:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-qmini/build/iocBoot/ioc-ued-spec-01/edm-ioc-ued-spec-01.cmd
+
+    Gun UV picomotors:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/divya/ioc/ued/ioc-ued-picoMotion/build/iocBoot/ioc-ued-pico-01/edm-ioc-ued-pico-01.cmd
+    
+    Pump Laser (Bunker) LabMax Power Meter:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-01/edm-ioc-ued-labMax-01.cmd      
+
+    UV Driver LabMax Power Meter:
+      type: shell
+      commands:
+        - /cds/group/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-02/edm-ioc-ued-labMax-02.cmd
+
+    Laser Room LabMax Power Meter:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics/ioc/ued/labMax_TOP/R1.0.0/build/iocBoot/ioc-ued-labMax-03/edm-ioc-ued-labMax-03.cmd
+    
+    Bunker MDO34 Scope:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/ioc/ued/ioc-ued-dso4000/build/iocBoot/ioc-ued-dso4000-02/pydm-ioc-ued-dso4000-02.cmd
+
+    Laser Room MDO34 Scope:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/ljansen7/ioc/ued/ioc-ued-dso4000/build/iocBoot/ioc-ued-dso4000-01/pydm-ioc-ued-dso4000-01.cmd
+
+
+Webcams:
+  config:
+    cols: 4
+  buttons:
+
+    Bunker ued-01:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.36.61/
+
+    Bunker ued-02:
+     type: shell
+     commands:
+       - /usr/bin/google-chrome-stable --user-data-dir="$HOME/.config/google-chrome.$HOSTNAME" --new-window http://172.21.36.62/
+
+XPS Motion:
+  config:
+    cols: 4
+  buttons:
+
+    XPS01 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.3.0/build/iocBoot/ioc-ued-xps-01/edm-ioc-ued-xps-01.cmd
+    XPS02 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.4.0/build/iocBoot/ioc-ued-xps-02/edm-ioc-ued-xps-02.cmd
+    XPS03 Stages_X_Y:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.5.0/build/iocBoot/ioc-ued-xps-03/edm-ioc-ued-xps-03.cmd
+    XPS04 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-04/edm-ioc-ued-xps-04.cmd
+    XPS05 HWP_Powermet:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-05/edm-ioc-ued-xps-05.cmd
+    XPS06 Lens_Delay:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-06/edm-ioc-ued-xps-06.cmd
+
+    XPS08 Pump throttle:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-08/edm-ioc-ued-xps-08.cmd
+
+    XPS09 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.1.1/build/iocBoot/ioc-ued-xps-09/edm-ioc-ued-xps-09.cmd
+
+    XPS10 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics/ioc/ued/NewportXPS8/R1.2.0/build/iocBoot/ioc-ued-xps-10/edm-ioc-ued-xps-10.cmd
+
+    XPS11 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-11/edm-ioc-ued-xps-11.cmd
+
+    XPS13 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/iroque/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-13/edm-ioc-ued-xps-13.cmd 
+
+    XPS14 Expert:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-NewportXPS8/build/iocBoot/ioc-ued-xps-14/edm-ioc-ued-xps-14.cmd
+
+Tools:
+
+  config:
+    cols: 3
+
+  buttons:
+    iocmanager:
+      type: shell
+      commands:
+        - iocmanager ued
+
+    camViewer:
+      type: shell
+      commands:
+        - camViewer -c ued-gige-01
+        - camViewer -c ued-andor-01
+        - camViewer -c ued-andor-03
+        - camViewer -c ued-alv-01
+        - camViewer -c ued-gige-sample-30deg
+        - camViewer -c ued-gige-sample-front
+        - camViewer -c ued-gige-sample-side
+        - camViewer -c ued-asar03
+        - camViewer -c ued-asar04
+        - camViewer -c ued-asps08
+        - camViewer -c ued-asps04
+        - camViewer -c ued-gige-vcc
+        - camViewer -c ued-gige-catcher-tube
+      titles:
+        - ued-gige-01
+        - ued-andor-01
+        - ued-andor-03
+        - ued-alv-01
+        - ued-gige-sample-bottom
+        - ued-gige-sample-back
+        - ued-gige-sample-front
+        - ued-asar03
+        - ued-asar04
+        - ued-asps08
+        - ued-asps04
+        - ued-gige-vcc
+        - ued-gige-thz-sample
+
+
+    Cam Viewer - Config:
+      type: shell
+      commands:
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-01.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-andor-01.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-andor-03.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-alv-01.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-sample-bottom.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-sample-back.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-gige-sample-front.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asar03.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asar04.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asps08.cmd
+        - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/camViewer-config/ued-asps04.cmd
+      titles:
+        - ued-gige-01
+        - ued-andor-01
+        - ued-andor-03
+        - ued-alv-01
+        - ued-gige-sample-bottom
+        - ued-gige-sample-back
+        - ued-gige-sample-front
+        - ued-asar03
+        - ued-asar04
+        - ued-asps08
+        - ued-asps04
+
+    Sood Waveform Generator:
+      type: shell
+      commands:
+        - xfreerdp -g 1920x1280 /smartsizing -u AT -p 1234 -ignore-certificate scope-ued-02
+
+
+
+    StripTool:
+     type: shell
+     commands:
+       - StripTool
+
+    UV feedback:
+     type: shell
+     commands:
+       - /cds/home/opr/uedopr/cjd/uv_feedback_ioc/uv_feedback_gui.py
+
+    Klystron:
+     type: shell
+     commands:
+       - /cds/home/opr/uedopr/bin/start_scandi
+
+    grubber:
+     type: shell
+     commands:
+       - eloggrabber -s grubber_script
+
+    UED PDU:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/ued/pdu_snmp/v1.0.0/build/iocBoot/ioc-ued-pwr-01/edm-ioc-ued-pwr-01.cmd
+
+    DG645 01:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen1/edm-ioc-ued-delaygen1.cmd
+ 
+
+    DG645 02:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/divya/ioc/ued/ioc-ued-dg/build/iocBoot/ioc-ued-delaygen2/edm-ioc-ued-delaygen2.cmd
+
+    LCLS-Gateway(on psbuild):
+        type: shell
+        commands:
+          - edm -x -eolc -m LLL=UED -m PREFIX=NET:CAG:UED /cds/group/pcds/epics-dev/screens/edm/gateway/current/gatewayScreens/emb-gateway.edl
+
+    Restart Andor:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/screens/pydm/ued/andor-restart-screen/Cycle_Andors.py
+
+    camera rate set:
+        type: display
+        filenames:
+          - /cds/group/pcds/epics-dev/iroque/pydm_screens/set_detector_rate.py
+
+    Ek9k AI/AO:
+        type: display
+        filenames:
+          - /reg/g/pcds/epics-dev/screens/pydm/ued_screens/bhc-usr-ek9k.ui 
+
+    XPMPVA:
+        type: shell
+        commands:
+          - /cds/group/pcds/epics-dev/screens/pydm/ued/scripts/xpmpva.cmd
+
+    Script Launcher:
+        type: shell
+        commands:
+          - /cds/home/opr/uedopr/cjd/ScriptLauncher.py
+
+    wave8:
+        type: shell
+        commands:
+          - /reg/g/pcds/epics/ioc/common/pgpWave8/R3.3.0/children/build/iocBoot/ioc-ued-pgpw8-01/edm-ioc-ued-pgpw8-01.cmd
+Legacy_UED:
+
+  config:
+    cols: 1
+
+  buttons:
+    runEDM (must be uedopr@ued-daq):
+      type: shell
+      commands:
+        - edm -x astaTop.edl
+
+
